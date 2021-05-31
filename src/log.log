@@ -1,0 +1,733 @@
+INFO 2021-05-29 20:29:53,058 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:31:43,178 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:31:43,679 views False
+INFO 2021-05-29 20:31:43,689 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:43:52,704 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:43:52,914 views False
+INFO 2021-05-29 20:43:52,924 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:44:29,471 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:44:29,667 views False
+INFO 2021-05-29 20:44:29,667 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:44:52,457 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:44:52,471 views False
+INFO 2021-05-29 20:44:52,481 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:45:21,542 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:45:21,558 views False
+INFO 2021-05-29 20:45:21,560 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:46:53,537 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:46:53,776 views False
+INFO 2021-05-29 20:46:53,777 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:46:53,779 views <django.forms.fields.ImageField object at 0x7f25e778ddc0>
+INFO 2021-05-29 20:47:21,153 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:47:21,328 views False
+INFO 2021-05-29 20:47:21,329 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:47:31,243 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:47:31,426 views False
+INFO 2021-05-29 20:47:31,426 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:48:57,715 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 20:48:57,720 views <MultiValueDict: {}>
+INFO 2021-05-29 20:48:57,908 views False
+INFO 2021-05-29 20:48:57,911 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 20:48:57,913 views <django.forms.fields.ImageField object at 0x7fe24843c400>
+INFO 2021-05-29 21:02:47,122 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:02:47,127 views <MultiValueDict: {}>
+INFO 2021-05-29 21:02:47,310 views False
+INFO 2021-05-29 21:02:47,310 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:07:33,042 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:07:33,044 views <MultiValueDict: {}>
+INFO 2021-05-29 21:07:33,213 views False
+INFO 2021-05-29 21:07:33,213 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:07:54,832 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:07:54,834 views <MultiValueDict: {}>
+INFO 2021-05-29 21:07:54,840 views False
+INFO 2021-05-29 21:07:54,842 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:08:32,281 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><font color="#333333" face="open sans, sans-serif"><span style="font-size: 14px; background-color: rgb(255, 255, 255);">Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven\'s Feel».</span></font><br></p>', '<p>asd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:08:32,282 views <MultiValueDict: {}>
+INFO 2021-05-29 21:08:32,286 views False
+INFO 2021-05-29 21:08:32,286 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:15:10,133 views <QueryDict: {'csrfmiddlewaretoken': ['8Rq1Bn51uihhfApLuHbImIffBO50U7xUdWlru1EfqbC9z6Tns8m5zVJKxDS9qnui'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>sadsadasd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:15:10,134 views <MultiValueDict: {}>
+INFO 2021-05-29 21:15:10,145 views False
+INFO 2021-05-29 21:15:10,146 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:15:52,776 views <QueryDict: {'csrfmiddlewaretoken': ['8Rq1Bn51uihhfApLuHbImIffBO50U7xUdWlru1EfqbC9z6Tns8m5zVJKxDS9qnui'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>sadsadasd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:15:52,781 views <MultiValueDict: {}>
+INFO 2021-05-29 21:15:52,955 views False
+INFO 2021-05-29 21:15:52,956 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:16:07,030 views <QueryDict: {'csrfmiddlewaretoken': ['8Rq1Bn51uihhfApLuHbImIffBO50U7xUdWlru1EfqbC9z6Tns8m5zVJKxDS9qnui'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>sadsadasd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:16:07,032 views <MultiValueDict: {}>
+INFO 2021-05-29 21:16:07,218 views False
+INFO 2021-05-29 21:16:07,228 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:18:25,757 views <QueryDict: {'csrfmiddlewaretoken': ['8Rq1Bn51uihhfApLuHbImIffBO50U7xUdWlru1EfqbC9z6Tns8m5zVJKxDS9qnui'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>sadsadasd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:18:25,759 views <MultiValueDict: {}>
+INFO 2021-05-29 21:18:25,929 views False
+INFO 2021-05-29 21:18:25,930 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:18:25,932 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>sadsadasd</p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': [], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-29 21:19:36,465 views <QueryDict: {'csrfmiddlewaretoken': ['8Rq1Bn51uihhfApLuHbImIffBO50U7xUdWlru1EfqbC9z6Tns8m5zVJKxDS9qnui'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><br></p>', '<p>asdasd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['05/31/2021 9:19 PM'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:19:36,467 views <MultiValueDict: {}>
+INFO 2021-05-29 21:19:36,473 views False
+INFO 2021-05-29 21:19:36,475 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li><li>release_date<ul class="errorlist"><li>Введите правильную дату.</li></ul></li></ul>
+INFO 2021-05-29 21:19:36,479 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>asdasd</p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False}
+INFO 2021-05-29 21:19:56,937 views <QueryDict: {'csrfmiddlewaretoken': ['8Rq1Bn51uihhfApLuHbImIffBO50U7xUdWlru1EfqbC9z6Tns8m5zVJKxDS9qnui'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p><br></p>', '<p>asdasd</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['05/31/2021 9:19 PM'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:19:56,938 views <MultiValueDict: {}>
+INFO 2021-05-29 21:19:56,943 views False
+INFO 2021-05-29 21:19:56,943 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li><li>release_date<ul class="errorlist"><li>Введите правильную дату.</li></ul></li></ul>
+INFO 2021-05-29 21:19:56,945 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>asdasd</p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False}
+INFO 2021-05-29 21:25:18,018 views <QueryDict: {'csrfmiddlewaretoken': ['rv2vhyH1PMIoL3U7yAvTHHOcf1ssD3tqwAXVacgfLF3g5zoJw1GgUUiHbQfB9jqO'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_gallery_0.jpg'], 'form-0-image': ['fsnhf_poster.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:25:18,018 views <MultiValueDict: {}>
+INFO 2021-05-29 21:25:18,235 views False
+INFO 2021-05-29 21:25:18,273 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:25:18,286 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>seo_keywords<br></p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-29 21:25:18,287 views False
+INFO 2021-05-29 21:25:18,287 views []
+INFO 2021-05-29 21:26:49,623 views <QueryDict: {'csrfmiddlewaretoken': ['rv2vhyH1PMIoL3U7yAvTHHOcf1ssD3tqwAXVacgfLF3g5zoJw1GgUUiHbQfB9jqO'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_gallery_0.jpg'], 'form-0-image': ['fsnhf_poster.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:26:49,637 views <MultiValueDict: {}>
+INFO 2021-05-29 21:26:50,032 views False
+INFO 2021-05-29 21:26:50,034 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:26:50,037 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>seo_keywords<br></p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-29 21:26:50,044 views False
+INFO 2021-05-29 21:27:30,528 views <QueryDict: {'csrfmiddlewaretoken': ['rv2vhyH1PMIoL3U7yAvTHHOcf1ssD3tqwAXVacgfLF3g5zoJw1GgUUiHbQfB9jqO'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_gallery_0.jpg'], 'form-0-image': ['fsnhf_poster.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:27:30,528 views <MultiValueDict: {}>
+INFO 2021-05-29 21:27:30,531 views False
+INFO 2021-05-29 21:27:45,689 views <QueryDict: {'csrfmiddlewaretoken': ['rv2vhyH1PMIoL3U7yAvTHHOcf1ssD3tqwAXVacgfLF3g5zoJw1GgUUiHbQfB9jqO'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_gallery_0.jpg'], 'form-0-image': ['fsnhf_poster.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:27:45,691 views <MultiValueDict: {}>
+INFO 2021-05-29 21:27:45,695 views False
+INFO 2021-05-29 21:30:12,620 views <QueryDict: {'csrfmiddlewaretoken': ['rv2vhyH1PMIoL3U7yAvTHHOcf1ssD3tqwAXVacgfLF3g5zoJw1GgUUiHbQfB9jqO'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", '<p>seo_keywords<br></p>'], 'files': ['', ''], 'poster': ['fsnhf_gallery_0.jpg'], 'form-0-image': ['fsnhf_poster.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:30:12,621 views <MultiValueDict: {}>
+INFO 2021-05-29 21:30:12,762 views False
+INFO 2021-05-29 21:30:12,763 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:30:12,765 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>seo_keywords<br></p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-29 21:30:12,769 views False
+INFO 2021-05-29 21:32:12,545 views <QueryDict: {'csrfmiddlewaretoken': ['rv2vhyH1PMIoL3U7yAvTHHOcf1ssD3tqwAXVacgfLF3g5zoJw1GgUUiHbQfB9jqO'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».", '<p>sadas</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_2.jpg'], 'form-2-image': ['fsnhf_gallery_3.jpg'], 'form-3-image': ['fsnhf_gallery_1.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['06/29/2021 9:31 PM'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:32:12,545 views <MultiValueDict: {}>
+INFO 2021-05-29 21:32:12,834 views False
+INFO 2021-05-29 21:32:12,834 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li><li>release_date<ul class="errorlist"><li>Введите правильную дату.</li></ul></li></ul>
+INFO 2021-05-29 21:32:12,836 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>sadas</p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False}
+INFO 2021-05-29 21:32:12,837 views False
+INFO 2021-05-29 21:33:19,626 views <QueryDict: {'csrfmiddlewaretoken': ['rv2vhyH1PMIoL3U7yAvTHHOcf1ssD3tqwAXVacgfLF3g5zoJw1GgUUiHbQfB9jqO'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».", '<p>sadas</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_2.jpg'], 'form-2-image': ['fsnhf_gallery_3.jpg'], 'form-3-image': ['fsnhf_gallery_1.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['06/29/2021 9:31 PM'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:33:19,630 views <MultiValueDict: {}>
+INFO 2021-05-29 21:33:19,843 views False
+INFO 2021-05-29 21:33:19,847 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li><li>release_date<ul class="errorlist"><li>Введите правильную дату.</li></ul></li></ul>
+INFO 2021-05-29 21:33:19,855 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>sadas</p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False}
+INFO 2021-05-29 21:33:19,860 views False
+INFO 2021-05-29 21:37:19,349 views <QueryDict: {'csrfmiddlewaretoken': ['Alckkfup1ZcGY7UIxNHmcOn5fP9gjYPkFq7KdT3DXSxyiDokveSJp1RAbEWpPeMI'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p>sadas<br></p>', 'asdasdasdasdasd'], 'files': [''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keyword']}>
+INFO 2021-05-29 21:37:19,353 views <MultiValueDict: {}>
+INFO 2021-05-29 21:37:19,382 views False
+INFO 2021-05-29 21:37:19,384 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:37:19,387 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': 'asdasdasdasdasd', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-29 21:37:19,398 views False
+INFO 2021-05-29 21:38:56,859 views <QueryDict: {'csrfmiddlewaretoken': ['Alckkfup1ZcGY7UIxNHmcOn5fP9gjYPkFq7KdT3DXSxyiDokveSJp1RAbEWpPeMI'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p>sadas<br></p>', 'asdasdasdasdasd'], 'files': [''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keyword']}>
+INFO 2021-05-29 21:38:56,859 views <MultiValueDict: {}>
+INFO 2021-05-29 21:38:57,024 views False
+INFO 2021-05-29 21:38:57,024 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:38:57,024 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': 'asdasdasdasdasd', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-29 21:38:57,025 views False
+INFO 2021-05-29 21:40:09,121 views <QueryDict: {'csrfmiddlewaretoken': ['vC31Dni5x9YEfXiNs9IGh50FUEJAD2UwAHYrw1Rjt2jwztMpqAT3uiuaQtwJ9iRU'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p>asdasdqweqwe</p>', '<p>wqewqewqe</p>'], 'files': ['', ''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['28.04.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo_title'], 'keywords': ['seo_keywords']}>
+INFO 2021-05-29 21:40:09,126 views <MultiValueDict: {}>
+INFO 2021-05-29 21:40:09,315 views False
+INFO 2021-05-29 21:40:09,317 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-29 21:40:09,321 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>wqewqewqe</p>', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 4, 28)}
+INFO 2021-05-29 21:40:09,325 views False
+INFO 2021-05-29 21:45:55,707 views <QueryDict: {'csrfmiddlewaretoken': ['kVmyuhQabU2zXnRja0mJmxROQvKikRB8p0hYnVpo7NnrhTlV8rx6zKljMkxrQ7yw'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p>wqeqe</p>', 'seo-descr'], 'files': [''], 'poster': ['fsnhf_poster.jpg'], 'form-0-image': ['fsnhf_gallery_0.jpg'], 'form-1-image': ['fsnhf_gallery_1.jpg'], 'form-2-image': ['fsnhf_gallery_2.jpg'], 'form-3-image': ['fsnhf_gallery_3.jpg'], 'trailer': ['ttps://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-29 21:45:55,708 views <MultiValueDict: {}>
+INFO 2021-05-29 21:45:55,717 views False
+INFO 2021-05-29 21:45:55,726 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li><li>trailer<ul class="errorlist"><li>Введите правильный URL.</li></ul></li></ul>
+INFO 2021-05-29 21:45:55,731 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': 'seo-descr', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-29 21:45:55,743 views False
+INFO 2021-05-30 00:05:28,523 views <QueryDict: {'csrfmiddlewaretoken': ['Ks1dZZtnISs2Rujwl68F7iN2dvJFe8bSPxWDSD2BELNUb0N8jxj2kvhx9kwOKo8g'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p>Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня<br></p>', 'seo-descr'], 'files': [''], 'poster': ['fsnhf_poster.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-30 00:05:28,526 views <MultiValueDict: {}>
+INFO 2021-05-30 00:05:28,532 views False
+INFO 2021-05-30 00:05:28,533 views <ul class="errorlist"><li>poster<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-05-30 00:05:28,534 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': 'seo-descr', 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-30 00:05:28,537 views False
+INFO 2021-05-30 00:08:22,212 views <QueryDict: {'csrfmiddlewaretoken': ['Ks1dZZtnISs2Rujwl68F7iN2dvJFe8bSPxWDSD2BELNUb0N8jxj2kvhx9kwOKo8g'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p>Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня<br></p>', 'seo-descr'], 'files': [''], 'poster': ['fsnhf_poster.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-30 00:08:22,213 views <MultiValueDict: {}>
+INFO 2021-05-30 00:09:25,151 views <QueryDict: {'csrfmiddlewaretoken': ['Ks1dZZtnISs2Rujwl68F7iN2dvJFe8bSPxWDSD2BELNUb0N8jxj2kvhx9kwOKo8g'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ['<p>asd</p>', 'seo-descr'], 'files': [''], 'poster': ['fsnhf_poster.jpg'], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['05/19/2021 12:09 AM'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-30 00:09:25,151 views <MultiValueDict: {}>
+INFO 2021-05-30 00:15:15,265 views <QueryDict: {'csrfmiddlewaretoken': ['yX10Ngf2qoUuWzeRfNwEZTQ6rG1pwyJYD2WqGUOgmhfmg5ItdeH1c6kBnvOy2OGm'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", 'seo-description'], 'files': [''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:21'], 'release_date': ['31.05.2021'], 'type': ['1'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-30 00:15:15,272 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'form-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'form-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'form-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'form-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 00:15:15,952 views True
+INFO 2021-05-30 00:15:15,952 views 
+INFO 2021-05-30 00:15:15,952 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': 'seo-description', 'poster': <InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>, 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': ['1'], 'duration': datetime.timedelta(seconds=7341), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-30 00:15:15,954 views False
+INFO 2021-05-30 00:51:27,113 views <QueryDict: {'csrfmiddlewaretoken': ['XPazVTDBrb6taA02uh2jDtZPUvAfy9lO2U5ZOxcPn4rlu6uEsIdGQGtkQkno4pic'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", 'seo-description'], 'files': [''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywors']}>
+INFO 2021-05-30 00:51:27,114 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 00:51:27,416 views True
+INFO 2021-05-30 00:51:27,417 views 
+INFO 2021-05-30 00:51:27,417 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': 'seo-description', 'poster': <InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>, 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': [], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-30 00:51:27,422 views False
+INFO 2021-05-30 00:55:08,340 views <QueryDict: {'csrfmiddlewaretoken': ['XPazVTDBrb6taA02uh2jDtZPUvAfy9lO2U5ZOxcPn4rlu6uEsIdGQGtkQkno4pic'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", 'seo-description'], 'files': [''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywors']}>
+INFO 2021-05-30 00:55:08,341 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 00:55:08,636 views True
+INFO 2021-05-30 00:55:08,636 views 
+INFO 2021-05-30 00:55:08,637 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': 'seo-description', 'poster': <InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>, 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': [], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-30 00:55:08,646 views False
+INFO 2021-05-30 01:02:10,529 views <QueryDict: {'csrfmiddlewaretoken': ['XPazVTDBrb6taA02uh2jDtZPUvAfy9lO2U5ZOxcPn4rlu6uEsIdGQGtkQkno4pic'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel».<br></p>", 'seo-description'], 'files': [''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywors']}>
+INFO 2021-05-30 01:02:10,544 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 01:02:11,106 views True
+INFO 2021-05-30 01:02:11,107 views 
+INFO 2021-05-30 01:02:11,108 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': 'seo-description', 'poster': <InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>, 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': [], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-30 01:02:11,115 views False
+INFO 2021-05-30 01:05:51,463 views <QueryDict: {'csrfmiddlewaretoken': ['EOu3fsgupGQQuq5HiYNrMxW6Jhyw6GXLJTpt86PIlzbIOWzjgpYOZKqBF6lFCWU9'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel»<br></p>", '<p>seo</p>'], 'files': ['', ''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-30 01:05:51,464 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 01:05:51,778 views True
+INFO 2021-05-30 01:05:51,778 views 
+INFO 2021-05-30 01:05:51,778 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>seo</p>', 'poster': <InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>, 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': [], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-30 01:05:51,780 views False
+INFO 2021-05-30 01:06:23,193 views <QueryDict: {'csrfmiddlewaretoken': ['EOu3fsgupGQQuq5HiYNrMxW6Jhyw6GXLJTpt86PIlzbIOWzjgpYOZKqBF6lFCWU9'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel»<br></p>", '<p>seo</p>'], 'files': ['', ''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-30 01:06:23,200 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 01:06:23,572 views True
+INFO 2021-05-30 01:06:23,576 views 
+INFO 2021-05-30 01:06:23,591 views {'name': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня', 'description': '<p>seo</p>', 'poster': <InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>, 'trailer': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'type': [], 'duration': datetime.timedelta(seconds=7342), 'is_active': False, 'release_date': datetime.date(2021, 5, 31)}
+INFO 2021-05-30 01:06:23,594 views False
+INFO 2021-05-30 01:07:26,139 views <QueryDict: {'csrfmiddlewaretoken': ['EOu3fsgupGQQuq5HiYNrMxW6Jhyw6GXLJTpt86PIlzbIOWzjgpYOZKqBF6lFCWU9'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel»<br></p>", '<p>seo</p>'], 'files': ['', ''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-30 01:07:26,140 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 01:07:26,577 views False
+INFO 2021-05-30 01:08:47,124 views <QueryDict: {'csrfmiddlewaretoken': ['EOu3fsgupGQQuq5HiYNrMxW6Jhyw6GXLJTpt86PIlzbIOWzjgpYOZKqBF6lFCWU9'], 'name': ['Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'], 'description': ["<p>Завершающий третий фильм аниме-адаптации «Fate/Stay night: Heaven's Feel»<br></p>", '<p>seo</p>'], 'files': ['', ''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seo-title'], 'keywords': ['seo-keywords']}>
+INFO 2021-05-30 01:08:47,125 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 01:08:47,343 views <tr><td colspan="2"><ul class="errorlist nonfield"><li>(Скрытое поле TOTAL_FORMS) Обязательное поле.</li><li>(Скрытое поле INITIAL_FORMS) Обязательное поле.</li></ul><input type="hidden" name="app-image-content_type-object_id-TOTAL_FORMS" id="id_app-image-content_type-object_id-TOTAL_FORMS"><input type="hidden" name="app-image-content_type-object_id-INITIAL_FORMS" id="id_app-image-content_type-object_id-INITIAL_FORMS"><input type="hidden" name="app-image-content_type-object_id-MIN_NUM_FORMS" id="id_app-image-content_type-object_id-MIN_NUM_FORMS"><input type="hidden" name="app-image-content_type-object_id-MAX_NUM_FORMS" id="id_app-image-content_type-object_id-MAX_NUM_FORMS"></td></tr>
+
+INFO 2021-05-30 01:27:13,506 views <QueryDict: {'csrfmiddlewaretoken': ['6DzEkcgQ1ukB3ajaSlSjoK6V6Npv8g8qbIu4dQP4XnFtnGNMQM3GBXAq2CcEEw5O'], 'name': ['sadasd'], 'description': ['<p>sadasd</p>', '<p>seod</p>'], 'files': ['', ''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seot'], 'keywords': ['seok']}>
+INFO 2021-05-30 01:27:13,509 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 01:27:13,801 views []
+INFO 2021-05-30 01:36:13,353 views <QueryDict: {'csrfmiddlewaretoken': ['6DzEkcgQ1ukB3ajaSlSjoK6V6Npv8g8qbIu4dQP4XnFtnGNMQM3GBXAq2CcEEw5O'], 'name': ['sadasd'], 'description': ['<p>sadasd</p>', '<p>seod</p>'], 'files': ['', ''], 'trailer': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'duration': ['2:02:22'], 'release_date': ['31.05.2021'], 'url': ['https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt'], 'title': ['seot'], 'keywords': ['seok']}>
+INFO 2021-05-30 01:36:13,354 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+INFO 2021-05-30 01:36:13,358 views []
+WARNING 2021-05-30 13:04:38,858 views False
+INFO 2021-05-30 13:04:38,858 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+WARNING 2021-05-30 13:14:38,832 views False
+INFO 2021-05-30 13:14:38,832 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+WARNING 2021-05-30 13:14:38,832 views <ul class="errorlist"><li>Данные ManagementForm отсутствуют или были подделаны. Отсутствующие поля: app-image-content_type-object_id-TOTAL_FORMS, app-image-content_type-object_id-INITIAL_FORMS. Если проблема не исчезнет, вам может потребоваться отправить отчет об ошибке.</li></ul>
+WARNING 2021-05-30 13:17:52,616 views False
+INFO 2021-05-30 13:17:52,617 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+WARNING 2021-05-30 13:17:52,617 views <ul class="errorlist"><li>Данные ManagementForm отсутствуют или были подделаны. Отсутствующие поля: app-image-content_type-object_id-TOTAL_FORMS, app-image-content_type-object_id-INITIAL_FORMS. Если проблема не исчезнет, вам может потребоваться отправить отчет об ошибке.</li></ul>
+WARNING 2021-05-30 13:20:02,629 views True
+INFO 2021-05-30 13:20:02,641 views <MultiValueDict: {'poster': [<InMemoryUploadedFile: fsnhf_poster.jpg (image/jpeg)>], 'app-image-content_type-object_id-0-image': [<InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>], 'app-image-content_type-object_id-1-image': [<InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>], 'app-image-content_type-object_id-2-image': [<InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>], 'app-image-content_type-object_id-3-image': [<InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>]}>
+WARNING 2021-05-30 13:20:02,665 views 
+INFO 2021-05-30 13:34:22,034 views True
+INFO 2021-05-30 13:34:22,036 views True
+INFO 2021-05-30 13:34:22,037 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 13:34:22,037 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 13:34:22,038 views 4
+INFO 2021-05-30 13:39:42,164 views True
+INFO 2021-05-30 13:39:42,169 views True
+INFO 2021-05-30 13:39:42,169 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 13:39:42,169 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 13:39:42,170 views 4
+INFO 2021-05-30 13:46:09,965 views True
+INFO 2021-05-30 13:46:09,970 views True
+INFO 2021-05-30 13:46:09,972 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 13:46:09,973 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 13:46:09,973 views 4
+INFO 2021-05-30 13:47:00,191 views True
+INFO 2021-05-30 13:47:00,208 views True
+INFO 2021-05-30 13:47:00,211 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 13:47:00,211 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 13:47:00,211 views 4
+INFO 2021-05-30 13:50:56,759 views True
+INFO 2021-05-30 13:50:56,760 views True
+INFO 2021-05-30 13:50:56,760 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 13:50:56,761 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 13:50:56,761 views 4
+INFO 2021-05-30 13:50:56,925 utils uploads/2021/05/30/--13:50:1622371856
+INFO 2021-05-30 13:50:57,010 utils uploads/2021/05/30/--13:50:1622371857
+INFO 2021-05-30 13:50:57,081 utils uploads/2021/05/30/--13:50:1622371857
+INFO 2021-05-30 13:50:57,152 utils uploads/2021/05/30/--13:50:1622371857
+INFO 2021-05-30 13:50:57,211 utils uploads/2021/05/30/--13:50:1622371857
+INFO 2021-05-30 14:13:53,845 views True
+INFO 2021-05-30 14:13:53,848 views True
+INFO 2021-05-30 14:13:53,850 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 14:13:53,851 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 14:13:53,851 views 4
+INFO 2021-05-30 14:13:53,872 utils uploads/2021/05/30
+INFO 2021-05-30 14:13:53,912 utils uploads/2021/05/30
+INFO 2021-05-30 14:13:53,928 utils uploads/2021/05/30
+INFO 2021-05-30 14:13:53,947 utils uploads/2021/05/30
+INFO 2021-05-30 14:13:53,964 utils uploads/2021/05/30
+INFO 2021-05-30 14:22:03,508 views True
+INFO 2021-05-30 14:22:03,513 views True
+INFO 2021-05-30 14:22:03,515 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 14:22:03,516 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 14:22:03,516 views 4
+INFO 2021-05-30 14:22:03,542 utils uploads/2021-05-30
+INFO 2021-05-30 14:22:03,594 utils uploads/2021-05-30
+INFO 2021-05-30 14:22:03,617 utils uploads/2021-05-30
+INFO 2021-05-30 14:22:03,640 utils uploads/2021-05-30
+INFO 2021-05-30 14:22:03,661 utils uploads/2021-05-30
+INFO 2021-05-30 14:33:44,724 views True
+INFO 2021-05-30 14:33:44,734 views True
+INFO 2021-05-30 14:33:44,741 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 14:33:44,741 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 14:33:44,742 views 4
+INFO 2021-05-30 14:34:35,499 views True
+INFO 2021-05-30 14:34:35,500 views True
+INFO 2021-05-30 14:34:35,501 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 14:34:35,501 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'id': None, 'DELETE': False}]
+INFO 2021-05-30 14:34:35,502 views 4
+INFO 2021-05-30 14:40:11,861 views True
+INFO 2021-05-30 14:40:11,862 views True
+INFO 2021-05-30 14:40:11,862 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 14:40:11,863 views [{'image': <InMemoryUploadedFile: fsnhf_gallery_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {}]
+INFO 2021-05-30 14:40:11,863 views 4
+INFO 2021-05-30 14:47:14,547 views True
+INFO 2021-05-30 14:47:14,549 views True
+INFO 2021-05-30 14:47:14,549 views {'seo_url': 'https://www.youtube.com/watch?v=Ev_vfAWTOjU&feature=emb_imp_woyt', 'seo_title': 'seo_title', 'seo_keywords': 'seo_keywords', 'seo_description': '<p>seo_description</p>'}
+INFO 2021-05-30 14:47:14,549 views [{}, {'image': <InMemoryUploadedFile: fsnhf_gallery_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}, {}, {}]
+INFO 2021-05-30 14:47:14,549 views 4
+INFO 2021-05-30 17:05:01,656 views True
+INFO 2021-05-30 17:05:01,662 views False
+INFO 2021-05-30 17:05:01,662 views True
+INFO 2021-05-30 17:07:52,011 views True
+INFO 2021-05-30 17:07:52,265 views False
+INFO 2021-05-30 17:07:52,268 views True
+INFO 2021-05-30 17:12:12,825 views True
+INFO 2021-05-30 17:12:12,834 views False
+INFO 2021-05-30 17:12:12,838 views True
+INFO 2021-05-30 17:13:14,315 views True
+INFO 2021-05-30 17:13:14,322 views False
+INFO 2021-05-30 17:13:14,324 views True
+INFO 2021-05-30 17:13:14,364 views None
+INFO 2021-05-30 17:13:14,365 views None
+INFO 2021-05-30 17:13:14,365 views None
+INFO 2021-05-30 17:13:14,365 views None
+INFO 2021-05-30 17:14:44,197 views True
+INFO 2021-05-30 17:14:44,204 views False
+INFO 2021-05-30 17:14:44,206 views True
+INFO 2021-05-30 17:14:44,247 views {'DELETE': False}
+INFO 2021-05-30 17:14:44,247 views {'DELETE': False}
+INFO 2021-05-30 17:14:44,247 views {}
+INFO 2021-05-30 17:14:44,247 views {}
+INFO 2021-05-30 17:15:27,499 views True
+INFO 2021-05-30 17:15:27,512 views False
+INFO 2021-05-30 17:15:27,513 views True
+INFO 2021-05-30 17:15:27,733 views {'DELETE': False}
+INFO 2021-05-30 17:15:27,734 views {'DELETE': False}
+INFO 2021-05-30 17:15:27,734 views {}
+INFO 2021-05-30 17:15:27,734 views {}
+INFO 2021-05-30 17:16:19,967 views True
+INFO 2021-05-30 17:16:20,098 views False
+INFO 2021-05-30 17:16:20,098 views True
+INFO 2021-05-30 17:16:20,145 views {'DELETE': False}
+INFO 2021-05-30 17:16:20,145 views {'image': <InMemoryUploadedFile: fsnhf_gallery_3.jpg (image/jpeg)>, 'DELETE': False}
+INFO 2021-05-30 17:16:20,145 views {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}
+INFO 2021-05-30 17:16:20,146 views {}
+INFO 2021-05-30 17:20:17,874 views True
+INFO 2021-05-30 17:20:17,962 views False
+INFO 2021-05-30 17:20:17,964 views True
+INFO 2021-05-30 17:21:06,177 views True
+INFO 2021-05-30 17:21:06,305 views False
+INFO 2021-05-30 17:21:06,307 views True
+INFO 2021-05-30 17:21:27,754 views True
+INFO 2021-05-30 17:21:27,763 views False
+INFO 2021-05-30 17:21:27,764 views True
+INFO 2021-05-30 17:22:13,598 views True
+INFO 2021-05-30 17:22:13,605 views False
+INFO 2021-05-30 17:22:13,608 views True
+INFO 2021-05-30 17:25:13,450 views True
+INFO 2021-05-30 17:25:13,550 views False
+INFO 2021-05-30 17:25:13,551 views True
+INFO 2021-05-30 17:25:13,655 views gallery - False
+INFO 2021-05-30 17:25:35,656 views True
+INFO 2021-05-30 17:25:35,663 views False
+INFO 2021-05-30 17:25:35,664 views True
+INFO 2021-05-30 17:25:35,693 views gallery - False
+INFO 2021-05-30 17:27:04,831 views True
+INFO 2021-05-30 17:27:04,860 views False
+INFO 2021-05-30 17:27:04,864 views True
+INFO 2021-05-30 17:27:05,023 views gallery - False
+ERROR 2021-05-30 17:27:05,026 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}, {}]
+INFO 2021-05-30 17:42:02,539 views True
+INFO 2021-05-30 17:42:02,549 views False
+INFO 2021-05-30 17:42:02,553 views True
+INFO 2021-05-30 17:42:02,606 views gallery - False
+ERROR 2021-05-30 17:42:02,607 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:47:26,738 views True
+INFO 2021-05-30 17:47:26,892 views False
+INFO 2021-05-30 17:47:26,895 views True
+INFO 2021-05-30 17:47:26,981 views gallery - False
+ERROR 2021-05-30 17:47:26,988 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:48:25,463 views True
+INFO 2021-05-30 17:48:25,475 views False
+INFO 2021-05-30 17:48:25,479 views True
+INFO 2021-05-30 17:48:25,603 views gallery - False
+ERROR 2021-05-30 17:48:25,606 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:48:41,007 views True
+INFO 2021-05-30 17:48:41,022 views False
+INFO 2021-05-30 17:48:41,032 views True
+INFO 2021-05-30 17:48:41,176 views gallery - False
+ERROR 2021-05-30 17:48:41,177 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:48:56,094 views True
+INFO 2021-05-30 17:48:56,111 views False
+INFO 2021-05-30 17:48:56,113 views True
+INFO 2021-05-30 17:48:56,177 views gallery - False
+ERROR 2021-05-30 17:48:56,178 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:54:08,042 views True
+INFO 2021-05-30 17:54:08,059 views False
+INFO 2021-05-30 17:54:08,059 views True
+INFO 2021-05-30 17:54:08,109 views gallery - False
+ERROR 2021-05-30 17:54:08,109 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:55:25,041 views True
+INFO 2021-05-30 17:55:25,046 views False
+INFO 2021-05-30 17:55:25,050 views True
+INFO 2021-05-30 17:55:25,204 views gallery - False
+ERROR 2021-05-30 17:55:25,204 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:55:25,206 views None
+INFO 2021-05-30 17:55:25,206 views None
+INFO 2021-05-30 17:55:25,206 views None
+INFO 2021-05-30 17:55:25,206 views None
+INFO 2021-05-30 17:56:12,847 views True
+INFO 2021-05-30 17:56:12,873 views False
+INFO 2021-05-30 17:56:12,875 views True
+INFO 2021-05-30 17:56:13,003 views gallery - False
+ERROR 2021-05-30 17:56:13,003 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:56:13,005 views {'DELETE': False}
+INFO 2021-05-30 17:56:13,005 views {'DELETE': False}
+INFO 2021-05-30 17:56:13,005 views {'DELETE': False}
+INFO 2021-05-30 17:56:13,005 views {}
+INFO 2021-05-30 17:57:19,002 views True
+INFO 2021-05-30 17:57:19,007 views False
+INFO 2021-05-30 17:57:19,010 views True
+INFO 2021-05-30 17:57:19,071 views gallery - False
+ERROR 2021-05-30 17:57:19,075 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:57:19,077 views {'DELETE': False}
+INFO 2021-05-30 17:57:19,078 views {'DELETE': False}
+INFO 2021-05-30 17:57:19,079 views {'DELETE': False}
+INFO 2021-05-30 17:57:19,085 views {}
+INFO 2021-05-30 17:58:49,996 views True
+INFO 2021-05-30 17:58:50,176 views False
+INFO 2021-05-30 17:58:50,186 views True
+INFO 2021-05-30 17:58:50,506 views gallery - False
+ERROR 2021-05-30 17:58:50,515 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 17:58:50,539 views {'DELETE': False}
+INFO 2021-05-30 17:58:50,540 views {'DELETE': False}
+INFO 2021-05-30 17:58:50,540 views {'image': <InMemoryUploadedFile: fsnhf_gallery_1.jpg (image/jpeg)>, 'DELETE': False}
+INFO 2021-05-30 17:58:50,540 views {}
+INFO 2021-05-30 18:23:31,043 views True
+INFO 2021-05-30 18:23:31,057 views False
+INFO 2021-05-30 18:23:31,058 views True
+INFO 2021-05-30 18:23:31,207 views gallery - False
+ERROR 2021-05-30 18:23:31,211 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 18:23:31,214 views {'DELETE': False}
+INFO 2021-05-30 18:23:31,225 views {'DELETE': False}
+INFO 2021-05-30 18:23:31,225 views {'DELETE': False}
+INFO 2021-05-30 18:23:31,225 views {}
+INFO 2021-05-30 18:27:58,620 views True
+INFO 2021-05-30 18:27:58,630 views False
+INFO 2021-05-30 18:27:58,634 views True
+INFO 2021-05-30 18:27:58,746 views gallery - False
+ERROR 2021-05-30 18:27:58,756 views [{'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {'image': ['Обязательное поле.'], 'id': ['Обязательное поле.']}, {}]
+INFO 2021-05-30 18:27:58,758 views {'DELETE': False}
+INFO 2021-05-30 18:27:58,759 views {'DELETE': False}
+INFO 2021-05-30 18:27:58,759 views {'DELETE': False}
+INFO 2021-05-30 18:27:58,759 views {}
+INFO 2021-05-30 18:37:26,610 views True
+INFO 2021-05-30 18:37:26,745 views True
+INFO 2021-05-30 18:37:26,751 views True
+INFO 2021-05-30 18:37:26,893 views gallery - True
+ERROR 2021-05-30 18:37:26,898 views [{}, {}, {}, {}]
+INFO 2021-05-30 18:37:26,954 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_0.jpg>, 'id': <Image: Image object (40)>, 'DELETE': False}
+INFO 2021-05-30 18:37:26,958 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_1.jpg>, 'id': <Image: Image object (41)>, 'DELETE': False}
+INFO 2021-05-30 18:37:26,958 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_2.jpg>, 'id': <Image: Image object (42)>, 'DELETE': False}
+INFO 2021-05-30 18:37:26,963 views {}
+INFO 2021-05-30 18:51:30,624 views True
+INFO 2021-05-30 18:51:30,772 views True
+INFO 2021-05-30 18:51:30,775 views True
+INFO 2021-05-30 18:51:30,856 views gallery - True
+ERROR 2021-05-30 18:51:30,869 views [{}, {}, {}, {}]
+INFO 2021-05-30 18:51:31,037 views {'image': <InMemoryUploadedFile: knymmrh_0.jpg (image/jpeg)>, 'id': None, 'DELETE': False}
+INFO 2021-05-30 18:51:31,037 views {'image': <InMemoryUploadedFile: knymmrh_1.jpg (image/jpeg)>, 'id': None, 'DELETE': False}
+INFO 2021-05-30 18:51:31,037 views {'image': <InMemoryUploadedFile: knymmrh_2.jpg (image/jpeg)>, 'id': None, 'DELETE': False}
+INFO 2021-05-30 18:51:31,038 views {}
+INFO 2021-05-30 18:52:32,918 views True
+INFO 2021-05-30 18:52:33,066 views True
+INFO 2021-05-30 18:52:33,068 views True
+INFO 2021-05-30 18:52:33,116 views gallery - True
+ERROR 2021-05-30 18:52:33,117 views [{}, {}, {}, {}]
+INFO 2021-05-30 18:52:33,181 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_0_Jt7xwWS.jpg>, 'id': <Image: Image object (43)>, 'DELETE': False}
+INFO 2021-05-30 18:52:33,182 views {'image': <InMemoryUploadedFile: knymmrh_2.jpg (image/jpeg)>, 'id': <Image: Image object (44)>, 'DELETE': False}
+INFO 2021-05-30 18:52:33,183 views {'image': <InMemoryUploadedFile: knymmrh_1.jpg (image/jpeg)>, 'id': <Image: Image object (45)>, 'DELETE': False}
+INFO 2021-05-30 18:52:33,184 views {}
+INFO 2021-05-30 18:52:49,666 views True
+INFO 2021-05-30 18:52:49,743 views True
+INFO 2021-05-30 18:52:49,745 views True
+INFO 2021-05-30 18:52:49,787 views gallery - True
+ERROR 2021-05-30 18:52:49,787 views [{}, {}, {}, {}]
+INFO 2021-05-30 18:52:49,788 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_0_Jt7xwWS.jpg>, 'id': <Image: Image object (43)>, 'DELETE': False}
+INFO 2021-05-30 18:52:49,789 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_2_ItF5nhv.jpg>, 'id': <Image: Image object (44)>, 'DELETE': False}
+INFO 2021-05-30 18:52:49,789 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_1_vMM1DLZ.jpg>, 'id': <Image: Image object (45)>, 'DELETE': False}
+INFO 2021-05-30 18:52:49,792 views {}
+INFO 2021-05-30 18:53:30,914 views True
+INFO 2021-05-30 18:53:31,091 views True
+INFO 2021-05-30 18:53:31,094 views True
+INFO 2021-05-30 18:53:31,223 views gallery - True
+ERROR 2021-05-30 18:53:31,236 views [{}, {}, {}, {}]
+INFO 2021-05-30 18:53:31,238 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_0_Jt7xwWS.jpg>, 'id': <Image: Image object (43)>, 'DELETE': False}
+INFO 2021-05-30 18:53:31,239 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_2_ItF5nhv.jpg>, 'id': <Image: Image object (44)>, 'DELETE': False}
+INFO 2021-05-30 18:53:31,239 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_1_vMM1DLZ.jpg>, 'id': <Image: Image object (45)>, 'DELETE': False}
+INFO 2021-05-30 18:53:31,245 views {}
+INFO 2021-05-30 18:54:11,138 views True
+INFO 2021-05-30 18:54:11,211 views True
+INFO 2021-05-30 18:54:11,212 views True
+INFO 2021-05-30 18:54:11,258 views gallery - True
+ERROR 2021-05-30 18:54:11,258 views [{}, {}, {}, {}]
+INFO 2021-05-30 18:54:11,386 views {'image': <ImageFieldFile: uploads/2021/05-30/knymmrh_0_Jt7xwWS.jpg>, 'id': <Image: Image object (43)>, 'DELETE': False}
+INFO 2021-05-30 18:54:11,389 views {'image': <InMemoryUploadedFile: knymmrh_1.jpg (image/jpeg)>, 'id': <Image: Image object (44)>, 'DELETE': False}
+INFO 2021-05-30 18:54:11,391 views {'image': <InMemoryUploadedFile: knymmrh_2.jpg (image/jpeg)>, 'id': <Image: Image object (45)>, 'DELETE': False}
+INFO 2021-05-30 18:54:11,397 views {}
+INFO 2021-05-30 18:56:03,471 views True
+INFO 2021-05-30 18:56:03,561 views True
+INFO 2021-05-30 18:56:03,565 views True
+INFO 2021-05-30 18:56:03,744 views gallery - True
+ERROR 2021-05-30 18:56:03,744 views [{}, {}, {}, {}]
+INFO 2021-05-30 18:56:53,153 views True
+INFO 2021-05-30 18:56:53,544 views True
+INFO 2021-05-30 18:56:53,556 views True
+INFO 2021-05-30 18:56:53,778 views gallery - True
+ERROR 2021-05-30 18:56:53,779 views [{}, {}, {}, {}]
+INFO 2021-05-30 19:20:33,102 views True
+INFO 2021-05-30 19:20:33,289 views True
+INFO 2021-05-30 19:20:33,289 views True
+INFO 2021-05-30 19:32:11,004 views True
+INFO 2021-05-30 19:32:11,082 views True
+INFO 2021-05-30 19:32:11,084 views True
+INFO 2021-05-30 19:33:49,295 views True
+INFO 2021-05-30 19:33:49,403 views True
+INFO 2021-05-30 19:33:49,405 views True
+INFO 2021-05-30 19:33:49,673 views gallery - True
+ERROR 2021-05-30 19:33:49,673 views [{}, {}, {}, {}]
+INFO 2021-05-30 19:35:06,555 views True
+INFO 2021-05-30 19:35:06,775 views True
+INFO 2021-05-30 19:35:06,777 views True
+INFO 2021-05-30 19:35:06,861 views gallery - True
+ERROR 2021-05-30 19:35:06,861 views [{}, {}, {}, {}]
+INFO 2021-05-30 19:40:28,593 views True
+INFO 2021-05-30 19:40:28,687 views True
+INFO 2021-05-30 19:40:28,689 views True
+INFO 2021-05-30 19:40:28,856 views gallery - True
+ERROR 2021-05-30 19:40:28,856 views [{}, {}, {}, {}]
+INFO 2021-05-30 19:41:25,377 views True
+INFO 2021-05-30 19:41:25,490 views True
+INFO 2021-05-30 19:41:25,492 views True
+INFO 2021-05-30 19:41:25,543 views gallery - True
+ERROR 2021-05-30 19:41:25,543 views [{}, {}, {}, {}]
+INFO 2021-05-30 19:41:40,372 views True
+INFO 2021-05-30 19:41:40,476 views True
+INFO 2021-05-30 19:41:40,477 views True
+INFO 2021-05-30 19:41:40,526 views gallery - True
+ERROR 2021-05-30 19:41:40,528 views [{}, {}, {}, {}]
+INFO 2021-05-31 00:18:59,913 views True
+INFO 2021-05-31 00:18:59,995 views True
+INFO 2021-05-31 00:18:59,996 views True
+INFO 2021-05-31 00:19:00,080 views gallery - True
+ERROR 2021-05-31 00:19:00,080 views [{}, {}, {}, {}]
+INFO 2021-05-31 00:24:30,153 views True
+INFO 2021-05-31 00:24:30,255 views True
+INFO 2021-05-31 00:24:30,259 views True
+INFO 2021-05-31 00:24:30,515 views gallery - True
+ERROR 2021-05-31 00:24:30,516 views [{}, {}, {}, {}]
+INFO 2021-05-31 00:44:27,328 views True
+INFO 2021-05-31 00:44:27,457 views True
+INFO 2021-05-31 00:44:27,457 views True
+INFO 2021-05-31 00:44:27,648 views gallery - True
+ERROR 2021-05-31 00:44:27,648 views [{}, {}, {}]
+INFO 2021-05-31 00:46:45,840 views True
+INFO 2021-05-31 00:46:45,907 views True
+INFO 2021-05-31 00:46:45,908 views True
+INFO 2021-05-31 00:46:45,984 views gallery - True
+ERROR 2021-05-31 00:46:45,985 views [{}, {}]
+INFO 2021-05-31 00:47:02,161 views True
+INFO 2021-05-31 00:47:02,170 views True
+INFO 2021-05-31 00:47:02,174 views True
+INFO 2021-05-31 00:47:02,259 views gallery - True
+ERROR 2021-05-31 00:47:02,263 views [{}, {}, {}, {}]
+INFO 2021-05-31 00:47:17,081 views True
+INFO 2021-05-31 00:47:17,087 views True
+INFO 2021-05-31 00:47:17,090 views True
+INFO 2021-05-31 00:47:17,151 views gallery - True
+ERROR 2021-05-31 00:47:17,151 views [{}, {}, {}, {}]
+INFO 2021-05-31 00:47:50,054 views True
+INFO 2021-05-31 00:47:50,068 views True
+INFO 2021-05-31 00:47:50,070 views True
+INFO 2021-05-31 00:47:50,146 views gallery - True
+ERROR 2021-05-31 00:47:50,147 views [{}, {}, {}, {}]
+INFO 2021-05-31 00:48:46,456 views True
+INFO 2021-05-31 00:48:46,523 views True
+INFO 2021-05-31 00:48:46,524 views True
+INFO 2021-05-31 00:48:46,583 views gallery - True
+ERROR 2021-05-31 00:48:46,587 views [{}, {}, {}, {}]
+INFO 2021-05-31 01:49:29,854 views 52
+INFO 2021-05-31 01:50:16,357 views 53
+INFO 2021-05-31 01:51:18,076 views True
+INFO 2021-05-31 01:51:18,430 views True
+INFO 2021-05-31 01:51:18,432 views True
+INFO 2021-05-31 01:51:18,629 views gallery - True
+ERROR 2021-05-31 01:51:18,629 views [{}, {}, {}, {}]
+INFO 2021-05-31 01:51:41,593 views 54
+INFO 2021-05-31 09:59:58,634 views True
+INFO 2021-05-31 09:59:58,729 views True
+INFO 2021-05-31 09:59:58,730 views True
+INFO 2021-05-31 09:59:58,926 views gallery - True
+ERROR 2021-05-31 09:59:58,932 views [{}, {}, {}, {}, {}]
+INFO 2021-05-31 10:32:41,509 views True
+INFO 2021-05-31 10:32:41,561 views True
+INFO 2021-05-31 10:32:41,562 views True
+INFO 2021-05-31 10:32:41,615 views gallery - True
+ERROR 2021-05-31 10:32:41,615 views [{}, {}, {}, {}, {}, {}, {}, {}]
+INFO 2021-05-31 10:32:53,857 views 57
+INFO 2021-05-31 10:33:05,904 views 56
+INFO 2021-05-31 10:33:19,447 views 55
+INFO 2021-05-31 10:33:24,686 views 55
+INFO 2021-05-31 10:46:11,203 views True
+INFO 2021-05-31 10:46:11,239 views True
+INFO 2021-05-31 10:46:11,240 views True
+INFO 2021-05-31 10:46:11,292 views gallery - True
+ERROR 2021-05-31 10:46:11,293 views [{}, {}, {}, {}, {}, {}, {}, {}]
+INFO 2021-05-31 10:46:53,113 views 58
+INFO 2021-05-31 10:47:28,339 views True
+INFO 2021-05-31 10:47:28,386 views False
+INFO 2021-05-31 10:47:28,388 views True
+INFO 2021-05-31 10:47:28,436 views gallery - False
+ERROR 2021-05-31 10:47:28,436 views [{}, {'id': ['Выберите корректный вариант. Вашего варианта нет среди допустимых значений.']}, {}, {}, {}, {}, {}, {}]
+INFO 2021-05-31 10:48:28,524 views True
+INFO 2021-05-31 10:48:28,562 views True
+INFO 2021-05-31 10:48:28,564 views True
+INFO 2021-05-31 10:48:28,619 views gallery - True
+ERROR 2021-05-31 10:48:28,621 views [{}, {}, {}, {}]
+INFO 2021-05-31 11:03:33,380 views 60
+INFO 2021-05-31 11:03:52,263 views True
+INFO 2021-05-31 11:03:52,325 views False
+INFO 2021-05-31 11:03:52,326 views True
+INFO 2021-05-31 11:03:52,388 views gallery - False
+ERROR 2021-05-31 11:03:52,388 views [{}, {}, {'id': ['Выберите корректный вариант. Вашего варианта нет среди допустимых значений.']}, {}]
+INFO 2021-05-31 11:04:12,515 views 59
+INFO 2021-05-31 11:04:22,844 views True
+INFO 2021-05-31 11:04:22,905 views False
+INFO 2021-05-31 11:04:22,907 views True
+INFO 2021-05-31 11:04:22,958 views gallery - False
+ERROR 2021-05-31 11:04:22,959 views [{}, {'image': ['Обязательное поле.'], 'id': ['Выберите корректный вариант. Вашего варианта нет среди допустимых значений.']}, {}, {}]
+INFO 2021-05-31 11:04:51,837 views True
+INFO 2021-05-31 11:04:51,871 views True
+INFO 2021-05-31 11:04:51,873 views True
+INFO 2021-05-31 11:04:51,926 views gallery - True
+ERROR 2021-05-31 11:04:51,926 views [{}, {}, {}, {}]
+INFO 2021-05-31 11:10:29,764 views 62
+INFO 2021-05-31 11:10:50,552 views True
+INFO 2021-05-31 11:10:50,646 views False
+INFO 2021-05-31 11:10:50,647 views True
+INFO 2021-05-31 11:10:50,713 views gallery - False
+ERROR 2021-05-31 11:10:50,714 views [{}, {}, {'id': ['Выберите корректный вариант. Вашего варианта нет среди допустимых значений.']}, {}]
+INFO 2021-05-31 11:11:11,036 views True
+INFO 2021-05-31 11:11:11,086 views True
+INFO 2021-05-31 11:11:11,089 views True
+INFO 2021-05-31 11:11:11,137 views gallery - True
+ERROR 2021-05-31 11:11:11,137 views [{}, {}, {}, {}]
+INFO 2021-05-31 11:14:39,494 views 63
+INFO 2021-05-31 11:16:11,348 views 61
+INFO 2021-05-31 11:18:20,005 views True
+INFO 2021-05-31 11:18:20,059 views True
+INFO 2021-05-31 11:18:20,060 views True
+INFO 2021-05-31 11:18:20,131 views gallery - True
+ERROR 2021-05-31 11:18:20,131 views [{}, {}, {}, {}]
+INFO 2021-05-31 11:18:38,370 views 65
+INFO 2021-05-31 11:19:08,961 views 64
+INFO 2021-05-31 11:20:39,562 views True
+INFO 2021-05-31 11:20:39,603 views True
+INFO 2021-05-31 11:20:39,604 views True
+INFO 2021-05-31 11:20:39,669 views gallery - True
+ERROR 2021-05-31 11:20:39,669 views [{}, {}, {}, {}, {}, {}, {}, {}]
+INFO 2021-05-31 11:20:52,910 views 72
+INFO 2021-05-31 11:21:05,838 views True
+INFO 2021-05-31 11:21:06,172 views False
+INFO 2021-05-31 11:21:06,185 views True
+INFO 2021-05-31 11:21:06,307 views gallery - False
+ERROR 2021-05-31 11:21:06,309 views [{}, {}, {}, {}, {}, {}, {}, {'id': ['Выберите корректный вариант. Вашего варианта нет среди допустимых значений.']}]
+INFO 2021-05-31 11:21:24,689 views 71
+INFO 2021-05-31 11:21:25,574 views 70
+INFO 2021-05-31 11:21:26,584 views 69
+INFO 2021-05-31 11:21:29,008 views 68
+INFO 2021-05-31 11:32:13,637 views True
+INFO 2021-05-31 11:32:13,934 views True
+INFO 2021-05-31 11:32:13,938 views True
+INFO 2021-05-31 11:32:14,019 views gallery - True
+ERROR 2021-05-31 11:32:14,021 views [{}, {}, {}, {}]
+INFO 2021-05-31 11:32:31,395 views True
+INFO 2021-05-31 11:32:31,474 views False
+INFO 2021-05-31 11:32:31,476 views True
+INFO 2021-05-31 11:32:31,644 views gallery - False
+ERROR 2021-05-31 11:32:31,646 views [{}, {}, {'image': ['Обязательное поле.'], 'id': ['Выберите корректный вариант. Вашего варианта нет среди допустимых значений.']}, {}]
+INFO 2021-05-31 11:42:03,022 views True
+INFO 2021-05-31 11:42:03,275 views True
+INFO 2021-05-31 11:42:03,276 views True
+INFO 2021-05-31 11:42:03,400 views gallery - True
+ERROR 2021-05-31 11:42:03,401 views [{}, {}, {}, {}, {}, {}, {}, {}]
+INFO 2021-05-31 12:42:07,899 views True
+INFO 2021-05-31 12:42:08,126 views True
+INFO 2021-05-31 12:42:08,128 views True
+INFO 2021-05-31 12:42:08,237 views gallery - True
+ERROR 2021-05-31 12:42:08,237 views [{}, {}, {}, {}]
+INFO 2021-05-31 12:45:10,233 views True
+INFO 2021-05-31 12:45:10,292 views True
+INFO 2021-05-31 12:45:10,294 views True
+INFO 2021-05-31 12:45:10,343 views gallery - True
+ERROR 2021-05-31 12:45:10,347 views [{}, {}, {}, {}, {}, {}, {}, {}]
+INFO 2021-05-31 12:50:51,942 views True
+INFO 2021-05-31 12:50:52,021 views True
+INFO 2021-05-31 12:50:52,032 views True
+INFO 2021-05-31 12:50:52,152 views gallery - True
+ERROR 2021-05-31 12:50:52,153 views [{}, {}, {}, {}, {}, {}, {}, {}]
+INFO 2021-05-31 12:55:44,899 views True
+INFO 2021-05-31 12:55:45,063 views False
+INFO 2021-05-31 12:55:45,064 views True
+INFO 2021-05-31 12:55:45,218 views gallery - False
+ERROR 2021-05-31 12:55:45,226 views [{}, {'image': ['Обязательное поле.'], 'id': ['Выберите корректный вариант. Вашего варианта нет среди допустимых значений.']}, {}, {}]
+INFO 2021-05-31 12:56:04,286 views True
+INFO 2021-05-31 12:56:04,324 views True
+INFO 2021-05-31 12:56:04,325 views True
+INFO 2021-05-31 12:56:04,375 views gallery - True
+ERROR 2021-05-31 12:56:04,376 views [{}, {}, {}, {}, {}, {}, {}, {}]
+INFO 2021-05-31 13:27:57,573 views True
+INFO 2021-05-31 13:27:57,702 views True
+INFO 2021-05-31 13:27:57,704 views True
+INFO 2021-05-31 13:27:57,792 views gallery - True
+ERROR 2021-05-31 13:27:57,792 views [{}, {}, {}, {}]
+INFO 2021-05-31 13:41:12,051 views True
+INFO 2021-05-31 13:41:12,130 views True
+INFO 2021-05-31 13:41:12,131 views True
+INFO 2021-05-31 13:41:12,174 views gallery - True
+ERROR 2021-05-31 13:41:12,175 views [{}, {}, {}, {}]
+INFO 2021-05-31 13:49:01,831 views True
+INFO 2021-05-31 13:49:01,964 views True
+INFO 2021-05-31 13:49:01,965 views True
+INFO 2021-05-31 13:49:02,007 views gallery - True
+ERROR 2021-05-31 13:49:02,007 views [{}, {}, {}, {}]
+INFO 2021-05-31 13:49:33,252 views False
+INFO 2021-05-31 13:51:58,634 views False
+INFO 2021-05-31 13:55:18,334 views False
+INFO 2021-05-31 14:01:28,590 views False
+INFO 2021-05-31 14:02:40,360 views False
+INFO 2021-05-31 14:03:37,042 views False
+INFO 2021-05-31 14:04:16,171 views False
+INFO 2021-05-31 14:15:05,331 views False
+INFO 2021-05-31 14:15:23,246 views False
+INFO 2021-05-31 14:16:03,405 views False
+INFO 2021-05-31 14:25:00,831 views False
+INFO 2021-05-31 14:25:35,372 views False
+INFO 2021-05-31 14:26:21,802 views True
+INFO 2021-05-31 14:26:21,921 views False
+INFO 2021-05-31 14:26:21,922 views True
+INFO 2021-05-31 14:26:21,976 views gallery - False
+ERROR 2021-05-31 14:26:21,977 views [{}, {}, {'image': ['Обязательное поле.'], 'id': ['Выберите корректный вариант. Вашего варианта нет среди допустимых значений.']}, {}]
+INFO 2021-05-31 14:27:07,548 views True
+INFO 2021-05-31 14:27:07,901 views True
+INFO 2021-05-31 14:27:07,903 views True
+INFO 2021-05-31 14:27:08,005 views gallery - True
+ERROR 2021-05-31 14:27:08,008 views [{}, {}, {}, {}]
+INFO 2021-05-31 14:29:30,663 views True
+INFO 2021-05-31 14:29:30,769 views True
+INFO 2021-05-31 14:29:30,772 views True
+INFO 2021-05-31 14:29:30,912 views gallery - True
+ERROR 2021-05-31 14:29:30,914 views [{}, {}, {}, {}]
+INFO 2021-05-31 14:30:18,177 views True
+INFO 2021-05-31 14:30:18,265 views True
+INFO 2021-05-31 14:30:18,266 views True
+INFO 2021-05-31 14:30:18,441 views gallery - True
+ERROR 2021-05-31 14:30:18,452 views [{}, {}, {}, {}]

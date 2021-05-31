@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users',
 
     'multiselectfield',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -176,9 +177,13 @@ LOGGING = {
     },
     'loggers': {
         # example of logger app
-        # 'django.db.backends': {
-        #     'level': 'DEBUG',
-        #     'handlers': ['file'],
-        # },
+        'admin': {
+            'level': 'DEBUG',
+            'handlers': ['file'],
+        },
+        'app': {
+            'level': 'DEBUG',
+            'handlers': ['file'],
+        },
     },
 }

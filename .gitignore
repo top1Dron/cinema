@@ -3,3 +3,4 @@ env/
 **/__pycache__
 src/admin/templates/AdminLTE-3.1.0
 src/config/static/example
+src/config/media
