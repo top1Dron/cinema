@@ -15,14 +15,16 @@ class MovieForm(forms.ModelForm):
 
     class Meta:
         model = Movie
-        fields = ('name', 'description', 'poster', 
+        fields = ('name', 'name_uk', 'description', 'description_uk', 'poster', 
             'trailer', 'type', 'duration', 'is_active', 'release_date')
 
-        def __init__(self, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.fields['name'].widget.attrs['class'] = 'form-control'
-            self.fields['trailer'].widget.attrs['class'] = 'form-control'
-            self.fields['type'].widget.attrs['class'] = 'form-group'
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # self.fields['name'].widget.attrs['class'] = 'form-control'
+        self.fields['name_uk'].label = 'Назва фільму (українською)'
+        self.fields['description_uk'].label = 'Опис (українською)'
+        # self.fields['trailer'].widget.attrs['class'] = 'form-control'
+        # self.fields['type'].widget.attrs['class'] = 'form-group'
 
 
 class SeoParametersForm(forms.ModelForm):

@@ -25,6 +25,16 @@
                 </div>
                 {% endfor %}
             </div>
+            <div class="form-group g-3">
+                <h4 for="{{form.name_uk.auto_id}}" class="form-label">{{ form.name_uk.label }}</h4>
+                {% render_field form.name_uk class='form-control bg-light col-md-6'%}
+                {% for error in form.name_uk.errors %}
+                <div class="alert alert-error">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{ error|striptags }}
+                </div>
+                {% endfor %}
+            </div>
             <div class="form-group g-3" style="margin-top: 40px">
                 <div class="col-md-12">
                     <div class="card card-outline card-info">
@@ -35,6 +45,20 @@
                         </div>
                         <div class="card-body">
                             {% render_field form.description class='bg-light'%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group g-3" style="margin-top: 40px">
+                <div class="col-md-12">
+                    <div class="card card-outline card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                {{ form.description_uk.label }}
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            {% render_field form.description_uk class='bg-light'%}
                         </div>
                     </div>
                 </div>

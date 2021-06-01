@@ -1,0 +1,276 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-01 19:29+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: app/models.py:37
+msgid "Название фильма"
+msgstr "Назва фільму"
+
+#: app/models.py:38 app/models.py:58 app/models.py:71 app/models.py:83
+#: app/models.py:96
+msgid "Описание"
+msgstr "Опис"
+
+#: app/models.py:39 app/models.py:85 app/models.py:98
+msgid "Главная картинка"
+msgstr "Головна картинка"
+
+#: app/models.py:41
+msgid "Ссылка на трейлер"
+msgstr "Посилання на трейлер"
+
+#: app/models.py:42
+msgid "Тип кино"
+msgstr "Тип кіноленти"
+
+#: app/models.py:43
+msgid "Продолжительность"
+msgstr "Тривалість"
+
+#: app/models.py:44
+msgid "В прокате?"
+msgstr "У прокаті?"
+
+#: app/models.py:45
+msgid "Дата выхода"
+msgstr "Дата виходу"
+
+#: app/models.py:46 app/models.py:63 app/models.py:75 app/models.py:88
+#: app/models.py:101
+msgid "SEO блок"
+msgstr "SEO блок"
+
+#: app/models.py:57
+msgid "Название кинотеатра"
+msgstr "Назва кінотеатру"
+
+#: app/models.py:59
+msgid "Условия"
+msgstr "Умови"
+
+#: app/models.py:60
+msgid "Логотип"
+msgstr "ЛОготип"
+
+#: app/models.py:61
+msgid "Фото верхнего баннера"
+msgstr "Фото верхнього баннеру"
+
+#: app/models.py:70
+msgid "Номер зала"
+msgstr "Номер зали"
+
+#: app/models.py:72
+msgid "Верхний баннер"
+msgstr "Верхній баннер"
+
+#: app/models.py:82
+msgid "Название новости"
+msgstr "Назва новини"
+
+#: app/models.py:84 app/models.py:97
+msgid "Дата публикации"
+msgstr "Дата публікації"
+
+#: app/models.py:87 app/models.py:100
+msgid "Ссылка на видео"
+msgstr "Посилання на відео"
+
+#: app/models.py:95
+msgid "Название акции"
+msgstr "Назва акції"
+
+#: app/templates/base.html:36
+msgid "Поиск"
+msgstr "Пошук"
+
+#: app/templates/base.html:83 app/templates/base.html:124
+msgid "Афиша"
+msgstr "Афіша"
+
+#: app/templates/base.html:86 app/templates/base.html:125
+msgid "Расписание"
+msgstr "Розклад"
+
+#: app/templates/base.html:89
+msgid "Скоро"
+msgstr "Скоро"
+
+#: app/templates/base.html:92 app/templates/base.html:127
+msgid "Кинотеатры"
+msgstr "Кінотеатри"
+
+#: app/templates/base.html:95 app/templates/base.html:128
+msgid "Акции"
+msgstr "Акції"
+
+#: app/templates/base.html:98 app/templates/base.html:131
+msgid "О кинотеатре"
+msgstr "Про кінотеатр"
+
+#: app/templates/base.html:101
+msgid "Мой кабинет"
+msgstr "Мій кабінет"
+
+#: app/templates/base.html:114
+msgid "Мобильные приложения"
+msgstr "Мобільні додатки"
+
+#: app/templates/base.html:126
+msgid "Скоро в прокате"
+msgstr "Скоро у прокаті"
+
+#: app/templates/base.html:132
+msgid "Новости"
+msgstr "Новини"
+
+#: app/templates/base.html:133
+msgid "Реклама"
+msgstr "Реклама"
+
+#: app/templates/base.html:134
+msgid "Кафе-Бар"
+msgstr "Кафе-Бар"
+
+#: app/templates/base.html:135
+msgid "Контакты"
+msgstr "Контакти"
+
+#: config/settings.py:145
+msgid "Russian"
+msgstr ""
+
+#: config/settings.py:146
+msgid "Ukrainian"
+msgstr ""
+
+#: users/models.py:8
+msgid "Одесса"
+msgstr "Одеса"
+
+#: users/models.py:9
+msgid "Николаев"
+msgstr "Миколаїв"
+
+#: users/models.py:10
+msgid "Херсон"
+msgstr "Херсон"
+
+#: users/models.py:11
+msgid "Винница"
+msgstr "Вінниця"
+
+#: users/models.py:12
+msgid "Киев"
+msgstr "Київ"
+
+#: users/models.py:13
+msgid "Львов"
+msgstr "Львів"
+
+#: users/models.py:14
+msgid "Харьков"
+msgstr "Харків"
+
+#: users/models.py:15
+msgid "Тернополь"
+msgstr "Тернопіль"
+
+#: users/models.py:16
+msgid "Кропивницкий"
+msgstr "Кропивницький"
+
+#: users/models.py:17
+msgid "Ивано-Франковск"
+msgstr "Івано-Франківськ"
+
+#: users/models.py:18
+msgid "Днепр"
+msgstr "Дніпро"
+
+#: users/models.py:19
+msgid "Запорожье"
+msgstr "Запоріжжя"
+
+#: users/models.py:20
+msgid "Ужгород"
+msgstr "Ужгород"
+
+#: users/models.py:21
+msgid "Луцк"
+msgstr "Луцьк"
+
+#: users/models.py:22
+msgid "Мариуполь"
+msgstr "Маріуполь"
+
+#: users/models.py:23
+msgid "Черкассы"
+msgstr "Черкаси"
+
+#: users/models.py:24
+msgid "Чернигов"
+msgstr "Чернігів"
+
+#: users/models.py:25
+msgid "Черновцы"
+msgstr "Чернівці"
+
+#: users/models.py:28
+msgid "E-mail"
+msgstr "E-mail"
+
+#: users/models.py:29
+msgid "Номер телефона"
+msgstr "Номер телефону"
+
+#: users/models.py:36
+msgid "Адрес"
+msgstr "Адреса"
+
+#: users/models.py:37
+msgid "Номер карты"
+msgstr "Номер карти"
+
+#: users/models.py:38
+msgid "Дата рождения"
+msgstr "Дата народження"
+
+#: users/models.py:39
+msgid "Язык"
+msgstr "Мова"
+
+#: users/models.py:40
+msgid "Пол"
+msgstr "Стать"
+
+#: users/models.py:40
+msgid "Мужской"
+msgstr "Чоловіча"
+
+#: users/models.py:40
+msgid "Женский"
+msgstr "Жіноча"
+
+#: users/models.py:41
+msgid "Город"
+msgstr "Місто"

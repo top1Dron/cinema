@@ -2,11 +2,13 @@ $('#id_description').summernote({
     height: '200px',
 });
 
-$('#id_seo_description').summernote({
+$('#id_description_uk').summernote({
     height: '200px',
 });
 
-
+$('#id_seo_description').summernote({
+    height: '200px',
+});
 
 $('#id_poster').change(function(event){
     if(typeof event.target.files[0] !== 'undefined'){

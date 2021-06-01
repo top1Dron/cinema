@@ -36,8 +36,8 @@ class User(AbstractUser):
     address = models.CharField(_("Адрес"), max_length=150, null=True, blank=True)
     payment_card_number = models.CharField(_("Номер карты"), max_length=16, null=True, blank=True)
     birth_date = models.DateField(_("Дата рождения"), null=True, blank=True)
-    language = models.CharField(_("Язык"), max_length=2, choices=(('ru', _('')), ('ua', _(''))), null=True, blank=True)
-    gender = models.CharField(_("Пол"), max_length=1, choices=(('M', _('')), ('W', _(''))), null=True, blank=True)
+    language = models.CharField(_("Язык"), max_length=2, choices=(('ru', 'Русский'), ('ua', 'Українська')), null=True, blank=True)
+    gender = models.CharField(_("Пол"), max_length=1, choices=(('M', _('Мужской')), ('W', _('Женский'))), null=True, blank=True)
     city = models.IntegerField(_("Город"), choices=CITIES, null=True, blank=True)
 
     USERNAME_FIELD = 'email'
