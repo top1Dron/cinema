@@ -66,7 +66,7 @@ INTERNAL_IPS = [
 ]
 
 ROOT_URLCONF = 'config.urls'
-
+    
 # LOGIN_URL = '/users/login_or_signup/'
 
 AUTH_USER_MODEL = 'users.User'

@@ -10,6 +10,9 @@
 
 {% block main_content %}
     <div class="container" style="margin-top: 75px">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8"><h2 class="text-center">Добавить новый фильм</h2></div>
+        </div>
         <form method="post" action='.' enctype="multipart/form-data">
         {% csrf_token %}
             <div class="form-group g-3">
