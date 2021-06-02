@@ -10,10 +10,18 @@ app_name = 'admin'
 urlpatterns = [
     path('ajax/delete-image/<int:pk>/', views.api_delete_image, name='delete_image'),
     path('ajax/delete-movie/<int:pk>/', views.api_delete_movie, name='movie_delete'),
+    path('ajax/delete-news/<int:pk>/', views.api_delete_news_object, name='news_delete'),
+    path('ajax/delete-stock/<int:pk>/', views.api_delete_stock, name='stock_delete'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('movies/update-movie-info/<int:pk>/', views.update_movie_info, name='movie_update'),
     path('movies/add-movie/', views.movie_create, name='movie_add'),
     path('movies/', staff_member_required(views.MovieListView.as_view(), login_url=reverse_lazy('admin:login')), name='movies'),
+    path('news/add-news/', views.news_create, name='news_add'),
+    path('news/update-news-info/<int:pk>/', views.update_news_info, name='news_update'),
+    path('news/', staff_member_required(views.NewsListView.as_view(), login_url=reverse_lazy('admin:login')), name='news'),
+    path('stocks/add-stock/', views.stock_create, name='stock_add'),
+    path('stocks/update-stock-info/<int:pk>/', views.update_stock_info, name='stock_update'),
+    path('stocks/', staff_member_required(views.StockListView.as_view(), login_url=reverse_lazy('admin:login')), name='stocks'),
     path('', views.index, name='index'),
 ]

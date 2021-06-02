@@ -1,4 +1,4 @@
-{% load static %}
+{% load static i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,43 +72,43 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
                 <a href="{% url 'admin:index' %}" class="nav-link">
-                    <p>Статистика</p>
+                    <p>{% trans "Статистика" %}</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <p>Баннера/Слайдеры</p>
+                    <p>{% trans "Баннера/Слайдеры" %}</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="{% url 'admin:movies' %}" class="nav-link">
-                    <p>Фильмы</p>
+                    <p>{% trans "Фильмы" %}</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <p>Кинотеатры</p>
+                    <p>{% trans "Кинотеатры" %}</p>
                 </a>
             </li>
             {% comment %} <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <p>Сеансы</p>
+                    <p>{% trans "Сеансы" %}</p>
                 </a>
             </li> {% endcomment %}
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <p>Новости</p>
+                <a href="{% url 'admin:news' %}" class="nav-link">
+                    <p>{% trans "Новости" %}</p>
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <p>Акции</p>
+                <a href="{% url 'admin:stocks' %}" class="nav-link">
+                    <p>{% trans "Акции" %}</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
                 <p>
-                    Страницы
+                    {% trans "Страницы" %}
                     <i class="right fas fa-angle-left"></i>
                 </p>
                 </a>
@@ -116,66 +116,61 @@
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Главная страница</p>
+                            <p>{% trans "Главная страница" %}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>О кинотеатре</p>
+                            <p>{% trans "О кинотеатре" %}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Кафе-бар</p>
+                            <p>{% trans "Кафе-бар" %}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Vip-зал</p>
+                            <p>{% trans "Vip-зал" %}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Реклама</p>
+                            <p>{% trans "Реклама" %}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Детская комната</p>
+                            <p>{% trans "Детская комната" %}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Мобильное приложение</p>
+                            <p>{% trans "Мобильное приложение" %}</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
-                            <p>Контакты</p>
+                            <p>{% trans "Контакты" %}</p>
                         </a>
                     </li>
                 </ul>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <p>Пользователи</p>
+                    <p>{% trans "Пользователи" %}</p>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <p>Рассылка</p>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <p>Статистика</p>
+                    <p>{% trans "Рассылка" %}</p>
                 </a>
             </li>
         </ul>

@@ -1,8 +1,6 @@
 {% extends 'admin/base.html' %}
 
-{% load static %}
-
-{% comment %} {% load static widget_tweaks %} {% endcomment %}
+{% load static i18n %}
 
 {% block extra_css %}{% endblock extra_css %}
 
@@ -10,14 +8,14 @@
     <div class="container-fluid" style="margin-top: 75px">
         {% csrf_token %}
         <div class="row justify-content-md-end">
-            <a href="{% url 'admin:movie_add' %}" class="float-end btn btn-outline-primary">Добавить фильм</a>
+            <a href="{% url 'admin:movie_add' %}" class="float-end btn btn-primary">{% trans "Добавить фильм" %}</a>
         </div>
         {% if active_movies %}
         <div class="form-group g-3">
-            <h4 class="form-label col-md-8 text-center">Список фильмов в прокате</h4>
+            <h4 class="form-label col-md-8 text-center">{% trans "Список фильмов в прокате" %}</h4>
             <div class="row">
                 {% for movie in active_movies %}
-                <div class="col-md-6 col-xl-3">
+                <div class="col-md-6 col-xl-3"> ``
                     <div class="card ms-2" style="padding:20px;">
                         <button class="col-2 btn btn-dark text-center align-self-end" delete-url="{% url 'admin:movie_delete' movie.pk %}" type='button' onclick="deleteMovie(this)">X</button>
                         <img id="active_movie_image_{{forloop.counter0}}" class="text-center" src="{{ MEDIA_URL }}{{ movie.poster.url }}" alt="{{ movie.name }}">
@@ -32,7 +30,7 @@
         {% endif %}
         {% if soon_movies %}
         <div class="form-group g-3">
-            <h4 class="form-label col-md-8 text-center">Список фильмов, которые скоро покажут</h4>
+            <h4 class="form-label col-md-8 text-center">{% trans "Список фильмов, которые скоро покажут" %}</h4>
             <div class="row">
                 {% for movie in soon_movies %}
                 <div class="col-md-6 col-xl-3">
@@ -52,7 +50,7 @@
         {% endif %}
         {% if retired_movies %}
         <div class="form-group g-3">
-            <h4 class="form-label col-md-8 text-center">Список фильмов, которые вышли из проката</h4>
+            <h4 class="form-label col-md-8 text-center">{% trans "Список фильмов, которые вышли из проката" %}</h4>
             <div class="row">
                 {% for movie in retired_movies %}
                 <div class="col-md-6 col-xl-3">

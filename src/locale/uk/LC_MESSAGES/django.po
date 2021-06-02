@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 19:29+0300\n"
+"POT-Creation-Date: 2021-06-01 21:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,6 +20,39 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: admin/templates/admin/movie_add.html:14
+msgid "Добавить новый фильм"
+msgstr "Додати новий фільм"
+
+#: admin/templates/admin/movie_add.html:88
+#: admin/templates/admin/movie_update.html:88
+msgid "Галерея картинок"
+msgstr "Галерея картинок"
+
+#: admin/templates/admin/movie_add.html:119
+msgid "Добавить ещё"
+msgstr "Додати ще"
+
+#: admin/templates/admin/movie_update.html:14
+msgid "Редактирование информации о фильме"
+msgstr "Редагування інформації про фільм"
+
+#: admin/templates/admin/movies_list.html:14
+msgid "Добавить фильм"
+msgstr "Додати фільм"
+
+#: admin/templates/admin/movies_list.html:18
+msgid "Список фильмов в прокате"
+msgstr "Список фільмів у прокаті"
+
+#: admin/templates/admin/movies_list.html:36
+msgid "Список фильмов, которые скоро покажут"
+msgstr "Список фільмів, що скоро покажуть"
+
+#: admin/templates/admin/movies_list.html:57
+msgid "Список фильмов, которые вышли из проката"
+msgstr "Список фільмів, що вийшли із прокату"
 
 #: app/models.py:37
 msgid "Название фильма"
@@ -155,13 +188,13 @@ msgstr "Кафе-Бар"
 msgid "Контакты"
 msgstr "Контакти"
 
-#: config/settings.py:145
+#: config/settings.py:147
 msgid "Russian"
-msgstr ""
+msgstr "Русский"
 
-#: config/settings.py:146
+#: config/settings.py:148
 msgid "Ukrainian"
-msgstr ""
+msgstr "Українська"
 
 #: users/models.py:8
 msgid "Одесса"

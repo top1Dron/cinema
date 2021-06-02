@@ -10,13 +10,13 @@ $('#id_seo_description').summernote({
     height: '200px',
 });
 
-$('#id_poster').change(function(event){
+$('#id_main_image').change(function(event){
     if(typeof event.target.files[0] !== 'undefined'){
-        $('#main_poster').attr("src", URL.createObjectURL(event.target.files[0]));
+        $('#main_image').attr("src", URL.createObjectURL(event.target.files[0]));
     }
     else {
-        URL.revokeObjectURL($('#main_poster').attr("src"));
-        $('#main_poster').attr("src", "{% static 'img/default-image.jpg' %}")
+        URL.revokeObjectURL($('#main_image').attr("src"));
+        $('#main_image').attr("src", "{% static 'img/default-image.jpg' %}")
     }
 });
 
@@ -37,6 +37,10 @@ $('.col-md-6', $('#images')).each(function(){
             $(image_id).attr("src", "{% static 'img/default-image.jpg' %}")
         }
     });
+});
+
+$("input[data-bootstrap-switch]").each(function(){
+    $(this).bootstrapSwitch('state', $(this).prop('checked'));
 });
 
 function deleteImage(button){
@@ -77,14 +81,3 @@ function onImageButtonUpload(uploadButton){
         }
     });
 }
-
-$("input[data-bootstrap-switch]").each(function(){
-    $(this).bootstrapSwitch('state', $(this).prop('checked'));
-});
-
-$(function () {
-    
-    $('#reservationdate').datetimepicker({
-        format:'DD.MM.YYYY',
-    });
-});

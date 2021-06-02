@@ -12,11 +12,11 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
 
+from app.models import Image, Movie, News, Stock
+from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery
+from app import utils
 from users.forms import LoginForm
 from users.utils import get_user_by_email
-from app.models import Image, Movie
-from app.forms import MovieForm, SeoParametersForm, Gallery
-from app import utils
 
 
 logger = logging.getLogger(__name__)
@@ -28,26 +28,79 @@ def index(request):
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))
 def movie_create(request):
-    form = MovieForm()
+    form = AdminMovieForm()
     seo_form = SeoParametersForm()
     gallery = Gallery(queryset=Image.objects.none())
 
     if request.method == 'POST':
-        form = MovieForm(request.POST, request.FILES)
+        form = AdminMovieForm(request.POST, request.FILES)
         if form.is_valid():
             movie = form.save(commit=False)
             seo_form = SeoParametersForm(request.POST)
             gallery = Gallery(request.POST, request.FILES, instance=movie)
 
-            if seo_form.is_valid():
+            if seo_form.is_valid() and gallery.is_valid():
                 seo_obj = seo_form.save()
                 movie.seo = seo_obj
                 movie.save()
-                if gallery.is_valid():
-                    gallery.save()
+                gallery.save()
 
-                return redirect(reverse_lazy('admin:movie_update', kwargs={'pk': movie.pk}))
+                return redirect(reverse_lazy('admin:movies'))
     return render(request, 'admin/movie_add.html', context={
+        'form': form, 
+        'seo_form': seo_form, 
+        'gallery': gallery
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def news_create(request):
+    form = AdminNewsForm()
+    seo_form = SeoParametersForm()
+    gallery = Gallery(queryset=Image.objects.none())
+
+    if request.method == 'POST':
+        form = AdminNewsForm(request.POST, request.FILES)
+        if form.is_valid():
+            news = form.save(commit=False)
+            seo_form = SeoParametersForm(request.POST)
+            gallery = Gallery(request.POST, request.FILES, instance=news)
+
+            if seo_form.is_valid() and gallery.is_valid():
+                seo_obj = seo_form.save()
+                news.seo = seo_obj
+                news.save()
+                gallery.save()
+
+                return redirect(reverse_lazy('admin:movies'))
+    return render(request, 'admin/news_add.html', context={
+        'form': form, 
+        'seo_form': seo_form, 
+        'gallery': gallery
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def stock_create(request):
+    form = AdminStockForm()
+    seo_form = SeoParametersForm()
+    gallery = Gallery(queryset=Image.objects.none())
+
+    if request.method == 'POST':
+        form = AdminStockForm(request.POST, request.FILES)
+        if form.is_valid():
+            stock = form.save(commit=False)
+            seo_form = SeoParametersForm(request.POST)
+            gallery = Gallery(request.POST, request.FILES, instance=stock)
+
+            if seo_form.is_valid() and gallery.is_valid():
+                seo_obj = seo_form.save()
+                stock.seo = seo_obj
+                stock.save()
+                gallery.save()
+
+                return redirect(reverse_lazy('admin:movies'))
+    return render(request, 'admin/stock_add.html', context={
         'form': form, 
         'seo_form': seo_form, 
         'gallery': gallery
@@ -57,7 +110,7 @@ def movie_create(request):
 @staff_member_required(login_url=reverse_lazy('admin:login'))
 def update_movie_info(request, pk):
     movie = utils.get_movie_by_params(pk=pk)
-    form = MovieForm(instance=movie)
+    form = AdminMovieForm(instance=movie)
     seo_form = SeoParametersForm(instance=movie.seo)
     extra_count = 4 - movie.gallery.all().count() % 4
     extra_count = 0 if extra_count == 4 else extra_count
@@ -65,20 +118,77 @@ def update_movie_info(request, pk):
         extra=extra_count)
     gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=movie.gallery.all(), instance=movie)
     if request.method == 'POST':
-        form = MovieForm(request.POST, request.FILES, instance=movie)
+        form = AdminMovieForm(request.POST, request.FILES, instance=movie)
         if form.is_valid():
             movie = form.save(commit=False)
             seo_form = SeoParametersForm(request.POST)
 
-            if seo_form.is_valid():
+            if seo_form.is_valid() and gallery.is_valid():
                 seo_obj = seo_form.save()
                 movie.seo = seo_obj
                 movie.save()
-            if gallery.is_valid():
                 gallery.save()
-            if form.is_valid() and seo_form.is_valid():
-                return redirect(reverse_lazy('admin:movie_update', kwargs={'pk': movie.pk}))
+                return redirect(reverse_lazy('admin:movies'))
     return render(request, 'admin/movie_update.html', context={
+        'form': form, 
+        'seo_form': seo_form, 
+        'gallery': gallery
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def update_news_info(request, pk):
+    news = utils.get_news_object_by_params(pk=pk)
+    form = AdminNewsForm(instance=news)
+    seo_form = SeoParametersForm(instance=news.seo)
+    extra_count = 4 - news.gallery.all().count() % 4
+    extra_count = 0 if extra_count == 4 and news.gallery.all().count() > 0 else extra_count
+    UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
+        extra=extra_count)
+    gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=news.gallery.all(), instance=news)
+    if request.method == 'POST':
+        form = AdminNewsForm(request.POST, request.FILES, instance=news)
+        if form.is_valid():
+            news = form.save(commit=False)
+            seo_form = SeoParametersForm(request.POST)
+
+            if seo_form.is_valid() and gallery.is_valid():
+                seo_obj = seo_form.save()
+                news.seo = seo_obj
+                logger.info(news.main_image)
+                news.save()
+                gallery.save()
+                return redirect(reverse_lazy('admin:movies'))
+    return render(request, 'admin/news_update.html', context={
+        'form': form, 
+        'seo_form': seo_form, 
+        'gallery': gallery
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def update_stock_info(request, pk):
+    stock = utils.get_stock_by_params(pk=pk)
+    form = AdminStockForm(instance=stock)
+    seo_form = SeoParametersForm(instance=stock.seo)
+    extra_count = 4 - stock.gallery.all().count() % 4
+    extra_count = 0 if extra_count == 4 else extra_count
+    UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
+        extra=extra_count)
+    gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=stock.gallery.all(), instance=stock)
+    if request.method == 'POST':
+        form = AdminStockForm(request.POST, request.FILES, instance=stock)
+        if form.is_valid():
+            stock = form.save(commit=False)
+            seo_form = SeoParametersForm(request.POST)
+
+            if seo_form.is_valid() and gallery.is_valid():
+                seo_obj = seo_form.save()
+                stock.seo = seo_obj
+                stock.save()
+                gallery.save()
+                return redirect(reverse_lazy('admin:movies'))
+    return render(request, 'admin/stock_update.html', context={
         'form': form, 
         'seo_form': seo_form, 
         'gallery': gallery
@@ -101,6 +211,22 @@ def api_delete_movie(request, pk):
     return JsonResponse({})
 
 
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+@require_http_methods(['DELETE'])
+def api_delete_news_object(request, pk):
+    news_object = utils.get_news_object_by_params(pk=pk)
+    news_object.delete()
+    return JsonResponse({})
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+@require_http_methods(['DELETE'])
+def api_delete_stock(request, pk):
+    stock = utils.get_stock_by_params(pk=pk)
+    stock.delete()
+    return JsonResponse({})
+
+
 class MovieListView(ListView):
     model = Movie
     queryset = utils.get_active_movies()
@@ -114,6 +240,20 @@ class MovieListView(ListView):
         return context
 
 
+class NewsListView(ListView):
+    model = News
+    queryset = utils.get_news()
+    context_object_name = 'news'
+    template_name = 'admin/news_list.html'
+
+
+class StockListView(ListView):
+    model = Stock
+    queryset = utils.get_stocks()
+    context_object_name = 'stocks'
+    template_name = 'admin/stock_list.html'
+
+
 def login(request):
     form = LoginForm()
 
@@ -123,10 +263,13 @@ def login(request):
         user = authenticate(request, email=email, password=password)
         if user is not None:
             auth_login(request, user)
-            redirect_to = request.POST.get('next')
-            if redirect_to:
-                return redirect(redirect_to)
-            return redirect(reverse_lazy('admin:index'))
+            if user.is_staff:
+                redirect_to = request.POST.get('next')
+                if redirect_to:
+                    return redirect(redirect_to)
+                return redirect(reverse_lazy('admin:index'))
+            else:
+                messages.error(request, 'Вход разрешён только сотрудникам')
         else:
             user = get_user_by_email(email)
             if user is None:

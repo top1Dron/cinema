@@ -1,4 +1,8 @@
-$('#id_description').summernote({
+$('#id_description_ru').summernote({
+    height: '200px',
+});
+
+$('#id_description_uk').summernote({
     height: '200px',
 });
 
@@ -20,7 +24,6 @@ $('#id_poster').change(function(event){
 
 $('.col-md-6', $('#images')).each(function(){
     // console.log($(this));
-    var img = $(this).children('.card').children('img')[0];
     var uploadButton = $(this).children('.card').children('.card-body').children('input')[0];
     onImageButtonUpload(uploadButton);
 });

@@ -4,31 +4,38 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'admin/plugins/summernote/summernote-bs4.min.css' %}">
-    <link rel="stylesheet" href="{% static 'admin/plugins/daterangepicker/daterangepicker.css' %}">
-    <link rel="stylesheet" href="{% static 'admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
 {% endblock extra_css %}
 
 {% block main_content %}
     <div class="container" style="margin-top: 75px">
         <div class="row justify-content-md-center">
-            <div class="col-md-8"><h2 class="text-center">{% trans "Редактирование информации о фильме" %}</h2></div>
+            <div class="col-md-8"><h2 class="text-center">{% trans "Редактирование акции" %}</h2></div>
         </div>
         <form method="post" action='' enctype="multipart/form-data">
         {% csrf_token %}
-            <div class="form-group g-3">
-                <h4 for="{{form.name_ru.auto_id}}" class="form-label">{{ form.name_ru.label }}</h4>
-                {% render_field form.name_ru class='form-control bg-light col-md-6'%}
-                {% for error in form.name_ru.errors %}
-                <div class="alert alert-error">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    {{ error|striptags }}
+            <div class="row">
+                <div class="form-group g-3 col-md-6">
+                    <h4 for="{{form.title_ru.auto_id}}" class="form-label">{{ form.title_ru.label }}</h4>
+                    {% render_field form.title_ru class='form-control bg-light'%}
+                    {% for error in form.title_ru.errors %}
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %} 
+                <div class="form-group g-3 col-md-6">
+                    <h4 for="{{form.status.auto_id}}" class="form-label">{{form.status.label}}</h4>
+                    {% render_field form.status class='bg-light' data-bootstrap-switch="" data-off-color="dark" data-on-color="light"%}
+                    <div class="invalid-feedback">
+                        {{ form.status.errors }}
+                    </div>
+                </div>
             </div>
             <div class="form-group g-3">
-                <h4 for="{{form.name_uk.auto_id}}" class="form-label">{{ form.name_uk.label }}</h4>
-                {% render_field form.name_uk class='form-control bg-light col-md-6'%}
-                {% for error in form.name_uk.errors %}
+                <h4 for="{{form.title_uk.auto_id}}" class="form-label">{{ form.title_uk.label }}</h4>
+                {% render_field form.title_uk class='form-control bg-light col-md-6'%}
+                {% for error in form.title_uk.errors %}
                 <div class="alert alert-error">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
@@ -70,13 +77,17 @@
                 </div>
             </div>
             <div class="form-group g-3">
-                <h4 for="{{form.poster.auto_id}}" class="form-label">{{ form.poster.label }}</h4>
+                <h4 for="{{form.main_image.auto_id}}" class="form-label">{{ form.main_image.label }}</h4>
                 <div class="card" style="width: 18rem;">
-                    <img id="main_poster" class="text-center" src="{{MEDIA_URL}}{{form.poster.value.url}}" alt="poster">
+                    {% if form.main_image.value.url is not None %}
+                        <img id="main_image" class="text-center" src="{{MEDIA_URL}}{{form.main_image.value.url}}" alt="main_image">
+                    {% else %}
+                        <img id="main_image" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="main_image">
+                    {% endif %}
                     <div class="card-body">
-                        {{ form.poster }}
+                        {{ form.main_image }}
                     </div>
-                    {% for error in form.poster.errors %}
+                    {% for error in form.main_image.errors %}
                     <div class="alert alert-error">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
@@ -128,69 +139,15 @@
                     <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
                 </svg></button>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group g-3">
-                        <h4 for="{{form.trailer.auto_id}}" class="form-label">{{ form.trailer.label }}</h4>
-                        {% render_field form.trailer class='form-control bg-light'%}
-                        {% for error in form.trailer.errors %}
-                        <div class="alert alert-error">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            {{ error|striptags }}
-                        </div>
-                        {%endfor%} 
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group g-3">
-                        <h4 for="{{form.duration.auto_id}}" class="form-label">{{ form.duration.label }}</h4>
-                        {% render_field form.duration class='form-control bg-light'%}
-                        {% for error in form.duration.errors %}
-                        <div class="alert alert-error">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            {{ error|striptags }}
-                        </div>
-                        {% endfor %} 
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group g-3">
-                        <h4 for="{{form.release_date.auto_id}}" class="form-label">{{ form.release_date.label }}</h4>
-                        <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                            {% render_field form.release_date class='form-control bg-light datetimepicker-input' data-target="#reservationdate"%}
-                            <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                            </div>
-                        </div>
-                        {% for error in form.release_date.errors %}
-                            <div class="alert alert-error">
-                                <button type="button" class="close" data-dismiss="alert">×</button>
-                                {{ error|striptags }}
-                            </div>
-                        {% endfor %} 
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <h4 for="{{form.type.auto_id}}" class="form-label">{{form.type.label}}</h4>
-            </div>
-            <div class="form-group">
-                {% for check in form.type %}
-                    <div class="form-check form-check-inline">
-                        <span class="form-check-input">{{ check.tag }}</span>
-                        <label  class='form-check-label' for="{{ check.id_for_label }}" style="font-size:150%">{{ check.choice_label }}</label>
-                    </div>
-                {% endfor %}
-            </div>
             <div class="form-group g-3">
-                <h4 for="{{form.is_active.auto_id}}" class="form-label">{{form.is_active.label}}</h4>
-                {% render_field form.is_active class='bg-light' data-bootstrap-switch="" data-off-color="dark" data-on-color="light"%}
-                {% for error in form.release_date.errors %}
+                <h4 for="{{form.youtube_link.auto_id}}" class="form-label">{{ form.youtube_link.label }}</h4>
+                {% render_field form.youtube_link class='form-control bg-light'%}
+                {% for error in form.youtube_link.errors %}
                 <div class="alert alert-error">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
                 </div>
-                {% endfor %} 
+                {% endfor %}
             </div>
             <h4>SEO блок</h4>
             <div class="row justify-content-md-center mb-2">
@@ -260,13 +217,7 @@
 {% block extra_js %}
 <script src="{% static 'admin/plugins/summernote/summernote-bs4.min.js' %}"></script>
 
-<script src="{% static 'admin/plugins/daterangepicker/daterangepicker.js' %}"></script>
-
-<script src="{% static 'admin/plugins/moment/moment.min.js' %}"></script>
-
 <script src="{% static 'admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
 
-<script src="{% static 'admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
-
-<script src="{% static 'admin/custom/js/movie_update.js' %}"></script>
+<script src="{% static 'admin/custom/js/stock_update.js' %}"></script>
 {% endblock extra_js %}

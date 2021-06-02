@@ -22,10 +22,10 @@ class Image(models.Model):
 
 
 class SeoParameters(models.Model):
-    seo_url = models.URLField(max_length=200)
-    seo_title = models.CharField(max_length=50)
-    seo_keywords = models.CharField(max_length=50)
-    seo_description = models.TextField()
+    seo_url = models.URLField(max_length=200, null=True, blank=True)
+    seo_title = models.CharField(max_length=50, null=True, blank=True)
+    seo_keywords = models.CharField(max_length=50, null=True, blank=True)
+    seo_description = models.TextField(null=True, blank=True)
 
 
 class Movie(models.Model):
@@ -47,6 +47,7 @@ class Movie(models.Model):
 
     class Meta:
         unique_together = ('name', 'description', 'release_date')
+        ordering = ('-release_date', )
 
     def __str__(self):
         return f'{self.name} - {self.release_date}'
@@ -82,13 +83,15 @@ class News(models.Model):
     title = models.CharField(_('Название новости'), max_length=50)
     description = models.TextField(_("Описание"))
     published = models.DateTimeField(_("Дата публикации"), auto_now_add=True)
-    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path)
+    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
     gallery = GenericRelation(Image, related_query_name='news')
-    youtube_link = models.URLField(_("Ссылка на видео"), max_length=100)
+    youtube_link = models.URLField(_("Ссылка на видео"), max_length=100, null=True, blank=True)
+    status = models.BooleanField(_("Статус"), default=False)
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
     class Meta:
         unique_together = ('title', 'published')
+        ordering = ('-published', )
 
 
 class Stock(models.Model):
@@ -98,10 +101,12 @@ class Stock(models.Model):
     main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path)
     gallery = GenericRelation(Image, related_query_name='stock')
     youtube_link = models.URLField(_("Ссылка на видео"), max_length=100)
+    status = models.BooleanField(_("Статус"), default=False)
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
     class Meta:
         unique_together = ('title', 'published')
+        ordering = ('-published', )
 
 
 image_attributes = ('image', 'poster', 'logo', 'banner', 'main_image')
@@ -122,8 +127,11 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
         if hasattr(instance, attribute):
             attr = getattr(instance, attribute)
             if attr:
-                if os.path.isfile(attr.path):
-                    os.remove(attr.path)
+                try:
+                    if os.path.isfile(attr.path):
+                        os.remove(attr.path)
+                except ValueError:
+                    pass
 
 @receiver(models.signals.pre_save, sender=Image)
 @receiver(models.signals.pre_save, sender=Movie)
@@ -151,5 +159,8 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
             new_file = getattr(instance, attribute)
 
     if not old_file == new_file:
-        if os.path.isfile(old_file.path):
-            os.remove(old_file.path)
+        try:
+            if os.path.isfile(old_file.path):
+                os.remove(old_file.path)
+        except ValueError as e:
+            pass
