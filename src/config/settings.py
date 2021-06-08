@@ -25,9 +25,10 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-4$*cs4qb&a*p!i+vyrf4vx4oseg72v%@kdnb24@3+z1$8$tlme')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get('DEBUG', default=True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('DJANGO_ALLOWED_HOSTS').split(" ") or []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 
     'multiselectfield',
     'widget_tweaks',
+    'django_seconds_field'
 ]
 
 MIDDLEWARE = [
@@ -99,12 +101,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'cinemadb'),
-        'USER': os.getenv('DB_USER','admin'),
-        'PASSWORD': os.getenv('DB_PASSWORD','top1Dron'),
-        'HOST': os.getenv('DB_HOST','localhost'),
-        'PORT': os.getenv('DB_PORT','5432'),
+        'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.postgresql'),
+        'NAME': os.getenv('SQL_NAME', 'cinemadb'),
+        'USER': os.getenv('SQL_USER','admin'),
+        'PASSWORD': os.getenv('SQL_PASSWORD','top1Dron'),
+        'HOST': os.getenv('SQL_HOST','localhost'),
+        'PORT': os.getenv('SQL_PORT','5432'),
     }
 }
 

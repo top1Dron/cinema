@@ -1,13 +1,19 @@
 from datetime import datetime as dt
 from pathlib import Path
+import logging
 import os
 
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+from django.db.models.fields.files import ImageField
 from django.dispatch import receiver
+from django_seconds_field import SecondsField
 from django.utils.translation import ugettext_lazy as _
 from multiselectfield import MultiSelectField
+
+
+logger = logging.getLogger(__name__)
 
 
 def get_upload_path(instance, filename):
@@ -109,6 +115,37 @@ class Stock(models.Model):
         ordering = ('-published', )
 
 
+class SingletonModel(models.Model):
+    class Meta:
+        abstract = True
+
+    def save(self, *args, **kwargs):
+        self.__class__.objects.exclude(id=self.id).delete()
+        super(SingletonModel, self).save(*args, **kwargs)
+
+    @classmethod
+    def load(cls):
+        try:
+            return cls.objects.get()
+        except cls.DoesNotExist:
+            return cls()
+
+
+class MainPageBanner(SingletonModel):
+    SECONDS = tuple([(str(i), f'{i}c') for i in range(1, 10)])
+
+    gallery = GenericRelation(Image, related_query_name='main_page_banner')
+    rotational_speed = models.CharField(_('Скорость вращения'), choices=SECONDS, max_length=5)
+    backgroung_image = models.ImageField(upload_to=get_upload_path)
+
+
+class NewsAndStockBanner(SingletonModel):
+    SECONDS = tuple([(str(i), f'{i}c') for i in range(1, 10)])
+
+    gallery = GenericRelation(Image, related_query_name='news_and_stock_advertices')
+    rotational_speed = models.CharField(_('Скорость вращения'), choices=SECONDS, max_length=5)
+
+
 image_attributes = ('image', 'poster', 'logo', 'banner', 'main_image')
 
 
@@ -118,6 +155,7 @@ image_attributes = ('image', 'poster', 'logo', 'banner', 'main_image')
 @receiver(models.signals.post_delete, sender=Hall)
 @receiver(models.signals.post_delete, sender=News)
 @receiver(models.signals.post_delete, sender=Stock)
+@receiver(models.signals.pre_save, sender=MainPageBanner)
 def auto_delete_file_on_delete(sender, instance, **kwargs):
     """
     Deletes file from filesystem
@@ -127,6 +165,7 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
         if hasattr(instance, attribute):
             attr = getattr(instance, attribute)
             if attr:
+                logger.info(attr)
                 try:
                     if os.path.isfile(attr.path):
                         os.remove(attr.path)
@@ -139,6 +178,7 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
 @receiver(models.signals.pre_save, sender=Hall)
 @receiver(models.signals.pre_save, sender=News)
 @receiver(models.signals.pre_save, sender=Stock)
+@receiver(models.signals.pre_save, sender=MainPageBanner)
 def auto_delete_file_on_change(sender, instance, **kwargs):
     """
     Deletes old file from filesystem
@@ -152,6 +192,7 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
         sender_obj = sender.objects.get(pk=instance.pk)
     except sender.DoesNotExist:
         return False
+    old_file = new_file = None
     for attribute in image_attributes:
         if hasattr(sender_obj, attribute):
             old_file = getattr(sender_obj, attribute)

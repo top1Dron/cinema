@@ -77,8 +77,25 @@
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    <p>{% trans "Баннера/Слайдеры" %}</p>
+                <p>
+                    {% trans "Баннера/Слайдеры" %}
+                    <i class="right fas fa-angle-left"></i>
+                </p>
                 </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{% url 'admin:main_page_banners' %}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>{% trans "Баннера главной страницы" %}</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'admin:news_and_stocks_page_banners' %}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>{% trans "Баннера на страницах Новости и Акции" %}</p>
+                        </a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a href="{% url 'admin:movies' %}" class="nav-link">

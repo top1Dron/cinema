@@ -4,3 +4,5 @@ env/
 src/admin/templates/AdminLTE-3.1.0
 src/config/static/example
 src/config/media
+Python-3.9.5
+postgres_data/

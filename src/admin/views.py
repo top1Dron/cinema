@@ -12,8 +12,9 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
 
-from app.models import Image, Movie, News, Stock
-from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery
+from app.models import Image, Movie, News, Stock, MainPageBanner, NewsAndStockBanner
+from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery, MainBannerForm, NewsAndStockBannerForm
+from admin.utils import get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page
 from app import utils
 from users.forms import LoginForm
 from users.utils import get_user_by_email
@@ -24,6 +25,32 @@ logger = logging.getLogger(__name__)
 @staff_member_required(login_url=reverse_lazy('admin:login'))
 def index(request):
     return render(request, 'admin/statistics.html')
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def main_page_banners(request):
+    main_form, main_gallery, redirect_available = get_forms_in_banner_page(request.POST, request.FILES, request.method)
+
+    if redirect_available:
+        return redirect(reverse_lazy('admin:main_page_banners'))
+    else:
+        return render(request, 'admin/main_page_banners.html', {
+            'main_form': main_form, 
+            'main_gallery': main_gallery
+        })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def news_and_stocks_banners(request):
+    form, gallery, redirect_available = get_forms_in_news_and_stocks_banner_page(request.POST, request.FILES, request.method)
+
+    if redirect_available:
+        return redirect(reverse_lazy('admin:news_and_stocks_page_banners'))
+    else:
+        return render(request, 'admin/news_and_stocks_banners.html', {
+            'form': form, 
+            'gallery': gallery
+        })
 
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))

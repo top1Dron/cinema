@@ -1,0 +1,104 @@
+{% extends 'admin/base.html' %}
+
+{% load static widget_tweaks i18n %}
+
+{% block extra_css %}
+{% endblock extra_css %}
+
+{% block main_content %}
+    <div class="container" style="margin-top: 75px">
+        <form method="post" action='.' enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row justify-content-md-center">
+                <div class="col-md-8"><h2 class="text-center">{% trans "На главной верх" %}</h2></div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h4 class="form-label">{% trans "Галерея картинок" %}</h4></div>
+                <div class="card-body">
+                    <div class="form-group g-3">
+                        {{ main_gallery.management_form }}
+                        <div class="row" id="main_gallery_images">
+                            {% for image_form in main_gallery %}
+                            {% for hidden in image_form.hidden_fields %}
+                                {{ hidden }}
+                            {% endfor %}
+                            <div class="col-md-6 col-xl-3">
+                                <div class="card ms-2" style="width: 16rem; padding:30px;">
+                                    {% csrf_token %}
+                                    {% if image_form.image.value.url %}
+                                        {% with image_form.hidden_fields.0.value as image_id %}
+                                        <button class="col-2 btn btn-dark text-center align-self-end" type='button' delete-url="{% url 'admin:delete_image' image_id %}" image-id="{{ image_id }}" onclick="deleteImage(this, {{forloop.counter0}})">X</button>
+                                        {% endwith %}
+                                        <img id="main_gallery_image_{{forloop.counter0}}" class="main_gallery_image text-center" image-start-src='{{MEDIA_URL}}{{image_form.image.value.url}}' src="{{MEDIA_URL}}{{image_form.image.value.url}}" alt="...">
+                                    {% else %}
+                                        <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this, {{forloop.counter0}})">X</button>
+                                        <img id="main_gallery_image_{{forloop.counter0}}" class="main_gallery_image text-center" image-start-src='...' src="{% static 'img/default-image.jpg' %}" alt="...">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        {{ image_form.image }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            <div id="main_gallery_empty_form" style="display:none">
+                                <div class="col-md-6 col-xl-3">
+                                    <div class="card ms-2" style="width: 16rem; padding:30px;">
+                                        {% csrf_token %}
+                                        <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this)">X</button>
+                                        <img id="main_gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
+                                        <div class="card-body">
+                                            {{ main_gallery.empty_form.image }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-light" id="main_gallery_add_more">
+                            {% trans "Добавить ещё" %} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                            <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                        </svg></button>
+                    </div>
+                    <div class="row form-group g-3">
+                        <div class="col-6 col-md-3">
+                            <h4 for="{{main_form.rotational_speed.auto_id}}" class="form-label">{{main_form.rotational_speed.label}}</h4>
+                        </div>
+                        <div class="w-auto">{% render_field main_form.rotational_speed class='form-select bg-light' %}</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-md-center">
+                <div class="col-md-8"><h2 class="text-center">{% trans "Сквозной баннер на заднем фоне" %}</h2></div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="form-group g-3">
+                        <div class="card" style="width: 18rem;">
+                            {% if main_form.backgroung_image.value.url is not None %}
+                                <img id="backgroung_image" class="text-center" src="{{MEDIA_URL}}{{main_form.backgroung_image.value.url}}" alt="main_image">
+                            {% else %}
+                                <img id="backgroung_image" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="backgroung_image">
+                            {% endif %}
+                            <div class="card-body">
+                                {{ main_form.backgroung_image }}
+                                {% for error in main_form.backgroung_image.errors %}
+                                <div class="alert alert-error">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    {{ error|striptags }}
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <input type="submit" class="btn btn-success col-md-2 justify-content-center mb-5" value="{% trans 'Cохранить' %}">
+            </div>
+        </form>
+    </div>
+{% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'admin/custom/js/banners.js' %}"></script>
+{% endblock extra_js %}

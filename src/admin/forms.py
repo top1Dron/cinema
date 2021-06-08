@@ -1,8 +1,9 @@
 from django import forms
+from django.contrib.contenttypes import fields
 from django.contrib.contenttypes.forms import generic_inlineformset_factory
 from django.utils.translation import ugettext_lazy as _
 
-from app.models import Movie, News, Stock, SeoParameters, Image
+from app.models import Movie, News, Stock, SeoParameters, Image, MainPageBanner, NewsAndStockBanner
 
 
 class AdminMovieForm(forms.ModelForm):
@@ -83,3 +84,20 @@ class ImageForm(forms.ModelForm):
 
 Gallery = generic_inlineformset_factory(Image, ImageForm, extra=4)
 
+
+class MainBannerForm(forms.ModelForm):
+    rotational_speed = list(MainPageBanner.SECONDS)
+    rotational_speed = forms.ChoiceField(choices=tuple(rotational_speed), label=_('Скорость вращения'))
+    
+    class Meta:
+        model = MainPageBanner
+        fields = ('rotational_speed', 'backgroung_image')
+
+
+class NewsAndStockBannerForm(forms.ModelForm):
+    rotational_speed = list(NewsAndStockBanner.SECONDS)
+    rotational_speed = forms.ChoiceField(choices=tuple(rotational_speed), label=_('Скорость вращения'))
+
+    class Meta:
+        model = NewsAndStockBanner
+        fields = ('rotational_speed',)

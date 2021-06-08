@@ -750,3 +750,47 @@ INFO 2021-05-31 21:10:00,218 views admin1@gmail.com
 INFO 2021-05-31 21:11:39,890 views admin2@gmail.com
 INFO 2021-06-01 23:30:42,844 views pepsi_news.jpg
 INFO 2021-06-02 00:04:48,922 views uploads/2021/06-01/pepsi_news.jpg
+INFO 2021-06-08 12:24:21,089 utils False
+INFO 2021-06-08 12:25:26,923 utils here
+INFO 2021-06-08 12:25:41,237 utils here
+INFO 2021-06-08 12:25:41,350 utils False
+INFO 2021-06-08 12:26:54,809 utils False
+INFO 2021-06-08 12:26:54,824 utils <ul class="errorlist"><li>rotational_speed<ul class="errorlist"><li>Выберите корректный вариант. 3 нет среди допустимых значений.</li></ul></li></ul>
+INFO 2021-06-08 12:28:35,510 utils True
+INFO 2021-06-08 12:28:35,512 utils 
+INFO 2021-06-08 12:28:35,521 utils True
+INFO 2021-06-08 13:37:29,298 models uploads/2021/06-02/cosmic_sin_2.jpg
+INFO 2021-06-08 13:37:29,313 models app.MainPageBanner.None
+INFO 2021-06-08 13:38:52,835 models uploads/2021/06-02/cosmic_sin_2.jpg
+INFO 2021-06-08 13:38:52,865 models app.MainPageBanner.None
+INFO 2021-06-08 13:40:43,382 models uploads/2021/06-02/cosmic_sin_2.jpg
+INFO 2021-06-08 13:40:43,394 models app.MainPageBanner.None
+INFO 2021-06-08 13:42:07,576 models uploads/2021/06-02/cosmic_sin_2.jpg
+INFO 2021-06-08 13:47:52,335 models uploads/2021/06-08/cosmic_sin_4_FJPOw22.jpg
+INFO 2021-06-08 13:48:26,410 models гнів_людський_poster.jpg
+INFO 2021-06-08 13:48:38,824 models кролик питер_1.jpeg
+INFO 2021-06-08 13:52:37,951 models кролик питер_2.jpeg
+INFO 2021-06-08 13:54:43,771 models uploads/2021/06-08/cosmic_sin_3.jpg
+INFO 2021-06-08 13:54:43,774 models uploads/2021/06-08/гнів_людський_5.jpg
+INFO 2021-06-08 13:55:28,310 utils True
+INFO 2021-06-08 13:55:28,311 utils 
+INFO 2021-06-08 13:55:28,325 utils True
+INFO 2021-06-08 13:55:28,330 models knymmrh_poster.jpg
+INFO 2021-06-08 13:55:40,097 models uploads/2021/06-08/knymmrh_poster.jpg
+INFO 2021-06-08 13:56:27,546 models uploads/2021/06-08/knymmrh_poster.jpg
+INFO 2021-06-08 13:56:35,575 models кролик питер_1.jpeg
+INFO 2021-06-08 13:56:45,156 models uploads/2021/06-08/кролик_питер_1.jpeg
+INFO 2021-06-08 14:07:00,993 models uploads/2021/06-08/cosmic_sin_1.jpg
+INFO 2021-06-08 14:07:01,000 models uploads/2021/06-08/cosmic_sin_poster.jpg
+INFO 2021-06-08 14:07:38,309 utils True
+INFO 2021-06-08 14:07:38,315 utils 
+INFO 2021-06-08 14:07:38,326 utils True
+INFO 2021-06-08 14:07:43,097 models uploads/2021/06-08/fsnhf_gallery_1.jpg
+INFO 2021-06-08 14:10:41,243 models uploads/2021/06-08/fsnhf_gallery_2.jpg
+INFO 2021-06-08 14:12:37,481 models uploads/2021/06-02/cosmic_sin_2.jpg
+INFO 2021-06-08 14:12:39,139 models uploads/2021/06-02/cosmic_sin_3.jpg
+INFO 2021-06-08 14:14:30,884 models cosmic_sin_4.jpg
+INFO 2021-06-08 14:14:38,959 models uploads/2021/06-08/fsnhf_gallery_2.jpg
+INFO 2021-06-08 14:14:51,069 models uploads/2021/06-08/cosmic_sin_4_hvU1jwE.jpg
+INFO 2021-06-08 18:02:31,208 utils True
+INFO 2021-06-08 18:05:00,537 models uploads/2021/06-08/cosmic_sin_1_uqKEcU8.jpg

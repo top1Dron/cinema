@@ -1,10 +1,10 @@
-{% load static widget_tweaks %}
+{% load static widget_tweaks i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Log in (v2)</title>
+  <title>DronCINEMA| {% trans "Авторизация" %}</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -25,9 +25,9 @@
     </div>
     <div class="card-body">
       {% if not user.is_authenticated %}
-        <p class="login-box-msg">Войдите в аккаунт</p>
+        <p class="login-box-msg">{% trans "Войдите в аккаунт" %}</p>
       {% elif not user.is_staff %}
-        <p class="login-box-msg">Вход разрешён только сотрудникам</p>
+        <p class="login-box-msg">{% trans "Вход разрешён только сотрудникам" %}</p>
       {% endif %}
 
       {% for message in messages %}
@@ -68,7 +68,7 @@
         </div>
         <input type="hidden" name="next" value="{{ request.GET.next }}">
         <div class="row">
-            <button type="submit" class="btn btn-primary btn-block">Войти в аккаунт</button>
+            <button type="submit" class="btn btn-primary btn-block">{% trans "Войти в аккаунт" %}</button>
         </div>
       </form>
     </div>

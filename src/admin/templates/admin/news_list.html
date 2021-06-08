@@ -36,7 +36,11 @@
                     <tr>
                         <td>{{record.title}}</td>
                         <td>{{record.published}}</td>
-                        <td>{{record.status}}</td>
+                        {% if record.status %}
+                           <td>{% trans "ВКЛ" %}</td>
+                        {% else %}
+                           <td>{% trans "ВЫКЛ" %}</td>
+                        {% endif %}
                         <td>
                           <div class="row">
                             <a class="col-6 text-center" href="{% url 'admin:news_update' record.pk %}">
