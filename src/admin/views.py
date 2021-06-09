@@ -99,7 +99,7 @@ def news_create(request):
                 news.save()
                 gallery.save()
 
-                return redirect(reverse_lazy('admin:movies'))
+                return redirect(reverse_lazy('admin:news'))
     return render(request, 'admin/news_add.html', context={
         'form': form, 
         'seo_form': seo_form, 
@@ -126,7 +126,7 @@ def stock_create(request):
                 stock.save()
                 gallery.save()
 
-                return redirect(reverse_lazy('admin:movies'))
+                return redirect(reverse_lazy('admin:stocks'))
     return render(request, 'admin/stock_add.html', context={
         'form': form, 
         'seo_form': seo_form, 
@@ -185,7 +185,7 @@ def update_news_info(request, pk):
                 logger.info(news.main_image)
                 news.save()
                 gallery.save()
-                return redirect(reverse_lazy('admin:movies'))
+                return redirect(reverse_lazy('admin:news'))
     return render(request, 'admin/news_update.html', context={
         'form': form, 
         'seo_form': seo_form, 
@@ -214,7 +214,7 @@ def update_stock_info(request, pk):
                 stock.seo = seo_obj
                 stock.save()
                 gallery.save()
-                return redirect(reverse_lazy('admin:movies'))
+                return redirect(reverse_lazy('admin:stocks'))
     return render(request, 'admin/stock_update.html', context={
         'form': form, 
         'seo_form': seo_form, 

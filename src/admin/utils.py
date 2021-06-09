@@ -100,6 +100,8 @@ def update_news_banner_page(news_obj, post_dict, files_dict, method):
 
     if method == 'POST':
         form = NewsAndStockBannerForm(post_dict, files_dict, instance=news_obj)
+        logger.info(gallery.is_valid())
+        logger.info(gallery.errors)
         if (form.is_valid()and gallery.is_valid()):
             form.save()
             gallery.save()

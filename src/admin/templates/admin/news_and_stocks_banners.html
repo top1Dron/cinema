@@ -25,6 +25,7 @@
                             <div class="col-md-6 col-xl-3">
                                 <div class="card ms-2" style="width: 16rem; padding:30px;">
                                      {% if image_form.image.value.url %}
+                                        {% render_field image_form.DELETE class="d-none"%}
                                         {% with image_form.hidden_fields.0.value as image_id %}
                                         <button class="col-2 btn btn-dark text-center align-self-end" type='button' delete-url="{% url 'admin:delete_image' image_id %}" image-id="{{ image_id }}" onclick="deleteImage(this, {{forloop.counter0}})">X</button>
                                         {% endwith %}

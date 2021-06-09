@@ -86,13 +86,8 @@ function deleteImage(button, form_ind){
                 xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
             },
             success: function(resp){
-                $(button).parent().parent().html($('#empty_form').html().replace(/__prefix__/g, form_ind));
-                var imageColumn = $('#images').children('.col-md-6').children('.col-md-6')[0];
-                var img = $(imageColumn).children('.card').children('img')[0];
-                var image_id = img.getAttribute('id') + form_ind.toString();
-                $(img).attr('id', image_id);
-                var uploadButton = $(imageColumn).children('.card').children('.card-body').children('input')[0];
-                onImageButtonUpload(uploadButton);
+                $(`#id_app-image-content_type-object_id-${form_ind}-DELETE`).attr('checked', true);
+                $(button).parent().parent().addClass("d-none");
             }
         });
     }

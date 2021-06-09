@@ -39,8 +39,26 @@ $('.col-md-6', $('#images')).each(function(){
     });
 });
 
-function deleteImage(button){
-    $(button).parent().parent().remove();  
+function deleteImage(button, form_ind){
+
+    var url = button.getAttribute('delete-url');
+    if (url != null){
+        $.ajax({
+            url: url,
+            type: 'DELETE',
+            data: {},
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
+            },
+            success: function(resp){
+                $(`#id_app-image-content_type-object_id-${form_ind}-DELETE`).attr('checked', true);
+                $(button).parent().parent().addClass("d-none");
+            }
+        });
+    }
+    else{
+        $(button).parent().parent().remove();
+    }    
 }
 
 $('#add_more').click(function() {
