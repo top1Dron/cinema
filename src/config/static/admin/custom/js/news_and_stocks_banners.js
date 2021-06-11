@@ -25,10 +25,10 @@ $('.col-md-6', $('#images')).each(function(){
 
 $('#add_more').click(function() {
     for(var ind=0; ind<4; ind++){
-        var form_idx = $('#id_app-image-content_type-object_id-TOTAL_FORMS').val();
+        var form_idx = $('#id_news_and_stocks-TOTAL_FORMS').val();
         $('#images').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
         var totalForms = parseInt(form_idx) + 1;
-        $('#id_app-image-content_type-object_id-TOTAL_FORMS').val(totalForms);
+        $('#id_news_and_stocks-TOTAL_FORMS').val(totalForms);
         
         var imageColumn = $('#images').children('.col-md-6').last();
         var img = $(imageColumn).children('.card').children('img')[0];
@@ -51,7 +51,7 @@ function deleteImage(button, form_ind){
                 xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
             },
             success: function(resp){
-                $(`#id_app-image-content_type-object_id-${form_ind}-DELETE`).attr('checked', true);
+                $(`#news_and_stocks-${form_ind}-DELETE`).attr('checked', true);
                 $(button).parent().parent().addClass("d-none");
             }
         });

@@ -49,10 +49,10 @@ function deleteImage(button){
 
 $('#add_more').click(function() {
     for(var ind=0; ind<4; ind++){
-        var form_idx = $('#id_app-image-content_type-object_id-TOTAL_FORMS').val();
+        var form_idx = $('#id_news_gallery-TOTAL_FORMS').val();
         $('#images').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
         var totalForms = parseInt(form_idx) + 1;
-        $('#id_app-image-content_type-object_id-TOTAL_FORMS').val(totalForms);
+        $('#id_news_gallery-TOTAL_FORMS').val(totalForms);
         
         var imageColumn = $('#images').children('.col-md-6').last();
         var img = $(imageColumn).children('.card').children('img')[0];
@@ -66,7 +66,6 @@ $('#add_more').click(function() {
 function onImageButtonUpload(uploadButton){
     $(uploadButton).change(function(event){
         var image_id = '#' + $(this).parent().parent().children('img')[0].getAttribute('id');
-        // console.log(image_id);
         if(typeof event.target.files[0] !== 'undefined'){
             $(image_id).attr("src", URL.createObjectURL(event.target.files[0]));
         }

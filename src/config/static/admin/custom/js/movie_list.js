@@ -10,7 +10,7 @@ function deleteMovie(button){
             },
             success: function(resp){
                 alert("Данные о фильме удалены");
-                $(button).parent().parent().html("");
+                window.location.reload();
             }
         });
     }

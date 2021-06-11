@@ -12,9 +12,9 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
 
-from app.models import Image, Movie, News, Stock, MainPageBanner, NewsAndStockBanner
-from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery, MainBannerForm, NewsAndStockBannerForm
-from admin.utils import get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page
+from app.models import Image, Movie, News, Stock, MainPage
+from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery
+from admin.utils import get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page, get_forms_in_main_page, get_forms_in_cafe_bar_pages
 from app import utils
 from users.forms import LoginForm
 from users.utils import get_user_by_email
@@ -25,6 +25,32 @@ logger = logging.getLogger(__name__)
 @staff_member_required(login_url=reverse_lazy('admin:login'))
 def index(request):
     return render(request, 'admin/statistics.html')
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def main_page(request):
+    form, seo_form, redirect_available = get_forms_in_main_page(request.POST, request.method)
+
+    if redirect_available:
+        return redirect(reverse_lazy('admin:main_page'))
+    else:
+        return render(request, 'admin/main_page.html', {
+            'form': form,
+            'seo_form': seo_form,
+        })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def cafe_bar_page(request):
+    form, gallery, seo_form, redirect_available = get_forms_in_cafe_bar_pages(request.POST, request.FILES, request.method)
+    if redirect_available:
+        return redirect(reverse_lazy('admin:cafe_bar_page'))
+    else:
+        return render(request, 'admin/cafe_bar_page.html', {
+            'form': form,
+            'seo_form': seo_form,
+            'gallery': gallery
+        })
 
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))
@@ -57,14 +83,14 @@ def news_and_stocks_banners(request):
 def movie_create(request):
     form = AdminMovieForm()
     seo_form = SeoParametersForm()
-    gallery = Gallery(queryset=Image.objects.none())
+    gallery = Gallery(queryset=Image.objects.none(), prefix="movies_gallery")
 
     if request.method == 'POST':
         form = AdminMovieForm(request.POST, request.FILES)
         if form.is_valid():
             movie = form.save(commit=False)
             seo_form = SeoParametersForm(request.POST)
-            gallery = Gallery(request.POST, request.FILES, instance=movie)
+            gallery = Gallery(request.POST, request.FILES, instance=movie, prefix="movies_gallery")
 
             if seo_form.is_valid() and gallery.is_valid():
                 seo_obj = seo_form.save()
@@ -84,14 +110,14 @@ def movie_create(request):
 def news_create(request):
     form = AdminNewsForm()
     seo_form = SeoParametersForm()
-    gallery = Gallery(queryset=Image.objects.none())
+    gallery = Gallery(queryset=Image.objects.none(), prefix="news_gallery")
 
     if request.method == 'POST':
         form = AdminNewsForm(request.POST, request.FILES)
         if form.is_valid():
             news = form.save(commit=False)
             seo_form = SeoParametersForm(request.POST)
-            gallery = Gallery(request.POST, request.FILES, instance=news)
+            gallery = Gallery(request.POST, request.FILES, instance=news, prefix="news_gallery")
 
             if seo_form.is_valid() and gallery.is_valid():
                 seo_obj = seo_form.save()
@@ -111,14 +137,14 @@ def news_create(request):
 def stock_create(request):
     form = AdminStockForm()
     seo_form = SeoParametersForm()
-    gallery = Gallery(queryset=Image.objects.none())
+    gallery = Gallery(queryset=Image.objects.none(), prefix="stock_gallery")
 
     if request.method == 'POST':
         form = AdminStockForm(request.POST, request.FILES)
         if form.is_valid():
             stock = form.save(commit=False)
             seo_form = SeoParametersForm(request.POST)
-            gallery = Gallery(request.POST, request.FILES, instance=stock)
+            gallery = Gallery(request.POST, request.FILES, instance=stock, prefix="stock_gallery")
 
             if seo_form.is_valid() and gallery.is_valid():
                 seo_obj = seo_form.save()
@@ -143,7 +169,7 @@ def update_movie_info(request, pk):
     extra_count = 0 if extra_count == 4 else extra_count
     UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
         extra=extra_count)
-    gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=movie.gallery.all(), instance=movie)
+    gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=movie.gallery.all(), instance=movie, prefix="movies_gallery")
     if request.method == 'POST':
         form = AdminMovieForm(request.POST, request.FILES, instance=movie)
         if form.is_valid():
@@ -172,7 +198,8 @@ def update_news_info(request, pk):
     extra_count = 0 if extra_count == 4 and news.gallery.all().count() > 0 else extra_count
     UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
         extra=extra_count)
-    gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=news.gallery.all(), instance=news)
+    gallery = UpdateGallery(request.POST or None, request.FILES or None, 
+        queryset=news.gallery.all(), instance=news, prefix="news_gallery")
     if request.method == 'POST':
         form = AdminNewsForm(request.POST, request.FILES, instance=news)
         if form.is_valid():
@@ -202,7 +229,8 @@ def update_stock_info(request, pk):
     extra_count = 0 if extra_count == 4 else extra_count
     UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
         extra=extra_count)
-    gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=stock.gallery.all(), instance=stock)
+    gallery = UpdateGallery(request.POST or None, request.FILES or None, 
+        queryset=stock.gallery.all(), instance=stock, prefix="stock_gallery")
     if request.method == 'POST':
         form = AdminStockForm(request.POST, request.FILES, instance=stock)
         if form.is_valid():

@@ -1,5 +1,6 @@
+from re import T
 from modeltranslation.translator import register, TranslationOptions
-from app.models import Movie, Cinema, Hall, News, Stock
+from app.models import Movie, Cinema, Hall, News, Stock, CafeBarPage
 
 
 @register(Movie)
@@ -24,4 +25,9 @@ class NewsTranslationOptions(TranslationOptions):
 
 @register(Stock)
 class StockTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')
+
+
+@register(CafeBarPage)
+class CafeBArPageTranslationOptions(TranslationOptions):
     fields = ('title', 'description')

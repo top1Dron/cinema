@@ -1,0 +1,80 @@
+{% extends 'admin/base.html' %}
+
+{% load static widget_tweaks i18n %}
+
+{% block main_content %}
+    <div class="container" style="margin-top: 75px">
+        <form method="post" action='.'>
+            {% csrf_token %}
+            <div class="card w-100">
+                <div class="card-header"><h4>{% trans "Номера" %}</h4></div>
+                <div class="card-body">
+                    {% render_field form.number1 class="form-control w-25 mb-2" %}
+                    {% render_field form.number2 class="form-control w-25 mb-2" %}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h5 for="{{form.seo_text.auto_id}}" class="form-label">{{ form.seo_text.label }}:</h5></div>
+                <div class="card-body">
+                    {% render_field form.seo_text rows="5" class="w-100" %}
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h4>SEO блок</h4></div>
+                <div class="card-body">
+                    <div class="row justify-content-md-center mb-2">
+                        <div class="col-lg-2"><h5 for="{{seo_form.seo_url.auto_id}}" class="form-label">{{ seo_form.seo_url.label }}:</h5></div>
+                        <div class="col-md-6">
+                            {{ seo_form.seo_url }}
+                            {% for error in seo_form.seo_url.errors %}
+                            <div class="alert alert-error">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center mb-2">
+                        <div class="col-lg-2"><h5 for="{{seo_form.seo_title.auto_id}}" class="form-label">{{ seo_form.seo_title.label }}:</h5></div>
+                        <div class="col-md-6">
+                            {{ seo_form.seo_title }}
+                            {% for error in seo_form.seo_title.errors %}
+                            <div class="alert alert-error">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center mb-2">
+                        <div class="col-lg-2"><h5 for="{{seo_form.seo_keywords.auto_id}}" class="form-label">{{ seo_form.seo_keywords.label }}:</h5></div>
+                        <div class="col-md-6">
+                            {{ seo_form.seo_keywords }}
+                            {% for error in seo_form.seo_keywords.errors %}
+                            <div class="alert alert-error">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row justify-content-md-center mb-2">
+                        <div class="col-lg-2"><h5 for="{{seo_form.seo_description.auto_id}}" class="form-label">{{ seo_form.seo_description.label }}:</h5></div>
+                        <div class="col-md-6">
+                            {% render_field seo_form.seo_description  rows="4" class="w-100"%}
+                            {% for error in seo_form.seo_description.errors %}
+                            <div class="alert alert-error">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <input type="submit" class="btn btn-success " value="{% trans 'Сохранить' %}">
+            </div>
+        </form>
+    </div>
+{% endblock main_content %}

@@ -51,7 +51,7 @@ function deleteImage(button, form_ind){
                 xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
             },
             success: function(resp){
-                $(`#id_app-image-content_type-object_id-${form_ind}-DELETE`).attr('checked', true);
+                $(`#id_stock_gallery-${form_ind}-DELETE`).attr('checked', true);
                 $(button).parent().parent().addClass("d-none");
             }
         });
@@ -63,10 +63,10 @@ function deleteImage(button, form_ind){
 
 $('#add_more').click(function() {
     for(var ind=0; ind<4; ind++){
-        var form_idx = $('#id_app-image-content_type-object_id-TOTAL_FORMS').val();
+        var form_idx = $('#id_stock_gallery-TOTAL_FORMS').val();
         $('#images').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
         var totalForms = parseInt(form_idx) + 1;
-        $('#id_app-image-content_type-object_id-TOTAL_FORMS').val(totalForms);
+        $('#id_stock_gallery-TOTAL_FORMS').val(totalForms);
         
         var imageColumn = $('#images').children('.col-md-6').last();
         var img = $(imageColumn).children('.card').children('img')[0];
@@ -80,7 +80,6 @@ $('#add_more').click(function() {
 function onImageButtonUpload(uploadButton){
     $(uploadButton).change(function(event){
         var image_id = '#' + $(this).parent().parent().children('img')[0].getAttribute('id');
-        // console.log(image_id);
         if(typeof event.target.files[0] !== 'undefined'){
             $(image_id).attr("src", URL.createObjectURL(event.target.files[0]));
         }
@@ -95,6 +94,14 @@ function onImageButtonUpload(uploadButton){
         }
     });
 }
+
+function getCookie(name) {
+
+    var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ))
+    return matches ? decodeURIComponent(matches[1]) : undefined
+};
 
 $("input[data-bootstrap-switch]").each(function(){
     $(this).bootstrapSwitch('state', $(this).prop('checked'));

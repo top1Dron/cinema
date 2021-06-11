@@ -5,6 +5,7 @@ import os
 
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.contrib.contenttypes.models import ContentType
+from django.core import validators
 from django.db import models
 from django.db.models.fields.files import ImageField
 from django.dispatch import receiver
@@ -25,6 +26,7 @@ class Image(models.Model):
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
+    url = models.URLField(default='', blank=True)
 
 
 class SeoParameters(models.Model):
@@ -104,9 +106,9 @@ class Stock(models.Model):
     title = models.CharField(_('Название акции'), max_length=50)
     description = models.TextField(_("Описание"))
     published = models.DateTimeField(_("Дата публикации"), auto_now_add=True)
-    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path)
+    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
     gallery = GenericRelation(Image, related_query_name='stock')
-    youtube_link = models.URLField(_("Ссылка на видео"), max_length=100)
+    youtube_link = models.URLField(_("Ссылка на видео"), max_length=100, null=True, blank=True)
     status = models.BooleanField(_("Статус"), default=False)
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
@@ -144,6 +146,29 @@ class NewsAndStockBanner(SingletonModel):
 
     gallery = GenericRelation(Image, related_query_name='news_and_stock_advertices')
     rotational_speed = models.CharField(_('Скорость вращения'), choices=SECONDS, max_length=5)
+
+
+class MainPage(SingletonModel):
+    number1 = models.CharField(max_length=13, unique=True,
+        validators=[
+            validators.RegexValidator(
+                regex=r'^(?:\+38)?(?:\(0[0-9][0-9]\)[ .-]?[0-9]{3}[ .-]?[0-9]{2}[ .-]?[0-9]{2}|044[ .-]?[0-9]{3}[ .-]?[0-9]{2}[ .-]?[0-9]{2}|0[0-9][0-9][0-9]{7})$')
+        ])
+    number2 = models.CharField(max_length=13, unique=True,
+        validators=[
+            validators.RegexValidator(
+                regex=r'^(?:\+38)?(?:\(0[0-9][0-9]\)[ .-]?[0-9]{3}[ .-]?[0-9]{2}[ .-]?[0-9]{2}|044[ .-]?[0-9]{3}[ .-]?[0-9]{2}[ .-]?[0-9]{2}|0[0-9][0-9][0-9]{7})$')
+        ])
+    seo_text = models.TextField(null=True, blank=True)
+    seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
+
+
+class CafeBarPage(SingletonModel):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
+
 
 
 image_attributes = ('image', 'poster', 'logo', 'banner', 'main_image')

@@ -35,10 +35,10 @@ $.each(['#news_and_stock_adv_gallery_images', '#main_gallery_images'], function(
 
 $('#main_gallery_add_more').click(function() {
     for(var ind=0; ind<4; ind++){
-        var form_idx = $('#main_gallery_images').parent().children('#id_app-image-content_type-object_id-TOTAL_FORMS').val();
+        var form_idx = $('#main_gallery_images').parent().children('#id_on_top_main-TOTAL_FORMS').val();
         $('#main_gallery_images').append($('#main_gallery_empty_form').html().replace(/__prefix__/g, form_idx));
         var totalForms = parseInt(form_idx) + 1;
-        $('#main_gallery_images').parent().children('#id_app-image-content_type-object_id-TOTAL_FORMS').val(totalForms);
+        $('#main_gallery_images').parent().children('#id_on_top_main-TOTAL_FORMS').val(totalForms);
         
         var imageColumn = $('#main_gallery_images').children('.col-md-6').last();
         var img = $(imageColumn).children('.card').children('img')[0];
@@ -50,10 +50,10 @@ $('#main_gallery_add_more').click(function() {
 });
 
 function add_images_to_formset(formset_id){
-    var form_idx = $('#id_app-image-content_type-object_id-TOTAL_FORMS').val();
+    var form_idx = $('#id_on_top_main-TOTAL_FORMS').val();
     $(`#${formset_id}`).append($(`#${formset_id}_empty_form`).html().replace(/__prefix__/g, form_idx));
     var totalForms = parseInt(form_idx) + 1;
-    $('#id_app-image-content_type-object_id-TOTAL_FORMS').val(totalForms);
+    $('#id_on_top_main-TOTAL_FORMS').val(totalForms);
     
     var imageColumn = $(formset_id).children('.col-md-6').last();
     var img = $(imageColumn).children('.card').children('img')[0];
@@ -74,7 +74,7 @@ function deleteImage(button, form_ind){
                 xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
             },
             success: function(resp){
-                $(`#id_app-image-content_type-object_id-${form_ind}-DELETE`).attr('checked', true);
+                $(`#id_on_top_main-${form_ind}-DELETE`).attr('checked', true);
                 $(button).parent().parent().addClass("d-none");
             }
         });

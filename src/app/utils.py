@@ -42,7 +42,7 @@ def get_news():
 
 
 def get_stock_by_params(**kwargs):
-    return get_object_or_404(News, **kwargs)
+    return get_object_or_404(Stock, **kwargs)
 
 
 def get_stocks():

@@ -45,10 +45,10 @@ function deleteImage(button){
 
 $('#add_more').click(function() {
     for(var ind=0; ind<4; ind++){
-        var form_idx = $('#id_app-image-content_type-object_id-TOTAL_FORMS').val();
+        var form_idx = $('#id_stock_gallery-TOTAL_FORMS').val();
         $('#images').append($('#empty_form').html().replace(/__prefix__/g, form_idx));
         var totalForms = parseInt(form_idx) + 1;
-        $('#id_app-image-content_type-object_id-TOTAL_FORMS').val(totalForms);
+        $('#id_stock_gallery-TOTAL_FORMS').val(totalForms);
         
         var imageColumn = $('#images').children('.col-md-6').last();
         var img = $(imageColumn).children('.card').children('img')[0];

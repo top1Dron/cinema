@@ -3,7 +3,7 @@ from django.contrib.contenttypes import fields
 from django.contrib.contenttypes.forms import generic_inlineformset_factory
 from django.utils.translation import ugettext_lazy as _
 
-from app.models import Movie, News, Stock, SeoParameters, Image, MainPageBanner, NewsAndStockBanner
+from app.models import CafeBarPage, Movie, News, Stock, SeoParameters, Image, MainPageBanner, NewsAndStockBanner, MainPage
 
 
 class AdminMovieForm(forms.ModelForm):
@@ -101,3 +101,28 @@ class NewsAndStockBannerForm(forms.ModelForm):
     class Meta:
         model = NewsAndStockBanner
         fields = ('rotational_speed',)
+
+    
+class MainPageForm(forms.ModelForm):
+
+    class Meta:
+        model = MainPage
+        fields = ('number1', 'number2', 'seo_text')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['seo_text'].label = 'SEO текст'
+
+
+class CafeBarForm(forms.ModelForm):
+
+    class Meta:
+        model = CafeBarPage
+        fields = ('title_ru', 'title_uk', 'description_ru', 'description_uk')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title_uk'].label = 'Назва (українською)'
+        self.fields['title_ru'].label = 'Название (на русском)'
+        self.fields['description_uk'].label = 'Опис (українською)'
+        self.fields['description_ru'].label = 'Описание (на русском)'

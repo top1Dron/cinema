@@ -10,7 +10,7 @@ function deleteStock(button){
             },
             success: function(resp){
                 alert("Данные об этой акции успешно удалены");
-                $(button).parent().parent().html("");
+                window.location.reload();
             }
         });
     }

@@ -23,6 +23,8 @@ urlpatterns = [
     path('stocks/add-stock/', views.stock_create, name='stock_add'),
     path('stocks/update-stock-info/<int:pk>/', views.update_stock_info, name='stock_update'),
     path('stocks/', staff_member_required(views.StockListView.as_view(), login_url=reverse_lazy('admin:login')), name='stocks'),
+    path('main-page/', views.main_page, name='main_page'),
+    path('cafe-bar-page/', views.cafe_bar_page, name='cafe_bar_page'),
     path('main-page-banners/', views.main_page_banners, name='main_page_banners'),
     path('news-and-stocks-page-banners/', views.news_and_stocks_banners, name='news_and_stocks_page_banners'),
     path('', views.index, name='index'),

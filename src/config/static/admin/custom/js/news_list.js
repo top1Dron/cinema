@@ -10,7 +10,7 @@ function deleteNews(button){
             },
             success: function(resp){
                 alert("Данные об этой новости успешно удалены");
-                $(button).parent().parent().html("");
+                window.location.reload();
             }
         });
     }
