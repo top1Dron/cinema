@@ -12,6 +12,7 @@ urlpatterns = [
     path('ajax/delete-movie/<int:pk>/', views.api_delete_movie, name='movie_delete'),
     path('ajax/delete-news/<int:pk>/', views.api_delete_news_object, name='news_delete'),
     path('ajax/delete-stock/<int:pk>/', views.api_delete_stock, name='stock_delete'),
+    path('ajax/delete-user/<str:email>/', views.api_delete_user, name='user_delete'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('movies/update-movie-info/<int:pk>/', views.update_movie_info, name='movie_update'),
@@ -32,5 +33,7 @@ urlpatterns = [
     path('mobile-app-page/', views.mobile_app_page, name='mobile_app_page'),
     path('main-page-banners/', views.main_page_banners, name='main_page_banners'),
     path('news-and-stocks-page-banners/', views.news_and_stocks_banners, name='news_and_stocks_page_banners'),
+    path('users/update-user-info/<str:email>/', views.change_user_info, name='user_update'),
+    path('users/', staff_member_required(views.UserListView.as_view(), login_url=reverse_lazy('admin:login')), name='users'),
     path('', views.index, name='index'),
 ]

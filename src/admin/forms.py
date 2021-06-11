@@ -1,12 +1,14 @@
 from django import forms
 from django.contrib.contenttypes import fields
 from django.contrib.contenttypes.forms import generic_inlineformset_factory
+from django.forms.widgets import RadioSelect
 from django.utils.translation import ugettext_lazy as _
 
 from app.models import (AboutCinemaPage, AdvertisePage, CafeBarPage, 
     ChildrenRoomPage, Movie, News, Stock, SeoParameters, Image, 
     MainPageBanner, NewsAndStockBanner, MainPage, VipHallPage, 
     MobileAppPage)
+from users.models import User
 
 
 class AdminMovieForm(forms.ModelForm):
@@ -199,3 +201,21 @@ class MobileAppForm(forms.ModelForm):
         self.fields['title_ru'].label = 'Название (на русском)'
         self.fields['description_uk'].label = 'Опис (українською)'
         self.fields['description_ru'].label = 'Описание (на русском)'
+
+
+class UserUpdateForm(forms.ModelForm):
+    language = forms.ChoiceField(label=_("Язык"), choices=(('ru', 'Русский'), ('ua', 'Українська')), 
+        widget=RadioSelect(attrs={'class': 'form-check-input'}))
+    gender = forms.ChoiceField(label=_("Пол"), choices=(('M', _('Мужской')), ('W', _('Женский'))), 
+        widget=RadioSelect(attrs={'class': 'form-check-input'}))
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'username', 
+            'email', 'address', 'payment_card_number', 
+            'language', 'gender', 'phone_number',
+            'birth_date', 'city', 'is_active', 'is_staff',
+            'is_superuser', 'date_joined')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)

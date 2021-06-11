@@ -12,14 +12,15 @@ from django.urls import reverse_lazy
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
 
-from app.models import Image, Movie, News, Stock, MainPage
-from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery
+from app.models import Image, Movie, News, Stock
+from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery, UserUpdateForm
 from admin.utils import (get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page, 
     get_forms_in_main_page, get_forms_in_cafe_bar_pages, get_forms_in_vip_hall_page,
     get_forms_in_about_cinema_page, get_forms_in_advertise_page, get_forms_in_children_room_page,
     get_forms_in_mobile_app_page)
 from app import utils
 from users.forms import LoginForm
+from users.models import User
 from users.utils import get_user_by_email
 
 
@@ -350,6 +351,14 @@ def api_delete_stock(request, pk):
     return JsonResponse({})
 
 
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+@require_http_methods(['DELETE'])
+def api_delete_user(request, email):
+    user = get_user_by_email(email)
+    user.delete()
+    return JsonResponse({})
+
+
 class MovieListView(ListView):
     model = Movie
     queryset = utils.get_active_movies()
@@ -375,6 +384,13 @@ class StockListView(ListView):
     queryset = utils.get_stocks()
     context_object_name = 'stocks'
     template_name = 'admin/stock_list.html'
+
+
+class UserListView(ListView):
+    model = User
+    queryset = User.objects.all()
+    context_object_name = 'users'
+    template_name = 'admin/users_list.html'
 
 
 def login(request):
@@ -409,3 +425,13 @@ def login(request):
 def logout(request):
     auth_logout(request)
     return redirect(reverse_lazy('admin:login'))
+
+
+def change_user_info(request, email):
+    user = get_user_by_email(email)
+    form = UserUpdateForm(request.POST or None, instance=user)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse_lazy('admin:users'))
+    return render(request, 'admin/user_update.html', {'form':form})
