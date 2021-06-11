@@ -3,7 +3,10 @@ from django.contrib.contenttypes import fields
 from django.contrib.contenttypes.forms import generic_inlineformset_factory
 from django.utils.translation import ugettext_lazy as _
 
-from app.models import CafeBarPage, Movie, News, Stock, SeoParameters, Image, MainPageBanner, NewsAndStockBanner, MainPage
+from app.models import (AboutCinemaPage, AdvertisePage, CafeBarPage, 
+    ChildrenRoomPage, Movie, News, Stock, SeoParameters, Image, 
+    MainPageBanner, NewsAndStockBanner, MainPage, VipHallPage, 
+    MobileAppPage)
 
 
 class AdminMovieForm(forms.ModelForm):
@@ -118,7 +121,77 @@ class CafeBarForm(forms.ModelForm):
 
     class Meta:
         model = CafeBarPage
-        fields = ('title_ru', 'title_uk', 'description_ru', 'description_uk')
+        fields = ('title_ru', 'title_uk', 'description_ru', 'description_uk', 'main_image')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title_uk'].label = 'Назва (українською)'
+        self.fields['title_ru'].label = 'Название (на русском)'
+        self.fields['description_uk'].label = 'Опис (українською)'
+        self.fields['description_ru'].label = 'Описание (на русском)'
+
+
+class VipHallForm(forms.ModelForm):
+
+    class Meta:
+        model = VipHallPage
+        fields = ('title_ru', 'title_uk', 'description_ru', 'description_uk', 'main_image')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title_uk'].label = 'Назва (українською)'
+        self.fields['title_ru'].label = 'Название (на русском)'
+        self.fields['description_uk'].label = 'Опис (українською)'
+        self.fields['description_ru'].label = 'Описание (на русском)'
+
+
+class AboutCinemaForm(forms.ModelForm):
+
+    class Meta:
+        model = AboutCinemaPage
+        fields = ('title_ru', 'title_uk', 'description_ru', 'description_uk', 'main_image')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title_uk'].label = 'Назва (українською)'
+        self.fields['title_ru'].label = 'Название (на русском)'
+        self.fields['description_uk'].label = 'Опис (українською)'
+        self.fields['description_ru'].label = 'Описание (на русском)'
+
+
+class AdvertiseForm(forms.ModelForm):
+
+    class Meta:
+        model = AdvertisePage
+        fields = ('title_ru', 'title_uk', 'description_ru', 'description_uk', 'main_image')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title_uk'].label = 'Назва (українською)'
+        self.fields['title_ru'].label = 'Название (на русском)'
+        self.fields['description_uk'].label = 'Опис (українською)'
+        self.fields['description_ru'].label = 'Описание (на русском)'
+
+
+class ChildrenRoomForm(forms.ModelForm):
+
+    class Meta:
+        model = ChildrenRoomPage
+        fields = ('title_ru', 'title_uk', 'description_ru', 'description_uk', 'main_image')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['title_uk'].label = 'Назва (українською)'
+        self.fields['title_ru'].label = 'Название (на русском)'
+        self.fields['description_uk'].label = 'Опис (українською)'
+        self.fields['description_ru'].label = 'Описание (на русском)'
+
+
+class MobileAppForm(forms.ModelForm):
+
+    class Meta:
+        model = MobileAppPage
+        fields = ('title_ru', 'title_uk', 'description_ru', 'description_uk', 'main_image')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

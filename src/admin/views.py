@@ -14,7 +14,10 @@ from django.views.generic import ListView
 
 from app.models import Image, Movie, News, Stock, MainPage
 from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery
-from admin.utils import get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page, get_forms_in_main_page, get_forms_in_cafe_bar_pages
+from admin.utils import (get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page, 
+    get_forms_in_main_page, get_forms_in_cafe_bar_pages, get_forms_in_vip_hall_page,
+    get_forms_in_about_cinema_page, get_forms_in_advertise_page, get_forms_in_children_room_page,
+    get_forms_in_mobile_app_page)
 from app import utils
 from users.forms import LoginForm
 from users.utils import get_user_by_email
@@ -47,6 +50,71 @@ def cafe_bar_page(request):
         return redirect(reverse_lazy('admin:cafe_bar_page'))
     else:
         return render(request, 'admin/cafe_bar_page.html', {
+            'form': form,
+            'seo_form': seo_form,
+            'gallery': gallery
+        })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def vip_hall_page(request):
+    form, gallery, seo_form, redirect_available = get_forms_in_vip_hall_page(request.POST, request.FILES, request.method)
+    if redirect_available:
+        return redirect(reverse_lazy('admin:vip_hall_page'))
+    else:
+        return render(request, 'admin/vip-hall-page.html', {
+            'form': form,
+            'seo_form': seo_form,
+            'gallery': gallery
+        })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def about_cinema_page(request):
+    form, gallery, seo_form, redirect_available = get_forms_in_about_cinema_page(request.POST, request.FILES, request.method)
+    if redirect_available:
+        return redirect(reverse_lazy('admin:about_cinema_page'))
+    else:
+        return render(request, 'admin/about-cinema-page.html', {
+            'form': form,
+            'seo_form': seo_form,
+            'gallery': gallery
+        })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def advertise_page(request):
+    form, gallery, seo_form, redirect_available = get_forms_in_advertise_page(request.POST, request.FILES, request.method)
+    if redirect_available:
+        return redirect(reverse_lazy('admin:advertise_page'))
+    else:
+        return render(request, 'admin/advertise-page.html', {
+            'form': form,
+            'seo_form': seo_form,
+            'gallery': gallery
+        })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def children_room_page(request):
+    form, gallery, seo_form, redirect_available = get_forms_in_children_room_page(request.POST, request.FILES, request.method)
+    if redirect_available:
+        return redirect(reverse_lazy('admin:children_room_page'))
+    else:
+        return render(request, 'admin/children-room-page.html', {
+            'form': form,
+            'seo_form': seo_form,
+            'gallery': gallery
+        })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def mobile_app_page(request):
+    form, gallery, seo_form, redirect_available = get_forms_in_mobile_app_page(request.POST, request.FILES, request.method)
+    if redirect_available:
+        return redirect(reverse_lazy('admin:mobile_app_page'))
+    else:
+        return render(request, 'admin/mobile-app-page.html', {
             'form': form,
             'seo_form': seo_form,
             'gallery': gallery

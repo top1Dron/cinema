@@ -166,9 +166,49 @@ class MainPage(SingletonModel):
 class CafeBarPage(SingletonModel):
     title = models.CharField(max_length=50)
     description = models.TextField()
+    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
     gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
+
+class VipHallPage(SingletonModel):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
+    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
+
+
+class AboutCinemaPage(SingletonModel):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
+    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
+
+
+class AdvertisePage(SingletonModel):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
+    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
+
+
+class ChildrenRoomPage(SingletonModel):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
+    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
+
+
+class MobileAppPage(SingletonModel):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
+    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
 
 image_attributes = ('image', 'poster', 'logo', 'banner', 'main_image')
@@ -190,7 +230,6 @@ def auto_delete_file_on_delete(sender, instance, **kwargs):
         if hasattr(instance, attribute):
             attr = getattr(instance, attribute)
             if attr:
-                logger.info(attr)
                 try:
                     if os.path.isfile(attr.path):
                         os.remove(attr.path)

@@ -1,6 +1,8 @@
 from re import T
 from modeltranslation.translator import register, TranslationOptions
-from app.models import Movie, Cinema, Hall, News, Stock, CafeBarPage
+from app.models import (Movie, Cinema, Hall, News, Stock, 
+    CafeBarPage, VipHallPage, AboutCinemaPage, AdvertisePage, 
+    ChildrenRoomPage, MobileAppPage)
 
 
 @register(Movie)
@@ -29,5 +31,30 @@ class StockTranslationOptions(TranslationOptions):
 
 
 @register(CafeBarPage)
-class CafeBArPageTranslationOptions(TranslationOptions):
+class CafeBarPageTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')
+
+
+@register(VipHallPage)
+class VipHallPageTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')
+
+
+@register(AboutCinemaPage)
+class AboutCinemaPageTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')
+
+
+@register(AdvertisePage)
+class AdvertisePageTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')
+
+
+@register(ChildrenRoomPage)
+class ChildrenRoomPageTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')
+
+
+@register(MobileAppPage)
+class MobileAppPageTranslationOptions(TranslationOptions):
     fields = ('title', 'description')

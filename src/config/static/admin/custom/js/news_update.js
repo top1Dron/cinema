@@ -10,8 +10,6 @@ $('#id_seo_description').summernote({
     height: '200px',
 });
 
-
-
 $('#id_main_image').change(function(event){
     if(typeof event.target.files[0] !== 'undefined'){
         $('#main_image').attr("src", URL.createObjectURL(event.target.files[0]));
