@@ -70,8 +70,6 @@ INTERNAL_IPS = [
 ]
 
 ROOT_URLCONF = 'config.urls'
-    
-# LOGIN_URL = '/users/login_or_signup/'
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -80,6 +78,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             PROJECT_ROOT / 'templates',
+            PROJECT_ROOT / 'media/emails',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -189,7 +188,6 @@ LOGGING = {
         },
     },
     'loggers': {
-        # example of logger app
         'admin': {
             'level': 'DEBUG',
             'handlers': ['file'],
@@ -200,3 +198,13 @@ LOGGING = {
         },
     },
 }
+
+# email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+MAILER_EMAIL_BACKEND = EMAIL_BACKEND
+EMAIL_HOST = 'smtp.mail.yahoo.com'
+EMAIL_HOST_PASSWORD = 'ltpefjirehtfwcbt'
+EMAIL_HOST_USER = 'olympiad2021helper@yahoo.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

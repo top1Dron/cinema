@@ -1,0 +1,129 @@
+{% extends 'admin/base.html' %}
+
+{% load static i18n widget_tweaks %}
+
+{% block main_content %}
+    <div class="container-fluid" style="margin-top: 75px;">
+        <div class="card">
+            <div class="card-header"><h3>Email</h3></div>
+            <div class="card-body">
+                {% for message in messages %}
+                <div class="alert alert-error">
+                    <div class="alert alert-danger" role="alert">
+                    {% render_field message.message %}<button type="button" class="text-light close" data-dismiss="alert">×</button>
+                    </div>
+                </div>
+                {% endfor %}
+                <form action="." method="post" enctype="multipart/form-data" novalidate>
+                    {% csrf_token %}
+                    <div class="d-flex">
+                        <div class="form-group">
+                            <label for="{{form.recipients.auto_id}}" class="form-label">{{form.recipients.label}}</label>
+                            {% for ratio in form.recipients %}
+                                <div class="form-check form-check-inline">
+                                    {{ ratio.tag }}
+                                    <label  class='form-check-label' for="{{ ratio.id_for_label }}">{{ ratio.choice_label }}</label>
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="form-group ml-auto">
+                            <button class="btn btn-primary" type="button" id="chooseUsers" data-toggle="modal" data-target="#usersModal" disabled>{% trans "Выбрать пользователей" %}</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                                <h4 for="id_subject">{% trans "Заголовок сообщения" %}</h4>
+                                <input type="text" class="form-control bg-light my-2" name='subject' id='id_subject'>
+                                {% render_field form.email accept=".html" %}
+                                <h4 class="mt-2">{% trans "Шаблон, используемый в рассылке" %}:</h4>
+                                <h4 class="mt-2">{% render_field form.file_id class="d-none"%}<div id="current_template"></div></h4>
+                                <h4 class="mt-2">{% trans "Количество писем" %}: {{ mails|length }}</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    {% for mail in mails %}
+                                        <div class="form-check my-2 d-flex">
+                                            <input class="form-check-input" type="radio" name="mails" id="{{mail.pk}}">
+                                            <label class="form-check-label" for="{{mail.pk}}">{{ mail }}</label>
+                                            <input type='button' delete-url="{% url 'admin:html_email_delete' mail.pk %}" class="delete-email btn btn-danger ml-auto" value="{% trans "Удалить" %}">
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id='users' name='users' value=''>
+                    <div class="row mt-2 justify-content-md-center">
+                        <input type="submit" class="btn btn-primary" value="{% trans "Начать рассылку" %}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="usersModal" tabindex="-1" aria-labelledby="usersModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="usersModalLabel">{% trans "Пользователи" %}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table id="users_table" class="table table-bordered table-hover">
+                    {% csrf_token %}
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>ID</th>
+                            <th>{% trans "Дата регистрации" %}</th>
+                            <th>{% trans "День рождения" %}</th>
+                            <th>Email</th>
+                            <th>{% trans "Телефон" %}</th>
+                            <th>{% trans "ФИО" %}</th>
+                            <th>{% trans "Псевдоним" %}</th>
+                            <th>{% trans "Город" %}</th>
+                        </tr>
+                    </thead>
+                  {% for user in users %}
+                  <tbody>
+                    <tr>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name='users_check' value="{{user.email}}">
+                            </div>
+                        </td>
+                        <td>{{user.pk}}</td>
+                        <td>{{user.date_joined|date:"d.m.Y"}}</td>
+                        <td>{{user.birth_date|date:"d.m.Y"}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.phone_number}}</td>
+                        <td>{{user.first_name|add:" "|add:user.last_name}}</td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.get_city_display}}</td>
+                    </tr>
+                  </tbody>
+                  {% endfor %}
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Закрыть" %}</button>
+                <button type="button" class="btn btn-primary" id="select_users" data-dismiss="modal">{% trans "Отправить выбранным" %}</button>
+            </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'admin/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/custom/js/mailing.js' %}"></script>
+{% endblock extra_js %}

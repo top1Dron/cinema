@@ -31,8 +31,8 @@
                     <th></th>
                   </tr>
                   </thead>
-                  {% for stock in stocks %}
                   <tbody>
+                  {% for stock in stocks %}
                     <tr>
                         <td>{{stock.title}}</td>
                         <td>{{stock.published}}</td>
@@ -56,8 +56,8 @@
                           </div>
                         </td>
                     </tr>
-                  </tbody>
                   {% endfor %}
+                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->

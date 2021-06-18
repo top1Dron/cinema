@@ -1,0 +1,271 @@
+{% extends 'admin/base.html' %}
+
+{% load static widget_tweaks i18n template_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'admin/plugins/summernote/summernote-bs4.min.css' %}">
+{% endblock extra_css %}
+
+{% block main_content %}
+    <div class="container" style="margin-top: 75px">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8"><h2 class="text-center">{% trans "Редактировать зал в кинотеатре" %}: {{cinema.name}}</h2></div>
+        </div>
+        <form method="post" action='.' enctype="multipart/form-data">
+        {% csrf_token %}
+            <div class="row">
+                <div class="form-group g-3 col-md-6">
+                    <h4 for="{{form.number.auto_id}}" class="form-label">{{ form.number.label }}</h4>
+                    {% render_field form.number class='form-control bg-light' required="required" %}
+                    {% for error in form.number.errors %}
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="form-group g-3" style="margin-top: 40px">
+                <div class="col-md-12">
+                    <div class="card card-outline card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                {{ form.description_ru.label }}
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            {% render_field form.description_ru class='bg-light'%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group g-3" style="margin-top: 40px">
+                <div class="col-md-12">
+                    <div class="card card-outline card-info">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                {{ form.description_uk.label }}
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            {% render_field form.description_uk class='bg-light'%}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h4 for="{{form.supported_types.auto_id}}" class="form-label">{{form.supported_types.label}}</h4>
+            </div>
+            <div class="form-group">
+                {% for check in form.supported_types %}
+                    <div class="form-check form-check-inline">
+                        <span class="form-check-input">{{ check.tag }}</span>
+                        <label  class='form-check-label' for="{{ check.id_for_label }}" style="font-size:150%">{{ check.choice_label }}</label>
+                    </div>
+                {% endfor %}
+                {% for error in form.supported_types.errors %}
+                    <div class="alert alert-danger">
+                        <button type="button" class="text-light close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="form-group g-3">
+                <div class="card">
+                    <div class="card-header"><h3 class="text-center">{% trans "Схема зала" %}</h3></div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>{% trans "Количество рядов" %}</h4>
+                                <input type="number" class="form-control bg-light" id="row_input">
+                            </div>
+                            <div class="col-md-6">
+                                <h4>{% trans "Количество мест в ряду" %}</h4>
+                                <input type="number" class="form-control bg-light" id="col_input">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center mt-2">
+                            <button class="btn btn-primary" disabled type="button" id="create_scheme_button">{% trans "Сгенерировать схему зала" %}</button>
+                        </div>
+                        <input type="hidden" id="json_scheme" name="json_scheme" value="">
+                        <div id="id_hall_scheme">
+                            {% for row in rows %}
+                                <div class="row justify-content-center mt-2" id="row_{{row}}">
+                                    {% get_hall_row_places form.instance row  as row_places %}
+                                    {% if row_places.0.row > 0 %}
+                                        <label for="row_{{row}}" class="col-1 d-flex align-items center form-col-label">{% trans "Ряд" %} {{row_places.0.row}}</label>
+                                    {% else %}
+                                        <label for="row_{{row}}" class="col-1 d-flex align-items center form-col-label"> </label>
+                                    {% endif %}
+                                    {% for place in row_places %}
+                                        <div id="row_{{place.real_row}}_col_{{place.real_position}}">
+                                            {% if place.is_vip %}
+                                                {% define "success" as btn_class %}
+                                                {% define place.number as number %}
+                                            {% elif place.number < 0  %}
+                                                {% define "primary" as btn_class %}
+                                                {% define " " as number %}
+                                            {% else %}
+                                                {% define "info" as btn_class %}
+                                                {% define place.number as number %}
+                                            {% endif %}
+                                            
+                                            <button class="badge badge-{{btn_class}} m-1 text-wrap" data-toggle="dropdown" aria-haspopup="true" 
+                                                aria-expanded="false" type="button" pos="{{place.real_position}}" style="height: {{px}}px; width: {{px}}px;"
+                                                id="row_{{place.real_row}}_col_{{place.real_position}}_btn"><span>{{number}}</span>
+                                            </button>
+                                            {% comment %} <div class="dropdown-menu" id="row_{{place.real_row}}_col_{{place.real_position}}_btn_dropdown">
+                                                <div class="dropdown-item">Убрать/Добавить</div>
+                                                {% if place.number < 0 %}
+                                                    {% define "dropdown-item d-none" as vip_class %}
+                                                {% else %}
+                                                    {% define "dropdown-item" as vip_class %}
+                                                {% endif %}
+                                                <div class="{{vip_class}}">Сделать VIP</div>
+                                            </div> {% endcomment %}
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div>
+                        {% comment %} <div id="id_hall_scheme_sample">
+                            {% for i in '123456789' %}
+                                <div id="row_{{i}}" class="row justify-content-center mt-2">
+                                {% for j in '123456789' %}
+                                    <div id="row_{{i}}_col_{{j}}" style="height:50px; width:50px;">
+                                        <button class="btn btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">{{j}}</button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Disable</a>
+                                            <a class="dropdown-item" href="#">Make VIP</a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                </div>
+                            {% endfor %}
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group g-3">
+                <h4 for="{{form.banner.auto_id}}" class="form-label">{{ form.banner.label }}</h4>
+                <div class="card" style="width: 18rem;">
+                    <img id="banner" class="text-center" src="{{MEDIA_URL}}{{form.banner.value.url}}" alt="banner">
+                    <div class="card-body">
+                        {{ form.banner }}
+                    </div>
+                    {% for error in form.banner.errors %}
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
+                    </div>
+                    {% endfor %} 
+                </div>
+            </div>
+            <div class="form-group g-3">
+                <h4 class="form-label">{% trans "Галерея картинок" %}</h4>
+                {{ gallery.management_form }}
+                <div class="row" id="images">
+                    {% for image_form in gallery %}
+                    {% for hidden in image_form.hidden_fields %}
+                        {{ hidden }}
+                    {% endfor %}
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card ms-2" style="width: 16rem; padding:30px;">
+                            {% csrf_token %}
+                            {% if image_form.image.value.url %}
+                                {% render_field image_form.DELETE class="d-none"%}
+                                {% with image_form.hidden_fields.0.value as image_id %}
+                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' delete-url="{% url 'admin:delete_image' image_id %}" image-id="{{ image_id }}" onclick="deleteImage(this, {{forloop.counter0}})">X</button>
+                                {% endwith %}
+                                <img id="gallery_image_{{forloop.counter0}}" class="gallery_image text-center" image-start-src='{{MEDIA_URL}}{{image_form.image.value.url}}' src="{{MEDIA_URL}}{{image_form.image.value.url}}" alt="...">
+                            {% else %}
+                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this, {{forloop.counter0}})">X</button>
+                                <img id="gallery_image_{{forloop.counter0}}" class="gallery_image text-center" image-start-src='...' src="{% static 'img/default-image.jpg' %}" alt="...">
+                            {% endif %}
+                            <div class="card-body">
+                                {{ image_form.image }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div id="empty_form" style="display:none">
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card ms-2" style="width: 16rem; padding:30px;">
+                                {% csrf_token %}
+                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this, {{forloop.counter0}})">X</button>
+                                <img id="gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
+                                <div class="card-body">
+                                    {{ gallery.empty_form.image }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-light" id="add_more">
+                    {% trans "Добавить ещё" %} <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path d="M8 0a1 1 0 0 1 1 1v6h6a1 1 0 1 1 0 2H9v6a1 1 0 1 1-2 0V9H1a1 1 0 0 1 0-2h6V1a1 1 0 0 1 1-1z"/>
+                </svg></button>
+            </div>
+            <h4>SEO блок</h4>
+            <div class="row justify-content-md-center mb-2">
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_url.auto_id}}" class="form-label">{{ seo_form.seo_url.label }}:</h5></div>
+                <div class="col-md-6">
+                    {{ seo_form.seo_url }}
+                    {% for error in seo_form.seo_url.errors %}
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row justify-content-md-center mb-2">
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_title.auto_id}}" class="form-label">{{ seo_form.seo_title.label }}:</h5></div>
+                <div class="col-md-6">
+                    {{ seo_form.seo_title }}
+                    {% for error in seo_form.seo_title.errors %}
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row justify-content-md-center mb-2">
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_keywords.auto_id}}" class="form-label">{{ seo_form.seo_keywords.label }}:</h5></div>
+                <div class="col-md-6">
+                    {{ seo_form.seo_keywords }}
+                    {% for error in seo_form.seo_keywords.errors %}
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row justify-content-md-center mb-2">
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_description.auto_id}}" class="form-label">{{ seo_form.seo_description.label }}:</h5></div>
+                <div class="col-md-6">
+                    {% render_field seo_form.seo_description  rows="4" class="w-100"%}
+                    {% for error in seo_form.seo_description.errors %}
+                    <div class="alert alert-error">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="row justify-content-md-center">
+                <input type="submit" class="btn btn-success col-md-2 justify-content-center mb-5" value="{% trans 'Cохранить' %}">
+            </div>
+        </form>
+    </div>
+{% endblock main_content %}
+
+{% block extra_js %}
+<script src="{% static 'admin/plugins/summernote/summernote-bs4.min.js' %}"></script>
+
+<script src="{% static 'admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+
+<script src="{% static 'admin/custom/js/hall_update.js' %}"></script>
+{% endblock extra_js %}

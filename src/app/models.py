@@ -63,7 +63,7 @@ class Movie(models.Model):
     
 
 class Cinema(models.Model):
-    name = models.CharField(_('Название кинотеатра'), max_length=50)
+    name = models.CharField(_('Название кинотеатра'), max_length=50, unique=True)
     description = models.TextField(_("Описание"))
     condition = models.TextField(_("Условия"))
     logo = models.ImageField(_('Логотип'), upload_to=get_upload_path)
@@ -79,12 +79,33 @@ class Hall(models.Model):
     number = models.CharField(_("Номер зала"), max_length=5)
     description = models.TextField(_("Описание"))
     banner = models.ImageField(_('Верхний баннер'), upload_to=get_upload_path)
+    created = models.DateField(_('Дата создания'), auto_now_add=True)
+    supported_types = MultiSelectField(choices=Movie.MOVIE_TYPES, verbose_name=_('Поддерживаемые форматы'))
     gallery = GenericRelation(Image, related_query_name='hall')
     cinema = models.ForeignKey(Cinema, on_delete=models.CASCADE)
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
     class Meta:
         unique_together = ('number', 'cinema')
+
+    @property
+    def ordered_places(self):
+        return self.places.order_by('real_row', 'real_position')
+
+
+class HallPlace(models.Model):
+    hall = models.ForeignKey(Hall, on_delete=models.CASCADE, related_name='places')
+    row = models.IntegerField(_('Ряд'))
+    real_row = models.PositiveIntegerField(_('Реальный ряд'))
+    real_position = models.PositiveIntegerField(_('Реальное местоположение в ряду'))
+    number = models.IntegerField(_('Номер'))
+    is_vip = models.BooleanField(_('VIP-место?'), default=False)
+
+    class Meta:
+        unique_together = ('hall', 'row', 'real_position')
+    
+    def __str__(self) -> str:
+        return f'{self.real_row}_{self.real_position}'
 
 
 class News(models.Model):
@@ -220,7 +241,7 @@ image_attributes = ('image', 'poster', 'logo', 'banner', 'main_image')
 @receiver(models.signals.post_delete, sender=Hall)
 @receiver(models.signals.post_delete, sender=News)
 @receiver(models.signals.post_delete, sender=Stock)
-@receiver(models.signals.pre_save, sender=MainPageBanner)
+@receiver(models.signals.post_delete, sender=MainPageBanner)
 def auto_delete_file_on_delete(sender, instance, **kwargs):
     """
     Deletes file from filesystem

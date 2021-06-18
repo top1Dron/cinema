@@ -9,7 +9,7 @@
 {% endblock extra_css %}
 
 {% block main_content %}
-    <div class="container" style="margin-top: 100px;">
+    <div class="container-fluid" style="margin-top: 100px;">
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -41,8 +41,8 @@
                     <th></th>
                   </tr>
                   </thead>
-                  {% for user in users %}
                   <tbody>
+                  {% for user in users %}
                     <tr>
                         <td>{{user.pk}}</td>
                         <td>{{user.date_joined|date:"d.m.Y"}}</td>
@@ -67,8 +67,8 @@
                           </div>
                         </td>
                     </tr>
-                  </tbody>
                   {% endfor %}
+                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->

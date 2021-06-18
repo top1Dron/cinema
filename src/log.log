@@ -854,3 +854,429 @@ INFO 2021-06-11 10:17:49,828 views uploads/2021/06-01/pepsi_news.jpg
 INFO 2021-06-11 10:19:25,819 models uploads/2021/06-11/pepsi_news.jpg
 INFO 2021-06-11 10:28:44,109 models uploads/2021/06-11/кролик_питер_1.jpeg
 INFO 2021-06-11 10:30:29,658 models uploads/2021/06-11/кролик_питер_2.jpeg
+INFO 2021-06-12 12:07:44,530 views <QueryDict: {'csrfmiddlewaretoken': ['7U6E1jM1yYNMKnMKaMhFa35weKMQ4qb6Pdc0VWq9hUViHnMDp0YwBUxwk3OrBzdw'], 'first_name': ['Простой'], 'language': ['ua'], 'last_name': ['Посетитель'], 'gender': ['W'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['simple@gmail.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on'], 'is_staff': ['on'], 'is_superuser': ['on']}>
+INFO 2021-06-12 12:07:44,585 views False
+ERROR 2021-06-12 12:07:44,585 views <ul class="errorlist"><li>date_joined<ul class="errorlist"><li>Обязательное поле.</li></ul></li></ul>
+INFO 2021-06-12 12:08:52,482 views <QueryDict: {'csrfmiddlewaretoken': ['PWQQnWlhqqA1nGCt3hnHmrT1q6Ya26JmxfWchzZp9mIxkGCmiv4yNil1wp0LzfLM'], 'first_name': ['Простой'], 'language': ['ru'], 'last_name': ['Посетитель'], 'gender': ['M'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['simple@gmail.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on']}>
+INFO 2021-06-12 12:08:52,533 views False
+ERROR 2021-06-12 12:08:52,534 views dict_items([('date_joined', ['Обязательное поле.'])])
+INFO 2021-06-12 12:08:59,979 views <QueryDict: {'csrfmiddlewaretoken': ['r4DDn1kRmZQKXDeB65G4tbPjWvWDQdOB9nJZhEYZ5VYgUDeuljnVU2hj2OYenmQ1'], 'first_name': ['Простой'], 'language': ['ua'], 'last_name': ['Посетитель'], 'gender': ['W'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['simple@gmail.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on'], 'is_staff': ['on'], 'is_superuser': ['on']}>
+INFO 2021-06-12 12:09:00,004 views False
+ERROR 2021-06-12 12:09:00,004 views dict_items([('date_joined', ['Обязательное поле.'])])
+INFO 2021-06-12 12:11:34,622 views <QueryDict: {'csrfmiddlewaretoken': ['r4DDn1kRmZQKXDeB65G4tbPjWvWDQdOB9nJZhEYZ5VYgUDeuljnVU2hj2OYenmQ1'], 'first_name': ['Простой'], 'language': ['ua'], 'last_name': ['Посетитель'], 'gender': ['W'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['simple@gmail.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on'], 'is_staff': ['on'], 'is_superuser': ['on']}>
+INFO 2021-06-12 12:11:34,672 views True
+ERROR 2021-06-12 12:11:34,672 views dict_items([])
+INFO 2021-06-12 12:12:41,369 views <QueryDict: {'csrfmiddlewaretoken': ['vAdQtSpg0VAwzMhAILTq7XgH2txGyqwwdTjcnv3oJRI2wMhtXZAhyOIH8Mzh5zyW'], 'first_name': ['Простой'], 'language': ['ua'], 'last_name': ['Посетитель'], 'gender': ['W'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['simple@gmail.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on'], 'is_staff': ['on'], 'is_superuser': ['on']}>
+INFO 2021-06-12 12:12:41,386 views True
+ERROR 2021-06-12 12:12:41,386 views dict_items([])
+INFO 2021-06-12 12:12:57,472 views <QueryDict: {'csrfmiddlewaretoken': ['c1LwthRHHTvXGad1zbaiPwAgtaefPOuMUkRSnUvPqPDtDadUOpR9gn2gztgQmXwc'], 'first_name': ['Простой'], 'language': ['ru'], 'last_name': ['Посетитель'], 'gender': ['M'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['simple@gmail.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on']}>
+INFO 2021-06-12 12:12:57,484 views True
+ERROR 2021-06-12 12:12:57,485 views dict_items([])
+INFO 2021-06-12 15:24:39,647 views <QueryDict: {'csrfmiddlewaretoken': ['SLCRmG2EzbtEbyKmzXKMbtRU6clffhIVhqtXsn4PeHPOZRaTaclTpTEHFT9MGdO6'], 'recipients': ['0']}>
+INFO 2021-06-12 15:24:39,650 views <MultiValueDict: {'email': [<InMemoryUploadedFile: гнів_людський_poster.jpg (image/jpeg)>]}>
+INFO 2021-06-12 18:16:58,696 views <QueryDict: {'csrfmiddlewaretoken': ['JixWPHhPfAXGQQjcgXjVOfYptd5SmjSS8Xo2Voj0U6jQE9JJRcU22FLc2UTpNfY3'], 'recipients': ['0']}>
+INFO 2021-06-12 18:16:58,696 views <MultiValueDict: {'email': [<InMemoryUploadedFile: гнів_людський_3.jpg (image/jpeg)>]}>
+INFO 2021-06-12 18:16:58,697 views False
+INFO 2021-06-12 18:17:38,232 views <QueryDict: {'csrfmiddlewaretoken': ['JixWPHhPfAXGQQjcgXjVOfYptd5SmjSS8Xo2Voj0U6jQE9JJRcU22FLc2UTpNfY3'], 'recipients': ['0']}>
+INFO 2021-06-12 18:17:38,233 views <MultiValueDict: {'email': [<InMemoryUploadedFile: гнів_людський_3.jpg (image/jpeg)>]}>
+INFO 2021-06-12 18:17:38,235 views False
+ERROR 2021-06-12 18:17:38,236 views dict_items([('email', ['Расширение файлов “jpg” не поддерживается. Разрешенные расширения: html.'])])
+INFO 2021-06-12 18:17:49,228 views <QueryDict: {'csrfmiddlewaretoken': ['anWKM6hHaUueSE7tN0r370MVFtmm013xz2NQSNjSPqQoGXx0of2alqzIeaaTrX9I'], 'recipients': ['0']}>
+INFO 2021-06-12 18:17:49,229 views <MultiValueDict: {'email': [<InMemoryUploadedFile: гнів_людський_6.jpg (image/jpeg)>]}>
+INFO 2021-06-12 18:17:49,230 views False
+ERROR 2021-06-12 18:17:49,230 views dict_items([('email', ['Расширение файлов “jpg” не поддерживается. Разрешенные расширения: html.'])])
+INFO 2021-06-12 18:18:18,757 views <QueryDict: {'csrfmiddlewaretoken': ['1fkvbojLlNJ76acGqWT7IiiXhHBuipaZqUbBh5lW0j5hUtCd1bueWI5KQop1Jlga'], 'recipients': ['0']}>
+INFO 2021-06-12 18:18:18,757 views <MultiValueDict: {'email': [<InMemoryUploadedFile: advertise-page.html (text/html)>]}>
+INFO 2021-06-12 18:18:18,760 views True
+ERROR 2021-06-12 18:18:18,760 views dict_items([])
+INFO 2021-06-12 18:29:09,187 views <QueryDict: {'csrfmiddlewaretoken': ['fzIbdb2zXYcg6HgrKC5exD9ohH0IBYULEezhjS4KCuyqU0GYlRGlL3WbQoOf2U0W'], 'recipients': ['0']}>
+INFO 2021-06-12 18:29:09,188 views <MultiValueDict: {'email': [<InMemoryUploadedFile: main_page_banners.html (text/html)>]}>
+INFO 2021-06-12 18:29:09,190 views False
+ERROR 2021-06-12 18:29:09,190 views dict_items([('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 18:31:20,353 views <QueryDict: {'csrfmiddlewaretoken': ['fzIbdb2zXYcg6HgrKC5exD9ohH0IBYULEezhjS4KCuyqU0GYlRGlL3WbQoOf2U0W'], 'recipients': ['0']}>
+INFO 2021-06-12 18:31:20,353 views <MultiValueDict: {'email': [<InMemoryUploadedFile: main_page_banners.html (text/html)>]}>
+INFO 2021-06-12 18:31:20,355 views False
+ERROR 2021-06-12 18:31:20,355 views dict_items([('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 18:32:17,732 views <QueryDict: {'csrfmiddlewaretoken': ['fzIbdb2zXYcg6HgrKC5exD9ohH0IBYULEezhjS4KCuyqU0GYlRGlL3WbQoOf2U0W'], 'recipients': ['0']}>
+INFO 2021-06-12 18:32:17,735 views <MultiValueDict: {'email': [<InMemoryUploadedFile: main_page_banners.html (text/html)>]}>
+INFO 2021-06-12 18:32:17,738 views False
+ERROR 2021-06-12 18:32:17,738 views dict_items([('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 18:35:49,514 views <QueryDict: {'csrfmiddlewaretoken': ['T1yTWbiqqghvmYGJM723tx4gV7yr2jGqiGpZ2SkB5MDFah6gnmDaHXR3uOmYtfMB'], 'recipients': ['0'], 'filename': ['children-room-page.html']}>
+INFO 2021-06-12 18:35:49,514 views <MultiValueDict: {'email': [<InMemoryUploadedFile: children-room-page.html (text/html)>]}>
+INFO 2021-06-12 18:35:49,515 views True
+ERROR 2021-06-12 18:35:49,516 views dict_items([])
+INFO 2021-06-12 20:00:13,062 views <QueryDict: {'csrfmiddlewaretoken': ['dOxdi84LYLhBpDqzx8zbMecHfIcOV3vyCtojoP6WDhDLdWQ68nai0EZuOp0lmZBJ'], 'first_name': ['None'], 'language': ['ru'], 'last_name': ['None'], 'gender': ['M'], 'username': ['admin1'], 'phone_number': ['+380995135682'], 'email': ['admin1@gmail.com'], 'birth_date': ['04.06.2021'], 'address': ['None'], 'city': ['1'], 'payment_card_number': ['None'], 'is_active': ['on'], 'is_staff': ['on'], 'is_superuser': ['on']}>
+INFO 2021-06-12 20:00:13,108 views True
+ERROR 2021-06-12 20:00:13,109 views dict_items([])
+INFO 2021-06-12 20:24:23,835 views <QueryDict: {'csrfmiddlewaretoken': ['hn5OI9juDN2c3ke3mL9WCD475m7NvI0FG2WUOQlFijomRDEAX0K3Q3RUE3VkWE6Q'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:24:23,837 views <MultiValueDict: {}>
+INFO 2021-06-12 20:24:23,838 views False
+ERROR 2021-06-12 20:24:23,838 views dict_items([('email', ['Обязательное поле.']), ('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 20:25:47,461 views <QueryDict: {'csrfmiddlewaretoken': ['DWC64viRMPjGtQBAnvuC9V4LZsUVFTVk2Btcack2rlFQh917YK5JnlRyy9Is6P1v'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:25:47,461 views <MultiValueDict: {}>
+INFO 2021-06-12 20:25:47,464 views False
+ERROR 2021-06-12 20:25:47,464 views dict_items([('email', ['Обязательное поле.']), ('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 20:26:33,962 views <QueryDict: {'csrfmiddlewaretoken': ['n95Y3H1poGqyuXpLXcbyGN8wRXjK5klSMOW49o3A3cMIigPiyrMFUdVjqE7hwgr3'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:26:33,966 views <MultiValueDict: {}>
+INFO 2021-06-12 20:26:33,968 views email: <ul class="errorlist"><li>Обязательное поле.</li></ul>
+INFO 2021-06-12 20:26:33,969 views filename: <ul class="errorlist"><li>Обязательное поле.</li></ul>
+INFO 2021-06-12 20:26:33,969 views False
+ERROR 2021-06-12 20:26:33,970 views dict_items([('email', ['Обязательное поле.']), ('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 20:27:05,459 views <QueryDict: {'csrfmiddlewaretoken': ['v3VwPm9Q4pdE2MxIAveKF1GqdNyRnuxyUIMCV3b1JVzOQ5XfbKPRTrtdMumoOqDJ'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:27:05,460 views <MultiValueDict: {}>
+INFO 2021-06-12 20:27:05,461 views email: <ul class="errorlist"><li>Обязательное поле.</li></ul>
+INFO 2021-06-12 20:27:05,466 views filename: <ul class="errorlist"><li>Обязательное поле.</li></ul>
+INFO 2021-06-12 20:27:05,466 views False
+ERROR 2021-06-12 20:27:05,466 views dict_items([('email', ['Обязательное поле.']), ('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 20:30:15,190 views <QueryDict: {'csrfmiddlewaretoken': ['urv0qBxt8LEeK7Db7x0P9cG3LwXG3b3jT6m6wizENh0oyq3IIMBWnCtQkdLdu79u'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:30:15,193 views <MultiValueDict: {}>
+INFO 2021-06-12 20:30:32,977 views <QueryDict: {'csrfmiddlewaretoken': ['urv0qBxt8LEeK7Db7x0P9cG3LwXG3b3jT6m6wizENh0oyq3IIMBWnCtQkdLdu79u'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:30:32,978 views <MultiValueDict: {}>
+INFO 2021-06-12 20:30:32,979 views email: <ul class="errorlist"><li>Обязательное поле.</li></ul>
+INFO 2021-06-12 20:31:15,950 views <QueryDict: {'csrfmiddlewaretoken': ['urv0qBxt8LEeK7Db7x0P9cG3LwXG3b3jT6m6wizENh0oyq3IIMBWnCtQkdLdu79u'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:31:15,951 views <MultiValueDict: {}>
+INFO 2021-06-12 20:31:15,952 views email: <ul class="errorlist"><li>Обязательное поле.</li></ul>
+INFO 2021-06-12 20:32:32,313 views <QueryDict: {'csrfmiddlewaretoken': ['urv0qBxt8LEeK7Db7x0P9cG3LwXG3b3jT6m6wizENh0oyq3IIMBWnCtQkdLdu79u'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:32:32,316 views <MultiValueDict: {}>
+INFO 2021-06-12 20:32:32,317 views email: <ul class="errorlist"><li>Обязательное поле.</li></ul>
+INFO 2021-06-12 20:32:32,318 views filename: <ul class="errorlist"><li>Обязательное поле.</li></ul>
+INFO 2021-06-12 20:32:32,319 views False
+ERROR 2021-06-12 20:32:32,320 views dict_items([('email', ['Обязательное поле.']), ('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 20:36:33,680 views <QueryDict: {'csrfmiddlewaretoken': ['HMpNkmGIrKELOnTjqBym7XlnReO98ZNN6rgTq3IT6g0VCGjQ1Q9tln8aqVCGzVTY'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:36:33,680 views <MultiValueDict: {}>
+INFO 2021-06-12 20:36:33,691 views email: Обязательное поле..
+INFO 2021-06-12 20:36:33,692 views filename: Обязательное поле..
+INFO 2021-06-12 20:36:33,692 views False
+ERROR 2021-06-12 20:36:33,692 views dict_items([('email', ['Обязательное поле.']), ('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 20:37:20,944 views <QueryDict: {'csrfmiddlewaretoken': ['HMpNkmGIrKELOnTjqBym7XlnReO98ZNN6rgTq3IT6g0VCGjQ1Q9tln8aqVCGzVTY'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:37:20,944 views <MultiValueDict: {}>
+INFO 2021-06-12 20:37:20,945 views email: Обязательное поле. 
+INFO 2021-06-12 20:37:20,945 views filename: Обязательное поле. 
+INFO 2021-06-12 20:37:20,945 views False
+ERROR 2021-06-12 20:37:20,946 views dict_items([('email', ['Обязательное поле.']), ('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 20:37:29,708 views <QueryDict: {'csrfmiddlewaretoken': ['gxKq0blHsE1rbjKSE3rOHWHU3HJVEFF0FcBw6SnS7anBZCapfi2VVmuHCoxs5BLb'], 'recipients': ['0'], 'email': [''], 'filename': ['']}>
+INFO 2021-06-12 20:37:29,709 views <MultiValueDict: {}>
+INFO 2021-06-12 20:37:29,710 views email: Обязательное поле. 
+INFO 2021-06-12 20:37:29,710 views filename: Обязательное поле. 
+INFO 2021-06-12 20:37:29,711 views False
+ERROR 2021-06-12 20:37:29,711 views dict_items([('email', ['Обязательное поле.']), ('filename', ['Обязательное поле.'])])
+INFO 2021-06-12 20:37:43,190 views <QueryDict: {'csrfmiddlewaretoken': ['62KQb0EzEwjXmGPTBR1j3RltKQq6ZKIWvHBWhHGKj2F7aZfqc6Cqhh8gjxeDqGO7'], 'recipients': ['0'], 'filename': ['children-room-page.html']}>
+INFO 2021-06-12 20:37:43,191 views <MultiValueDict: {'email': [<InMemoryUploadedFile: children-room-page.html (text/html)>]}>
+INFO 2021-06-12 20:37:43,196 views True
+ERROR 2021-06-12 20:37:43,196 views dict_items([])
+INFO 2021-06-12 20:38:59,828 views <QueryDict: {'csrfmiddlewaretoken': ['62KQb0EzEwjXmGPTBR1j3RltKQq6ZKIWvHBWhHGKj2F7aZfqc6Cqhh8gjxeDqGO7'], 'recipients': ['0'], 'filename': ['children-room-page.html']}>
+INFO 2021-06-12 20:38:59,829 views <MultiValueDict: {'email': [<InMemoryUploadedFile: children-room-page.html (text/html)>]}>
+INFO 2021-06-12 20:38:59,863 views True
+ERROR 2021-06-12 20:38:59,863 views dict_items([])
+INFO 2021-06-12 20:39:14,567 views <QueryDict: {'csrfmiddlewaretoken': ['WsOF177Vwq3MoMGh5w0OZ3qM44gnT4Cvl7FL7O96bWpWc56OGLBVdtdzDL4Uk0IG'], 'recipients': ['0'], 'filename': ['mobile-app-page.html'], 'mails': ['on']}>
+INFO 2021-06-12 20:39:14,567 views <MultiValueDict: {'email': [<InMemoryUploadedFile: mobile-app-page.html (text/html)>]}>
+INFO 2021-06-12 20:39:14,582 views True
+ERROR 2021-06-12 20:39:14,583 views dict_items([])
+INFO 2021-06-12 20:40:01,303 views <QueryDict: {'csrfmiddlewaretoken': ['WsOF177Vwq3MoMGh5w0OZ3qM44gnT4Cvl7FL7O96bWpWc56OGLBVdtdzDL4Uk0IG'], 'recipients': ['0'], 'filename': ['mobile-app-page.html'], 'mails': ['on']}>
+INFO 2021-06-12 20:40:01,303 views <MultiValueDict: {'email': [<InMemoryUploadedFile: mobile-app-page.html (text/html)>]}>
+INFO 2021-06-12 20:40:01,311 views True
+ERROR 2021-06-12 20:40:01,311 views dict_items([])
+INFO 2021-06-12 21:00:11,796 views <QueryDict: {'csrfmiddlewaretoken': ['9RgpCOmL6nXORWdd1lcEuPjtkq9jApNzqFyzwuflghDWiUAAfKlwCGcNLlCD4u59'], 'recipients': ['0'], 'email': [''], 'filename': ['                                                /media/emails/mobile-app-page_tea8QyG.html                                            '], 'mails': ['on']}>
+INFO 2021-06-12 21:00:11,797 views <MultiValueDict: {}>
+INFO 2021-06-12 21:00:29,844 views <QueryDict: {'csrfmiddlewaretoken': ['9RgpCOmL6nXORWdd1lcEuPjtkq9jApNzqFyzwuflghDWiUAAfKlwCGcNLlCD4u59'], 'recipients': ['0'], 'email': [''], 'filename': ['                                                /media/emails/mobile-app-page_tea8QyG.html                                            '], 'mails': ['on']}>
+INFO 2021-06-12 21:00:29,844 views <MultiValueDict: {}>
+INFO 2021-06-12 21:00:46,867 views <QueryDict: {'csrfmiddlewaretoken': ['9RgpCOmL6nXORWdd1lcEuPjtkq9jApNzqFyzwuflghDWiUAAfKlwCGcNLlCD4u59'], 'recipients': ['0'], 'email': [''], 'filename': ['                                                /media/emails/mobile-app-page_tea8QyG.html                                            '], 'mails': ['on']}>
+INFO 2021-06-12 21:00:46,867 views <MultiValueDict: {}>
+INFO 2021-06-12 21:02:31,933 views <QueryDict: {'csrfmiddlewaretoken': ['9RgpCOmL6nXORWdd1lcEuPjtkq9jApNzqFyzwuflghDWiUAAfKlwCGcNLlCD4u59'], 'recipients': ['0'], 'email': [''], 'filename': ['                                                /media/emails/mobile-app-page_tea8QyG.html                                            '], 'mails': ['on']}>
+INFO 2021-06-12 21:02:31,936 views <MultiValueDict: {}>
+INFO 2021-06-12 21:02:31,937 views <django.forms.fields.CharField object at 0x7f81d8c69130>
+INFO 2021-06-12 21:02:31,938 views email: Обязательное поле. 
+INFO 2021-06-12 21:02:31,938 views False
+ERROR 2021-06-12 21:02:31,938 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-12 21:04:15,223 views <QueryDict: {'csrfmiddlewaretoken': ['QczEE6j9TC8hk3iyyuzhjiXSkXB2VBVJ70ROyMcJ3wOpL1FVMTI9r9QcLS4mpGdj'], 'recipients': ['0'], 'email': [''], 'filename': ['                                                /media/emails/mobile-app-page_tea8QyG.html                                            '], 'mails': ['on']}>
+INFO 2021-06-12 21:04:15,224 views <MultiValueDict: {}>
+INFO 2021-06-12 21:04:15,226 views <django.forms.fields.CharField object at 0x7f81d8c51820>
+INFO 2021-06-12 21:04:15,227 views email: Обязательное поле. 
+INFO 2021-06-12 21:04:15,227 views False
+ERROR 2021-06-12 21:04:15,227 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:06:39,903 views <QueryDict: {'csrfmiddlewaretoken': ['N2bjv1YLLnAnrwdQMsW1tyelDsHSarWo4QttpHRlVhgvSuAd0R5TBp7F4nacEweY'], 'recipients': ['0'], 'email': [''], 'filename': ['                                                /media/emails/mobile-app-page.html                                            '], 'mails': ['on']}>
+INFO 2021-06-13 00:06:39,906 views <MultiValueDict: {}>
+INFO 2021-06-13 00:06:39,908 views email: Обязательное поле. 
+INFO 2021-06-13 00:06:39,908 views False
+ERROR 2021-06-13 00:06:39,908 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:09:21,960 views <QueryDict: {'csrfmiddlewaretoken': ['N2bjv1YLLnAnrwdQMsW1tyelDsHSarWo4QttpHRlVhgvSuAd0R5TBp7F4nacEweY'], 'recipients': ['0'], 'email': [''], 'filename': ['                                                /media/emails/mobile-app-page.html                                            '], 'mails': ['on']}>
+INFO 2021-06-13 00:09:21,960 views <MultiValueDict: {}>
+INFO 2021-06-13 00:09:21,961 views email: Обязательное поле. 
+INFO 2021-06-13 00:09:21,961 views False
+ERROR 2021-06-13 00:09:21,962 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:10:15,042 views <QueryDict: {'csrfmiddlewaretoken': ['NMcAuVloNTSirs0TnphmRWHtXhGhyXPsla2FqibufC1UQcIKHt8xiZOQLFAsDcjr'], 'recipients': ['0'], 'email': [''], 'filename': ['/media/emails/children-room-page.html'], 'mails': ['on']}>
+INFO 2021-06-13 00:10:15,042 views <MultiValueDict: {}>
+INFO 2021-06-13 00:10:15,044 views email: Обязательное поле. 
+INFO 2021-06-13 00:10:15,044 views False
+ERROR 2021-06-13 00:10:15,044 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:24:14,103 views <QueryDict: {'csrfmiddlewaretoken': ['NMcAuVloNTSirs0TnphmRWHtXhGhyXPsla2FqibufC1UQcIKHt8xiZOQLFAsDcjr'], 'recipients': ['0'], 'email': [''], 'filename': ['/media/emails/children-room-page.html'], 'mails': ['on']}>
+INFO 2021-06-13 00:24:14,104 views <MultiValueDict: {}>
+INFO 2021-06-13 00:24:14,106 views email: Обязательное поле. 
+INFO 2021-06-13 00:24:14,110 views False
+ERROR 2021-06-13 00:24:14,111 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:26:19,130 views <QueryDict: {'csrfmiddlewaretoken': ['NMcAuVloNTSirs0TnphmRWHtXhGhyXPsla2FqibufC1UQcIKHt8xiZOQLFAsDcjr'], 'recipients': ['0'], 'email': [''], 'filename': ['/media/emails/children-room-page.html'], 'mails': ['on']}>
+INFO 2021-06-13 00:26:19,130 views <MultiValueDict: {}>
+INFO 2021-06-13 00:26:19,134 views email: Обязательное поле. 
+INFO 2021-06-13 00:26:19,134 views False
+ERROR 2021-06-13 00:26:19,134 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:26:48,801 views <QueryDict: {'csrfmiddlewaretoken': ['NMcAuVloNTSirs0TnphmRWHtXhGhyXPsla2FqibufC1UQcIKHt8xiZOQLFAsDcjr'], 'recipients': ['0'], 'email': [''], 'filename': ['/media/emails/children-room-page.html'], 'mails': ['on']}>
+INFO 2021-06-13 00:26:48,802 views <MultiValueDict: {}>
+INFO 2021-06-13 00:26:48,803 views email: Обязательное поле. 
+INFO 2021-06-13 00:26:48,803 views False
+ERROR 2021-06-13 00:26:48,803 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:28:53,567 views <QueryDict: {'csrfmiddlewaretoken': ['NMcAuVloNTSirs0TnphmRWHtXhGhyXPsla2FqibufC1UQcIKHt8xiZOQLFAsDcjr'], 'recipients': ['0'], 'email': [''], 'filename': ['/media/emails/children-room-page.html'], 'mails': ['on']}>
+INFO 2021-06-13 00:28:53,569 views <MultiValueDict: {}>
+INFO 2021-06-13 00:28:53,570 views email: Обязательное поле. 
+INFO 2021-06-13 00:28:53,570 views False
+ERROR 2021-06-13 00:28:53,571 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:30:29,789 views <QueryDict: {'csrfmiddlewaretoken': ['L0XET8gAUnOfX4eFhPTija2P1dHmmYJQjoNJPv6Gm6XRmOWwBTKtKd9cPBBxrddP'], 'recipients': ['1'], 'filename': ['new']}>
+INFO 2021-06-13 00:30:29,789 views <MultiValueDict: {'email': [<InMemoryUploadedFile: login.html (text/html)>]}>
+INFO 2021-06-13 00:30:29,790 views new
+INFO 2021-06-13 00:30:29,790 views True
+ERROR 2021-06-13 00:30:29,791 views dict_items([])
+INFO 2021-06-13 00:32:04,241 views <QueryDict: {'csrfmiddlewaretoken': ['bWkHTIPnmi4uVha4R01QaJvWX2u6icmBJkaMP5FtO1d6k1SVb4S1BMCjLqohnrQA'], 'recipients': ['0'], 'email': [''], 'filename': ['3'], 'mails': ['on']}>
+INFO 2021-06-13 00:32:04,242 views <MultiValueDict: {}>
+INFO 2021-06-13 00:32:04,243 views email: Обязательное поле. 
+INFO 2021-06-13 00:32:04,243 views False
+ERROR 2021-06-13 00:32:04,243 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:35:52,659 views <QueryDict: {'csrfmiddlewaretoken': ['bWkHTIPnmi4uVha4R01QaJvWX2u6icmBJkaMP5FtO1d6k1SVb4S1BMCjLqohnrQA'], 'recipients': ['0'], 'email': [''], 'filename': ['3'], 'mails': ['on']}>
+INFO 2021-06-13 00:35:52,660 views <MultiValueDict: {}>
+INFO 2021-06-13 00:35:52,661 views email: Обязательное поле. 
+INFO 2021-06-13 00:35:52,661 views file_id: Обязательное поле. 
+INFO 2021-06-13 00:35:52,661 views False
+ERROR 2021-06-13 00:35:52,661 views dict_items([('email', ['Обязательное поле.']), ('file_id', ['Обязательное поле.'])])
+INFO 2021-06-13 00:37:29,304 views <QueryDict: {'csrfmiddlewaretoken': ['9uNdUFsGhu3bHYMsjCccDv2egYZDHpOOHSDiQ2iMJdcN6IujDG3n4y9B4mTOMEiN'], 'recipients': ['0'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 00:37:29,304 views <MultiValueDict: {}>
+INFO 2021-06-13 00:37:29,310 views 2
+INFO 2021-06-13 00:37:29,311 views email: Обязательное поле. 
+INFO 2021-06-13 00:37:29,311 views False
+ERROR 2021-06-13 00:37:29,311 views dict_items([('email', ['Обязательное поле.'])])
+INFO 2021-06-13 00:45:11,887 views <QueryDict: {'csrfmiddlewaretoken': ['TZhd93Giigdjb6USTPdJseWv1a5IqFGmrn7i5qwoKZmVAQCJdT4UTh3SPyZTvUal'], 'recipients': ['0'], 'email': [''], 'file_id': ['']}>
+INFO 2021-06-13 00:45:11,887 views <MultiValueDict: {}>
+INFO 2021-06-13 00:45:26,169 views <QueryDict: {'csrfmiddlewaretoken': ['eTVLRTJzDuq3mPgDftIMFMq779iAplBlMhLQNgzF5dzFLzYuzxzX6PxuVxcLuA5k'], 'recipients': ['0'], 'file_id': ['new']}>
+INFO 2021-06-13 00:45:26,175 views <MultiValueDict: {'email': [<InMemoryUploadedFile: children-room-page.html (text/html)>]}>
+INFO 2021-06-13 00:45:26,199 views emails/children-room-page_NJSuCfS.html
+INFO 2021-06-13 00:45:45,919 views <QueryDict: {'csrfmiddlewaretoken': ['SZHtUQILHXouDRtjV4kfOXipFgLgQutSqnxyQdyR9Gx62Bbaf8bqf0pMtEFrVJXR'], 'recipients': ['0'], 'email': [''], 'file_id': ['3'], 'mails': ['on']}>
+INFO 2021-06-13 00:45:45,921 views <MultiValueDict: {}>
+INFO 2021-06-13 00:45:45,926 views emails/mobile-app-page_tea8QyG.html
+INFO 2021-06-13 00:46:07,517 views <QueryDict: {'csrfmiddlewaretoken': ['OtjldsmB7YzcxGSEtU6ONbv8z2BeqEXamR9q9PcHzHIOWqAvNYXZeeCvnqvpvTr9'], 'recipients': ['1'], 'email': [''], 'file_id': ['']}>
+INFO 2021-06-13 00:46:07,517 views <MultiValueDict: {}>
+INFO 2021-06-13 00:46:15,945 views <QueryDict: {'csrfmiddlewaretoken': ['fyKthIArK1vU93s3PUXQz7gRbwzZYdkyNWAyd5qxcKEwyNaU9YO10aneZUta3sOx'], 'recipients': ['1'], 'email': [''], 'file_id': ['']}>
+INFO 2021-06-13 00:46:15,946 views <MultiValueDict: {}>
+INFO 2021-06-13 00:46:29,773 views <QueryDict: {'csrfmiddlewaretoken': ['X9DDm6N7ffx9iFL06GWzVa6nJzHeh7AsvxtIitDdHYGLHptRqKNKmddKxXBpmm4r'], 'recipients': ['1'], 'email': [''], 'file_id': ['']}>
+INFO 2021-06-13 00:46:29,773 views <MultiValueDict: {}>
+INFO 2021-06-13 00:47:18,054 views <QueryDict: {'csrfmiddlewaretoken': ['X9DDm6N7ffx9iFL06GWzVa6nJzHeh7AsvxtIitDdHYGLHptRqKNKmddKxXBpmm4r'], 'recipients': ['1'], 'email': [''], 'file_id': ['']}>
+INFO 2021-06-13 00:47:18,055 views <MultiValueDict: {}>
+INFO 2021-06-13 00:47:29,762 views <QueryDict: {'csrfmiddlewaretoken': ['VZr18PfgdTUu5hlY5Oz7yOvsEebPzUlvtnh64c5mFC36u13PpSqiZRCPsC50E9Pu'], 'recipients': ['1'], 'email': [''], 'file_id': ['']}>
+INFO 2021-06-13 00:47:29,762 views <MultiValueDict: {}>
+INFO 2021-06-13 00:47:55,257 views <QueryDict: {'csrfmiddlewaretoken': ['VZr18PfgdTUu5hlY5Oz7yOvsEebPzUlvtnh64c5mFC36u13PpSqiZRCPsC50E9Pu'], 'recipients': ['1'], 'email': [''], 'file_id': ['']}>
+INFO 2021-06-13 00:47:55,258 views <MultiValueDict: {}>
+INFO 2021-06-13 00:52:48,516 views <QueryDict: {'csrfmiddlewaretoken': ['3ORmesOLKIEZ5bh0ICOAH2yzNSzB35hYBcHraPERcrNBuVZR2GFL85FWBgtM8kLX'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 00:52:48,517 views <MultiValueDict: {}>
+INFO 2021-06-13 00:52:48,520 views emails/mobile-app-page.html
+INFO 2021-06-13 00:54:38,220 views <QueryDict: {'csrfmiddlewaretoken': ['3ORmesOLKIEZ5bh0ICOAH2yzNSzB35hYBcHraPERcrNBuVZR2GFL85FWBgtM8kLX'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 00:54:38,220 views <MultiValueDict: {}>
+INFO 2021-06-13 00:54:38,234 views emails/mobile-app-page.html
+INFO 2021-06-13 00:54:51,772 views <QueryDict: {'csrfmiddlewaretoken': ['Opz7hXBB65DbsM60CzpHVK6EoqQMJ00lmNpcdkrHyOMNRwORWDgSmNd1cOKXOfuk'], 'recipients': ['1'], 'email': [''], 'file_id': ['3'], 'mails': ['on']}>
+INFO 2021-06-13 00:54:51,773 views <MultiValueDict: {}>
+INFO 2021-06-13 00:54:51,778 views emails/mobile-app-page_tea8QyG.html
+INFO 2021-06-13 00:55:20,775 views <QueryDict: {'csrfmiddlewaretoken': ['ZKfBbrp0bhqyD2TsHUwcxaEdHpd1aMZsx85G7Of6D0za2MBj1YnnYdLAvN7cf1tr'], 'recipients': ['1'], 'email': [''], 'file_id': ['']}>
+INFO 2021-06-13 00:55:20,775 views <MultiValueDict: {}>
+INFO 2021-06-13 00:55:36,098 views <QueryDict: {'csrfmiddlewaretoken': ['VMsOq7sgtwxdR2qmt9eNK0lNJNR7SubctaiTmuimVfGPgM8dNd5Yb3saxbLiXJFb'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 00:55:36,107 views <MultiValueDict: {}>
+INFO 2021-06-13 00:55:36,116 views emails/mobile-app-page.html
+INFO 2021-06-13 00:57:39,412 views <QueryDict: {'csrfmiddlewaretoken': ['VMsOq7sgtwxdR2qmt9eNK0lNJNR7SubctaiTmuimVfGPgM8dNd5Yb3saxbLiXJFb'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 00:57:39,412 views <MultiValueDict: {}>
+INFO 2021-06-13 00:57:39,416 views emails/mobile-app-page.html
+INFO 2021-06-13 00:58:05,350 views <QueryDict: {'csrfmiddlewaretoken': ['qNGv9t2Dop3i0OGspnwm3Mo34fydmloLYbwA5QSJQ8cUpyojJrnxuPvqSDsorASK'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 00:58:05,351 views <MultiValueDict: {}>
+INFO 2021-06-13 00:58:05,356 views emails/mobile-app-page.html
+INFO 2021-06-13 01:00:50,009 views <QueryDict: {'csrfmiddlewaretoken': ['qNGv9t2Dop3i0OGspnwm3Mo34fydmloLYbwA5QSJQ8cUpyojJrnxuPvqSDsorASK'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 01:00:50,009 views <MultiValueDict: {}>
+INFO 2021-06-13 01:00:50,012 views emails/mobile-app-page.html
+INFO 2021-06-13 01:01:01,556 views <QueryDict: {'csrfmiddlewaretoken': ['i2oQZiMvu462pspAQDUbxlNEQpSoNqnWQqeVVFCBWNfEOc7raHLmYoU1ENMzSFRV'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 01:01:01,557 views <MultiValueDict: {}>
+INFO 2021-06-13 01:01:01,567 views emails/mobile-app-page.html
+INFO 2021-06-13 01:04:44,579 views <QueryDict: {'csrfmiddlewaretoken': ['i2oQZiMvu462pspAQDUbxlNEQpSoNqnWQqeVVFCBWNfEOc7raHLmYoU1ENMzSFRV'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 01:04:44,579 views <MultiValueDict: {}>
+INFO 2021-06-13 01:04:44,585 views emails/mobile-app-page.html
+INFO 2021-06-13 01:11:18,853 views <QueryDict: {'csrfmiddlewaretoken': ['i2oQZiMvu462pspAQDUbxlNEQpSoNqnWQqeVVFCBWNfEOc7raHLmYoU1ENMzSFRV'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 01:11:18,854 views <MultiValueDict: {}>
+INFO 2021-06-13 01:11:18,863 views emails/mobile-app-page.html
+INFO 2021-06-13 01:14:21,191 views <QueryDict: {'csrfmiddlewaretoken': ['gaPu4JanfnRZjHGTwEXmUooBZh5fDmYw7Rwriqscfatww73Nos3idX90w13GUvjy'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 01:14:21,191 views <MultiValueDict: {}>
+INFO 2021-06-13 01:14:21,198 views emails/mobile-app-page.html
+INFO 2021-06-13 01:15:26,326 views <QueryDict: {'csrfmiddlewaretoken': ['gaPu4JanfnRZjHGTwEXmUooBZh5fDmYw7Rwriqscfatww73Nos3idX90w13GUvjy'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on']}>
+INFO 2021-06-13 01:15:26,327 views <MultiValueDict: {}>
+INFO 2021-06-13 01:15:26,336 views emails/mobile-app-page.html
+INFO 2021-06-13 01:15:38,872 views <QueryDict: {'csrfmiddlewaretoken': ['Clql1m5T52mSus7qvHpFm7tEI0fMnZTht27if3nI5PYpHSuknvvBFGe3fKddE8ej'], 'recipients': ['1'], 'email': [''], 'file_id': ['2'], 'mails': ['on'], 'users': ['simple@gmail.com,admin1@gmail.com']}>
+INFO 2021-06-13 01:15:38,872 views <MultiValueDict: {}>
+INFO 2021-06-13 01:15:38,879 views emails/mobile-app-page.html
+INFO 2021-06-13 01:16:00,778 views <QueryDict: {'csrfmiddlewaretoken': ['wJZjnyQQ38O9thLuKY5kAf87C7om8SV5nqGgBf8F3VqGGH8oCMbgTOTw9RmNp1g7'], 'recipients': ['1'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 01:16:00,779 views <MultiValueDict: {}>
+INFO 2021-06-13 01:16:22,275 views <QueryDict: {'csrfmiddlewaretoken': ['N6qUyyxNENf8EBhCT6OOHQ2rMeGpSwD0EN7RMfPCEARFR1EwLUUK0pNQjYEQ9FY2'], 'recipients': ['1'], 'email': [''], 'file_id': [''], 'users': ['simple@gmail.com']}>
+INFO 2021-06-13 01:16:22,276 views <MultiValueDict: {}>
+INFO 2021-06-13 01:18:05,879 views <QueryDict: {'csrfmiddlewaretoken': ['6NYBJnx14HXjt4U3IEgTPi5AxWn7witGXuFyX4PQ4uzQGuhXAsmP8RQZ4GlyNrOI'], 'recipients': ['1'], 'email': [''], 'file_id': [''], 'users': ['admin1@gmail.com']}>
+INFO 2021-06-13 01:18:05,879 views <MultiValueDict: {}>
+INFO 2021-06-13 01:18:05,880 views admin1@gmail.com
+INFO 2021-06-13 01:18:32,302 views <QueryDict: {'csrfmiddlewaretoken': ['wWwh8bauVKjHmlZgnJM2nOyPqpBuGbTOnDdemSsjVxVezLmafxSYGnjeX9zVXkeQ'], 'recipients': ['1'], 'email': [''], 'file_id': [''], 'users': ['simple@gmail.com,admin1@gmail.com']}>
+INFO 2021-06-13 01:18:32,303 views <MultiValueDict: {}>
+INFO 2021-06-13 01:18:32,303 views simple@gmail.com,admin1@gmail.com
+INFO 2021-06-13 01:18:50,845 views <QueryDict: {'csrfmiddlewaretoken': ['55ZBf5vz1TZkkt6dsqDAXbsqk156Eu4dWMGytMNo1GBRxTt7keJwgKdPRL3xVDpf'], 'recipients': ['1'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 01:18:50,849 views <MultiValueDict: {}>
+INFO 2021-06-13 01:18:50,849 views 
+INFO 2021-06-13 01:20:36,152 views <QueryDict: {'csrfmiddlewaretoken': ['8tsGWsM5JL0gJYCa2oKwWDWLHFR0prBfZa9Da94UJyCNWoZ4UcQsfcHaepPrGAWh'], 'recipients': ['1'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 01:20:36,153 views <MultiValueDict: {}>
+INFO 2021-06-13 01:20:36,153 views ['']
+INFO 2021-06-13 01:21:17,157 views <QueryDict: {'csrfmiddlewaretoken': ['71rR7g2AufwQmhDPEfOHOLoJGodqP5lQYI8OlXkpu28nzH0Jw3UD7k98d8bR6eGS'], 'recipients': ['1'], 'email': [''], 'file_id': [''], 'users': ['simple@gmail.com']}>
+INFO 2021-06-13 01:21:17,157 views <MultiValueDict: {}>
+INFO 2021-06-13 01:21:17,158 views ['simple@gmail.com']
+INFO 2021-06-13 01:21:33,810 views <QueryDict: {'csrfmiddlewaretoken': ['ZPDCeq3G25mpfG2GXPSQ5FKxQZxtmjFJQwkzs7lv2SYWs6pAPDYMoevWnJvUDs0L'], 'recipients': ['1'], 'email': [''], 'file_id': [''], 'users': ['simple@gmail.com,admin1@gmail.com']}>
+INFO 2021-06-13 01:21:33,811 views <MultiValueDict: {}>
+INFO 2021-06-13 01:21:33,811 views ['simple@gmail.com', 'admin1@gmail.com']
+INFO 2021-06-13 01:22:47,578 views <QueryDict: {'csrfmiddlewaretoken': ['1pBTRDHauG36wpO3IHlP1sIt88lWCIeJS6iQ5kZZutFDJPbXAvrLk1tSFSjnTRzL'], 'recipients': ['0'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 01:22:47,579 views <MultiValueDict: {}>
+INFO 2021-06-13 01:22:47,579 views ['']
+INFO 2021-06-13 07:56:11,692 utils <QueryDict: {'csrfmiddlewaretoken': ['6sk2n5zPeeGyJxanwFuKVh9qvnnnHHhVX91ZBMREe1i5WXxhotAGeQUP27lOYQCX'], 'recipients': ['0'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 07:56:11,692 utils <MultiValueDict: {}>
+INFO 2021-06-13 07:56:11,696 utils ['simple@gmail.com']
+INFO 2021-06-13 07:57:07,869 utils <QueryDict: {'csrfmiddlewaretoken': ['6sk2n5zPeeGyJxanwFuKVh9qvnnnHHhVX91ZBMREe1i5WXxhotAGeQUP27lOYQCX'], 'recipients': ['0'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 07:57:07,869 utils <MultiValueDict: {}>
+INFO 2021-06-13 07:57:07,871 utils ['simple@gmail.com', 'admin1@gmail.com']
+INFO 2021-06-13 07:59:55,993 utils <QueryDict: {'csrfmiddlewaretoken': ['6sk2n5zPeeGyJxanwFuKVh9qvnnnHHhVX91ZBMREe1i5WXxhotAGeQUP27lOYQCX'], 'recipients': ['0'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 07:59:55,993 utils <MultiValueDict: {}>
+INFO 2021-06-13 07:59:56,000 utils ['simple@gmail.com']
+INFO 2021-06-13 08:00:09,487 utils <QueryDict: {'csrfmiddlewaretoken': ['6sk2n5zPeeGyJxanwFuKVh9qvnnnHHhVX91ZBMREe1i5WXxhotAGeQUP27lOYQCX'], 'recipients': ['0'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 08:00:09,488 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:00:09,492 utils ['simple@gmail.com']
+INFO 2021-06-13 08:04:33,313 utils <QueryDict: {'csrfmiddlewaretoken': ['w4c0IYb7P7JwYHPvk8TjqgIZIFLCKSsgnLTXWFtWPUl3b7cpcWZfJPtofpJ311Ni'], 'recipients': ['1'], 'subject': [''], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 08:04:33,315 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:04:33,315 utils ['']
+INFO 2021-06-13 08:10:54,780 views <QueryDict: {'csrfmiddlewaretoken': ['BlrAWroqMuAPlXCJBxWpmalP0cmkxPMzs28xa8GfMhcmynZDtl2lFJ6exWkLOY7B'], 'first_name': ['Простой'], 'language': ['ru'], 'last_name': ['Посетитель'], 'gender': ['M'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['pro100moneyfarmer@gmail.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on']}>
+INFO 2021-06-13 08:10:54,859 views True
+ERROR 2021-06-13 08:10:54,859 views dict_items([])
+INFO 2021-06-13 08:11:33,086 utils <QueryDict: {'csrfmiddlewaretoken': ['ddJJ72D3LR1gJTY8wQm5z069OBNQqTeB4UqGlJVSLEDNWjl2oEs1SzRyllLhH2zD'], 'recipients': ['1'], 'subject': ['Test message'], 'file_id': ['new'], 'users': ['pro100moneyfarmer@gmail.com']}>
+INFO 2021-06-13 08:11:33,090 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: stock_list.html (text/html)>]}>
+INFO 2021-06-13 08:11:33,091 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:11:33,104 utils emails/stock_list.html
+INFO 2021-06-13 08:12:19,720 utils <QueryDict: {'csrfmiddlewaretoken': ['ddJJ72D3LR1gJTY8wQm5z069OBNQqTeB4UqGlJVSLEDNWjl2oEs1SzRyllLhH2zD'], 'recipients': ['1'], 'subject': ['Test message'], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 08:12:19,721 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: stock_list.html (text/html)>]}>
+INFO 2021-06-13 08:12:19,721 utils ['']
+INFO 2021-06-13 08:12:51,036 utils <QueryDict: {'csrfmiddlewaretoken': ['9MpEV8RSn00LBvpksofnOy83akXKslaY0t6B9P9HnNCiOVMekclj77TsH4VbJuv0'], 'recipients': ['1'], 'subject': ['Test message'], 'email': [''], 'file_id': ['5'], 'mails': ['on'], 'users': ['pro100moneyfarmer@gmail.com']}>
+INFO 2021-06-13 08:12:51,036 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:12:51,037 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:12:51,044 utils emails/stock_list.html
+INFO 2021-06-13 08:14:18,041 utils <QueryDict: {'csrfmiddlewaretoken': ['TUEW7kGmh8u4aJQHOKSJCJZ2w1wN2M6JKBlTl1YbhV6Bn9dBGyYFViKr3LuejVrL'], 'recipients': ['0'], 'subject': ['Test message'], 'file_id': ['new'], 'mails': ['on'], 'users': ['']}>
+INFO 2021-06-13 08:14:18,041 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: stock_list.html (text/html)>]}>
+INFO 2021-06-13 08:14:18,050 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:14:18,061 utils emails/stock_list_k68M223.html
+INFO 2021-06-13 08:27:46,295 utils <QueryDict: {'csrfmiddlewaretoken': ['GZ1bh3bK4bOoAgS4Nfe0NPUyDogLRsrGxGI8vKtz4YqVNGfYF3kW6oFXa8ec8BMI'], 'recipients': ['0'], 'subject': ['Test message'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 08:27:46,301 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 08:27:46,306 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:27:46,320 utils emails/test_email.html
+INFO 2021-06-13 08:29:59,258 utils <QueryDict: {'csrfmiddlewaretoken': ['aZDfW1qSsmWJWOK71sAeWGfrOMg7w2qo1GkcaIIHs9yg9e71TgGaff0QlweyNbLq'], 'recipients': ['1'], 'subject': ['Test email'], 'file_id': ['new'], 'users': ['pro100moneyfarmer@gmail.com']}>
+INFO 2021-06-13 08:29:59,259 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 08:29:59,259 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:29:59,276 utils emails/test_email_g7bnqzd.html
+INFO 2021-06-13 08:31:24,030 utils <QueryDict: {'csrfmiddlewaretoken': ['VODLEilTWFYDuLiroMhNNstbP9v2ZVyJMvkISZDIWsAaHbFlgAnJ61eAmTttg4TL'], 'recipients': ['1'], 'subject': ['Test email'], 'file_id': ['new'], 'users': ['pro100moneyfarmer@gmail.com']}>
+INFO 2021-06-13 08:31:24,030 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 08:31:24,031 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:31:24,046 utils emails/test_email_JpfD55e.html
+INFO 2021-06-13 08:35:18,443 utils <QueryDict: {'csrfmiddlewaretoken': ['Nquk9X8Wpb3CXkDkeO33R8S8vMbaLPb3E7bhnEqLpYF9aK0e6C9ZaHDx2w9B2Yw5'], 'recipients': ['0'], 'subject': ['Test message #2'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 08:35:18,449 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 08:35:18,456 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:35:18,470 utils emails/test_email_HCNK8rS.html
+INFO 2021-06-13 08:45:40,658 utils <QueryDict: {'csrfmiddlewaretoken': ['MA4RUocgQkMxe8SyrTvhOemKDfrp26AADhLO85u5Q7o4ryfsjHBd7N79aZpQjfVC'], 'recipients': ['1'], 'subject': [''], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 08:45:40,660 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:45:40,661 utils ['']
+INFO 2021-06-13 08:45:56,478 utils <QueryDict: {'csrfmiddlewaretoken': ['EFb3bywLgaIMaqep7Z48X0wtQ2ZmU3c7vmS0pfOAgXkjnQBjZNa4gzhSnMXNbcx9'], 'recipients': ['0'], 'subject': [''], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 08:45:56,484 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:45:56,491 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:46:35,507 utils <QueryDict: {'csrfmiddlewaretoken': ['4xlcx2swl1AELzFTgfZcxLNHREt2my5lVe29LJKllOcbYZ2N8358Qky6oortDHqn'], 'recipients': ['0'], 'subject': [''], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 08:46:35,512 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:46:35,516 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:46:35,721 utils <QueryDict: {'csrfmiddlewaretoken': ['4xlcx2swl1AELzFTgfZcxLNHREt2my5lVe29LJKllOcbYZ2N8358Qky6oortDHqn'], 'recipients': ['0'], 'subject': [''], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 08:46:35,721 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:46:35,727 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:47:45,242 utils <QueryDict: {'csrfmiddlewaretoken': ['yHwtHzsuRe34tNVsXjwpAwT4mzMBxwWbpodqVgKjR1FBGdimP7ClT5EtTjK2OFhd'], 'recipients': ['0'], 'subject': [''], 'email': [''], 'file_id': ['9'], 'mails': ['on'], 'users': ['']}>
+INFO 2021-06-13 08:47:45,243 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:47:45,247 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:47:51,230 utils <QueryDict: {'csrfmiddlewaretoken': ['YGtFhIbzTL9F3CpkQxtOsqVXTzTObTQEPnaCvptoTyLcg2MeIlzKLZGmqjRfs2bG'], 'recipients': ['0'], 'subject': ['ads'], 'email': [''], 'file_id': [''], 'users': ['']}>
+INFO 2021-06-13 08:47:51,232 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:47:51,235 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:47:57,218 utils <QueryDict: {'csrfmiddlewaretoken': ['EtkPc3No8ksc3slra6myUT9WQd4fampyva1MqK5d874JgSIl2UsudsUlnX2GrvKA'], 'recipients': ['0'], 'subject': ['sadasd'], 'email': [''], 'file_id': ['8'], 'mails': ['on'], 'users': ['']}>
+INFO 2021-06-13 08:47:57,220 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:47:57,228 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:47:57,231 utils emails/test_email_g7bnqzd.html
+INFO 2021-06-13 08:52:19,542 utils <QueryDict: {'csrfmiddlewaretoken': ['zLl0ebVC4d0id99MGGZ9AOTtcjzmRSyvqs2XsSdr40CPqzwGyu55TnESJ3xN81Tx'], 'recipients': ['1'], 'subject': ['Test exists message'], 'email': [''], 'file_id': ['10'], 'mails': ['on'], 'users': ['pro100moneyfarmer@gmail.com']}>
+INFO 2021-06-13 08:52:19,548 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:52:19,548 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:52:19,551 utils emails/test_email_HCNK8rS.html
+INFO 2021-06-13 08:53:01,439 utils <QueryDict: {'csrfmiddlewaretoken': ['xZNmFNuSjJ55zkEu6jSCoXo80FIx660goGujTuMHjwHCMK1oY7YyHw9xxpGYnfli'], 'recipients': ['0'], 'subject': ['Test new without css'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 08:53:01,441 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 08:53:01,444 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:53:01,461 utils emails/test_email_jlRZhMH.html
+INFO 2021-06-13 08:53:21,722 utils <QueryDict: {'csrfmiddlewaretoken': ['zU1hUEj5fW3GeeNWwsVUI47Xwspruji5qBIe8lBUfJFdrEaQog1Q1DSm3cnSLsD7'], 'recipients': ['0'], 'subject': ['Test exists without css'], 'email': [''], 'file_id': ['11'], 'mails': ['on'], 'users': ['']}>
+INFO 2021-06-13 08:53:21,722 utils <MultiValueDict: {}>
+INFO 2021-06-13 08:53:21,735 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 08:53:21,742 utils emails/test_email_jlRZhMH.html
+INFO 2021-06-13 09:38:23,359 utils <QueryDict: {'csrfmiddlewaretoken': ['Sxdfg0AUctsBnZLZmDM4CuIverXez56RCJvETY238vNoKqIXEHO3527RmNhqf1ak'], 'recipients': ['0'], 'subject': ['erwer'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 09:38:23,368 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 09:38:23,371 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 09:38:23,397 utils emails/test_email.html
+INFO 2021-06-13 09:41:21,896 utils <QueryDict: {'csrfmiddlewaretoken': ['dlFN4Ovbt2L0z0FMZn8T0cdXQGhFnqFeXxXcHMXkp46NWrCKhraStKCjY2BR3mJH'], 'recipients': ['0'], 'subject': ['asdasd'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 09:41:21,899 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 09:41:21,905 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 09:41:21,908 models /usr/projects/cinema/src/config/media/test_email.html
+INFO 2021-06-13 09:41:21,925 utils emails/test_email_vbt9k8a.html
+INFO 2021-06-13 09:42:41,007 utils <QueryDict: {'csrfmiddlewaretoken': ['sjGcPf8l2ZiEZx3LKYToRSWkcj817ZQPcvYBsdAuY1DrmY0J22VnkqlGkFsdNVUi'], 'recipients': ['0'], 'subject': ['dasdasd'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 09:42:41,015 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 09:42:41,023 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 09:42:41,024 models /usr/projects/cinema/src/config/media/test_email.html
+INFO 2021-06-13 09:42:41,044 utils emails/test_email.html
+INFO 2021-06-13 09:43:54,177 utils <QueryDict: {'csrfmiddlewaretoken': ['X8KTDm6oylxwwhRwTC9QifGMBZnKoHHrHk2igkyxunSjTIOubGbPLN58JlHW4DLU'], 'recipients': ['0'], 'subject': ['sdfdsfsdf'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 09:43:54,190 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email_vbt9k8a.html (text/html)>]}>
+INFO 2021-06-13 09:43:54,194 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 09:43:54,195 models /usr/projects/cinema/src/config/media/test_email_vbt9k8a.html
+INFO 2021-06-13 09:43:54,219 utils emails/test_email_vbt9k8a_u79klRX.html
+INFO 2021-06-13 09:48:01,370 models /usr/projects/cinema/src/config/media/emails/test_email_vbt9k8a_u79klRX.html
+INFO 2021-06-13 09:49:19,825 utils <QueryDict: {'csrfmiddlewaretoken': ['3X9UCN3P0eZDmyr5UFKznsTH9DZOORMlN9rjfLvYWgkqJZo3cJMyQ0i3hZj0uNQO'], 'recipients': ['0'], 'subject': ['adasd'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 09:49:19,831 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 09:49:19,839 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 09:49:19,860 utils emails/test_email.html
+INFO 2021-06-13 09:49:29,354 models /usr/projects/cinema/src/config/media/emails/test_email.html
+INFO 2021-06-13 09:49:56,424 utils <QueryDict: {'csrfmiddlewaretoken': ['bagrWQRkr3mlV4eVRcB2UG0LQ0UEzBHBVmyQzOjtn5H8ivbT9gD1nep7YmeQfxL4'], 'recipients': ['0'], 'subject': ['dasd'], 'file_id': ['new'], 'users': ['']}>
+INFO 2021-06-13 09:49:56,438 utils <MultiValueDict: {'email': [<InMemoryUploadedFile: test_email.html (text/html)>]}>
+INFO 2021-06-13 09:49:56,444 utils ['pro100moneyfarmer@gmail.com']
+INFO 2021-06-13 09:49:56,479 utils emails/test_email.html
+INFO 2021-06-13 09:50:13,887 models /usr/projects/cinema/src/config/media/emails/test_email.html
+INFO 2021-06-14 15:32:16,476 views True
+ERROR 2021-06-14 15:32:16,483 views 
+INFO 2021-06-14 17:35:43,168 views True
+ERROR 2021-06-14 17:35:43,170 views 
+INFO 2021-06-16 18:43:59,396 views <QueryDict: {'csrfmiddlewaretoken': ['AHome2MAibxutxrQ52NkbFafymPAgVO4CsgQEaf9lftYf7uQae7qnJc3o6Cia9zo'], 'first_name': ['Простой'], 'language': ['ru'], 'last_name': ['Посетитель'], 'gender': ['M'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['donepet527@moxkid.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on']}>
+INFO 2021-06-16 18:43:59,521 views True
+ERROR 2021-06-16 18:43:59,522 views dict_items([])
+INFO 2021-06-16 18:59:02,957 views <QueryDict: {'csrfmiddlewaretoken': ['u5NvWnWWzHlQ1bRz2xYcp3YqPqgd0qgowQFZmvpvCLhkNLUz7JiiB70eFa3VUE1I'], 'first_name': ['Простой'], 'language': ['ru'], 'last_name': ['Посетитель'], 'gender': ['M'], 'username': ['simple'], 'phone_number': ['+380931350239'], 'email': ['pro100moneyfarmer@gmail.com'], 'birth_date': ['30.07.2000'], 'address': [''], 'city': ['1'], 'payment_card_number': [''], 'is_active': ['on']}>
+INFO 2021-06-16 18:59:03,036 views True
+ERROR 2021-06-16 18:59:03,038 views dict_items([])
+INFO 2021-06-17 00:22:37,217 views <QueryDict: {'csrfmiddlewaretoken': ['l5fii2JkjgMwoSrCEBXgr3wLOzVZOQBHbkEpCl5fgoMTuqt4ieCc7uxEv82GXUtb', 'l5fii2JkjgMwoSrCEBXgr3wLOzVZOQBHbkEpCl5fgoMTuqt4ieCc7uxEv82GXUtb'], 'number': ['1'], 'description_ru': ['<p>1</p>'], 'files': ['', ''], 'description_uk': ['<p>1</p>'], 'hall_gallery-TOTAL_FORMS': ['4'], 'hall_gallery-INITIAL_FORMS': ['0'], 'hall_gallery-MIN_NUM_FORMS': ['0'], 'hall_gallery-MAX_NUM_FORMS': ['1000'], 'hall_gallery-0-id': [''], 'hall_gallery-1-id': [''], 'hall_gallery-1-image': [''], 'hall_gallery-2-id': [''], 'hall_gallery-2-image': [''], 'hall_gallery-3-id': [''], 'hall_gallery-3-image': [''], 'hall_gallery-__prefix__-image': [''], 'seo_url': [''], 'seo_title': [''], 'seo_keywords': [''], 'seo_description': ['']}>
+INFO 2021-06-17 00:26:44,373 views <QueryDict: {'csrfmiddlewaretoken': ['lJmrgWubswohOse8oU7I9TXfcLa3ShqzbYLyAfQ6pEoEU0gA2xMEPkY8TkhK1li3', 'lJmrgWubswohOse8oU7I9TXfcLa3ShqzbYLyAfQ6pEoEU0gA2xMEPkY8TkhK1li3'], 'number': ['1'], 'description_ru': ['<p>123</p>'], 'files': ['', ''], 'description_uk': ['<p>123</p>'], 'supported_types': ['0', '1'], 'json_scheme': ['{"1_1":{"row":1,"real_pos":"1","number":"1","vip":false},"1_2":{"row":1,"real_pos":"2","number":"2","vip":false},"1_3":{"row":1,"real_pos":"3","number":"3","vip":false},"1_4":{"row":1,"real_pos":"4","number":"4","vip":false},"1_5":{"row":1,"real_pos":"5","number":"5","vip":false},"1_6":{"row":1,"real_pos":"6","number":"6","vip":false},"1_7":{"row":1,"real_pos":"7","number":"7","vip":false},"1_8":{"row":1,"real_pos":"8","number":"8","vip":false},"1_9":{"row":1,"real_pos":"9","number":"9","vip":false},"1_10":{"row":1,"real_pos":"10","number":"10","vip":false},"1_11":{"row":1,"real_pos":"11","number":"11","vip":false},"1_12":{"row":1,"real_pos":"12","number":"12","vip":false},"2_1":{"row":2,"real_pos":"1","number":"1","vip":false},"2_2":{"row":2,"real_pos":"2","number":"2","vip":false},"2_3":{"row":2,"real_pos":"3","number":"3","vip":false},"2_4":{"row":2,"real_pos":"4","number":"4","vip":false},"2_5":{"row":2,"real_pos":"5","number":"5","vip":false},"2_6":{"row":2,"real_pos":"6","number":"6","vip":false},"2_7":{"row":2,"real_pos":"7","number":"7","vip":false},"2_8":{"row":2,"real_pos":"8","number":"8","vip":false},"2_9":{"row":2,"real_pos":"9","number":"9","vip":false},"2_10":{"row":2,"real_pos":"10","number":"10","vip":false},"2_11":{"row":2,"real_pos":"11","number":"11","vip":false},"2_12":{"row":2,"real_pos":"12","number":"12","vip":false},"3_1":{"row":3,"real_pos":"1","number":"1","vip":false},"3_2":{"row":3,"real_pos":"2","number":"2","vip":false},"3_3":{"row":3,"real_pos":"3","number":"3","vip":false},"3_4":{"row":3,"real_pos":"4","number":"4","vip":false},"3_5":{"row":3,"real_pos":"5","number":"5","vip":false},"3_6":{"row":3,"real_pos":"6","number":"6","vip":false},"3_7":{"row":3,"real_pos":"7","number":"7","vip":false},"3_8":{"row":3,"real_pos":"8","number":"8","vip":false},"3_9":{"row":3,"real_pos":"9","number":"9","vip":false},"3_10":{"row":3,"real_pos":"10","number":"10","vip":false},"3_11":{"row":3,"real_pos":"11","number":"11","vip":false},"3_12":{"row":3,"real_pos":"12","number":"12","vip":false},"4_1":{"row":4,"real_pos":"1","number":"1","vip":false},"4_2":{"row":4,"real_pos":"2","number":"2","vip":false},"4_3":{"row":4,"real_pos":"3","number":"3","vip":false},"4_4":{"row":4,"real_pos":"4","number":"4","vip":false},"4_5":{"row":4,"real_pos":"5","number":"5","vip":false},"4_6":{"row":4,"real_pos":"6","number":"6","vip":false},"4_7":{"row":4,"real_pos":"7","number":"7","vip":false},"4_8":{"row":4,"real_pos":"8","number":"8","vip":false},"4_9":{"row":4,"real_pos":"9","number":"9","vip":false},"4_10":{"row":4,"real_pos":"10","number":"10","vip":false},"4_11":{"row":4,"real_pos":"11","number":"11","vip":false},"4_12":{"row":4,"real_pos":"12","number":"12","vip":false},"5_1":{"row":5,"real_pos":"1","number":"1","vip":false},"5_2":{"row":5,"real_pos":"2","number":"2","vip":false},"5_3":{"row":5,"real_pos":"3","number":"3","vip":false},"5_4":{"row":5,"real_pos":"4","number":"4","vip":false},"5_5":{"row":5,"real_pos":"5","number":"5","vip":false},"5_6":{"row":5,"real_pos":"6","number":"6","vip":false},"5_7":{"row":5,"real_pos":"7","number":"7","vip":false},"5_8":{"row":5,"real_pos":"8","number":"8","vip":false},"5_9":{"row":5,"real_pos":"9","number":"9","vip":false},"5_10":{"row":5,"real_pos":"10","number":"10","vip":false},"5_11":{"row":5,"real_pos":"11","number":"11","vip":false},"5_12":{"row":5,"real_pos":"12","number":"12","vip":false},"6_1":{"row":6,"real_pos":"1","number":"1","vip":false},"6_2":{"row":6,"real_pos":"2","number":"2","vip":false},"6_3":{"row":6,"real_pos":"3","number":"3","vip":false},"6_4":{"row":6,"real_pos":"4","number":"4","vip":false},"6_5":{"row":6,"real_pos":"5","number":"5","vip":false},"6_6":{"row":6,"real_pos":"6","number":"6","vip":false},"6_7":{"row":6,"real_pos":"7","number":"7","vip":false},"6_8":{"row":6,"real_pos":"8","number":" ","vip":false},"6_9":{"row":6,"real_pos":"9","number":" ","vip":false},"6_10":{"row":6,"real_pos":"10","number":" ","vip":false},"6_11":{"row":6,"real_pos":"11","number":"8","vip":false},"6_12":{"row":6,"real_pos":"12","number":"9","vip":false},"7_1":{"row":7,"real_pos":"1","number":"1","vip":false},"7_2":{"row":7,"real_pos":"2","number":"2","vip":false},"7_3":{"row":7,"real_pos":"3","number":"3","vip":false},"7_4":{"row":7,"real_pos":"4","number":"4","vip":false},"7_5":{"row":7,"real_pos":"5","number":"5","vip":false},"7_6":{"row":7,"real_pos":"6","number":"6","vip":false},"7_7":{"row":7,"real_pos":"7","number":"7","vip":false},"7_8":{"row":7,"real_pos":"8","number":" ","vip":false},"7_9":{"row":7,"real_pos":"9","number":"8","vip":false},"7_10":{"row":7,"real_pos":"10","number":" ","vip":false},"7_11":{"row":7,"real_pos":"11","number":"9","vip":false},"7_12":{"row":7,"real_pos":"12","number":"10","vip":false},"8_1":{"row":8,"real_pos":"1","number":"1","vip":false},"8_2":{"row":8,"real_pos":"2","number":"2","vip":false},"8_3":{"row":8,"real_pos":"3","number":"3","vip":false},"8_4":{"row":8,"real_pos":"4","number":"4","vip":false},"8_5":{"row":8,"real_pos":"5","number":"5","vip":false},"8_6":{"row":8,"real_pos":"6","number":"6","vip":false},"8_7":{"row":8,"real_pos":"7","number":"7","vip":false},"8_8":{"row":8,"real_pos":"8","number":" ","vip":false},"8_9":{"row":8,"real_pos":"9","number":"8","vip":false},"8_10":{"row":8,"real_pos":"10","number":" ","vip":false},"8_11":{"row":8,"real_pos":"11","number":"9","vip":false},"8_12":{"row":8,"real_pos":"12","number":"10","vip":false},"9_1":{"row":9,"real_pos":"1","number":"1","vip":false},"9_2":{"row":9,"real_pos":"2","number":"2","vip":false},"9_3":{"row":9,"real_pos":"3","number":"3","vip":false},"9_4":{"row":9,"real_pos":"4","number":"4","vip":false},"9_5":{"row":9,"real_pos":"5","number":"5","vip":false},"9_6":{"row":9,"real_pos":"6","number":"6","vip":false},"9_7":{"row":9,"real_pos":"7","number":"7","vip":false},"9_8":{"row":9,"real_pos":"8","number":" ","vip":false},"9_9":{"row":9,"real_pos":"9","number":"8","vip":false},"9_10":{"row":9,"real_pos":"10","number":" ","vip":false},"9_11":{"row":9,"real_pos":"11","number":"9","vip":false},"9_12":{"row":9,"real_pos":"12","number":"10","vip":false},"10_1":{"row":10,"real_pos":"1","number":"1","vip":false},"10_2":{"row":10,"real_pos":"2","number":"2","vip":false},"10_3":{"row":10,"real_pos":"3","number":"3","vip":false},"10_4":{"row":10,"real_pos":"4","number":"4","vip":false},"10_5":{"row":10,"real_pos":"5","number":"5","vip":false},"10_6":{"row":10,"real_pos":"6","number":"6","vip":false},"10_7":{"row":10,"real_pos":"7","number":"7","vip":false},"10_8":{"row":10,"real_pos":"8","number":" ","vip":false},"10_9":{"row":10,"real_pos":"9","number":"8","vip":false},"10_10":{"row":10,"real_pos":"10","number":" ","vip":false},"10_11":{"row":10,"real_pos":"11","number":"9","vip":false},"10_12":{"row":10,"real_pos":"12","number":"10","vip":false},"11_1":{"row":11,"real_pos":"1","number":"1","vip":false},"11_2":{"row":11,"real_pos":"2","number":"2","vip":false},"11_3":{"row":11,"real_pos":"3","number":"3","vip":false},"11_4":{"row":11,"real_pos":"4","number":"4","vip":false},"11_5":{"row":11,"real_pos":"5","number":"5","vip":false},"11_6":{"row":11,"real_pos":"6","number":"6","vip":false},"11_7":{"row":11,"real_pos":"7","number":"7","vip":false},"11_8":{"row":11,"real_pos":"8","number":" ","vip":false},"11_9":{"row":11,"real_pos":"9","number":" ","vip":false},"11_10":{"row":11,"real_pos":"10","number":" ","vip":false},"11_11":{"row":11,"real_pos":"11","number":"8","vip":false},"11_12":{"row":11,"real_pos":"12","number":"9","vip":false},"12_1":{"row":12,"real_pos":"1","number":"1","vip":false},"12_2":{"row":12,"real_pos":"2","number":"2","vip":true},"12_3":{"row":12,"real_pos":"3","number":"3","vip":false},"12_4":{"row":12,"real_pos":"4","number":"4","vip":true},"12_5":{"row":12,"real_pos":"5","number":"5","vip":false},"12_6":{"row":12,"real_pos":"6","number":"6","vip":true},"12_7":{"row":12,"real_pos":"7","number":"7","vip":false},"12_8":{"row":12,"real_pos":"8","number":"8","vip":true},"12_9":{"row":12,"real_pos":"9","number":" ","vip":false},"12_10":{"row":12,"real_pos":"10","number":"9","vip":true},"12_11":{"row":12,"real_pos":"11","number":"10","vip":false},"12_12":{"row":12,"real_pos":"12","number":"11","vip":false}}'], 'hall_gallery-TOTAL_FORMS': ['4'], 'hall_gallery-INITIAL_FORMS': ['0'], 'hall_gallery-MIN_NUM_FORMS': ['0'], 'hall_gallery-MAX_NUM_FORMS': ['1000'], 'hall_gallery-0-id': [''], 'hall_gallery-0-image': [''], 'hall_gallery-1-id': [''], 'hall_gallery-1-image': [''], 'hall_gallery-2-id': [''], 'hall_gallery-2-image': [''], 'hall_gallery-3-id': [''], 'hall_gallery-3-image': [''], 'hall_gallery-__prefix__-image': [''], 'seo_url': [''], 'seo_title': [''], 'seo_keywords': [''], 'seo_description': ['']}>
+INFO 2021-06-17 00:29:49,711 views <QueryDict: {'csrfmiddlewaretoken': ['ny3hBEhxvKY59P0DuF0nhi38HoDxFlHQdNsoVXDssSYsfn258iFjXJ41oXKeOpzk', 'ny3hBEhxvKY59P0DuF0nhi38HoDxFlHQdNsoVXDssSYsfn258iFjXJ41oXKeOpzk'], 'number': ['2'], 'description_ru': ['<p>ADAS</p>'], 'files': ['', ''], 'description_uk': ['<p>DDD</p>'], 'supported_types': ['0'], 'json_scheme': ['{"1_1":{"row":1,"real_pos":"1","number":"1","vip":false},"1_2":{"row":1,"real_pos":"2","number":"2","vip":false},"1_3":{"row":1,"real_pos":"3","number":"3","vip":false},"1_4":{"row":1,"real_pos":"4","number":"4","vip":false},"1_5":{"row":1,"real_pos":"5","number":"5","vip":false},"1_6":{"row":1,"real_pos":"6","number":"6","vip":false},"1_7":{"row":1,"real_pos":"7","number":"7","vip":false},"2_1":{"row":2,"real_pos":"1","number":"1","vip":false},"2_2":{"row":2,"real_pos":"2","number":"2","vip":false},"2_3":{"row":2,"real_pos":"3","number":"3","vip":false},"2_4":{"row":2,"real_pos":"4","number":"4","vip":false},"2_5":{"row":2,"real_pos":"5","number":"5","vip":false},"2_6":{"row":2,"real_pos":"6","number":"6","vip":false},"2_7":{"row":2,"real_pos":"7","number":"7","vip":false},"3_1":{"row":3,"real_pos":"1","number":"1","vip":false},"3_2":{"row":3,"real_pos":"2","number":"2","vip":false},"3_3":{"row":3,"real_pos":"3","number":"3","vip":false},"3_4":{"row":3,"real_pos":"4","number":"4","vip":false},"3_5":{"row":3,"real_pos":"5","number":"5","vip":false},"3_6":{"row":3,"real_pos":"6","number":"6","vip":false},"3_7":{"row":3,"real_pos":"7","number":"7","vip":false},"4_1":{"row":4,"real_pos":"1","number":"1","vip":false},"4_2":{"row":4,"real_pos":"2","number":"2","vip":false},"4_3":{"row":4,"real_pos":"3","number":"3","vip":false},"4_4":{"row":4,"real_pos":"4","number":"4","vip":false},"4_5":{"row":4,"real_pos":"5","number":"5","vip":false},"4_6":{"row":4,"real_pos":"6","number":"6","vip":false},"4_7":{"row":4,"real_pos":"7","number":"7","vip":false},"5_1":{"row":5,"real_pos":"1","number":"1","vip":false},"5_2":{"row":5,"real_pos":"2","number":"2","vip":false},"5_3":{"row":5,"real_pos":"3","number":"3","vip":false},"5_4":{"row":5,"real_pos":"4","number":"4","vip":false},"5_5":{"row":5,"real_pos":"5","number":"5","vip":false},"5_6":{"row":5,"real_pos":"6","number":"6","vip":false},"5_7":{"row":5,"real_pos":"7","number":"7","vip":false},"6_1":{"row":6,"real_pos":"1","number":"1","vip":false},"6_2":{"row":6,"real_pos":"2","number":"2","vip":false},"6_3":{"row":6,"real_pos":"3","number":"3","vip":false},"6_4":{"row":6,"real_pos":"4","number":"4","vip":false},"6_5":{"row":6,"real_pos":"5","number":"5","vip":false},"6_6":{"row":6,"real_pos":"6","number":"6","vip":false},"6_7":{"row":6,"real_pos":"7","number":"7","vip":false},"7_1":{"row":7,"real_pos":"1","number":" ","vip":false},"7_2":{"row":7,"real_pos":"2","number":" ","vip":false},"7_3":{"row":7,"real_pos":"3","number":" ","vip":false},"7_4":{"row":7,"real_pos":"4","number":" ","vip":false},"7_5":{"row":7,"real_pos":"5","number":" ","vip":false},"7_6":{"row":7,"real_pos":"6","number":" ","vip":false},"7_7":{"row":7,"real_pos":"7","number":" ","vip":false},"8_1":{"row":8,"real_pos":"1","number":"1","vip":false},"8_2":{"row":8,"real_pos":"2","number":"2","vip":false},"8_3":{"row":8,"real_pos":"3","number":"3","vip":false},"8_4":{"row":8,"real_pos":"4","number":"4","vip":true},"8_5":{"row":8,"real_pos":"5","number":"5","vip":true},"8_6":{"row":8,"real_pos":"6","number":"6","vip":false},"8_7":{"row":8,"real_pos":"7","number":"7","vip":false},"9_1":{"row":9,"real_pos":"1","number":"1","vip":false},"9_2":{"row":9,"real_pos":"2","number":"2","vip":false},"9_3":{"row":9,"real_pos":"3","number":"3","vip":false},"9_4":{"row":9,"real_pos":"4","number":"4","vip":false},"9_5":{"row":9,"real_pos":"5","number":"5","vip":false},"9_6":{"row":9,"real_pos":"6","number":"6","vip":false},"9_7":{"row":9,"real_pos":"7","number":"7","vip":false},"10_1":{"row":10,"real_pos":"1","number":"1","vip":false},"10_2":{"row":10,"real_pos":"2","number":"2","vip":false},"10_3":{"row":10,"real_pos":"3","number":"3","vip":false},"10_4":{"row":10,"real_pos":"4","number":"4","vip":false},"10_5":{"row":10,"real_pos":"5","number":"5","vip":false},"10_6":{"row":10,"real_pos":"6","number":"6","vip":false},"10_7":{"row":10,"real_pos":"7","number":"7","vip":false},"11_1":{"row":11,"real_pos":"1","number":"1","vip":false},"11_2":{"row":11,"real_pos":"2","number":"2","vip":false},"11_3":{"row":11,"real_pos":"3","number":"3","vip":false},"11_4":{"row":11,"real_pos":"4","number":"4","vip":false},"11_5":{"row":11,"real_pos":"5","number":"5","vip":false},"11_6":{"row":11,"real_pos":"6","number":"6","vip":false},"11_7":{"row":11,"real_pos":"7","number":"7","vip":false},"12_1":{"row":12,"real_pos":"1","number":"1","vip":false},"12_2":{"row":12,"real_pos":"2","number":"2","vip":false},"12_3":{"row":12,"real_pos":"3","number":"3","vip":false},"12_4":{"row":12,"real_pos":"4","number":"4","vip":false},"12_5":{"row":12,"real_pos":"5","number":"5","vip":false},"12_6":{"row":12,"real_pos":"6","number":"6","vip":false},"12_7":{"row":12,"real_pos":"7","number":"7","vip":false},"13_1":{"row":13,"real_pos":"1","number":"1","vip":false},"13_2":{"row":13,"real_pos":"2","number":"2","vip":false},"13_3":{"row":13,"real_pos":"3","number":"3","vip":false},"13_4":{"row":13,"real_pos":"4","number":"4","vip":false},"13_5":{"row":13,"real_pos":"5","number":"5","vip":false},"13_6":{"row":13,"real_pos":"6","number":"6","vip":false},"13_7":{"row":13,"real_pos":"7","number":"7","vip":false},"14_1":{"row":14,"real_pos":"1","number":"1","vip":false},"14_2":{"row":14,"real_pos":"2","number":"2","vip":false},"14_3":{"row":14,"real_pos":"3","number":"3","vip":false},"14_4":{"row":14,"real_pos":"4","number":"4","vip":false},"14_5":{"row":14,"real_pos":"5","number":"5","vip":false},"14_6":{"row":14,"real_pos":"6","number":"6","vip":false},"14_7":{"row":14,"real_pos":"7","number":"7","vip":false},"15_1":{"row":15,"real_pos":"1","number":"1","vip":false},"15_2":{"row":15,"real_pos":"2","number":"2","vip":false},"15_3":{"row":15,"real_pos":"3","number":"3","vip":false},"15_4":{"row":15,"real_pos":"4","number":"4","vip":false},"15_5":{"row":15,"real_pos":"5","number":"5","vip":false},"15_6":{"row":15,"real_pos":"6","number":"6","vip":false},"15_7":{"row":15,"real_pos":"7","number":"7","vip":false},"16_1":{"row":16,"real_pos":"1","number":"1","vip":false},"16_2":{"row":16,"real_pos":"2","number":"2","vip":false},"16_3":{"row":16,"real_pos":"3","number":"3","vip":false},"16_4":{"row":16,"real_pos":"4","number":"4","vip":false},"16_5":{"row":16,"real_pos":"5","number":"5","vip":false},"16_6":{"row":16,"real_pos":"6","number":"6","vip":false},"16_7":{"row":16,"real_pos":"7","number":"7","vip":false},"17_1":{"row":17,"real_pos":"1","number":"1","vip":false},"17_2":{"row":17,"real_pos":"2","number":"2","vip":false},"17_3":{"row":17,"real_pos":"3","number":"3","vip":false},"17_4":{"row":17,"real_pos":"4","number":"4","vip":false},"17_5":{"row":17,"real_pos":"5","number":"5","vip":false},"17_6":{"row":17,"real_pos":"6","number":"6","vip":false},"17_7":{"row":17,"real_pos":"7","number":"7","vip":false},"18_1":{"row":18,"real_pos":"1","number":"1","vip":false},"18_2":{"row":18,"real_pos":"2","number":"2","vip":false},"18_3":{"row":18,"real_pos":"3","number":"3","vip":false},"18_4":{"row":18,"real_pos":"4","number":"4","vip":false},"18_5":{"row":18,"real_pos":"5","number":"5","vip":false},"18_6":{"row":18,"real_pos":"6","number":"6","vip":false},"18_7":{"row":18,"real_pos":"7","number":"7","vip":false}}'], 'hall_gallery-TOTAL_FORMS': ['4'], 'hall_gallery-INITIAL_FORMS': ['0'], 'hall_gallery-MIN_NUM_FORMS': ['0'], 'hall_gallery-MAX_NUM_FORMS': ['1000'], 'hall_gallery-0-id': [''], 'hall_gallery-0-image': [''], 'hall_gallery-1-id': [''], 'hall_gallery-1-image': [''], 'hall_gallery-2-id': [''], 'hall_gallery-2-image': [''], 'hall_gallery-3-id': [''], 'hall_gallery-3-image': [''], 'hall_gallery-__prefix__-image': [''], 'seo_url': [''], 'seo_title': [''], 'seo_keywords': [''], 'seo_description': ['']}>
+INFO 2021-06-18 09:49:45,273 views {'1_1': {'row': 1, 'real_pos': '1', 'number': '1', 'vip': False}, '1_2': {'row': 1, 'real_pos': '2', 'number': '2', 'vip': False}, '1_3': {'row': 1, 'real_pos': '3', 'number': '3', 'vip': False}, '1_4': {'row': 1, 'real_pos': '4', 'number': '4', 'vip': False}, '1_5': {'row': 1, 'real_pos': '5', 'number': '5', 'vip': False}, '1_6': {'row': 1, 'real_pos': '6', 'number': '6', 'vip': False}, '1_7': {'row': 1, 'real_pos': '7', 'number': '7', 'vip': False}, '1_8': {'row': 1, 'real_pos': '8', 'number': '8', 'vip': False}, '1_9': {'row': 1, 'real_pos': '9', 'number': '9', 'vip': False}, '1_10': {'row': 1, 'real_pos': '10', 'number': '10', 'vip': False}, '2_1': {'row': 2, 'real_pos': '1', 'number': '1', 'vip': False}, '2_2': {'row': 2, 'real_pos': '2', 'number': '2', 'vip': False}, '2_3': {'row': 2, 'real_pos': '3', 'number': '3', 'vip': False}, '2_4': {'row': 2, 'real_pos': '4', 'number': '4', 'vip': False}, '2_5': {'row': 2, 'real_pos': '5', 'number': '5', 'vip': False}, '2_6': {'row': 2, 'real_pos': '6', 'number': '6', 'vip': False}, '2_7': {'row': 2, 'real_pos': '7', 'number': '7', 'vip': False}, '2_8': {'row': 2, 'real_pos': '8', 'number': '8', 'vip': False}, '2_9': {'row': 2, 'real_pos': '9', 'number': '9', 'vip': False}, '2_10': {'row': 2, 'real_pos': '10', 'number': '10', 'vip': False}, '3_1': {'row': 3, 'real_pos': '1', 'number': '1', 'vip': False}, '3_2': {'row': 3, 'real_pos': '2', 'number': '2', 'vip': False}, '3_3': {'row': 3, 'real_pos': '3', 'number': '3', 'vip': False}, '3_4': {'row': 3, 'real_pos': '4', 'number': '4', 'vip': False}, '3_5': {'row': 3, 'real_pos': '5', 'number': '5', 'vip': False}, '3_6': {'row': 3, 'real_pos': '6', 'number': '6', 'vip': False}, '3_7': {'row': 3, 'real_pos': '7', 'number': '7', 'vip': False}, '3_8': {'row': 3, 'real_pos': '8', 'number': '8', 'vip': False}, '3_9': {'row': 3, 'real_pos': '9', 'number': '9', 'vip': False}, '3_10': {'row': 3, 'real_pos': '10', 'number': '10', 'vip': False}, '4_1': {'row': 4, 'real_pos': '1', 'number': '1', 'vip': False}, '4_2': {'row': 4, 'real_pos': '2', 'number': '2', 'vip': False}, '4_3': {'row': 4, 'real_pos': '3', 'number': '3', 'vip': False}, '4_4': {'row': 4, 'real_pos': '4', 'number': '4', 'vip': False}, '4_5': {'row': 4, 'real_pos': '5', 'number': '5', 'vip': False}, '4_6': {'row': 4, 'real_pos': '6', 'number': '6', 'vip': False}, '4_7': {'row': 4, 'real_pos': '7', 'number': '7', 'vip': False}, '4_8': {'row': 4, 'real_pos': '8', 'number': '8', 'vip': False}, '4_9': {'row': 4, 'real_pos': '9', 'number': '9', 'vip': False}, '4_10': {'row': 4, 'real_pos': '10', 'number': '10', 'vip': False}, '5_1': {'row': 5, 'real_pos': '1', 'number': '1', 'vip': False}, '5_2': {'row': 5, 'real_pos': '2', 'number': '2', 'vip': False}, '5_3': {'row': 5, 'real_pos': '3', 'number': '3', 'vip': False}, '5_4': {'row': 5, 'real_pos': '4', 'number': '4', 'vip': False}, '5_5': {'row': 5, 'real_pos': '5', 'number': '5', 'vip': False}, '5_6': {'row': 5, 'real_pos': '6', 'number': '6', 'vip': False}, '5_7': {'row': 5, 'real_pos': '7', 'number': '7', 'vip': False}, '5_8': {'row': 5, 'real_pos': '8', 'number': '8', 'vip': False}, '5_9': {'row': 5, 'real_pos': '9', 'number': '9', 'vip': False}, '5_10': {'row': 5, 'real_pos': '10', 'number': '10', 'vip': False}, '6_1': {'row': 6, 'real_pos': '1', 'number': '1', 'vip': False}, '6_2': {'row': 6, 'real_pos': '2', 'number': '2', 'vip': False}, '6_3': {'row': 6, 'real_pos': '3', 'number': '3', 'vip': False}, '6_4': {'row': 6, 'real_pos': '4', 'number': '4', 'vip': False}, '6_5': {'row': 6, 'real_pos': '5', 'number': '5', 'vip': False}, '6_6': {'row': 6, 'real_pos': '6', 'number': '6', 'vip': False}, '6_7': {'row': 6, 'real_pos': '7', 'number': '7', 'vip': False}, '6_8': {'row': 6, 'real_pos': '8', 'number': '8', 'vip': False}, '6_9': {'row': 6, 'real_pos': '9', 'number': '9', 'vip': False}, '6_10': {'row': 6, 'real_pos': '10', 'number': '10', 'vip': False}, '7_1': {'row': 7, 'real_pos': '1', 'number': '1', 'vip': False}, '7_2': {'row': 7, 'real_pos': '2', 'number': '2', 'vip': False}, '7_3': {'row': 7, 'real_pos': '3', 'number': '3', 'vip': False}, '7_4': {'row': 7, 'real_pos': '4', 'number': '4', 'vip': False}, '7_5': {'row': 7, 'real_pos': '5', 'number': '5', 'vip': False}, '7_6': {'row': 7, 'real_pos': '6', 'number': '6', 'vip': False}, '7_7': {'row': 7, 'real_pos': '7', 'number': '7', 'vip': False}, '7_8': {'row': 7, 'real_pos': '8', 'number': '8', 'vip': False}, '7_9': {'row': 7, 'real_pos': '9', 'number': '9', 'vip': False}, '7_10': {'row': 7, 'real_pos': '10', 'number': '10', 'vip': False}, '8_1': {'row': 8, 'real_pos': '1', 'number': '1', 'vip': False}, '8_2': {'row': 8, 'real_pos': '2', 'number': '2', 'vip': False}, '8_3': {'row': 8, 'real_pos': '3', 'number': '3', 'vip': False}, '8_4': {'row': 8, 'real_pos': '4', 'number': '4', 'vip': False}, '8_5': {'row': 8, 'real_pos': '5', 'number': '5', 'vip': False}, '8_6': {'row': 8, 'real_pos': '6', 'number': '6', 'vip': False}, '8_7': {'row': 8, 'real_pos': '7', 'number': '7', 'vip': False}, '8_8': {'row': 8, 'real_pos': '8', 'number': '8', 'vip': False}, '8_9': {'row': 8, 'real_pos': '9', 'number': '9', 'vip': False}, '8_10': {'row': 8, 'real_pos': '10', 'number': '10', 'vip': False}, '9_1': {'row': 9, 'real_pos': '1', 'number': '1', 'vip': False}, '9_2': {'row': 9, 'real_pos': '2', 'number': '2', 'vip': False}, '9_3': {'row': 9, 'real_pos': '3', 'number': '3', 'vip': False}, '9_4': {'row': 9, 'real_pos': '4', 'number': '4', 'vip': False}, '9_5': {'row': 9, 'real_pos': '5', 'number': '5', 'vip': False}, '9_6': {'row': 9, 'real_pos': '6', 'number': '6', 'vip': False}, '9_7': {'row': 9, 'real_pos': '7', 'number': '7', 'vip': False}, '9_8': {'row': 9, 'real_pos': '8', 'number': '8', 'vip': False}, '9_9': {'row': 9, 'real_pos': '9', 'number': '9', 'vip': False}, '9_10': {'row': 9, 'real_pos': '10', 'number': '10', 'vip': False}, '10_1': {'row': 10, 'real_pos': '1', 'number': '1', 'vip': False}, '10_2': {'row': 10, 'real_pos': '2', 'number': '2', 'vip': False}, '10_3': {'row': 10, 'real_pos': '3', 'number': '3', 'vip': False}, '10_4': {'row': 10, 'real_pos': '4', 'number': '4', 'vip': False}, '10_5': {'row': 10, 'real_pos': '5', 'number': '5', 'vip': False}, '10_6': {'row': 10, 'real_pos': '6', 'number': '6', 'vip': False}, '10_7': {'row': 10, 'real_pos': '7', 'number': '7', 'vip': False}, '10_8': {'row': 10, 'real_pos': '8', 'number': '8', 'vip': False}, '10_9': {'row': 10, 'real_pos': '9', 'number': '9', 'vip': False}, '10_10': {'row': 10, 'real_pos': '10', 'number': '10', 'vip': False}}
+INFO 2021-06-18 09:52:38,304 views {'1_1': {'row': 1, 'real_pos': '1', 'number': '1', 'vip': False}, '1_2': {'row': 1, 'real_pos': '2', 'number': '2', 'vip': False}, '1_3': {'row': 1, 'real_pos': '3', 'number': '3', 'vip': False}, '2_1': {'row': 2, 'real_pos': '1', 'number': '1', 'vip': False}, '2_2': {'row': 2, 'real_pos': '2', 'number': '2', 'vip': False}, '2_3': {'row': 2, 'real_pos': '3', 'number': '3', 'vip': False}, '3_1': {'row': 3, 'real_pos': '1', 'number': '1', 'vip': False}, '3_2': {'row': 3, 'real_pos': '2', 'number': '2', 'vip': False}, '3_3': {'row': 3, 'real_pos': '3', 'number': '3', 'vip': False}}
+INFO 2021-06-18 10:12:44,533 utils {'1_1': {'row': 1, 'real_pos': '1', 'number': '1', 'vip': False}, '1_2': {'row': 1, 'real_pos': '2', 'number': '2', 'vip': False}, '1_3': {'row': 1, 'real_pos': '3', 'number': '3', 'vip': False}, '1_4': {'row': 1, 'real_pos': '4', 'number': '4', 'vip': False}, '1_5': {'row': 1, 'real_pos': '5', 'number': '5', 'vip': False}, '2_1': {'row': 2, 'real_pos': '1', 'number': '1', 'vip': False}, '2_2': {'row': 2, 'real_pos': '2', 'number': '2', 'vip': False}, '2_3': {'row': 2, 'real_pos': '3', 'number': '3', 'vip': False}, '2_4': {'row': 2, 'real_pos': '4', 'number': '4', 'vip': False}, '2_5': {'row': 2, 'real_pos': '5', 'number': '5', 'vip': False}, '3_1': {'row': 3, 'real_pos': '1', 'number': '1', 'vip': False}, '3_2': {'row': 3, 'real_pos': '2', 'number': '2', 'vip': False}, '3_3': {'row': 3, 'real_pos': '3', 'number': '3', 'vip': False}, '3_4': {'row': 3, 'real_pos': '4', 'number': '4', 'vip': False}, '3_5': {'row': 3, 'real_pos': '5', 'number': '5', 'vip': False}, '4_1': {'row': 4, 'real_pos': '1', 'number': '1', 'vip': False}, '4_2': {'row': 4, 'real_pos': '2', 'number': '2', 'vip': False}, '4_3': {'row': 4, 'real_pos': '3', 'number': '3', 'vip': False}, '4_4': {'row': 4, 'real_pos': '4', 'number': '4', 'vip': False}, '4_5': {'row': 4, 'real_pos': '5', 'number': '5', 'vip': False}, '5_1': {'row': 5, 'real_pos': '1', 'number': '1', 'vip': False}, '5_2': {'row': 5, 'real_pos': '2', 'number': '2', 'vip': False}, '5_3': {'row': 5, 'real_pos': '3', 'number': '3', 'vip': False}, '5_4': {'row': 5, 'real_pos': '4', 'number': '4', 'vip': False}, '5_5': {'row': 5, 'real_pos': '5', 'number': '5', 'vip': False}}
+INFO 2021-06-18 10:21:31,632 utils {'1_1': {'row': 1, 'real_pos': '1', 'number': ' ', 'vip': False}, '1_2': {'row': 1, 'real_pos': '2', 'number': '1', 'vip': False}, '1_3': {'row': 1, 'real_pos': '3', 'number': '2', 'vip': False}, '2_1': {'row': 2, 'real_pos': '1', 'number': '1', 'vip': False}, '2_2': {'row': 2, 'real_pos': '2', 'number': ' ', 'vip': False}, '2_3': {'row': 2, 'real_pos': '3', 'number': '2', 'vip': False}, '3_1': {'row': 3, 'real_pos': '1', 'number': '1', 'vip': False}, '3_2': {'row': 3, 'real_pos': '2', 'number': '2', 'vip': False}, '3_3': {'row': 3, 'real_pos': '3', 'number': ' ', 'vip': False}}
+ERROR 2021-06-18 14:07:12,141 views False
+ERROR 2021-06-18 14:07:32,897 views False
+ERROR 2021-06-18 14:08:13,003 views False
+ERROR 2021-06-18 14:08:33,135 views False
+ERROR 2021-06-18 14:09:14,070 views False
+ERROR 2021-06-18 14:16:13,428 views True
+ERROR 2021-06-18 14:21:13,030 views False
+ERROR 2021-06-18 14:25:01,258 views False
+ERROR 2021-06-18 14:30:45,858 views True
+ERROR 2021-06-18 14:32:38,516 views True
+ERROR 2021-06-18 14:33:57,073 views True
+ERROR 2021-06-18 14:34:51,411 views True
+ERROR 2021-06-18 16:32:03,012 views True

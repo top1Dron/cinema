@@ -97,8 +97,8 @@
                             {% render_field form.payment_card_number class="form-control bg-light" %}
                         </div>
                         <div class="col-md-6">
-                            <h4 class="form-label">{{form.date_joined.label}}</h4>
-                            <input type="text" class="form-control bg-secondary" id="{{form.date_joined.auto_id}}" name="{{form.date_joined.name}}" value="{{form.date_joined.value|date:"d.m.Y"}}">
+                            <h4 class="form-label">{% trans "Дата регистрации" %}</h4>
+                            <input type="text" class="form-control bg-secondary" name="{{form.instance.date_joined.name}}" disabled value="{{form.instance.date_joined|date:"d.m.Y"}}">
                         </div>
                     </div>
                     <div class="row mt-2">

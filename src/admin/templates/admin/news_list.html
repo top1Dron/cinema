@@ -31,8 +31,8 @@
                     <th></th>
                   </tr>
                   </thead>
-                  {% for record in news %}
                   <tbody>
+                  {% for record in news %}
                     <tr>
                         <td>{{record.title}}</td>
                         <td>{{record.published}}</td>
@@ -56,8 +56,8 @@
                           </div>
                         </td>
                     </tr>
-                  </tbody>
                   {% endfor %}
+                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->

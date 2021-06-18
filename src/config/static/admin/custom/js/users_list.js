@@ -28,6 +28,12 @@ $(function () {
     $('#users_table').DataTable({
         "responsive": true, 
         "lengthChange": false, 
-        "autoWidth": false,
+        "autoWidth": true,
+        "columnDefs": [
+            {
+            "targets": [8], 
+            "orderable": false, 
+            "visible": true }
+        ]
     }).buttons().container().appendTo('#users_table_wrapper .col-md-6:eq(0)');
 });

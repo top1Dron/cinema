@@ -1,4 +1,3 @@
-from re import T
 from modeltranslation.translator import register, TranslationOptions
 from app.models import (Movie, Cinema, Hall, News, Stock, 
     CafeBarPage, VipHallPage, AboutCinemaPage, AdvertisePage, 

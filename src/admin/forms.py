@@ -4,12 +4,45 @@ from django.contrib.contenttypes.forms import generic_inlineformset_factory
 from django.forms.widgets import RadioSelect
 from django.utils.translation import ugettext_lazy as _
 
+from admin.models import Mail
 from app.models import (AboutCinemaPage, AdvertisePage, CafeBarPage, 
     ChildrenRoomPage, Movie, News, Stock, SeoParameters, Image, 
     MainPageBanner, NewsAndStockBanner, MainPage, VipHallPage, 
-    MobileAppPage)
+    MobileAppPage, Cinema, Hall)
 from users.models import User
 
+
+class AdminCinemaForm(forms.ModelForm):
+    class Meta:
+        model = Cinema
+        fields = ('name_ru', 'name_uk', 'description_ru', 'description_uk', 'condition_ru', 'condition_uk', 'logo', 'banner')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['name_uk'].label = 'Назва кінотеатру (українською)'
+        self.fields['name_ru'].label = 'Название кинотеатра (на русском)'
+        self.fields['description_uk'].label = 'Опис (українською)'
+        self.fields['description_ru'].label = 'Описание (на русском)'
+        self.fields['condition_uk'].label = 'Умови (українською)'
+        self.fields['condition_ru'].label = 'Условия (на русском)'
+
+
+class AdminHallForm(forms.ModelForm):
+    supported_types = forms.MultipleChoiceField(
+        required=True,
+        widget=forms.CheckboxSelectMultiple,
+        choices=Movie.MOVIE_TYPES
+    )
+
+    class Meta:
+        model = Hall
+        fields = ('number', 'description_ru', 'description_uk', 'banner', 'supported_types')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['description_uk'].label = 'Опис (українською)'
+        self.fields['description_ru'].label = 'Описание (на русском)'
+        self.fields['supported_types'].label = _('Поддерживаемые форматы')
 
 class AdminMovieForm(forms.ModelForm):
     type = forms.MultipleChoiceField(
@@ -215,7 +248,18 @@ class UserUpdateForm(forms.ModelForm):
             'email', 'address', 'payment_card_number', 
             'language', 'gender', 'phone_number',
             'birth_date', 'city', 'is_active', 'is_staff',
-            'is_superuser', 'date_joined')
+            'is_superuser')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+
+class MailingForm(forms.ModelForm):
+    recipients = forms.ChoiceField(label=_('Выбрать email кому слать'), choices=(
+        ('0', _('Все пользователи')), ('1', _('Выбранные пользователи'))),
+        widget=RadioSelect(attrs={'class': 'form-check-input'}))
+    file_id = forms.CharField(max_length=200)
+    
+    class Meta:
+        model = Mail
+        fields = ('email',)

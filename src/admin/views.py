@@ -5,19 +5,21 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.contenttypes.forms import generic_inlineformset_factory
-from django.forms import utils
 from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
+from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
 
-from app.models import Image, Movie, News, Stock
-from admin.forms import AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, Gallery, UserUpdateForm
+from app.models import Hall, HallPlace, Image, Movie, News, Stock, Cinema
+from admin.forms import (AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, 
+    Gallery, UserUpdateForm, MailingForm, AdminCinemaForm, AdminHallForm)
+from admin.models import Mail
 from admin.utils import (get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page, 
     get_forms_in_main_page, get_forms_in_cafe_bar_pages, get_forms_in_vip_hall_page,
     get_forms_in_about_cinema_page, get_forms_in_advertise_page, get_forms_in_children_room_page,
-    get_forms_in_mobile_app_page)
+    get_forms_in_mobile_app_page, make_mailing, save_hall_places, update_hall_places)
 from app import utils
 from users.forms import LoginForm
 from users.models import User
@@ -176,6 +178,66 @@ def movie_create(request):
 
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))
+def cinema_create(request):
+    form = AdminCinemaForm()
+    seo_form = SeoParametersForm()
+    gallery = Gallery(queryset=Image.objects.none(), prefix="cinema_gallery")
+
+    if request.method == 'POST':
+        form = AdminCinemaForm(request.POST, request.FILES)
+        logger.info(form.is_valid())
+        logger.error(form.errors)
+        if form.is_valid():
+            movie = form.save(commit=False)
+            seo_form = SeoParametersForm(request.POST)
+            gallery = Gallery(request.POST, request.FILES, instance=movie, prefix="cinema_gallery")
+
+            if seo_form.is_valid() and gallery.is_valid():
+                seo_obj = seo_form.save()
+                movie.seo = seo_obj
+                movie.save()
+                gallery.save()
+
+                return redirect(reverse_lazy('admin:cinemas'))
+    return render(request, 'admin/cinema_add.html', context={
+        'form': form, 
+        'seo_form': seo_form, 
+        'gallery': gallery
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def hall_create(request, cinema_pk):
+    cinema = utils.get_cinema_by_params(pk=cinema_pk)
+    form = AdminHallForm()
+    seo_form = SeoParametersForm()
+    gallery = Gallery(queryset=Image.objects.none(), prefix="hall_gallery")
+    if request.method == 'POST':
+            form = AdminHallForm(request.POST, request.FILES)
+            logger.error(form.is_valid())
+            if form.is_valid():
+                hall = form.save(commit=False)
+                seo_form = SeoParametersForm(request.POST)
+                gallery = Gallery(request.POST, request.FILES, instance=hall, prefix="hall_gallery")
+                if (seo_form.is_valid() and gallery.is_valid() and
+                    request.POST.get('json_scheme') is not None and request.POST.get('json_scheme')):
+                    seo_obj = seo_form.save()
+                    hall.seo = seo_obj
+                    hall.cinema = cinema
+                    hall.save()
+                    gallery.save()
+                    json_scheme = request.POST.get('json_scheme')
+                    save_hall_places(json_scheme, hall)
+                    return redirect(reverse_lazy('admin:cinema_update', kwargs={'pk': cinema_pk}))
+    return render(request, 'admin/hall_add.html', {
+        'form': form,
+        'seo_form': seo_form, 
+        'gallery': gallery,
+        'cinema': cinema
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
 def news_create(request):
     form = AdminNewsForm()
     seo_form = SeoParametersForm()
@@ -235,7 +297,7 @@ def update_movie_info(request, pk):
     form = AdminMovieForm(instance=movie)
     seo_form = SeoParametersForm(instance=movie.seo)
     extra_count = 4 - movie.gallery.all().count() % 4
-    extra_count = 0 if extra_count == 4 else extra_count
+    extra_count = 0 if extra_count == 4 and movie.gallery.all().count() > 0 else extra_count
     UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
         extra=extra_count)
     gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=movie.gallery.all(), instance=movie, prefix="movies_gallery")
@@ -255,6 +317,86 @@ def update_movie_info(request, pk):
         'form': form, 
         'seo_form': seo_form, 
         'gallery': gallery
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def update_cinema_info(request, pk):
+    cinema = utils.get_cinema_by_params(pk=pk)
+    form = AdminCinemaForm(instance=cinema)
+    seo_form = SeoParametersForm(instance=cinema.seo)
+    extra_count = 4 - cinema.gallery.all().count() % 4
+    extra_count = 0 if extra_count == 4 and cinema.gallery.all().count() > 0 else extra_count
+    UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
+        extra=extra_count)
+    gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=cinema.gallery.all(), instance=cinema, prefix="cinema_gallery")
+    halls = utils.get_cinema_halls(cinema.pk)
+    if request.method == 'POST':
+        form = AdminCinemaForm(request.POST, request.FILES, instance=cinema)
+        if form.is_valid():
+            cinema = form.save(commit=False)
+            seo_form = SeoParametersForm(request.POST)
+
+            if seo_form.is_valid() and gallery.is_valid():
+                seo_obj = seo_form.save()
+                cinema.seo = seo_obj
+                cinema.save()
+                gallery.save()
+                return redirect(reverse_lazy('admin:cinemas'))
+    return render(request, 'admin/cinema_update.html', context={
+        'form': form, 
+        'seo_form': seo_form, 
+        'gallery': gallery,
+        'halls': halls
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def update_hall_info(request, cinema_pk, pk):
+    cinema = utils.get_cinema_by_params(pk=cinema_pk)
+    hall = utils.get_hall_by_params(pk=pk)
+    rows = max(place.real_row for place in hall.ordered_places)
+    cols = max(place.real_position for place in hall.ordered_places)
+    px = 50
+    if cols > 17 and cols < 20:
+        px = 45
+    elif cols > 19 and cols < 22:
+        px = 40
+    elif cols >= 22 and cols < 24:
+        px = 35
+    elif cols >= 24 and cols < 27:
+        px = 30
+    elif cols >= 27:
+        px = 27
+    form = AdminHallForm(instance=hall)
+    seo_form = SeoParametersForm(instance=hall.seo)
+    extra_count = 4 - hall.gallery.all().count() % 4
+    extra_count = 0 if extra_count == 4 and hall.gallery.all().count() > 0 else extra_count
+    UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
+        extra=extra_count)
+    gallery = UpdateGallery(request.POST or None, request.FILES or None, queryset=hall.gallery.all(), instance=hall, prefix="hall_gallery")
+    if request.method == 'POST':
+        form = AdminHallForm(request.POST, request.FILES, instance=hall)
+        if form.is_valid():
+            hall = form.save(commit=False)
+            seo_form = SeoParametersForm(request.POST)
+            if seo_form.is_valid() and gallery.is_valid():
+                seo_obj = seo_form.save()
+                hall.seo = seo_obj
+                hall.save()
+                gallery.save()
+                if request.POST.get('json_scheme') is not None and request.POST.get('json_scheme'):
+                    json_scheme = request.POST.get('json_scheme')
+                    update_hall_places(json_scheme, hall)
+                return redirect(reverse_lazy('admin:cinema_update', kwargs={'pk': cinema_pk}))
+    return render(request, 'admin/hall_update.html', context={
+        'form': form, 
+        'seo_form': seo_form, 
+        'gallery': gallery,
+        'cinema': cinema,
+        'rows': range(1, rows + 1),
+        'cols': range(1, cols + 1),
+        'px': px,
     })
 
 
@@ -295,7 +437,7 @@ def update_stock_info(request, pk):
     form = AdminStockForm(instance=stock)
     seo_form = SeoParametersForm(instance=stock.seo)
     extra_count = 4 - stock.gallery.all().count() % 4
-    extra_count = 0 if extra_count == 4 else extra_count
+    extra_count = 0 if extra_count == 4 and stock.gallery.all().count() > 0 else extra_count
     UpdateGallery = generic_inlineformset_factory(Image, can_delete=True,
         extra=extra_count)
     gallery = UpdateGallery(request.POST or None, request.FILES or None, 
@@ -337,6 +479,22 @@ def api_delete_movie(request, pk):
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))
 @require_http_methods(['DELETE'])
+def api_delete_cinema(request, pk):
+    cinema = utils.get_cinema_by_params(pk=pk)
+    cinema.delete()
+    return JsonResponse({})
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+@require_http_methods(['DELETE'])
+def api_delete_hall(request, pk):
+    hall = utils.get_hall_by_params(pk=pk)
+    hall.delete()
+    return JsonResponse({})
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+@require_http_methods(['DELETE'])
 def api_delete_news_object(request, pk):
     news_object = utils.get_news_object_by_params(pk=pk)
     news_object.delete()
@@ -359,6 +517,13 @@ def api_delete_user(request, email):
     return JsonResponse({})
 
 
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+@require_http_methods(['DELETE'])
+def api_delete_html_email(request, pk):
+    html_email = get_object_or_404(Mail, pk=pk)
+    html_email.delete()
+    return JsonResponse({})
+
 class MovieListView(ListView):
     model = Movie
     queryset = utils.get_active_movies()
@@ -370,6 +535,13 @@ class MovieListView(ListView):
         context['soon_movies'] = utils.get_soon_movies()
         context['retired_movies'] = utils.get_retired_movies()
         return context
+
+
+class CinemaListView(ListView):
+    model = Cinema
+    queryset = utils.get_cinemas()
+    context_object_name = 'cinemas'
+    template_name = 'admin/cinemas_list.html'
 
 
 class NewsListView(ListView):
@@ -427,11 +599,41 @@ def logout(request):
     return redirect(reverse_lazy('admin:login'))
 
 
+@staff_member_required(login_url=reverse_lazy('admin:login'))
 def change_user_info(request, email):
     user = get_user_by_email(email)
     form = UserUpdateForm(request.POST or None, instance=user)
     if request.method == 'POST':
+        logger.info(request.POST)
+        logger.info(form.is_valid())
+        logger.error(form.errors.items())
         if form.is_valid():
             form.save()
             return redirect(reverse_lazy('admin:users'))
     return render(request, 'admin/user_update.html', {'form':form})
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def mailing(request):
+    mails = Mail.objects.order_by('-uploaded')[:5]
+    form = MailingForm(initial={'recipients': '0'})
+    if request.method == 'POST':
+        make_mailing(request)
+        # form = MailingForm(request.POST, request.FILES)
+        # if form.is_valid():
+        #     logger.info(form.cleaned_data['filename'])
+        #     form.save()
+        # if not form.is_valid():
+        #     for field, errors in form.errors.items():
+        #         error_str = f'{field}: '
+        #         for error in errors:
+        #             error_str += f'{error} '
+        #         messages.error(request, error_str)
+        #         logger.info(error_str)
+        # logger.info(form.is_valid())
+        # logger.error(form.errors.items())
+    return render(request, 'admin/mailing.html', {
+        'form': form, 
+        'mails':mails,
+        'users': User.objects.all()
+    })

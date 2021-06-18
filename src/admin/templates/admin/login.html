@@ -32,11 +32,9 @@
 
       {% for message in messages %}
       <div class="alert alert-error">
-        
         <div class="alert alert-danger" role="alert">
           {% render_field message.message %}<button type="button" class="close" data-dismiss="alert">×</button>
         </div>
-        
       </div>
       {% endfor %}
 

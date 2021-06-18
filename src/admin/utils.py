@@ -1,17 +1,66 @@
+import json
 import logging
+from users.models import User
 
+from django.conf import settings
+from django.contrib import messages
 from django.contrib.contenttypes.forms import generic_inlineformset_factory
+from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 from django.utils.translation import ugettext_lazy as _
 
 from admin.forms import (AboutCinemaForm, AdvertiseForm, ChildrenRoomForm, 
     MainBannerForm, Gallery, MainPageForm, NewsAndStockBannerForm, 
-    SeoParametersForm, CafeBarForm, VipHallForm, MobileAppForm)
+    SeoParametersForm, CafeBarForm, VipHallForm, MobileAppForm, MailingForm)
+from admin.models import Mail
 from app.models import (MainPage, MainPageBanner, NewsAndStockBanner, 
     Image, CafeBarPage, VipHallPage, AboutCinemaPage, AdvertisePage,
-    ChildrenRoomPage, MobileAppPage)
+    ChildrenRoomPage, MobileAppPage, HallPlace, Hall)
 
 
 logger = logging.getLogger(__name__)
+
+
+def make_mailing(request):
+    if request.POST.get('recipients') == '0':
+        users = [u.email for u in User.objects.exclude(is_staff=True, is_superuser=True)]
+    else:
+        users = request.POST.get('users').split(',')
+    file_id = request.POST.get('file_id')
+    subject = request.POST.get('subject')
+    message = ''
+    if users[0] == '' or not file_id or not subject:
+        if users[0] == '':
+            messages.error(request, _('Выберите хоть одного получателя письма'))
+        if not file_id:
+            messages.error(request, _('Загрузите email или выберите из существующих'))
+        if not subject:
+            messages.error(request, _('Перед отправкой сообщения укажите его заголовок'))
+        return None
+    if file_id == 'new':
+        form = MailingForm(request.POST, request.FILES)
+        if form.is_valid():
+            file = form.save()
+            message = strip_tags(render_to_string(file.email.url.removeprefix('/media/emails/')))
+    else:
+        mail = get_object_or_404(Mail, pk=file_id)
+        message = strip_tags(render_to_string(mail.email.url.removeprefix('/media/emails/')))
+    send_email(subject, message, users)
+
+
+def send_email(subject:str, message:str, to:list):
+    '''
+    function for send email
+    '''
+    send_mail(
+        subject, 
+        message, 
+        settings.EMAIL_HOST_USER, 
+        to,
+        fail_silently=False,
+    )
 
 
 def get_main_page_banner_obj():
@@ -463,3 +512,20 @@ def update_mobile_app_page(mobile_app, post_dict, files_dict, method):
             gallery.save()
             redirect_available = True
     return form, gallery, seo_form, redirect_available
+
+
+def save_hall_places(json_scheme, hall):
+    scheme = json.loads(json_scheme)
+    for key, value in scheme.items():
+        HallPlace.objects.create(hall=hall,
+            real_row=value['real_row'],
+            row=-1 if value['row'] == ' ' else value['row'],
+            real_position=value['real_pos'],
+            number=-1 if value['number'] == ' ' else value['number'],
+            is_vip=value['vip'],
+        )
+
+
+def update_hall_places(json_scheme, hall):
+    hall.places.all().delete()
+    save_hall_places(json_scheme, hall)

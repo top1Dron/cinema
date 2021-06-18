@@ -3,7 +3,7 @@ import logging
 
 from django.shortcuts import get_object_or_404
 
-from app.models import Movie, Image, News, Stock
+from app.models import Cinema, Movie, Image, News, Stock, Hall
 
 
 logger = logging.getLogger(__name__)
@@ -11,6 +11,14 @@ logger = logging.getLogger(__name__)
 
 def get_movie_by_params(**kwargs):
     return get_object_or_404(Movie, **kwargs)
+
+
+def get_cinema_by_params(**kwargs):
+    return get_object_or_404(Cinema, **kwargs)
+
+
+def get_hall_by_params(**kwargs):
+    return get_object_or_404(Hall, **kwargs)
 
 
 def get_image_by_id(id):
@@ -31,6 +39,14 @@ def get_soon_movies():
 
 def get_retired_movies():
     return get_not_active_movies().filter(release_date__lte=dt.today())
+
+
+def get_cinemas():
+    return Cinema.objects.all().select_related('seo')
+
+
+def get_cinema_halls(cinema_id):
+    return Hall.objects.filter(cinema=get_cinema_by_params(pk=cinema_id))
 
 
 def get_news_object_by_params(**kwargs):
