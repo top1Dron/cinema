@@ -100,6 +100,10 @@
                             {% endif %}
                             <div class="card-body">
                                 {{ image_form.image }}
+                                <div class="d-flex align-items-center">
+                                    <label class="form-col-label mt-3" for="id_on_top_main-{{forloop.counter0}}-url">URL:</label>
+                                    {% render_field image_form.url class="form-control mt-3 bg-light ml-auto"%}
+                                </div>
                             </div>
                         </div>
                     </div>

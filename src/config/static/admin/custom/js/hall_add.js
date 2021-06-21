@@ -64,6 +64,9 @@ $(document).ready(function(){
             $('#col_input').val('');
             return;
         }
+        if($('#id-screen-img').hasClass('d-none') ){
+            $('#id-screen-img').removeClass('d-none');
+        }
         for(var row_num = 1; row_num <= rows; row_num++){
             // create row
             jQuery('<div/>', {

@@ -1,0 +1,90 @@
+{% extends 'admin/base.html' %}
+
+{% load static i18n %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+{% endblock extra_css %}
+
+{% block main_content %}
+    <div class="container-fluid" style="margin-top: 100px;">
+        <div class="row justify-content-md-end">
+            <a href="{% url 'admin:session_add' %}" class="float-end btn btn-primary mb-3">{% trans "Добавить сеанс" %}</a>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">{% trans "Сеансы" %}</h3>
+              </div>
+              <div class="card-body">
+                <table id="sessions_table" class="table table-bordered table-hover">
+                  {% csrf_token %}
+                  <thead>
+                  <tr>
+                    <th></th>
+                    <th>{% trans "Фильм" %}</th>
+                    <th>{% trans "Время сеанса" %}</th>
+                    <th>{% trans "Формат" %}</th>
+                    <th>{% trans "Кинотеатр" %}</th>
+                    <th>{% trans "Номер зала" %}</th>
+                    <th>{% trans "Цена обычная" %}</th>
+                    <th>{% trans "VIP цена" %}</th>
+                    <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {% for session in sessions %}
+                    <tr>
+                        <td class="text-center"><img style="max-height:100px;" src="{{ MEDIA_URL }}{{ session.movie.poster.url }}" alt="{{ session.movie.name }}"></td>
+                        <td>{{session.movie.name}}</td>
+                        <td>{{session.time|date:"d M Y H:i"}}</td>
+                        <td>{{session.get_format_display}}</td>
+                        <td>{{session.hall.cinema.name}}</td>
+                        <td>{{session.hall.number}}</td>
+                        <td>{{session.price}}</td>
+                        <td>{{session.vip_price}}</td>
+                        <td>
+                          <a class="col-6 text-center" href="{% url 'admin:session_update' session.pk %}">{% trans "Детали" %}</a>
+                        </td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+{% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'admin/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+    {% comment %} <script src="{% static 'admin/custom/js/users_list.js' %}"></script> {% endcomment %}
+    <script>
+        $(function () {
+            $('#sessions_table').DataTable({
+                "responsive": true, 
+                "lengthChange": false, 
+                "autoWidth": true,
+                "columnDefs": [
+                    {
+                        "targets": [0, 8], 
+                        "orderable": false, 
+                        "visible": true 
+                    },
+                ]
+            }).buttons().container().appendTo('#users_table_wrapper .col-md-6:eq(0)');
+        });
+    </script>
+{% endblock extra_js %}

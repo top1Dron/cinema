@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{% static 'admin/plugins/summernote/summernote-bs4.min.css' %}">
     <link rel="stylesheet" href="{% static 'admin/plugins/daterangepicker/daterangepicker.css' %}">
     <link rel="stylesheet" href="{% static 'admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/select2/css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
 {% endblock extra_css %}
 
 {% block main_content %}
@@ -19,7 +21,7 @@
                 <h4 for="{{form.name_ru.auto_id}}" class="form-label">{{ form.name_ru.label }}</h4>
                 {% render_field form.name_ru class='form-control bg-light col-md-6'%}
                 {% for error in form.name_ru.errors %}
-                <div class="alert alert-error">
+                <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
                 </div>
@@ -29,14 +31,14 @@
                 <h4 for="{{form.name_uk.auto_id}}" class="form-label">{{ form.name_uk.label }}</h4>
                 {% render_field form.name_uk class='form-control bg-light col-md-6'%}
                 {% for error in form.name_uk.errors %}
-                <div class="alert alert-error">
+                <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
                 </div>
                 {% endfor %}
             </div>
             {% for error in form.description_ru.errors %}
-            <div class="alert alert-error">
+            <div class="alert alert-danger">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 {{ error|striptags }}
             </div>
@@ -77,7 +79,7 @@
                         {{ form.poster }}
                     </div>
                     {% for error in form.poster.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -135,7 +137,7 @@
                         <h4 for="{{form.trailer.auto_id}}" class="form-label">{{ form.trailer.label }}</h4>
                         {% render_field form.trailer class='form-control bg-light'%}
                         {% for error in form.trailer.errors %}
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             {{ error|striptags }}
                         </div>
@@ -147,7 +149,7 @@
                         <h4 for="{{form.duration.auto_id}}" class="form-label">{{ form.duration.label }}</h4>
                         {% render_field form.duration class='form-control bg-light'%}
                         {% for error in form.duration.errors %}
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             {{ error|striptags }}
                         </div>
@@ -164,7 +166,7 @@
                             </div>
                         </div>
                         {% for error in form.release_date.errors %}
-                            <div class="alert alert-error">
+                            <div class="alert alert-danger">
                                 <button type="button" class="close" data-dismiss="alert">×</button>
                                 {{ error|striptags }}
                             </div>
@@ -187,19 +189,185 @@
                 <h4 for="{{form.is_active.auto_id}}" class="form-label">{{form.is_active.label}}</h4>
                 {% render_field form.is_active class='bg-light' data-bootstrap-switch="" data-off-color="dark" data-on-color="light"%}
                 {% for error in form.release_date.errors %}
-                <div class="alert alert-error">
+                <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
                 </div>
                 {% endfor %} 
             </div>
+            <div class="dropdown-divider"></div>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-8"><h3 class="text-center">{% trans "Дополнительная информация о фильме" %}</h3></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.language_ru.auto_id}}" class="form-label">{{ form.language_ru.label }}</h4>
+                            {% render_field form.language_ru class='form-control bg-light'%}
+                            {% for error in form.language_ru.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.director_ru.auto_id}}" class="form-label">{{ form.director_ru.label }}</h4>
+                            {% render_field form.director_ru class='form-control bg-light'%}
+                            {% for error in form.director_ru.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.scriptwriter_ru.auto_id}}" class="form-label">{{ form.scriptwriter_ru.label }}</h4>
+                            {% render_field form.scriptwriter_ru class='form-control bg-light'%}
+                            {% for error in form.scriptwriter_ru.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.language_uk.auto_id}}" class="form-label">{{ form.language_uk.label }}</h4>
+                            {% render_field form.language_uk class='form-control bg-light'%}
+                            {% for error in form.language_uk.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.director_uk.auto_id}}" class="form-label">{{ form.director_uk.label }}</h4>
+                            {% render_field form.director_uk class='form-control bg-light'%}
+                            {% for error in form.director_uk.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.scriptwriter_uk.auto_id}}" class="form-label">{{ form.scriptwriter_uk.label }}</h4>
+                            {% render_field form.scriptwriter_uk class='form-control bg-light'%}
+                            {% for error in form.scriptwriter_uk.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.genre.auto_id}}" class="form-label">{{ form.genre.label }}</h4>
+                            {% trans "Выберите жанры" as placeholder %}
+                            <div class="select2-dark">
+                                {% render_field form.genre class='form-control select2' data-placeholder=placeholder %}
+                            </div>
+                            {% for error in form.genre.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.country_ru.auto_id}}" class="form-label">{{ form.country_ru.label }}</h4>
+                            {% render_field form.country_ru class='form-control bg-light'%}
+                            {% for error in form.country_ru.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.age_limit_ru.auto_id}}" class="form-label">{{ form.age_limit_ru.label }}</h4>
+                            {% render_field form.age_limit_ru class='form-control bg-light'%}
+                            {% for error in form.age_limit_ru.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.budget_ru.auto_id}}" class="form-label">{{ form.budget_ru.label }}</h4>
+                            {% render_field form.budget_ru class='form-control bg-light'%}
+                            {% for error in form.budget_ru.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.country_uk.auto_id}}" class="form-label">{{ form.country_uk.label }}</h4>
+                            {% render_field form.country_uk class='form-control bg-light'%}
+                            {% for error in form.country_uk.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.age_limit_uk.auto_id}}" class="form-label">{{ form.age_limit_uk.label }}</h4>
+                            {% render_field form.age_limit_uk class='form-control bg-light'%}
+                            {% for error in form.age_limit_uk.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group g-3">
+                            <h4 for="{{form.budget_uk.auto_id}}" class="form-label">{{ form.budget_uk.label }}</h4>
+                            {% render_field form.budget_uk class='form-control bg-light'%}
+                            {% for error in form.budget_uk.errors %}
+                            <div class="alert alert-danger">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {%endfor%} 
+                        </div>
+                    </div>
+                </div>
+            <div class="dropdown-divider"></div>
             <h4>SEO блок</h4>
             <div class="row justify-content-md-center mb-2">
-                <div class="col-lg-1"><h5 for="{{seo_form.seo_url.auto_id}}" class="form-label">{{ seo_form.seo_url.label }}:</h5></div>
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_url.auto_id}}" class="form-label">{{ seo_form.seo_url.label }}:</h5></div>
                 <div class="col-md-6">
                     {{ seo_form.seo_url }}
                     {% for error in seo_form.seo_url.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -207,11 +375,11 @@
                 </div>
             </div>
             <div class="row justify-content-md-center mb-2">
-                <div class="col-lg-1"><h5 for="{{seo_form.seo_title.auto_id}}" class="form-label">{{ seo_form.seo_title.label }}:</h5></div>
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_title.auto_id}}" class="form-label">{{ seo_form.seo_title.label }}:</h5></div>
                 <div class="col-md-6">
                     {{ seo_form.seo_title }}
                     {% for error in seo_form.seo_title.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -219,36 +387,27 @@
                 </div>
             </div>
             <div class="row justify-content-md-center mb-2">
-                <div class="col-lg-1"><h5 for="{{seo_form.seo_keywords.auto_id}}" class="form-label">{{ seo_form.seo_keywords.label }}:</h5></div>
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_keywords.auto_id}}" class="form-label">{{ seo_form.seo_keywords.label }}:</h5></div>
                 <div class="col-md-6">
                     {{ seo_form.seo_keywords }}
                     {% for error in seo_form.seo_keywords.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
                     {% endfor %}
                 </div>
             </div>
-            {% for error in seo_form.seo_description.errors %}
-            <div class="alert alert-error">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                {{ error|striptags }}
-            </div>
-            {% endfor %}
-            <div class="form-group g-3" style="margin-top: 40px; margin-bottom: 40px;">
-                <div class="col-md-12">
-                    <div class="card card-outline card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                {{ seo_form.seo_description.label }}
-                            </h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            {% render_field seo_form.seo_description name='seo-seo_description' class='bg-light'%}
-                        </div>
+            <div class="row justify-content-md-center mb-2">
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_description.auto_id}}" class="form-label">{{ seo_form.seo_description.label }}:</h5></div>
+                <div class="col-md-6">
+                    {% render_field seo_form.seo_description class="form-control w-100 bg-light" rows="5" %}
+                    {% for error in seo_form.seo_description.errors %}
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
                     </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="row justify-content-md-center">
@@ -266,6 +425,8 @@
 <script src="{% static 'admin/plugins/moment/moment.min.js' %}"></script>
 
 <script src="{% static 'admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+
+<script src="{% static 'admin/plugins/select2/js/select2.full.min.js' %}"></script>
 
 <script src="{% static 'admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
 

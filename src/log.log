@@ -1280,3 +1280,107 @@ ERROR 2021-06-18 14:32:38,516 views True
 ERROR 2021-06-18 14:33:57,073 views True
 ERROR 2021-06-18 14:34:51,411 views True
 ERROR 2021-06-18 16:32:03,012 views True
+INFO 2021-06-18 20:12:00,563 views [True]
+INFO 2021-06-18 20:13:40,417 views [True]
+INFO 2021-06-18 20:16:13,381 views [True]
+INFO 2021-06-18 20:19:17,024 views [True, True]
+INFO 2021-06-18 20:31:47,739 views [True, True]
+INFO 2021-06-19 10:20:27,173 views uploads/2021/06-01/pepsi_news.jpg
+INFO 2021-06-19 12:19:20,180 views <QueryDict: {'csrfmiddlewaretoken': ['TomM5unxg8JVsRiyJYbnWB1vseLAjA3MJDLTpNJsdgJiypk0nBQjC22o9NShsEVg'], 'movie': ['15'], 'hall': ['9'], 'time': ['20.06.2021 12:19'], 'last_session_date': ['26.06.2021'], 'price': ['100'], 'vip_price': ['160']}>
+INFO 2021-06-19 12:19:20,378 views False
+ERROR 2021-06-19 12:19:20,380 views dict_items([('format', ['Обязательное поле.'])])
+INFO 2021-06-19 12:20:48,157 views <QueryDict: {'csrfmiddlewaretoken': ['TomM5unxg8JVsRiyJYbnWB1vseLAjA3MJDLTpNJsdgJiypk0nBQjC22o9NShsEVg'], 'movie': ['15'], 'hall': ['9'], 'time': ['20.06.2021 12:19'], 'last_session_date': ['26.06.2021'], 'price': ['100'], 'vip_price': ['160']}>
+INFO 2021-06-19 12:20:48,189 views False
+ERROR 2021-06-19 12:20:48,189 views dict_items([('format', ['Обязательное поле.'])])
+INFO 2021-06-19 12:21:12,039 views <QueryDict: {'csrfmiddlewaretoken': ['TomM5unxg8JVsRiyJYbnWB1vseLAjA3MJDLTpNJsdgJiypk0nBQjC22o9NShsEVg'], 'movie': ['15'], 'hall': ['9'], 'time': ['20.06.2021 12:19'], 'last_session_date': ['26.06.2021'], 'price': ['100'], 'vip_price': ['160']}>
+INFO 2021-06-19 12:21:12,068 views False
+ERROR 2021-06-19 12:21:12,068 views dict_items([('format', ['Обязательное поле.'])])
+INFO 2021-06-19 12:21:20,787 views <QueryDict: {'csrfmiddlewaretoken': ['7udG8IkjGicQXl75gR7AIFMeCEer5xBXXJCNs1GeDqcd3T9xUuMwo6N7jdl8eBtr'], 'movie': ['15'], 'hall': ['9'], 'time': ['20.06.2021 12:19'], 'last_session_date': ['26.06.2021'], 'price': ['100'], 'vip_price': ['160'], 'format': ['1']}>
+INFO 2021-06-19 12:21:20,807 views False
+ERROR 2021-06-19 12:21:20,810 views dict_items([('format', ['Выберите корректный вариант. 1 нет среди допустимых значений.'])])
+INFO 2021-06-19 12:21:58,670 views <QueryDict: {'csrfmiddlewaretoken': ['7udG8IkjGicQXl75gR7AIFMeCEer5xBXXJCNs1GeDqcd3T9xUuMwo6N7jdl8eBtr'], 'movie': ['15'], 'hall': ['9'], 'time': ['20.06.2021 12:19'], 'last_session_date': ['26.06.2021'], 'price': ['100'], 'vip_price': ['160'], 'format': ['1']}>
+INFO 2021-06-19 12:21:58,745 views False
+ERROR 2021-06-19 12:21:58,746 views dict_items([('format', ['Выберите корректный вариант. 1 нет среди допустимых значений.'])])
+INFO 2021-06-19 12:23:54,401 views <QueryDict: {'csrfmiddlewaretoken': ['ZNaTLRqMvnvw3dfrkdFAiLHDSR5GpyYBP2z05aMHsvvT9LhTYQkwYcIwzqcnyCQ5'], 'movie': ['15'], 'hall': ['9'], 'time': ['20.06.2021 12:19'], 'last_session_date': ['26.06.2021'], 'price': ['100'], 'vip_price': ['160'], 'format': ['0']}>
+INFO 2021-06-19 12:23:54,472 views False
+ERROR 2021-06-19 12:23:54,472 views dict_items([('format', ['Выберите корректный вариант. 0 нет среди допустимых значений.'])])
+INFO 2021-06-19 12:30:13,689 views <QueryDict: {'csrfmiddlewaretoken': ['ZNaTLRqMvnvw3dfrkdFAiLHDSR5GpyYBP2z05aMHsvvT9LhTYQkwYcIwzqcnyCQ5'], 'movie': ['15'], 'hall': ['9'], 'time': ['20.06.2021 12:19'], 'last_session_date': ['26.06.2021'], 'price': ['100'], 'vip_price': ['160'], 'format': ['0']}>
+INFO 2021-06-19 12:30:13,845 views True
+ERROR 2021-06-19 12:30:13,846 views dict_items([])
+INFO 2021-06-19 12:30:24,415 views <QueryDict: {'csrfmiddlewaretoken': ['q88v6ddFC0qTzKr4UDifOd3Pr2iDPd1QgnxCqwzAz8qgFitwygXbuE4I8BpkYhTk'], 'movie': ['15'], 'hall': ['9'], 'time': ['20.06.2021 12:19'], 'last_session_date': ['26.06.2021'], 'price': ['100'], 'vip_price': ['160'], 'format': ['1']}>
+INFO 2021-06-19 12:30:24,462 views True
+ERROR 2021-06-19 12:30:24,463 views dict_items([])
+INFO 2021-06-19 18:39:32,519 utils 20.06.2021 18:37
+INFO 2021-06-19 18:39:32,520 utils 23.06.2021
+INFO 2021-06-19 18:48:56,647 utils 2021-06-20 18:37:00
+INFO 2021-06-19 18:48:56,649 utils 23.06.2021
+INFO 2021-06-19 18:55:59,763 utils 2021-06-20 18:37:00
+INFO 2021-06-19 18:55:59,763 utils 2021-06-23 00:00:00
+INFO 2021-06-19 18:56:46,827 utils 2021-06-20 18:37:00
+INFO 2021-06-19 18:56:46,828 utils 2021-06-23 18:37:00
+INFO 2021-06-19 19:00:23,798 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:00:23,798 utils 2021-06-23 18:37:00
+INFO 2021-06-19 19:00:23,798 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:00:23,799 utils 2021-06-21 18:37:00
+INFO 2021-06-19 19:00:23,799 utils 2021-06-22 18:37:00
+INFO 2021-06-19 19:00:23,799 utils 2021-06-23 18:37:00
+INFO 2021-06-19 19:01:29,322 utils 
+INFO 2021-06-19 19:02:07,249 utils 
+INFO 2021-06-19 19:02:07,250 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:02:07,251 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:02:07,251 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:02:19,852 utils 
+INFO 2021-06-19 19:02:19,852 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:02:19,853 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:02:19,853 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:02:30,105 utils 
+INFO 2021-06-19 19:02:30,105 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:02:30,105 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:02:30,105 utils 2021-06-20 18:37:00
+INFO 2021-06-19 19:03:10,044 utils 
+INFO 2021-06-19 19:03:10,044 utils 2021-06-21 18:37:00
+INFO 2021-06-19 19:03:10,045 utils 2021-06-21 18:37:00
+INFO 2021-06-19 19:03:10,046 utils 2021-06-21 18:37:00
+INFO 2021-06-19 19:04:24,898 utils 
+INFO 2021-06-19 19:04:24,899 utils 2021-06-21 18:37:00
+INFO 2021-06-19 19:04:24,899 utils 2021-06-21 18:37:00
+INFO 2021-06-19 19:04:24,899 utils 0:00:00
+INFO 2021-06-19 19:04:24,900 utils 0
+INFO 2021-06-19 19:04:24,900 utils 2021-06-21 18:37:00
+INFO 2021-06-19 19:04:24,900 utils 2021-06-21 18:37:00
+INFO 2021-06-19 19:05:18,875 utils 
+INFO 2021-06-19 19:05:18,876 utils 2021-06-20 19:05:00
+INFO 2021-06-19 19:05:18,876 utils 2021-06-20 19:05:00
+INFO 2021-06-19 19:05:18,876 utils 0:00:00
+INFO 2021-06-19 19:05:18,876 utils 0
+INFO 2021-06-19 19:05:18,876 utils 2021-06-20 19:05:00
+INFO 2021-06-19 19:05:18,876 utils 2021-06-20 19:05:00
+INFO 2021-06-19 19:06:05,661 utils 2021-06-20 19:05:00
+INFO 2021-06-19 19:06:05,661 utils 2021-06-20 19:05:00
+INFO 2021-06-19 19:06:05,661 utils 0:00:00
+INFO 2021-06-19 19:06:05,661 utils 0
+INFO 2021-06-19 19:06:05,661 utils 2021-06-20 19:05:00
+INFO 2021-06-19 19:06:35,304 utils 2021-06-21 19:05:00
+INFO 2021-06-19 19:06:35,305 utils 2021-06-23 19:05:00
+INFO 2021-06-19 19:06:35,305 utils 2 days, 0:00:00
+INFO 2021-06-19 19:06:35,305 utils 2
+INFO 2021-06-19 19:06:35,305 utils 2021-06-21 19:05:00
+INFO 2021-06-19 19:06:35,305 utils 2021-06-22 19:05:00
+INFO 2021-06-19 19:06:35,306 utils 2021-06-23 19:05:00
+INFO 2021-06-19 19:11:46,363 utils 2021-06-23 19:05:00
+INFO 2021-06-19 19:13:48,621 views False
+INFO 2021-06-19 19:18:52,063 views False
+INFO 2021-06-19 19:19:12,658 views False
+INFO 2021-06-19 19:21:51,649 views False
+INFO 2021-06-19 19:22:06,661 views True
+INFO 2021-06-19 19:22:06,661 utils 2021-06-23 19:05:00
+INFO 2021-06-19 19:22:52,225 utils 2021-06-22 19:05:00
+INFO 2021-06-19 19:22:52,226 utils 2021-06-23 19:05:00
+INFO 2021-06-19 19:22:52,227 utils 2021-06-24 19:05:00
+INFO 2021-06-19 19:22:52,227 utils 2021-06-25 19:05:00
+INFO 2021-06-19 19:22:52,228 utils 2021-06-26 19:05:00
+INFO 2021-06-19 19:36:47,970 utils Session object (None)
+INFO 2021-06-19 19:36:47,977 utils Session object (None)
+INFO 2021-06-19 19:36:47,986 utils Session object (None)
+INFO 2021-06-19 19:36:47,994 utils Session object (None)
+INFO 2021-06-19 19:36:48,003 utils Session object (None)

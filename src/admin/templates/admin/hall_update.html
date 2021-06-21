@@ -88,14 +88,17 @@
                             <button class="btn btn-primary" disabled type="button" id="create_scheme_button">{% trans "Сгенерировать схему зала" %}</button>
                         </div>
                         <input type="hidden" id="json_scheme" name="json_scheme" value="">
+                        <div class="row my-3">
+                            <img id="id-screen-img" class="w-100" src="{% static 'img/screen.png' %}" alt="screen">
+                        </div>
                         <div id="id_hall_scheme">
                             {% for row in rows %}
                                 <div class="row justify-content-center mt-2" id="row_{{row}}">
                                     {% get_hall_row_places form.instance row  as row_places %}
                                     {% if row_places.0.row > 0 %}
-                                        <label for="row_{{row}}" class="col-1 d-flex align-items center form-col-label">{% trans "Ряд" %} {{row_places.0.row}}</label>
+                                        <label for="row_{{row}}" class="col-1 d-flex align-items-center form-col-label">{% trans "Ряд" %} {{row_places.0.row}}</label>
                                     {% else %}
-                                        <label for="row_{{row}}" class="col-1 d-flex align-items center form-col-label"> </label>
+                                        <label for="row_{{row}}" class="col-1 d-flex align-items-center form-col-label"> </label>
                                     {% endif %}
                                     {% for place in row_places %}
                                         <div id="row_{{place.real_row}}_col_{{place.real_position}}">
@@ -110,39 +113,15 @@
                                                 {% define place.number as number %}
                                             {% endif %}
                                             
-                                            <button class="badge badge-{{btn_class}} m-1 text-wrap" data-toggle="dropdown" aria-haspopup="true" 
-                                                aria-expanded="false" type="button" pos="{{place.real_position}}" style="height: {{px}}px; width: {{px}}px;"
+                                            <button class="badge badge-{{btn_class}} m-1 text-wrap" type="button" 
+                                                pos="{{place.real_position}}" style="height: {{px}}px; width: {{px}}px;"
                                                 id="row_{{place.real_row}}_col_{{place.real_position}}_btn"><span>{{number}}</span>
                                             </button>
-                                            {% comment %} <div class="dropdown-menu" id="row_{{place.real_row}}_col_{{place.real_position}}_btn_dropdown">
-                                                <div class="dropdown-item">Убрать/Добавить</div>
-                                                {% if place.number < 0 %}
-                                                    {% define "dropdown-item d-none" as vip_class %}
-                                                {% else %}
-                                                    {% define "dropdown-item" as vip_class %}
-                                                {% endif %}
-                                                <div class="{{vip_class}}">Сделать VIP</div>
-                                            </div> {% endcomment %}
                                         </div>
                                     {% endfor %}
                                 </div>
                             {% endfor %}
                         </div>
-                        {% comment %} <div id="id_hall_scheme_sample">
-                            {% for i in '123456789' %}
-                                <div id="row_{{i}}" class="row justify-content-center mt-2">
-                                {% for j in '123456789' %}
-                                    <div id="row_{{i}}_col_{{j}}" style="height:50px; width:50px;">
-                                        <button class="btn btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">{{j}}</button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Disable</a>
-                                            <a class="dropdown-item" href="#">Make VIP</a>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                                </div>
-                            {% endfor %}
-                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>

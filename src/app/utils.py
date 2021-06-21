@@ -1,9 +1,9 @@
-from datetime import date as dt
+from datetime import date as dt, datetime
 import logging
 
 from django.shortcuts import get_object_or_404
 
-from app.models import Cinema, Movie, Image, News, Stock, Hall
+from app.models import Cinema, Movie, Image, News, Stock, Hall, Session, Ticket
 
 
 logger = logging.getLogger(__name__)
@@ -20,6 +20,12 @@ def get_cinema_by_params(**kwargs):
 def get_hall_by_params(**kwargs):
     return get_object_or_404(Hall, **kwargs)
 
+
+def get_session_by_params(**kwargs):
+    return get_object_or_404(Session, **kwargs)
+
+def get_ticket_by_params(**kwargs):
+    return get_object_or_404(Ticket, **kwargs)
 
 def get_image_by_id(id):
     return get_object_or_404(Image, id=id)
@@ -63,3 +69,7 @@ def get_stock_by_params(**kwargs):
 
 def get_stocks():
     return Stock.objects.all().select_related('seo')
+
+
+def get_future_sessions():
+    return Session.objects.filter(time__gte=datetime.now())

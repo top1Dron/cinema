@@ -88,22 +88,10 @@
                             <button class="btn btn-primary" disabled type="button" id="create_scheme_button">{% trans "Сгенерировать схему зала" %}</button>
                         </div>
                         <input type="hidden" id="json_scheme" name="json_scheme" value="">
+                        <div class="row mt-3">
+                            <img id="id-screen-img" class="d-none w-100" src="{% static 'img/screen.png' %}" alt="screen">
+                        </div>
                         <div id="id_hall_scheme"></div>
-                        {% comment %} <div id="id_hall_scheme_sample">
-                            {% for i in '123456789' %}
-                                <div id="row_{{i}}" class="row justify-content-center mt-2">
-                                {% for j in '123456789' %}
-                                    <div id="row_{{i}}_col_{{j}}" style="height:50px; width:50px;">
-                                        <button class="btn btn-info" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">{{j}}</button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Disable</a>
-                                            <a class="dropdown-item" href="#">Make VIP</a>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                                </div>
-                            {% endfor %}
-                        </div> {% endcomment %}
                     </div>
                 </div>
             </div>

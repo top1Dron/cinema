@@ -12,14 +12,15 @@ from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
 
-from app.models import Hall, HallPlace, Image, Movie, News, Stock, Cinema
+from app.models import Image, Movie, News, Session, Stock, Cinema, CinemaContactsPage
 from admin.forms import (AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, 
-    Gallery, UserUpdateForm, MailingForm, AdminCinemaForm, AdminHallForm)
+    Gallery, UserUpdateForm, MailingForm, AdminCinemaForm, AdminHallForm, CinemaContactsPageForm,
+    AdminSessionForm)
 from admin.models import Mail
 from admin.utils import (get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page, 
     get_forms_in_main_page, get_forms_in_cafe_bar_pages, get_forms_in_vip_hall_page,
     get_forms_in_about_cinema_page, get_forms_in_advertise_page, get_forms_in_children_room_page,
-    get_forms_in_mobile_app_page, make_mailing, save_hall_places, update_hall_places)
+    get_forms_in_mobile_app_page, make_mailing, save_hall_places, update_hall_places, create_session)
 from app import utils
 from users.forms import LoginForm
 from users.models import User
@@ -125,6 +126,22 @@ def mobile_app_page(request):
 
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))
+def contacts_page(request):
+    cinema_contacts = CinemaContactsPage.objects.all()
+    forms = [CinemaContactsPageForm(instance=contact, prefix=contact.cinema.name) for contact in cinema_contacts]
+    if request.method == 'POST':
+        forms = [CinemaContactsPageForm(request.POST, request.FILES, instance=contact, prefix=contact.cinema.name) for contact in cinema_contacts]
+        logger.info([form.is_valid() for form in forms])
+        for form in forms:
+            if form.is_valid():
+                form.save()
+        return redirect(reverse_lazy('admin:cinema_contacts'))
+    return render(request, 'admin/contacts_page.html', {
+        'forms': forms
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
 def main_page_banners(request):
     main_form, main_gallery, redirect_available = get_forms_in_banner_page(request.POST, request.FILES, request.method)
 
@@ -185,18 +202,17 @@ def cinema_create(request):
 
     if request.method == 'POST':
         form = AdminCinemaForm(request.POST, request.FILES)
-        logger.info(form.is_valid())
-        logger.error(form.errors)
         if form.is_valid():
-            movie = form.save(commit=False)
+            cinema = form.save(commit=False)
             seo_form = SeoParametersForm(request.POST)
-            gallery = Gallery(request.POST, request.FILES, instance=movie, prefix="cinema_gallery")
+            gallery = Gallery(request.POST, request.FILES, instance=cinema, prefix="cinema_gallery")
 
             if seo_form.is_valid() and gallery.is_valid():
                 seo_obj = seo_form.save()
-                movie.seo = seo_obj
-                movie.save()
+                cinema.seo = seo_obj
+                cinema.save()
                 gallery.save()
+                CinemaContactsPage.objects.create(cinema=cinema)
 
                 return redirect(reverse_lazy('admin:cinemas'))
     return render(request, 'admin/cinema_add.html', context={
@@ -234,6 +250,57 @@ def hall_create(request, cinema_pk):
         'seo_form': seo_form, 
         'gallery': gallery,
         'cinema': cinema
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def session_create(request):
+    form = AdminSessionForm()
+    form.fields['movie'].queryset = utils.get_active_movies()
+    if request.method == 'POST':
+        form = AdminSessionForm(request.POST)
+        if form.is_valid():
+            create_session(request.POST)
+            return redirect(reverse_lazy('admin:sessions'))
+        else:
+            for k, v in form.errors.items():
+                for error_message in v:
+                    messages.error(request, error_message)
+    return render(request, 'admin/session_create.html', {
+        'form': form
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def update_session_info(request, pk):
+    session = utils.get_session_by_params(pk=pk)
+    form = AdminSessionForm(instance=session)
+    form.fields['movie'].queryset = utils.get_active_movies()
+    rows = max(place.real_row for place in session.hall.ordered_places)
+    cols = max(place.real_position for place in session.hall.ordered_places)
+    px = 50
+    if cols > 17 and cols < 20:
+        px = 45
+    elif cols > 19 and cols < 22:
+        px = 40
+    elif cols >= 22 and cols < 24:
+        px = 35
+    elif cols >= 24 and cols < 27:
+        px = 30
+    elif cols >= 27:
+        px = 27
+    if request.method == 'POST':
+        form = AdminSessionForm(request.POST, instance=session)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse_lazy('admin:session_update', kwargs={'pk': session.pk}))
+        else:
+            logger.error(form.errors.items())
+    return render(request, 'admin/session_update.html', {
+        'form': form,
+        'rows': range(1, rows + 1),
+        'cols': range(1, cols + 1),
+        'px': px,
     })
 
 
@@ -544,6 +611,13 @@ class CinemaListView(ListView):
     template_name = 'admin/cinemas_list.html'
 
 
+class SessionListView(ListView):
+    model = Session
+    queryset = utils.get_future_sessions().order_by('time')
+    context_object_name = 'sessions'
+    template_name = 'admin/session_list.html'
+
+
 class NewsListView(ListView):
     model = News
     queryset = utils.get_news()
@@ -619,21 +693,25 @@ def mailing(request):
     form = MailingForm(initial={'recipients': '0'})
     if request.method == 'POST':
         make_mailing(request)
-        # form = MailingForm(request.POST, request.FILES)
-        # if form.is_valid():
-        #     logger.info(form.cleaned_data['filename'])
-        #     form.save()
-        # if not form.is_valid():
-        #     for field, errors in form.errors.items():
-        #         error_str = f'{field}: '
-        #         for error in errors:
-        #             error_str += f'{error} '
-        #         messages.error(request, error_str)
-        #         logger.info(error_str)
-        # logger.info(form.is_valid())
-        # logger.error(form.errors.items())
     return render(request, 'admin/mailing.html', {
         'form': form, 
         'mails':mails,
         'users': User.objects.all()
+    })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+@require_http_methods(['POST'])
+def api_update_session_ticket(request, pk):
+    ticket = utils.get_ticket_by_params(pk=pk)
+    session = ticket.session
+    ticket.status = request.POST.get('status')
+    ticket.save()
+    return JsonResponse({
+        'total_places': session.total_places,
+        'total_free_places': session.total_free_places,
+        'total_booked_places': session.total_booked_places,
+        'booked_money': session.booked_money,
+        'total_sold_places': session.total_sold_places,
+        'sold_money': session.sold_money
     })

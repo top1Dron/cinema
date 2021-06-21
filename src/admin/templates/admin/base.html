@@ -107,11 +107,11 @@
                     <p>{% trans "Кинотеатры" %}</p>
                 </a>
             </li>
-            {% comment %} <li class="nav-item">
-                <a href="#" class="nav-link">
+            <li class="nav-item">
+                <a href="{% url 'admin:sessions' %}" class="nav-link">
                     <p>{% trans "Сеансы" %}</p>
                 </a>
-            </li> {% endcomment %}
+            </li>
             <li class="nav-item">
                 <a href="{% url 'admin:news' %}" class="nav-link">
                     <p>{% trans "Новости" %}</p>
@@ -173,7 +173,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{% url 'admin:cinema_contacts' %}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>{% trans "Контакты" %}</p>
                         </a>

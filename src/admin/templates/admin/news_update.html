@@ -152,7 +152,7 @@
             </div>
             <h4>SEO блок</h4>
             <div class="row justify-content-md-center mb-2">
-                <div class="col-lg-1"><h5 for="{{seo_form.seo_url.auto_id}}" class="form-label">{{ seo_form.seo_url.label }}:</h5></div>
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_url.auto_id}}" class="form-label">{{ seo_form.seo_url.label }}:</h5></div>
                 <div class="col-md-6">
                     {{ seo_form.seo_url }}
                     {% for error in seo_form.seo_url.errors %}
@@ -164,7 +164,7 @@
                 </div>
             </div>
             <div class="row justify-content-md-center mb-2">
-                <div class="col-lg-1"><h5 for="{{seo_form.seo_title.auto_id}}" class="form-label">{{ seo_form.seo_title.label }}:</h5></div>
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_title.auto_id}}" class="form-label">{{ seo_form.seo_title.label }}:</h5></div>
                 <div class="col-md-6">
                     {{ seo_form.seo_title }}
                     {% for error in seo_form.seo_title.errors %}
@@ -176,7 +176,7 @@
                 </div>
             </div>
             <div class="row justify-content-md-center mb-2">
-                <div class="col-lg-1"><h5 for="{{seo_form.seo_keywords.auto_id}}" class="form-label">{{ seo_form.seo_keywords.label }}:</h5></div>
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_keywords.auto_id}}" class="form-label">{{ seo_form.seo_keywords.label }}:</h5></div>
                 <div class="col-md-6">
                     {{ seo_form.seo_keywords }}
                     {% for error in seo_form.seo_keywords.errors %}
@@ -187,25 +187,16 @@
                     {% endfor %}
                 </div>
             </div>
-            {% for error in seo_form.seo_description.errors %}
-            <div class="alert alert-error">
-                <button type="button" class="close" data-dismiss="alert">×</button>
-                {{ error|striptags }}
-            </div>
-            {% endfor %}
-            <div class="form-group g-3" style="margin-top: 40px; margin-bottom: 40px;">
-                <div class="col-md-12">
-                    <div class="card card-outline card-info">
-                        <div class="card-header">
-                            <h3 class="card-title">
-                                {{ seo_form.seo_description.label }}
-                            </h3>
-                        </div>
-                        <!-- /.card-header -->
-                        <div class="card-body">
-                            {% render_field seo_form.seo_description name='seo-seo_description' class='bg-light'%}
-                        </div>
+            <div class="row justify-content-md-center mb-2">
+                <div class="col-lg-2"><h5 for="{{seo_form.seo_description.auto_id}}" class="form-label">{{ seo_form.seo_description.label }}:</h5></div>
+                <div class="col-md-6">
+                    {% render_field seo_form.seo_description class="form-control w-100 bg-light" rows="5" %}
+                    {% for error in seo_form.seo_description.errors %}
+                    <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ error|striptags }}
                     </div>
+                    {% endfor %}
                 </div>
             </div>
             <div class="row justify-content-md-center">

@@ -7,11 +7,11 @@ from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelatio
 from django.contrib.contenttypes.models import ContentType
 from django.core import validators
 from django.db import models
-from django.db.models.fields.files import ImageField
 from django.dispatch import receiver
-from django_seconds_field import SecondsField
 from django.utils.translation import ugettext_lazy as _
 from multiselectfield import MultiSelectField
+
+from users.models import User
 
 
 logger = logging.getLogger(__name__)
@@ -42,6 +42,33 @@ class Movie(models.Model):
         (1, '2D'),
         (2, 'IMAX')
     )
+    GENRE = (
+        ('0', _('Аниме')),
+        ('1', _('Биографический фильм')),
+        ('2', _('Боевик')),
+        ('3', _('Вестерн')),
+        ('4', _('Военный фильм')),
+        ('5', _('Документальный фильм')),
+        ('6', _('Драма')),
+        ('7', _('Исторический фильм')),
+        ('8', _('Комедия')),
+        ('9', _('Короткометражный фильм')),
+        ('10', _('Криминал')),
+        ('11', _('Мелодрама')),
+        ('12', _('Мистика')),
+        ('13', _('Музыкальный фильм')),
+        ('14', _('Мультфильм')),
+        ('15', _('Мюзикл')),
+        ('16', _('Научно-фантастичекий')),
+        ('17', _('Нуар')),
+        ('18', _('Приключения')),
+        ('19', _('Семейный фильм')),
+        ('20', _('Спортивный фильм')),
+        ('21', _('ТВ-шоу')),
+        ('22', _('Триллер')),
+        ('23', _('Ужасы')),
+        ('24', _('Фентези')),
+    )
     name = models.CharField(_('Название фильма'), max_length=100)
     description = models.TextField(_("Описание"))
     poster = models.ImageField(_("Главная картинка"), upload_to=get_upload_path)
@@ -51,6 +78,13 @@ class Movie(models.Model):
     duration = models.DurationField(_("Продолжительность"), null=True)
     is_active = models.BooleanField(_("В прокате?"), default=False)
     release_date = models.DateField(_("Дата выхода"))
+    country = models.CharField(_('Страна'), max_length=50, null=True, blank=True)
+    director = models.CharField(_('Режиссёр'), max_length=250, null=True, blank=True)
+    scriptwriter = models.CharField(_('Сценарист'), max_length=250, null=True, blank=True)
+    language = models.CharField(_('Язык'), max_length=250, default=_("украинский"))
+    age_limit = models.CharField(_('Возрастное ограничение'), max_length=20, null=True, blank=True)
+    budget = models.CharField(_('Бюджет'), max_length=100, null=True, blank=True)
+    genre =MultiSelectField(max_length=100, null=True, blank=True, choices=GENRE)
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING, null=True)
 
     class Meta:
@@ -58,7 +92,7 @@ class Movie(models.Model):
         ordering = ('-release_date', )
 
     def __str__(self):
-        return f'{self.name} - {self.release_date}'
+        return f'{self.name}'
     
     
 
@@ -92,6 +126,13 @@ class Hall(models.Model):
     def ordered_places(self):
         return self.places.order_by('real_row', 'real_position')
 
+    @property
+    def real_places(self):
+        return self.ordered_places.exclude(number=-1)
+
+    def __str__(self) -> str:
+        return f'{self.cinema.name} (Зал № {self.number})'
+
 
 class HallPlace(models.Model):
     hall = models.ForeignKey(Hall, on_delete=models.CASCADE, related_name='places')
@@ -106,6 +147,57 @@ class HallPlace(models.Model):
     
     def __str__(self) -> str:
         return f'{self.real_row}_{self.real_position}'
+
+
+class Session(models.Model):
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    time = models.DateTimeField(_('Дата сеанса'))
+    hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
+    format = models.IntegerField(_('Формат показа'), choices=Movie.MOVIE_TYPES)
+    price = models.FloatField(_('Цена обычного билета'))
+    vip_price = models.FloatField(_('Цена VIP-билета'))
+
+    @property
+    def total_places(self):
+        return self.tickets.count()
+
+    @property
+    def total_free_places(self):
+        return self.tickets.filter(status='0').count()
+    
+    @property
+    def total_booked_places(self):
+        return self.tickets.filter(status='1').count()
+
+    @property
+    def booked_money(self):
+        return (self.tickets.filter(status='1', place__is_vip=False).count() * self.price +
+            self.tickets.filter(status='1', place__is_vip=True).count() * self.vip_price)
+
+    @property
+    def total_sold_places(self):
+        return self.tickets.filter(status='2').count()
+
+    @property
+    def sold_money(self):
+        return (self.tickets.filter(status='2', place__is_vip=False).count() * self.price +
+            self.tickets.filter(status='2', place__is_vip=True).count() * self.vip_price)
+
+
+class Ticket(models.Model):
+    STATUSES = (
+        ('0', _('Cвободен')),
+        ('1', _('Забронирован')),
+        ('2', _('Куплен')),
+    )
+
+    session = models.ForeignKey(Session, on_delete=models.CASCADE, related_name='tickets')
+    place = models.ForeignKey(HallPlace, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='tickets')
+    status = models.CharField(_('Cтатус'), max_length=1, choices=STATUSES, default='0')
+
+    class Meta:
+        unique_together = ('session', 'place')
 
 
 class News(models.Model):
@@ -232,12 +324,20 @@ class MobileAppPage(SingletonModel):
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
 
+class CinemaContactsPage(models.Model):
+    cinema = models.OneToOneField(Cinema, on_delete=models.CASCADE)
+    address = models.TextField(null=True, blank=True)
+    coordinates = models.TextField(null=True, blank=True)
+    logo = models.ImageField(_('Логотип'), upload_to=get_upload_path, null=True, blank=True)
+
+
 image_attributes = ('image', 'poster', 'logo', 'banner', 'main_image')
 
 
 @receiver(models.signals.post_delete, sender=Image)
 @receiver(models.signals.post_delete, sender=Movie)
 @receiver(models.signals.post_delete, sender=Cinema)
+@receiver(models.signals.post_delete, sender=CinemaContactsPage)
 @receiver(models.signals.post_delete, sender=Hall)
 @receiver(models.signals.post_delete, sender=News)
 @receiver(models.signals.post_delete, sender=Stock)

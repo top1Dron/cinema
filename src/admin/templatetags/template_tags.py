@@ -11,4 +11,8 @@ def get_hall_row_places(hall, row):
 
 @register.simple_tag
 def define(val=None):
-  return val
+    return val
+
+@register.simple_tag
+def get_ticket_from_place(session, place):
+    return session.tickets.get(place=place)

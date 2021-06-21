@@ -1,6 +1,6 @@
+from datetime import datetime as dt, timedelta
 import json
 import logging
-from users.models import User
 
 from django.conf import settings
 from django.contrib import messages
@@ -17,7 +17,9 @@ from admin.forms import (AboutCinemaForm, AdvertiseForm, ChildrenRoomForm,
 from admin.models import Mail
 from app.models import (MainPage, MainPageBanner, NewsAndStockBanner, 
     Image, CafeBarPage, VipHallPage, AboutCinemaPage, AdvertisePage,
-    ChildrenRoomPage, MobileAppPage, HallPlace, Hall)
+    ChildrenRoomPage, MobileAppPage, HallPlace, Hall, Session, Ticket)
+from app.utils import get_hall_by_params, get_movie_by_params
+from users.models import User
 
 
 logger = logging.getLogger(__name__)
@@ -529,3 +531,27 @@ def save_hall_places(json_scheme, hall):
 def update_hall_places(json_scheme, hall):
     hall.places.all().delete()
     save_hall_places(json_scheme, hall)
+
+
+def create_session(post):
+    first_session = dt.strptime(post.get('time'), '%d.%m.%Y %H:%M')
+    last_session = dt.strptime(post.get('time'), '%d.%m.%Y %H:%M')
+    if post.get('last_session_date') is not None and post.get('last_session_date'):
+        last_session = dt.strptime(post.get('last_session_date'), '%d.%m.%Y')
+        last_session = last_session.replace(hour=first_session.hour, minute=first_session.minute)
+    delta = last_session - first_session
+
+    # iterate on range between first session and last session
+    for i in range(delta.days + 1):
+        session_date = first_session + timedelta(days=i)
+        session = Session(
+            movie=get_movie_by_params(pk=post.get('movie')),
+            hall=get_hall_by_params(pk=post.get('hall')),
+            time=session_date,
+            format=post.get('format'),
+            price=post.get('price'),
+            vip_price=post.get('vip_price'),
+        )
+        session.save()
+        for place in session.hall.real_places:
+            Ticket.objects.create(session=session, place=place)

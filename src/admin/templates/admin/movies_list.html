@@ -18,7 +18,7 @@
                 <div class="col-md-6 col-xl-3">
                     <div class="card ms-2" style="padding:20px;">
                         <button class="col-2 btn btn-dark text-center align-self-end" delete-url="{% url 'admin:movie_delete' movie.pk %}" type='button' onclick="deleteMovie(this)">X</button>
-                        <img id="active_movie_image_{{forloop.counter0}}" class="text-center" src="{{ MEDIA_URL }}{{ movie.poster.url }}" alt="{{ movie.name }}">
+                        <img id="active_movie_image_{{forloop.counter0}}" class="align-self-center" src="{{ MEDIA_URL }}{{ movie.poster.url }}" alt="{{ movie.name }}" height="300px" width="300px">
                         <div class="card-body">
                             <a class="link-primary text-center" href="{% url 'admin:movie_update' movie.pk %}"><h4 class="fs-1">{{ movie.name }}</h4></a>
                         </div>
@@ -36,7 +36,7 @@
                 <div class="col-md-6 col-xl-3">
                     <div class="card ms-2" style="padding:20px;">
                         <button class="col-2 btn btn-dark text-center align-self-end" type='button' delete-url="{% url 'admin:movie_delete' movie.pk %}" onclick="deleteMovie(this)">X</button>
-                        <img id="active_movie_image_{{forloop.counter0}}" class="text-center" src="{{ MEDIA_URL }}{{ movie.poster.url }}" alt="{{ movie.name }}">
+                        <img id="active_movie_image_{{forloop.counter0}}" class="align-self-center" src="{{ MEDIA_URL }}{{ movie.poster.url }}" alt="{{ movie.name }}" height="300px" width="300px">
                         <div class="card-body">
                             <a class="link-primary text-center" href="{% url 'admin:movie_update' movie.pk %}"><h4 class="fs-1">{{ movie.name }}</h4></a>
                         </div>
@@ -56,7 +56,7 @@
                 <div class="col-md-6 col-xl-3">
                     <div class="card ms-2" style="padding:20px;">
                         <button class="col-2 btn btn-dark text-center align-self-end" type='button' delete-url="{% url 'admin:movie_delete' movie.pk %}" onclick="deleteMovie(this)">X</button>
-                        <img id="active_movie_image_{{forloop.counter0}}" class="text-center" src="{{ MEDIA_URL }}{{ movie.poster.url }}" alt="{{ movie.name }}">
+                        <img id="active_movie_image_{{forloop.counter0}}" class="align-self-center" src="{{ MEDIA_URL }}{{ movie.poster.url }}" alt="{{ movie.name }}" height="300px" width="300px">
                         <div class="card-body">
                             <a class="link-primary text-center" href="{% url 'admin:movie_update' movie.pk %}"><h4 class="fs-1">{{ movie.name }}</h4></a>
                         </div>

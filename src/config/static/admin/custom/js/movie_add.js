@@ -6,10 +6,6 @@ $('#id_description_uk').summernote({
     height: '200px',
 });
 
-$('#id_seo_description').summernote({
-    height: '200px',
-});
-
 $('#id_poster').change(function(event){
     if(typeof event.target.files[0] !== 'undefined'){
         $('#main_poster').attr("src", URL.createObjectURL(event.target.files[0]));
@@ -83,6 +79,7 @@ $("input[data-bootstrap-switch]").each(function(){
 });
 
 $(function () {
+    $('.select2').select2();
     
     $('#reservationdate').datetimepicker({
         format:'DD.MM.YYYY',

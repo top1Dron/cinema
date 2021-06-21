@@ -8,7 +8,7 @@ from admin.models import Mail
 from app.models import (AboutCinemaPage, AdvertisePage, CafeBarPage, 
     ChildrenRoomPage, Movie, News, Stock, SeoParameters, Image, 
     MainPageBanner, NewsAndStockBanner, MainPage, VipHallPage, 
-    MobileAppPage, Cinema, Hall)
+    MobileAppPage, Cinema, Hall, CinemaContactsPage, Session)
 from users.models import User
 
 
@@ -50,11 +50,19 @@ class AdminMovieForm(forms.ModelForm):
         widget=forms.CheckboxSelectMultiple,
         choices=Movie.MOVIE_TYPES
     )
+    genre = forms.MultipleChoiceField(
+        required=False,
+        choices=Movie.GENRE,
+        # widget=forms.TypedMultipleChoiceField
+    )
 
     class Meta:
         model = Movie
         fields = ('name_ru', 'name_uk', 'description_ru', 'description_uk', 'poster', 
-            'trailer', 'type', 'duration', 'is_active', 'release_date')
+            'trailer', 'type', 'duration', 'is_active', 'release_date', 'country_ru', 
+            'director_ru', 'scriptwriter_ru', 'language_ru', 'age_limit_ru', 
+            'budget_ru', 'country_uk', 'director_uk', 'scriptwriter_uk', 'language_uk', 
+            'age_limit_uk', 'budget_uk', 'genre')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -63,6 +71,27 @@ class AdminMovieForm(forms.ModelForm):
         self.fields['description_uk'].label = 'Опис (українською)'
         self.fields['description_ru'].label = 'Описание (на русском)'
         self.fields['type'].label = _('Тип')
+        self.fields['genre'].label = _('Жанр')
+
+
+class AdminSessionForm(forms.ModelForm):
+    format = forms.ChoiceField(label=_('Формат показа'), choices=Movie.MOVIE_TYPES, widget=forms.Select(attrs={'class': 'form-select'}))
+    last_session_date = forms.DateTimeField(required=False, label=_('Дата последнего сеанса (опционально)'))
+    
+    class Meta:
+        model = Session
+        fields = ('movie', 'time', 'hall', 'format', 'price', 'vip_price')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['movie'].label = _('Фильм')
+        self.fields['hall'].label = _('Зал кинотеатра')
+
+    def clean(self):
+        data = self.cleaned_data
+        if data.get('last_session_date') is not None and data['last_session_date'] < data['time']:
+            raise forms.ValidationError(_('Дата последнего показа не может быть ранее даты первого показа'))
+        return super().clean()
 
 
 class AdminNewsForm(forms.ModelForm):
@@ -220,6 +249,13 @@ class ChildrenRoomForm(forms.ModelForm):
         self.fields['title_ru'].label = 'Название (на русском)'
         self.fields['description_uk'].label = 'Опис (українською)'
         self.fields['description_ru'].label = 'Описание (на русском)'
+
+
+class CinemaContactsPageForm(forms.ModelForm):
+
+    class Meta:
+        model = CinemaContactsPage
+        fields = ('address', 'coordinates', 'logo')
 
 
 class MobileAppForm(forms.ModelForm):

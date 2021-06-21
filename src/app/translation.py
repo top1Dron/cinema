@@ -6,7 +6,8 @@ from app.models import (Movie, Cinema, Hall, News, Stock,
 
 @register(Movie)
 class MovieTranslationOptions(TranslationOptions):
-    fields = ('name', 'description')
+    fields = ('name', 'description', 'country', 'director', 
+        'scriptwriter', 'language', 'age_limit', 'budget')
 
 
 @register(Cinema)

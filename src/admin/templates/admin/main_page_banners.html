@@ -23,7 +23,7 @@
                                 {{ hidden }}
                             {% endfor %}
                             <div class="col-md-6 col-xl-3">
-                                <div class="card ms-2" style="width: 16rem; padding:30px;">
+                                <div class="card ms-2" style="width: 16rem; padding:30px; height: 25rem;">
                                     {% csrf_token %}
                                     {% if image_form.image.value.url %}
                                         {% render_field image_form.DELETE class="d-none"%}
@@ -37,6 +37,10 @@
                                     {% endif %}
                                     <div class="card-body">
                                         {{ image_form.image }}
+                                        <div class="d-flex align-items-center">
+                                            <label class="form-col-label mt-3" for="id_on_top_main-{{forloop.counter0}}-url">URL:</label>
+                                            {% render_field image_form.url class="form-control mt-3 bg-light ml-auto"%}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -13,9 +13,11 @@
     <!-- CSS end -->
 </head>
 <body>
-    <div class="row">
-        <img src="{% static 'img/banner_main.png' %}" alt="main_banner">
-    </div>
+    {% block site_header %}
+        <div class="row">
+            <img src="{% static 'img/banner_main.png' %}" alt="main_banner">
+        </div>
+    {% endblock site_header %}
     <div class="container">
         <div class="row mt-4">
             <div class="col-10"></div>
@@ -62,8 +64,8 @@
                     
                     <div class="col-md-4">
                         <div class="row fs-4 text-light">
-                            <span>+380995135692</span>
-                            <span>+380931350238</span>
+                            <span>{{main_page.number1}}</span>
+                            <span>{{main_page.number2}}</span>
                         </div>
                     </div>
                 </div>

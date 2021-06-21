@@ -1,0 +1,67 @@
+{% extends 'admin/base.html' %}
+
+{% load static widget_tweaks i18n %}
+
+{% block main_content %}
+<div class="container-fluid" style="margin-top: 75px">
+    <form action="." method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for form in forms %}
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>{% trans "Название кинотеатра" %}</h4>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control w-50 bg-secondary" disabled value="{{ form.instance.cinema.name }}">
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <h4>{% trans "Адресс" %}</h4>
+                    </div>
+                    <div class="col-md-8">
+                        {% render_field form.address class="form-control bg-light" rows="5" %}
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <h4>{% trans "Координаты для карты" %}</h4>
+                    </div>
+                    <div class="col-md-8">
+                        {% render_field form.coordinates class="form-control bg-light" rows="5" %}
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <h4 for="{{form.logo.auto_id}}" class="form-label">{{ form.logo.label }}</h4>
+                    </div>
+                    <div class="col-md-8">
+                    {% if form.logo.value.url is not None %}
+                        <img id="logo_{{form.instance.cinema.name}}" class="text-center" src="{{MEDIA_URL}}{{form.logo.value.url}}" alt="logo" style="width:16rem;">
+                    {% else %}
+                        <img id="logo_{{form.instance.cinema.name}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="logo" style="width:16rem;">
+                    {% endif %}
+                        {% render_field form.logo class="w-25 cinema-logo-btn" onchange="onImageUpload(this);"%}
+                        {% for error in form.logo.errors %}
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            {{ error|striptags }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="row justify-content-center">
+        <input type="submit" class="btn btn-success mx-auto" value="{% trans "Сохранить" %}">
+    </div>
+    </form>
+</div>
+{% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'admin/custom/js/contacts.js' %}"></script>
+{% endblock extra_js %}
