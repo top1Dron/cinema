@@ -96,71 +96,89 @@
         </div>
     </div>
     <div id="id_hall_scheme">
-                    <div class="row">
-                        <div class="col-md-2"><h4>{% trans "Всего мест" %}: <span id="total_places">{{form.instance.total_places}}</span></h4></div>
-                        <div class="col-md-2"><h4>{% trans "Свободно" %}: <span id="total_free_places">{{form.instance.total_free_places}}</span></h4></div>
-                        <div class="col-md-4"><h4>{% trans "Забронировано" %}: <span id="total_booked_places">{{form.instance.total_booked_places}}</span> (<span id="booked_money">{{form.instance.booked_money}}</span> грн.)</h4></div>
-                        <div class="col-md-4"><h4>{% trans "Продано" %}: <span id="total_sold_places">{{form.instance.total_sold_places}}</span> (<span id="sold_money">{{form.instance.sold_money}}</span> грн.)</h4></div>
-
-                    </div>
-                    <div class="dropdown-divider"></div>
-                    {% for row in rows %}
-                        <div class="row justify-content-center mt-2" id="row_{{row}}">
-                            {% get_hall_row_places form.instance.hall row  as row_places %}
-                            {% if row_places.0.row > 0 %}
-                                <label for="row_{{row}}" class="col-1 d-flex align-items-center form-col-label">{% trans "Ряд" %} {{row_places.0.row}}</label>
-                            {% else %}
-                                <label for="row_{{row}}" class="col-1 d-flex align-items-center form-col-label"> </label>
-                            {% endif %}
-                            {% for place in row_places %}
-                                <div id="row_{{place.real_row}}_col_{{place.real_position}}">
-                                    {% if place.number < 0 %}
-                                        {% define "invisible" as btn_class %}
-                                        <button class="invisible m-1" type="button" style="height: {{px}}px; width: {{px}}px;"></button>
-                                    {% else %}
-                                        {% get_ticket_from_place form.instance place as ticket %}
-                                        {% if ticket.place.is_vip %}
-                                            {% define "success" as btn_class %}
-                                            {% if ticket.status == '0' %}
-                                                {% define "" as extra_btn_class %}
-                                            {% elif ticket.status == '1' %}
-                                                {% define "bg-gradient-warning" as extra_btn_class %}
-                                            {% elif ticket.status == '2' %}
-                                                {% define "bg-gradient-danger" as extra_btn_class %}
-                                            {% endif %}
-                                            {% define ticket.place.number as number %}
-                                        {% else %}
-                                            {% define "info" as btn_class %}
-                                            {% if ticket.status == '0' %}
-                                                {% define "" as extra_btn_class %}
-                                            {% elif ticket.status == '1' %}
-                                                {% define "bg-gradient-primary" as extra_btn_class %}
-                                            {% elif ticket.status == '2' %}
-                                                {% define "bg-gradient-dark" as extra_btn_class %}
-                                            {% endif %}
-                                            {% define ticket.place.number as number %}
-                                        {% endif %}
-                                        <button class="badge badge-{{btn_class}} {{extra_btn_class}} m-1 text-wrap" data-toggle="dropdown" aria-haspopup="true" 
-                                            aria-expanded="false" type="button" pos="{{place.real_position}}" style="height: {{px}}px; width: {{px}}px;"
-                                            vip="{{ticket.place.is_vip}}" id="row_{{place.real_row}}_col_{{place.real_position}}_btn" ticket-update-url="{% url 'admin:ticket_update' ticket.pk %}"><span>{{number}}</span>
-                                        </button>
-                                        <div class="dropdown-menu" id="row_{{place.real_row}}_col_{{place.real_position}}_btn_dropdown">
-                                            {% if ticket.status == '0' %}
-                                                <div class="dropdown-item book"><span>Забронировать</span></div>
-                                                <div class="dropdown-item sell"><span>Продать</span></div>
-                                            {% elif ticket.status == '1'%}
-                                                <div class="dropdown-item free"><span>Снять бронь</span></div>
-                                                <div class="dropdown-item sell"><span>Продать</span></div>
-                                            {% elif ticket.status == '2'%}
-                                                <div class="dropdown-item free"><span>Освободить</span></div>
-                                            {% endif %}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                            {% endfor %}
-                        </div>
+        <div class="row">
+            <div class="col-md-2"><h4>{% trans "Всего мест" %}: <span id="total_places">{{form.instance.total_places}}</span></h4></div>
+            <div class="col-md-2"><h4>{% trans "Свободно" %}: <span id="total_free_places">{{form.instance.total_free_places}}</span></h4></div>
+            <div class="col-md-4"><h4>{% trans "Забронировано" %}: <span id="total_booked_places">{{form.instance.total_booked_places}}</span> (<span id="booked_money">{{form.instance.booked_money}}</span> грн.)</h4></div>
+            <div class="col-md-4"><h4>{% trans "Продано" %}: <span id="total_sold_places">{{form.instance.total_sold_places}}</span> (<span id="sold_money">{{form.instance.sold_money}}</span> грн.)</h4></div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="row">
+            <div class="col-md-6"><h4 class="form-label">{% trans "Пользователь, на которого будут записываться билеты" %}:</h4></div>
+            <div class="col-md-6">
+                <select name="user" class="form-control form-select bg-light" id="id_users">
+                    {% for user in users %}
+                        {% if forloop.counter0 == 0 %}
+                            <option value="{{user.email}}" selected>{{user.full_name}} ({{user.email}})</option>
+                        {% else %}
+                            <option value="{{user.email}}">{{user.full_name}} ({{user.email}})</option>
+                        {% endif %}
                     {% endfor %}
-                </div>
+                </select>
+            </div>
+        </div>
+
+        <div class="dropdown-divider"></div>
+        <div class="row my-3">
+            <img id="id-screen-img" class="w-100" src="{% static 'img/screen.png' %}" alt="screen">
+        </div>
+        {% for row in rows %}
+            <div class="row justify-content-center mt-2" id="row_{{row}}">
+                {% get_hall_row_places form.instance.hall row  as row_places %}
+                {% if row_places.0.row > 0 %}
+                    <label for="row_{{row}}" class="col-1 d-flex align-items-center form-col-label">{% trans "Ряд" %} {{row_places.0.row}}</label>
+                {% else %}
+                    <label for="row_{{row}}" class="col-1 d-flex align-items-center form-col-label"> </label>
+                {% endif %}
+                {% for place in row_places %}
+                    <div id="row_{{place.real_row}}_col_{{place.real_position}}">
+                        {% if place.number < 0 %}
+                            {% define "invisible" as btn_class %}
+                            <button class="invisible m-1" type="button" style="height: {{px}}px; width: {{px}}px;"></button>
+                        {% else %}
+                            {% get_ticket_from_place form.instance place as ticket %}
+                            {% if ticket.place.is_vip %}
+                                {% define "success" as btn_class %}
+                                {% if ticket.status == '0' %}
+                                    {% define "" as extra_btn_class %}
+                                {% elif ticket.status == '1' %}
+                                    {% define "bg-gradient-warning" as extra_btn_class %}
+                                {% elif ticket.status == '2' %}
+                                    {% define "bg-gradient-danger" as extra_btn_class %}
+                                {% endif %}
+                                {% define ticket.place.number as number %}
+                            {% else %}
+                                {% define "info" as btn_class %}
+                                {% if ticket.status == '0' %}
+                                    {% define "" as extra_btn_class %}
+                                {% elif ticket.status == '1' %}
+                                    {% define "bg-gradient-primary" as extra_btn_class %}
+                                {% elif ticket.status == '2' %}
+                                    {% define "bg-gradient-dark" as extra_btn_class %}
+                                {% endif %}
+                                {% define ticket.place.number as number %}
+                            {% endif %}
+                            <button class="badge badge-{{btn_class}} {{extra_btn_class}} m-1 text-wrap" data-toggle="dropdown" aria-haspopup="true" 
+                                aria-expanded="false" type="button" pos="{{place.real_position}}" style="height: {{px}}px; width: {{px}}px;"
+                                vip="{{ticket.place.is_vip}}" id="row_{{place.real_row}}_col_{{place.real_position}}_btn" ticket-update-url="{% url 'admin:ticket_update' ticket.pk %}"><span>{{number}}</span>
+                            </button>
+                            <div class="dropdown-menu" id="row_{{place.real_row}}_col_{{place.real_position}}_btn_dropdown">
+                                {% if ticket.status == '0' %}
+                                    <div class="dropdown-item book"><span>Забронировать</span></div>
+                                    <div class="dropdown-item sell"><span>Продать</span></div>
+                                {% elif ticket.status == '1'%}
+                                    <div class="dropdown-item free"><span>Снять бронь</span></div>
+                                    <div class="dropdown-item sell"><span>Продать</span></div>
+                                {% elif ticket.status == '2'%}
+                                    <div class="dropdown-item free"><span>Освободить</span></div>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock main_content %}
 

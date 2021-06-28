@@ -73,6 +73,8 @@ ROOT_URLCONF = 'config.urls'
 
 AUTH_USER_MODEL = 'users.User'
 
+LOGIN_URL = '/login/'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -158,11 +160,13 @@ LOCALE_PATHS = (
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (
-    PROJECT_ROOT / 'static',
-)
+STATIC_ROOT = BASE_DIR / "static"
 
-MEDIA_ROOT = PROJECT_ROOT / 'media'
+# STATICFILES_DIRS = (
+#     BASE_DIR / 'static',
+# )
+
+MEDIA_ROOT = BASE_DIR / 'media'
 
 MEDIA_URL = '/media/'
 

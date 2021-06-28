@@ -5,17 +5,17 @@ from django.contrib import messages
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.contenttypes.forms import generic_inlineformset_factory
-from django.http import JsonResponse
+from django.http import JsonResponse, response
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views.decorators.http import require_http_methods
 from django.views.generic import ListView
 
-from app.models import Image, Movie, News, Session, Stock, Cinema, CinemaContactsPage
+from app.models import Image, Movie, News, Session, Stock, Cinema, CinemaContactsPage, User
 from admin.forms import (AdminMovieForm, AdminNewsForm, AdminStockForm, SeoParametersForm, 
     Gallery, UserUpdateForm, MailingForm, AdminCinemaForm, AdminHallForm, CinemaContactsPageForm,
-    AdminSessionForm)
+    AdminSessionForm, UserCreateForm)
 from admin.models import Mail
 from admin.utils import (get_forms_in_banner_page, get_forms_in_news_and_stocks_banner_page, 
     get_forms_in_main_page, get_forms_in_cafe_bar_pages, get_forms_in_vip_hall_page,
@@ -127,11 +127,10 @@ def mobile_app_page(request):
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))
 def contacts_page(request):
-    cinema_contacts = CinemaContactsPage.objects.all()
+    cinema_contacts = utils.get_cinema_contacts()
     forms = [CinemaContactsPageForm(instance=contact, prefix=contact.cinema.name) for contact in cinema_contacts]
     if request.method == 'POST':
         forms = [CinemaContactsPageForm(request.POST, request.FILES, instance=contact, prefix=contact.cinema.name) for contact in cinema_contacts]
-        logger.info([form.is_valid() for form in forms])
         for form in forms:
             if form.is_valid():
                 form.save()
@@ -289,6 +288,7 @@ def update_session_info(request, pk):
         px = 30
     elif cols >= 27:
         px = 27
+    users = User.objects.all()
     if request.method == 'POST':
         form = AdminSessionForm(request.POST, instance=session)
         if form.is_valid():
@@ -301,6 +301,7 @@ def update_session_info(request, pk):
         'rows': range(1, rows + 1),
         'cols': range(1, cols + 1),
         'px': px,
+        'users': users,
     })
 
 
@@ -678,13 +679,20 @@ def change_user_info(request, email):
     user = get_user_by_email(email)
     form = UserUpdateForm(request.POST or None, instance=user)
     if request.method == 'POST':
-        logger.info(request.POST)
-        logger.info(form.is_valid())
-        logger.error(form.errors.items())
         if form.is_valid():
             form.save()
             return redirect(reverse_lazy('admin:users'))
     return render(request, 'admin/user_update.html', {'form':form})
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+def create_user(request):
+    form = UserCreateForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect(reverse_lazy('admin:users'))
+    return render(request, 'admin/user_create.html', {'form':form})
 
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))
@@ -706,6 +714,10 @@ def api_update_session_ticket(request, pk):
     ticket = utils.get_ticket_by_params(pk=pk)
     session = ticket.session
     ticket.status = request.POST.get('status')
+    if ticket.status != '0':
+        ticket.user = get_user_by_email(request.POST.get('user_email'))
+    else:
+        ticket.user = None
     ticket.save()
     return JsonResponse({
         'total_places': session.total_places,
@@ -715,3 +727,15 @@ def api_update_session_ticket(request, pk):
         'total_sold_places': session.total_sold_places,
         'sold_money': session.sold_money
     })
+
+
+@staff_member_required(login_url=reverse_lazy('admin:login'))
+@require_http_methods(['GET'])
+def api_is_any_planned_sessions_in_hall(request, hall_pk):
+    sessions = utils.get_future_sessions().filter(hall=utils.get_hall_by_params(pk=hall_pk))
+    responce = {}
+    if sessions.count() > 0:
+        responce['any'] = True
+    else:
+        responce['any'] = False
+    return JsonResponse(responce)

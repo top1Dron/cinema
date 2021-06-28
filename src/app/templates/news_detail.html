@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags %}
+
+{% block title %}{{article.title}}{% endblock title %}
+
+{% block main_content %}
+    <div class="container-fluid" style="min-height:46vh;">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body bg-dark">
+                        <h2 class="text-light">{{article.title}}</h2>
+                        <h6 class="fs-6 text-light">{{article.published|date:"d.m.Y"}}</h6>
+                        <div class="row">
+                            <div class="col-md-5">
+                                {% if article.main_image %}
+                                    <img class="d-block w-100" src="{{MEDIA_URL}}{{article.main_image.url}}" alt="" height="200px">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-7">
+                                <span class="text-light">{{article.description|safe}}</span>
+                            </div>
+                        </div>
+                        {% if article.youtube_link %}
+                            <iframe class="w-100" src="{{article.youtube_link}}" height="500px"></iframe>
+                        {% endif %}
+                        {% if article.gallery.count %}
+                        <div class="carousel slide" id="articleCarouselControls" data-bs-ride="carousel">
+                            <div class="carousel-indicators">                
+                                {% for image in article.gallery.all %}
+                                    {% if not forloop.counter0 %}
+                                        <button type="button" data-bs-target="#articleCarouselControls" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Article image {{forloop.counter0}}"></button>
+                                    {% else %}
+                                        <button type="button" data-bs-target="#articleCarouselControls" data-bs-slide-to="{{forloop.counter0}}" aria-label="Article image {{forloop.counter0}}"></button>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="carousel-inner">
+                            {% for image in article.gallery.all %}
+                            {% if not forloop.counter0 %}
+                                <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                            {% else %}
+                                <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                            {% endif %}
+                                    <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." style="height: 600px;"></a>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#articleCarouselControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#articleCarouselControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for image in advertise_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% else %}
+                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% endif %}
+                                <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..."></a>
+                            </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

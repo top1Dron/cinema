@@ -85,7 +85,26 @@
                             </div>
                         </div>
                         <div class="row justify-content-center mt-2">
-                            <button class="btn btn-primary" disabled type="button" id="create_scheme_button">{% trans "Сгенерировать схему зала" %}</button>
+                            <button class="btn btn-primary" disabled type="button" id="create_scheme_button" check-available="{% url 'admin:is_any_planned_sessions_in_hall' form.instance.pk %}">{% trans "Сгенерировать схему зала" %}</button>
+                        </div>
+                        <!-- Modal -->
+                        <div class="modal fade" id="errorHallSchemeCreationModal" tabindex="-1" role="dialog" aria-labelledby="errorHallSchemeCreationModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="errorHallSchemeCreationModalLabel">{% trans "Ошибка" %}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        {% trans "Нельзя изменять схему зала пока есть запланированные сеансы в этом зале!" %}
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "Закрыть" %}</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <input type="hidden" id="json_scheme" name="json_scheme" value="">
                         <div class="row my-3">

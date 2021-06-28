@@ -22,8 +22,6 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
 ]
 
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 urlpatterns += i18n_patterns(
     path('admin/', include('admin.urls')),
     path('users/', include('users.urls')),
@@ -33,6 +31,4 @@ urlpatterns += i18n_patterns(
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns.insert(0, path('__debug__/', include(debug_toolbar.urls)))
-
-
-
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

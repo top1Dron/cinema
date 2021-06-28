@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.contenttypes import fields
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.contenttypes.forms import generic_inlineformset_factory
 from django.forms.widgets import RadioSelect
 from django.utils.translation import ugettext_lazy as _
@@ -53,16 +53,15 @@ class AdminMovieForm(forms.ModelForm):
     genre = forms.MultipleChoiceField(
         required=False,
         choices=Movie.GENRE,
-        # widget=forms.TypedMultipleChoiceField
     )
 
     class Meta:
         model = Movie
         fields = ('name_ru', 'name_uk', 'description_ru', 'description_uk', 'poster', 
             'trailer', 'type', 'duration', 'is_active', 'release_date', 'country_ru', 
-            'director_ru', 'scriptwriter_ru', 'language_ru', 'age_limit_ru', 
+            'director_ru', 'scriptwriter_ru', 'language_ru', 'age_limit',
             'budget_ru', 'country_uk', 'director_uk', 'scriptwriter_uk', 'language_uk', 
-            'age_limit_uk', 'budget_uk', 'genre')
+            'budget_uk', 'genre')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -288,6 +287,24 @@ class UserUpdateForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
+
+class UserCreateForm(UserCreationForm):
+    first_name = forms.CharField(label=_("Имя"), widget=forms.TextInput(attrs={'class': 'form-control'}), max_length=32, required=False)
+    last_name=forms.CharField(label=_("Фамилия"), widget=forms.TextInput(attrs={'class': 'form-control'}), max_length=32, required=False)
+    password1=forms.CharField(label=_("Пароль"), widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    password2=forms.CharField(label=_("Повторите пароль"), widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+    language = forms.ChoiceField(label=_("Язык"), choices=(('ru', 'Русский'), ('ua', 'Українська')), 
+        widget=RadioSelect(attrs={'class': 'form-check-input'}), required=False)
+    gender = forms.ChoiceField(label=_("Пол"), choices=(('M', _('Мужской')), ('W', _('Женский'))), 
+        widget=RadioSelect(attrs={'class': 'form-check-input'}), required=False)
+
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = UserCreationForm.Meta.fields + ('first_name', 'last_name', 'email',
+            'address', 'payment_card_number', 'is_superuser',
+            'language', 'gender', 'phone_number',
+            'birth_date', 'city', 'is_active', 'is_staff')
 
 
 class MailingForm(forms.ModelForm):

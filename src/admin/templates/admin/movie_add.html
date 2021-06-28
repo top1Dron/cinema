@@ -283,9 +283,9 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group g-3">
-                            <h4 for="{{form.age_limit_ru.auto_id}}" class="form-label">{{ form.age_limit_ru.label }}</h4>
-                            {% render_field form.age_limit_ru class='form-control bg-light'%}
-                            {% for error in form.age_limit_ru.errors %}
+                            <h4 for="{{form.age_limit.auto_id}}" class="form-label">{{ form.age_limit.label }}</h4>
+                            {% render_field form.age_limit class='form-control bg-light'%}
+                            {% for error in form.age_limit.errors %}
                             <div class="alert alert-danger">
                                 <button type="button" class="close" data-dismiss="alert">×</button>
                                 {{ error|striptags }}
@@ -305,7 +305,7 @@
                             {%endfor%} 
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group g-3">
                             <h4 for="{{form.country_uk.auto_id}}" class="form-label">{{ form.country_uk.label }}</h4>
                             {% render_field form.country_uk class='form-control bg-light'%}
@@ -317,19 +317,7 @@
                             {%endfor%} 
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group g-3">
-                            <h4 for="{{form.age_limit_uk.auto_id}}" class="form-label">{{ form.age_limit_uk.label }}</h4>
-                            {% render_field form.age_limit_uk class='form-control bg-light'%}
-                            {% for error in form.age_limit_uk.errors %}
-                            <div class="alert alert-danger">
-                                <button type="button" class="close" data-dismiss="alert">×</button>
-                                {{ error|striptags }}
-                            </div>
-                            {%endfor%} 
-                        </div>
-                    </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="form-group g-3">
                             <h4 for="{{form.budget_uk.auto_id}}" class="form-label">{{ form.budget_uk.label }}</h4>
                             {% render_field form.budget_uk class='form-control bg-light'%}

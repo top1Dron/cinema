@@ -21,5 +21,11 @@ RUN apk update \
 #after installation fill db with sql dump
 # sudo docker exec -i {DB_CONTAINER} psql -U {DB_USER_NAME} -d {DB_NAME} < {BACKUP_FILE}
 
+# copy entrypoint.sh
+COPY ./entrypoint.sh .
+
 # copy project
 COPY . .
+
+# run entrypoint.sh
+ENTRYPOINT ["/usr/projects/cinema/src/entrypoint.sh"]

@@ -16,3 +16,8 @@ def define(val=None):
 @register.simple_tag
 def get_ticket_from_place(session, place):
     return session.tickets.get(place=place)
+
+
+@register.filter()
+def sec_to_ms(value):
+    return str(int(value) * 1000)

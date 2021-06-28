@@ -82,7 +82,7 @@ class Movie(models.Model):
     director = models.CharField(_('Режиссёр'), max_length=250, null=True, blank=True)
     scriptwriter = models.CharField(_('Сценарист'), max_length=250, null=True, blank=True)
     language = models.CharField(_('Язык'), max_length=250, default=_("украинский"))
-    age_limit = models.CharField(_('Возрастное ограничение'), max_length=20, null=True, blank=True)
+    age_limit = models.IntegerField(_('Возрастное ограничение'), null=True, blank=True)
     budget = models.CharField(_('Бюджет'), max_length=100, null=True, blank=True)
     genre =MultiSelectField(max_length=100, null=True, blank=True, choices=GENRE)
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING, null=True)
@@ -288,7 +288,7 @@ class VipHallPage(SingletonModel):
     title = models.CharField(max_length=50)
     description = models.TextField()
     main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
-    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    gallery = GenericRelation(Image, related_query_name='vip_hall_page')
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
 
@@ -296,7 +296,7 @@ class AboutCinemaPage(SingletonModel):
     title = models.CharField(max_length=50)
     description = models.TextField()
     main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
-    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    gallery = GenericRelation(Image, related_query_name='about_cinema_page')
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
 
@@ -304,7 +304,7 @@ class AdvertisePage(SingletonModel):
     title = models.CharField(max_length=50)
     description = models.TextField()
     main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
-    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    gallery = GenericRelation(Image, related_query_name='advertise_page')
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
 
@@ -312,7 +312,7 @@ class ChildrenRoomPage(SingletonModel):
     title = models.CharField(max_length=50)
     description = models.TextField()
     main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
-    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    gallery = GenericRelation(Image, related_query_name='children_room_page')
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
 
@@ -320,7 +320,7 @@ class MobileAppPage(SingletonModel):
     title = models.CharField(max_length=50)
     description = models.TextField()
     main_image = models.ImageField(_('Главная картинка'), upload_to=get_upload_path, null=True, blank=True)
-    gallery = GenericRelation(Image, related_query_name='cafe_bar_page')
+    gallery = GenericRelation(Image, related_query_name='mobile_app_page')
     seo = models.ForeignKey(SeoParameters, verbose_name=_("SEO блок"), on_delete=models.DO_NOTHING)
 
 

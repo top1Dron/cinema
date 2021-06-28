@@ -1,0 +1,242 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags widget_tweaks %}
+
+{% block title %}{% trans "Расписание" %}{% endblock title %}
+
+{% block main_content %}
+    <div class="container-fluid" style="min-height:46vh;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h5>{% trans "Фильтры" %}</h5>
+                                {% comment %} {% render_field filter_form.cinema.label_tag%} {% endcomment %}
+                                <label for="{{filter_form.cinema.auto_id}}" class="fs-6 mt-2 text-secondary">{{filter_form.cinema.label}}</label>
+                                {% render_field filter_form.cinema class='form-select' %}
+                                <div class="dropdown-divider"></div>
+                                <label for="{{filter_form.movie.auto_id}}" class="fs-6 mt-2 text-secondary">{{filter_form.movie.label}}</label>
+                                {% render_field filter_form.movie class='form-select' %}
+                                <div class="dropdown-divider"></div>
+                                <label class="fs-6 mt-2 text-secondary">{% trans "Период" %}</label>
+                                <div class="form-check" style="margin: 0; padding: 0;">
+                                    <input class="" type="radio" name="periodRadio" id="id_all_session_radio" checked>
+                                    <label class="form-check-label fs-6" for="id_all_session_radio">
+                                        {% trans "Все" %}
+                                    </label>
+                                </div>
+                                <div class="form-check" style="margin: 0; padding: 0;">
+                                    <input class="" type="radio" name="periodRadio" id="id_today_sessions_radio">
+                                    <label class="form-check-label fs-6" for="id_today_sessions_radio">
+                                        {% trans "Сегодня" %}
+                                    </label>
+                                </div>
+                                <div class="form-check" style="margin: 0; padding: 0;">
+                                    <input class="" type="radio" name="periodRadio" id="id_tomorrow_session_radio" >
+                                    <label class="form-check-label fs-6" for="id_tomorrow_session_radio">
+                                        {% trans "Завтра" %}
+                                    </label>
+                                </div>
+                                <div class="form-check" style="margin: 0; padding: 0;">
+                                    <input class="" type="radio" name="periodRadio" id="id_week_session_radio">
+                                    <label class="form-check-label fs-6" for="id_week_session_radio">
+                                        {% trans "Неделя" %}
+                                    </label>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <label for="{{filter_form.format.auto_id}}" class="fs-6 mt-2 text-secondary">{{filter_form.format.label}}</label>
+                                {% render_field filter_form.format class='form-select' %}
+                            </div>
+                            <div class="col-md-10">
+                                <div class="sessions d-block" id="id_all_sessions">
+                                    <table class="table fs-5">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th scope="col">{% trans "Фильм" %}</th>
+                                                <th scope="col">{% trans "Возраст" %}</th>
+                                                <th scope="col">{% trans "Формат" %}</th>
+                                                <th scope="col">{% trans "Кинотеатр" %}</th>
+                                                <th scope="col">{% trans "Зал" %}</th>
+                                                <th scope="col">{% trans "Дата" %}</th>
+                                                <th scope="col">{% trans "Время" %}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for session in sessions %}
+                                            <tr>
+                                                <td class="text-center">
+                                                    {% if session.movie.poster %}
+                                                        <img style="max-height:100px;" src="{{MEDIA_URL}}{{session.movie.poster.url}}" alt="{{movie.name}}_poster">
+                                                    {% endif %}
+                                                </td>
+                                                <td><a href="{% url 'app:movie_detail' session.movie.pk %}" class="text-decoration-none">{{session.movie.name}}</a></td>
+                                                <td>
+                                                    {% if session.movie.age_limit %}
+                                                        {{session.movie.age_limit}}+
+                                                    {% else %}
+                                                        {% trans "Не указано" %}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{session.get_format_display}}</td>
+                                                <td><a href="{% url 'app:cinema_detail' session.hall.cinema.pk %}" class="text-decoration-none">{{session.hall.cinema.name}}</a></td>
+                                                <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
+                                                <td>{{session.time|date:"d M Y"}}</td>
+                                                <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="sessions d-none" id="id_today_sessions">
+                                    <table class="table fs-5">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th scope="col">{% trans "Фильм" %}</th>
+                                                <th scope="col">{% trans "Возраст" %}</th>
+                                                <th scope="col">{% trans "Формат" %}</th>
+                                                <th scope="col">{% trans "Кинотеатр" %}</th>
+                                                <th scope="col">{% trans "Зал" %}</th>
+                                                <th scope="col">{% trans "Дата" %}</th>
+                                                <th scope="col">{% trans "Время" %}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for session in today_sessions %}
+                                            <tr>
+                                                <td class="text-center">
+                                                    {% if session.movie.poster %}
+                                                        <img style="max-height:100px;" src="{{MEDIA_URL}}{{session.movie.poster.url}}" alt="{{movie.name}}_poster">
+                                                    {% endif %}
+                                                </td>
+                                                <td><a href="{% url 'app:movie_detail' session.movie.pk %}" class="text-decoration-none">{{session.movie.name}}</a></td>
+                                                <td>
+                                                    {% if session.movie.age_limit %}
+                                                        {{session.movie.age_limit}}+
+                                                    {% else %}
+                                                        {% trans "Не указано" %}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{session.get_format_display}}</td>
+                                                <td><a href="{% url 'app:cinema_detail' session.hall.cinema.pk %}" class="text-decoration-none">{{session.hall.cinema.name}}</a></td>
+                                                <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
+                                                <td>{{session.time|date:"d M Y"}}</td>
+                                                <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="sessions d-none" id="id_tomorrow_sessions">
+                                    <table class="table fs-5">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th scope="col">{% trans "Фильм" %}</th>
+                                                <th scope="col">{% trans "Возраст" %}</th>
+                                                <th scope="col">{% trans "Формат" %}</th>
+                                                <th scope="col">{% trans "Кинотеатр" %}</th>
+                                                <th scope="col">{% trans "Зал" %}</th>
+                                                <th scope="col">{% trans "Дата" %}</th>
+                                                <th scope="col">{% trans "Время" %}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for session in tomorrow_sessions %}
+                                            <tr>
+                                                <td class="text-center">
+                                                    {% if session.movie.poster %}
+                                                        <img style="max-height:100px;" src="{{MEDIA_URL}}{{session.movie.poster.url}}" alt="{{movie.name}}_poster">
+                                                    {% endif %}
+                                                </td>
+                                                <td><a href="{% url 'app:movie_detail' session.movie.pk %}" class="text-decoration-none">{{session.movie.name}}</a></td>
+                                                <td>
+                                                    {% if session.movie.age_limit %}
+                                                        {{session.movie.age_limit}}+
+                                                    {% else %}
+                                                        {% trans "Не указано" %}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{session.get_format_display}}</td>
+                                                <td><a href="{% url 'app:cinema_detail' session.hall.cinema.pk %}" class="text-decoration-none">{{session.hall.cinema.name}}</a></td>
+                                                <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
+                                                <td>{{session.time|date:"d M Y"}}</td>
+                                                <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="sessions d-none" id="id_next_week_sessions">
+                                    <table class="table fs-5">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th scope="col">{% trans "Фильм" %}</th>
+                                                <th scope="col">{% trans "Возраст" %}</th>
+                                                <th scope="col">{% trans "Формат" %}</th>
+                                                <th scope="col">{% trans "Кинотеатр" %}</th>
+                                                <th scope="col">{% trans "Зал" %}</th>
+                                                <th scope="col">{% trans "Дата" %}</th>
+                                                <th scope="col">{% trans "Время" %}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for session in next_week_sessions %}
+                                            <tr>
+                                                <td class="text-center">
+                                                    {% if session.movie.poster %}
+                                                        <img style="max-height:100px;" src="{{MEDIA_URL}}{{session.movie.poster.url}}" alt="{{movie.name}}_poster">
+                                                    {% endif %}
+                                                </td>
+                                                <td><a href="{% url 'app:movie_detail' session.movie.pk %}" class="text-decoration-none">{{session.movie.name}}</a></td>
+                                                <td>
+                                                    {% if session.movie.age_limit %}
+                                                        {{session.movie.age_limit}}+
+                                                    {% else %}
+                                                        {% trans "Не указано" %}
+                                                    {% endif %}
+                                                </td>
+                                                <td>{{session.get_format_display}}</td>
+                                                <td><a href="{% url 'app:cinema_detail' session.hall.cinema.pk %}" class="text-decoration-none">{{session.hall.cinema.name}}</a></td>
+                                                <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
+                                                <td>{{session.time|date:"d M Y"}}</td>
+                                                <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="position-sticky mt-2" style="top: 2rem;">
+                    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for image in advertise_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% else %}
+                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% endif %}
+                            <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." height="300px"></a>
+                        </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/shedule.js' %}"></script>
+{% endblock extra_js %}

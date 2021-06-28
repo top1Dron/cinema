@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags %}
+
+{% block title %}{{about_cinema.title}}{% endblock title %}
+
+{% block main_content %}
+    <div class="container-fluid" style="min-height:46vh;">
+        <div class="row">
+            <div class="col-md-10">
+            {% if about_cinema.main_image %}
+                <img id="about_cinema_image" class="text-center w-100" src="{{MEDIA_URL}}{{about_cinema.main_image.url}}" alt="about_cinema_image">
+            {% endif %}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center">{{about_cinema.title}}</h3>
+                        <div class="text-center fs-5">{{about_cinema.description|safe}}</div>
+                        <div class="row justify-content-center">
+                        {% for image in about_cinema.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="col-11 mb-3">
+                                <img id="about_cinema_image_{{forloop.counter0}}" class="text-center w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="about_cinema_image_{{forloop.counter0}}">
+                            </div>
+                        {% else %}
+                            <div class="col-4">
+                                <img id="about_cinema_image_{{forloop.counter0}}" class="text-center w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="about_cinema_image_{{forloop.counter0}}">
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for image in advertise_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% else %}
+                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% endif %}
+                                <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..."></a>
+                            </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

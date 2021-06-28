@@ -1,0 +1,178 @@
+{% extends 'admin/base.html' %}
+
+{% load static i18n widget_tweaks %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'admin/plugins/daterangepicker/daterangepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+{% endblock extra_css %}
+
+{% block main_content %}
+    <div class="container" style="margin-top: 75px">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8"><h2 class="text-center">{% trans "Создать пользователя" %}</h2></div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <form action="." method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 for="{{form.first_name.auto_id}}" class="form-label">{{form.first_name.label}}</h4>
+                            {% render_field form.first_name class="form-control bg-light" %}
+                        </div>
+                        <div class="col-md-6">
+                            <h4 for="{{form.language.auto_id}}" class="form-label">{{form.language.label}}</h4>
+                            <div class="form-group d-flex justify-content-around">
+                                {% for ratio in form.language %}
+                                    <div class="form-check form-check-inline">
+                                        {{ ratio.tag }}
+                                        <label  class='form-check-label' for="{{ ratio.id_for_label }}" style="font-size:150%">{{ ratio.choice_label }}</label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="form-label" for="{{form.last_name.auto_id}}">{{form.last_name.label}}</h4>
+                            {% render_field form.last_name class="form-control bg-light" %}
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="form-label" for="{{form.gender.auto_id}}">{{form.gender.label}}</h4>
+                            <div class="form-group d-flex justify-content-around">
+                                {% for ratio in form.gender %}
+                                    <div class="form-check form-check-inline">
+                                        {{ ratio.tag }}
+                                        <label  class='form-check-label' for="{{ ratio.id_for_label }}" style="font-size:150%">{{ ratio.choice_label }}</label>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4 class="form-label">{% trans "Псевдоним" %}</h4>
+                            {% render_field form.username class="form-control bg-light" %}
+                            {% for error in form.username.errors %}
+                            <div class="alert alert-danger mt-2">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="form-label">{{form.phone_number.label}}</h4>
+                            {% render_field form.phone_number placeholder="+38(0**)*******" class="form-control bg-light" %}
+                            {% for error in form.phone_number.errors %}
+                            <div class="alert alert-danger mt-2">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h4 class="form-label">{{form.email.label}}</h4>
+                            {% render_field form.email class="form-control bg-light" %}
+                            {% for error in form.email.errors %}
+                            <div class="alert alert-danger mt-2">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="form-label">{{form.birth_date.label}}</h4>
+                            <div class="input-group date" id="birthdate" data-target-input="nearest">
+                                {% render_field form.birth_date class='form-control bg-light datetimepicker-input' data-target="#birthdate"%}
+                                <div class="input-group-append" data-target="#birthdate" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                            {% for error in form.birth_date.errors %}
+                            <div class="alert alert-danger mt-2">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h4 class="form-label">{{form.payment_card_number.label}}</h4>
+                            {% render_field form.payment_card_number class="form-control bg-light" %}
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="form-label">{{form.city.label}}</h4>
+                            {% render_field form.city class="form-control w-100 bg-light" %}
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6">
+                            <h4 class="form-label">{{form.password1.label}}</h4>
+                            {% render_field form.password1 class="form-control bg-light" %}
+                            {% for error in form.password1.errors %}
+                            <div class="alert alert-danger mt-2">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="form-label">{{form.password2.label}}</h4>
+                            {% render_field form.password2 class="form-control w-100 bg-light" %}
+                            {% for error in form.password2.errors %}
+                            <div class="alert alert-danger mt-2">
+                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                {{ error|striptags }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-12">
+                            <h4 class="form-label">{{form.address.label}}</h4>
+                            {% render_field form.address class="form-control bg-light" %}
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-sm-4">
+                            <div class="form-check">
+                                {% render_field form.is_active class="form-check-input" %}
+                                <label for="{{form.is_active.auto_id}}" class="form-check-label">{{form.is_active.label}}</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-check">
+                                {% render_field form.is_staff class="form-check-input" %}
+                                <label for="{{form.is_staff.auto_id}}" class="form-check-label">{{form.is_staff.label}}</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-check">
+                                {% render_field form.is_superuser class="form-check-input" %}
+                                <label for="{{form.is_superuser.auto_id}}" class="form-check-label">{{form.is_superuser.label}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <input type="submit" class="btn btn-success" value="{% trans "Сохранить" %}">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'admin/plugins/daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'admin/plugins/moment/moment.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+    <script>
+        $('#birthdate').datetimepicker({
+            format:'DD.MM.YYYY',
+        });
+    </script>
+{% endblock extra_js %}

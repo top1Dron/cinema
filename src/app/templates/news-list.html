@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags %}
+
+{% block title %}{% trans "Новости" %}{% endblock title %}
+
+{% block main_content %}
+    <div class="container-fluid" style="min-height:46vh;">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>{% trans "Новости" %}</h2>
+                        <div class="row">
+                        {% for article in news %}
+                            <div class="col-sm-6 col-md-4">
+                            {% if article.main_image %}
+                                <img class="d-block w-100" src="{{MEDIA_URL}}{{article.main_image.url}}" alt="" height="200px">
+                            {% endif %}
+                                <a href="{% url 'app:news_detail' article.pk %}" class="text-decoration-none fs-4">{{article.title}}</a>
+                                <h6>{{article.published|date:"d.m.Y"}}</h6>
+                                <span class="fs-6">{{article.description|safe}}</span>
+                            </div>
+                        {% empty %}
+                            <h4 class="text-center">{% trans "На данный момент нету новостей" %}</h4>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for image in advertise_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% else %}
+                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% endif %}
+                                <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..."></a>
+                            </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags %}
+
+{% block title %}{{movie.name}}{% endblock title %}
+
+{% block main_content %}
+    <div class="container-fluid" style="min-height:46vh;">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                {% if movie.trailer %}
+                    <iframe class="w-100" height="500px" src="{{movie.trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                {% endif %}
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <button class="btn btn-success" type='button' id="movie_info_btn">{% trans "Информация о фильме" %}</button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-outline-success" type='button' id="movie_shedule_btn">{% trans "Расписание" %}</button>
+                            </div>
+                        </div>
+                        <div id="movie_info">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    {% if movie.poster %}
+                                        <img src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-9">
+                                    <h2 class="text-center">{{movie.name}}</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="position-sticky mt-2" style="top: 2rem;">
+                    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for image in advertise_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% else %}
+                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% endif %}
+                            <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." height="300px"></a>
+                        </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

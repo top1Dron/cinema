@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags %}
+
+{% block site_header %}
+<div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    {% for image in main_page_baner.gallery.all %}
+    {% if not forloop.counter0 %}
+        <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+    {% else %}
+        <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+    {% endif %}
+            <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." style="height: 100px;"></a>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock site_header %}
+
+{% block main_content %}
+    <div class="container" style="min-height:42vh;">
+        <div class="card bg-dark">
+            <div class="card-body">
+                <div class="carousel slide" id="todayMoviesCarouselControls" data-bs-ride="carousel">
+                    <div class="carousel-indicators">                
+                        {% for movie in today_movies %}
+                            {% if not forloop.counter0 %}
+                                <button type="button" data-bs-target="#todayMoviesCarouselControls" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Movie {{forloop.counter0}}"></button>
+                            {% else %}
+                                <button type="button" data-bs-target="#todayMoviesCarouselControls" data-bs-slide-to="{{forloop.counter0}}" aria-label="Movie {{forloop.counter0}}"></button>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                    {% for movie in today_movies %}
+                    {% if not forloop.counter0 %}
+                        <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                    {% else %}
+                        <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                    {% endif %}
+                            <a href="#"><img class="d-block w-100" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..." style="height: 600px;"></a>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#todayMoviesCarouselControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#todayMoviesCarouselControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                
+                {% if today_movies %}
+                <h3 class="text-center text-light">{% trans "Смотрите сегодня" %}, {{today|date:"d.m"}}</h3>
+                <div class="row">
+                {% for movie in today_movies %}
+                    <div class="col-3">
+                        <a href="{% url 'app:movie_detail' movie.pk %}" class=""><img src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..." style="height: 400px;"></a>
+                        <div class="text-center"><a href="{% url 'app:movie_detail' movie.pk %}" class="fs-5">{{movie.name}}</a></div>
+                        <div class="row d-flex align-items-center mt-2">
+                            <div class="col-2"></div>
+                            <a href="{% url 'app:shedule' %}?movie={{movie.pk}}" class="col-8 btn btn-success">{% trans "Купить билет" %}</a>
+                            <div class="col-2"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                {% endif %}
+                
+                {% if soon_movies %}
+                <h3 class="text-center text-light">{% trans "Смотрите скоро" %}</h3>
+                <div class="row">
+                {% for movie in soon_movies %}
+                    <div class="col-3">
+                        <a href="{% url 'app:movie_detail' movie.pk %}"><img src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..." style="height: 400px;"></a>
+                        <a href="{% url 'app:movie_detail' movie.pk %}" class="fs-5">{{movie.name}}</a></br>
+                        <h5 class="text-center text-success fs-3">{% trans "С" %} {{movie.release_date|date:"d.m.Y"}}</h5>
+                    </div>
+                {% endfor %}
+                </div>
+                {% endif %}
+
+                <h3 class="text-center text-light">{% trans "Новости и Акции" %}</h3>
+                <div class="carousel slide" id="newsCarouselControls" data-bs-ride="carousel">
+                    <div class="carousel-indicators">                
+                        {% for i in news_and_stocks_range %}
+                            {% if not forloop.counter0 %}
+                                <button type="button" data-bs-target="#newsCarouselControls" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Slide {{forloop.counter0}}"></button>
+                            {% else %}
+                                <button type="button" data-bs-target="#newsCarouselControls" data-bs-slide-to="{{forloop.counter0}}" aria-label="Slide {{forloop.counter0}}"></button>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-inner">
+                    {% for image in news_and_stock_banner.gallery.all %}
+                    {% if not forloop.counter0 %}
+                        <div class="carousel-item active" data-bs-interval="{{news_and_stock_banner.rotational_speed|sec_to_ms}}">
+                    {% else %}
+                        <div class="carousel-item" data-bs-interval="{{news_and_stock_banner.rotational_speed|sec_to_ms}}">
+                    {% endif %}
+                            <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." style="height: 600px;"></a>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#newsCarouselControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#newsCarouselControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card bg-light w-100">
+                        <div class="card-body">
+                            <label for="id_seo_text" class="form-col-label my-3 d-flex justify-content-center fs-5">{% trans "СЕО текст" %}</label>
+                            <div class="text-center fs-6" id="id_seo_text">{{main_page.seo_text}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+{% endblock main_content %}

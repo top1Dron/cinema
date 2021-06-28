@@ -10,22 +10,16 @@
 
 {% block main_content %}
     <div class="container-fluid" style="margin-top: 100px;">
+        <div class="row justify-content-end mr-5 mb-3">
+          <a href="{% url 'admin:create_user' %}" class="btn btn-primary">{% trans "Создать пользователя" %}</a>
+        </div>
         <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">{% trans "Пользователи" %}</h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body">
-                {% comment %} <div class="row justify-content-md-end">
-                    <div class="dataTables_filter" id="users_table_filter">
-                        <label>
-                            {% trans "Поиск" %}
-                            <input type="text" class="form-control form-control-sm" aria-controls="users_table">
-                        </label>
-                    </div>
-                </div> {% endcomment %}
                 <table id="users_table" class="table table-bordered table-hover">
                   {% csrf_token %}
                   <thead>
@@ -49,7 +43,7 @@
                         <td>{{user.birth_date|date:"d.m.Y"}}</td>
                         <td>{{user.email}}</td>
                         <td>{{user.phone_number}}</td>
-                        <td>{{user.first_name|add:" "|add:user.last_name}}</td>
+                        <td>{{user.full_name}}</td>
                         <td>{{user.username}}</td>
                         <td>{{user.get_city_display}}</td>
                         <td>

@@ -17,7 +17,7 @@
                 <h4 for="{{form.name_ru.auto_id}}" class="form-label">{{ form.name_ru.label }}</h4>
                 {% render_field form.name_ru class='form-control bg-light col-md-6'%}
                 {% for error in form.name_ru.errors %}
-                <div class="alert alert-error">
+                <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
                 </div>
@@ -27,14 +27,14 @@
                 <h4 for="{{form.name_uk.auto_id}}" class="form-label">{{ form.name_uk.label }}</h4>
                 {% render_field form.name_uk class='form-control bg-light col-md-6'%}
                 {% for error in form.name_uk.errors %}
-                <div class="alert alert-error">
+                <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
                 </div>
                 {% endfor %}
             </div>
             {% for error in form.description_ru.errors %}
-            <div class="alert alert-error">
+            <div class="alert alert-danger">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 {{ error|striptags }}
             </div>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             {% for error in form.description_ru.errors %}
-            <div class="alert alert-error">
+            <div class="alert alert-danger">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 {{ error|striptags }}
             </div>
@@ -109,7 +109,7 @@
                         {{ form.logo }}
                     </div>
                     {% for error in form.logo.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -124,7 +124,7 @@
                         {{ form.banner }}
                     </div>
                     {% for error in form.banner.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -227,7 +227,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_url }}
                     {% for error in seo_form.seo_url.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -239,7 +239,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_title }}
                     {% for error in seo_form.seo_title.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -251,7 +251,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_keywords }}
                     {% for error in seo_form.seo_keywords.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -263,7 +263,7 @@
                 <div class="col-md-6">
                     {% render_field seo_form.seo_description  rows="4" class="w-100"%}
                     {% for error in seo_form.seo_description.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>

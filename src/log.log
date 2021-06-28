@@ -1384,3 +1384,34 @@ INFO 2021-06-19 19:36:47,977 utils Session object (None)
 INFO 2021-06-19 19:36:47,986 utils Session object (None)
 INFO 2021-06-19 19:36:47,994 utils Session object (None)
 INFO 2021-06-19 19:36:48,003 utils Session object (None)
+ERROR 2021-06-24 12:55:50,051 views True
+INFO 2021-06-24 18:00:13,700 utils 2021-06-25 18:00:00+03:00
+INFO 2021-06-24 18:00:14,726 utils 2021-06-26 18:00:00+03:00
+INFO 2021-06-24 18:00:15,732 utils 2021-06-27 18:00:00+03:00
+INFO 2021-06-24 18:00:16,746 utils 2021-06-28 18:00:00+03:00
+INFO 2021-06-24 18:00:17,801 utils 2021-06-29 18:00:00+03:00
+INFO 2021-06-24 18:00:18,874 utils 2021-06-30 18:00:00+03:00
+INFO 2021-06-26 20:09:58,964 views кролик питер_1.jpeg
+INFO 2021-06-26 20:16:47,215 views uploads/2021/06-01/pepsi_news.jpg
+INFO 2021-06-26 20:19:47,017 views 
+INFO 2021-06-26 20:21:19,335 views 
+INFO 2021-06-26 20:22:56,156 views uploads/2021/06-26/кролик_питер_1.jpeg
+INFO 2021-06-26 20:23:04,870 views 
+INFO 2021-06-26 20:23:15,686 views 
+INFO 2021-06-26 20:23:26,243 views 
+INFO 2021-06-26 20:23:36,105 views uploads/2021/06-01/pepsi_news.jpg
+INFO 2021-06-26 20:24:14,280 views uploads/2021/06-26/кролик_питер_1.jpeg
+INFO 2021-06-26 20:24:25,114 views 
+INFO 2021-06-26 20:24:35,625 views 
+INFO 2021-06-26 20:24:44,624 views 
+INFO 2021-06-26 20:24:53,808 views uploads/2021/06-01/pepsi_news.jpg
+INFO 2021-06-26 21:03:24,689 views uploads/2021/06-01/pepsi_news.jpg
+INFO 2021-06-26 21:06:15,282 views uploads/2021/06-01/pepsi_news.jpg
+INFO 2021-06-26 21:14:34,212 views uploads/2021/06-01/pepsi_news.jpg
+INFO 2021-06-27 14:04:54,735 views dict_items([('username', ['Обязательное поле.']), ('email', ['Обязательное поле.']), ('phone_number', ['Обязательное поле.'])])
+INFO 2021-06-27 14:05:27,034 views dict_items([('username', ['Обязательное поле.']), ('email', ['Обязательное поле.']), ('phone_number', ['Обязательное поле.'])])
+INFO 2021-06-27 14:06:37,578 views dict_items([('username', ['Обязательное поле.']), ('email', ['Обязательное поле.']), ('phone_number', ['Обязательное поле.'])])
+INFO 2021-06-27 14:06:44,408 views dict_items([('username', ['Обязательное поле.']), ('email', ['Обязательное поле.']), ('phone_number', ['Обязательное поле.'])])
+INFO 2021-06-27 14:12:12,238 views dict_items([('username', ['Обязательное поле.']), ('email', ['Обязательное поле.'])])
+INFO 2021-06-27 14:44:18,511 views dict_items([('username', ['Обязательное поле.']), ('email', ['Обязательное поле.'])])
+INFO 2021-06-27 14:44:50,558 views AlEksandra2007

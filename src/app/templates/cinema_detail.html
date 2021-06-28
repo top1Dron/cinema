@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags %}
+
+{% block title %}{{cinema.name}}{% endblock title %}
+
+{% block main_content %}
+    <div class="container-fluid" style="min-height:46vh;">
+        {% if cinema.banner %}
+            <img class="d-block w-100" src="{{MEDIA_URL}}{{cinema.banner.url}}" alt="" height="400px">
+        {% endif %}
+        <div class="row">
+            <div class="col-md-3">
+                <div class="position-sticky mt-2" style="top: 2rem;">
+                    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for image in advertise_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% else %}
+                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% endif %}
+                            <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." height="300px"></a>
+                        </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <h4 class="mt-3">{% trans "Количество залов" %}: {{cinema.hall_set.count}}</h4>
+                    {% for hall in cinema.hall_set.all %}
+                        <a href="{% url 'app:hall_detail' hall.pk %}" class="btn btn-light w-100">{% trans "Зал" %} №{{hall.number}}</a>
+                    {% endfor %}
+                    <h4 class="mt-3">{% trans "Смотрите сегодня" %}:</h4>
+                    {% for session in today_sessions %}
+                        <a href="#" class="btn btn-light w-100">{{session.movie.name}} {% trans "в зале" %} №{{session.hall.number}} {% trans "в" %} {{session.time|date:"H:i"}}</a>
+                    {% endfor %}
+                    <div class="mt-3 text-center">
+                        <a href="{% url 'app:shedule' %}?cinema={{cinema.pk}}" class="btn btn-success">{% trans "Расписание" %}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2">
+                                {% if cinema.logo %}
+                                    <img class="d-block" src="{{MEDIA_URL}}{{cinema.logo.url}}" alt="" height="200px" width="200px">
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <h4 class="text-center">{{cinema.name}}</h4>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="{% url 'app:shedule' %}?cinema={{cinema.pk}}" class="btn btn-success">{% trans "Расписание" %}</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="fs-6">{{cinema.description|safe}}</span>
+                        </div>
+                        <div class="row">
+                            <h2 class="text-center">{% trans "Условия" %}</h2>
+                        </div>
+                        <div class="row">
+                            <span class="fs-6">{{cinema.condition|safe}}</span>
+                        </div>
+                        <div class="row">
+                            <h2 class="text-center">{% trans "ФОТОГАЛЕРЕЯ" %}</h2>
+                        </div>
+                        {% if cinema.gallery.count %}
+                        <div class="carousel slide" id="cinemaCarouselControls" data-bs-ride="carousel">
+                            <div class="carousel-indicators">                
+                                {% for image in cinema.gallery.all %}
+                                    {% if not forloop.counter0 %}
+                                        <button type="button" data-bs-target="#cinemaCarouselControls" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Article image {{forloop.counter0}}"></button>
+                                    {% else %}
+                                        <button type="button" data-bs-target="#cinemaCarouselControls" data-bs-slide-to="{{forloop.counter0}}" aria-label="Article image {{forloop.counter0}}"></button>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <div class="carousel-inner">
+                            {% for image in cinema.gallery.all %}
+                            {% if not forloop.counter0 %}
+                                <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                            {% else %}
+                                <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                            {% endif %}
+                                    <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." style="height: 600px;"></a>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#cinemaCarouselControls" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#cinemaCarouselControls" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

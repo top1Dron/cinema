@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags %}
+
+{% block title %}{{children_room_page.title}}{% endblock title %}
+
+{% block main_content %}
+    <div class="container-fluid" style="min-height:46vh;">
+        <div class="row">
+            <div class="col-md-10">
+            {% if children_room_page.main_image %}
+                <img id="children_room_page_image" class="text-center w-100" src="{{MEDIA_URL}}{{children_room_page.main_image.url}}" alt="children_room_page_image">
+            {% endif %}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text-center">{{children_room_page.title}}</h3>
+                        <div class="text-center fs-5">{{children_room_page.description|safe}}</div>
+                        <div class="row justify-content-center">
+                        {% for image in children_room_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="col-11 mb-3">
+                                <img id="children_room_page_image_{{forloop.counter0}}" class="text-center w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="children_room_page_image_{{forloop.counter0}}">
+                            </div>
+                        {% else %}
+                            <div class="col-4">
+                                <img id="children_room_page_image_{{forloop.counter0}}" class="text-center w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="children_room_page_image_{{forloop.counter0}}">
+                            </div>
+                        {% endif %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="position-sticky" style="top: 2rem;">
+                    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for image in advertise_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% else %}
+                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% endif %}
+                                <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..."></a>
+                            </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}

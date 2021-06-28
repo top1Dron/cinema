@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags %}
+
+{% block title %}{% trans "Скоро" %}{% endblock title %}
+
+{% block main_content %}
+    <div class="container-fluid" style="min-height:46vh;">
+        <div class="row">
+            <div class="col-md-2">
+                <button class="btn btn-light w-100" type="button" id="afiche_btn">{% trans "Афиша" %}</button>
+                <button class="btn btn-success w-100" type="button" id="soon_btn">{% trans "Скоро" %}</button>
+                <div class="position-sticky mt-2" style="top: 2rem;">
+                    <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        {% for image in advertise_page.gallery.all %}
+                        {% if not forloop.counter0 %}
+                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% else %}
+                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                        {% endif %}
+                            <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." height="300px"></a>
+                        </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="d-none" id="id_active_movies">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <div class="row">
+                                {% for movie in active_movies %}
+                                    <div class="col-md-2 text-center">
+                                        <label class="fs-5 text-light">Сейчас в кино</label>
+                                        {% if movie.poster %}
+                                            <img class="w-100" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
+                                        {% endif %}
+                                        <a class="fs-5" href="{% url 'app:movie_detail' movie.pk %}">{{ movie.name }}</a>
+                                        <a href="{% url 'app:shedule' %}?movie={{movie.pk}}" class="col-8 btn btn-success">{% trans "Купить билет" %}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-block" id="id_soon_movies">
+                    <div class="card bg-dark">
+                        <div class="card-body">
+                            <div class="row">
+                                {% for movie in soon_movies %}
+                                    <div class="col-md-2 text-center">
+                                        <label class="text-light fs-5">{% trans "С" %} {{movie.release_date|date:"d.m.Y"}}</label>
+                                        {% if movie.poster %}
+                                            <img class="w-100" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
+                                        {% endif %}
+                                        <a class="fs-5" href="{% url 'app:movie_detail' movie.pk %}">{{ movie.name }}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/afiche.js' %}"></script>
+{% endblock extra_js %}
+

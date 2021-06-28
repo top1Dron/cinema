@@ -1,6 +1,7 @@
 from datetime import datetime as dt, timedelta
 import json
 import logging
+import pytz
 
 from django.conf import settings
 from django.contrib import messages
@@ -534,14 +535,16 @@ def update_hall_places(json_scheme, hall):
 
 
 def create_session(post):
-    first_session = dt.strptime(post.get('time'), '%d.%m.%Y %H:%M')
-    last_session = dt.strptime(post.get('time'), '%d.%m.%Y %H:%M')
+    tzinfo = pytz.timezone(settings.TIME_ZONE)
+    first_session = tzinfo.localize(dt.strptime(post.get('time'), '%d.%m.%Y %H:%M'))
+    last_session = tzinfo.localize(dt.strptime(post.get('time'), '%d.%m.%Y %H:%M'))
     if post.get('last_session_date') is not None and post.get('last_session_date'):
-        last_session = dt.strptime(post.get('last_session_date'), '%d.%m.%Y')
+        last_session = tzinfo.localize(dt.strptime(post.get('last_session_date'), '%d.%m.%Y'))
         last_session = last_session.replace(hour=first_session.hour, minute=first_session.minute)
     delta = last_session - first_session
 
     # iterate on range between first session and last session
+    
     for i in range(delta.days + 1):
         session_date = first_session + timedelta(days=i)
         session = Session(

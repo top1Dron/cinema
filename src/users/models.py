@@ -26,7 +26,7 @@ class User(AbstractUser):
     )
 
     email = models.EmailField(_('E-mail'), unique=True)
-    phone_number = models.CharField(_("Номер телефона"), max_length=13, unique=True,
+    phone_number = models.CharField(_("Номер телефона"), max_length=20, unique=True,
         # valid=[+38(093)1350239,+38(093)135-02-39,+38(093)135 02 39,+380931350239,0931350239,+380445371428, +38(044)5371428,+38(044)537 14 28,+38(044)537-14-28,+38(044) 537.14.28,044.537.14.28,0445371428,044-537-1428,(044)537-1428,044 537-1428]
         # invalid = [+83(044)537 14 28,088 537-1428]
         validators=[
