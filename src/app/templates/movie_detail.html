@@ -12,10 +12,10 @@
                 {% if movie.trailer %}
                     <iframe class="w-100" height="500px" src="{{movie.trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 {% endif %}
-                <div class="card">
+                <div class="card mb-2">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-2">
+                        <div class="row mb-2">
+                            <div class="col-sm-3">
                                 <button class="btn btn-success" type='button' id="movie_info_btn">{% trans "Информация о фильме" %}</button>
                             </div>
                             <div class="col-sm-2">
@@ -26,13 +26,127 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     {% if movie.poster %}
-                                        <img src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
+                                        <img class="w-100" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
                                     {% endif %}
+                                    <ul class="list-group mt-3 fs-6">
+                                        <li class="list-group-item text-light bg-dark">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Год" %}</div>
+                                                <div class="col-6">{{movie.release_date|date:"Y"}}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item text-light bg-secondary">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Страна" %}</div>
+                                                <div class="col-6">{{movie.country}}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item text-light bg-dark">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Режиссёр" %}</div>
+                                                <div class="col-6">{{movie.director}}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item text-light bg-secondary">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Сценарий" %}</div>
+                                                <div class="col-6">{{movie.scriptwriter}}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item text-light bg-dark">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Возрастное ограничение" %}</div>
+                                                <div class="col-6">{{movie.age_limit}}+</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item text-light bg-secondary">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Язык" %}</div>
+                                                <div class="col-6">{{movie.language}}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item text-light bg-dark">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Жанр" %}</div>
+                                                <div class="col-6">{{movie.get_genre_display}}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item text-light bg-secondary">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Длительность" %}</div>
+                                                <div class="col-6">{{movie.duration|duration}}</div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item text-light bg-dark">
+                                            <div class="row">
+                                                <div class="col-6">{% trans "Бюджет" %}</div>
+                                                <div class="col-6">{{movie.budget}}</div>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                                 <div class="col-md-9">
                                     <h2 class="text-center">{{movie.name}}</h2>
+                                    <span class="fs-4">{{movie.description|safe}}</span>
+                                    <h4 class="text-center">{% trans "Кадры и постеры" %}</h4>
+                                    {% if movie.gallery.count %}
+                                    <div class="carousel slide" id="movieCarouselControls" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">                
+                                            {% for image in movie.gallery.all %}
+                                                {% if not forloop.counter0 %}
+                                                    <button type="button" data-bs-target="#movieCarouselControls" data-bs-slide-to="{{forloop.counter0}}" class="active" aria-current="true" aria-label="Article image {{forloop.counter0}}"></button>
+                                                {% else %}
+                                                    <button type="button" data-bs-target="#movieCarouselControls" data-bs-slide-to="{{forloop.counter0}}" aria-label="Article image {{forloop.counter0}}"></button>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                        <div class="carousel-inner">
+                                        {% for image in movie.gallery.all %}
+                                        {% if not forloop.counter0 %}
+                                            <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                                        {% else %}
+                                            <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                                        {% endif %}
+                                                <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." style="height: 600px;"></a>
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#movieCarouselControls" data-bs-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#movieCarouselControls" data-bs-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="visually-hidden">Next</span>
+                                                </button>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    {% endif %}
                                 </div>
                             </div>
+                        </div>
+                        <div class="d-none" id="movie_shedule">
+                            <table class="table fs-5">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">{% trans "Формат" %}</th>
+                                        <th scope="col">{% trans "Кинотеатр" %}</th>
+                                        <th scope="col">{% trans "Зал" %}</th>
+                                        <th scope="col">{% trans "Дата" %}</th>
+                                        <th scope="col">{% trans "Время" %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for session in sessions %}
+                                    <tr>
+                                        <td>{{session.get_format_display}}</td>
+                                        <td><a href="{% url 'app:cinema_detail' session.hall.cinema.pk %}" class="text-decoration-none">{{session.hall.cinema.name}}</a></td>
+                                        <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
+                                        <td>{{session.time|date:"d M Y"}}</td>
+                                        <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -57,3 +171,7 @@
         </div>
     </div>
 {% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'js/movie_detail.js' %}"></script>
+{% endblock extra_js %}

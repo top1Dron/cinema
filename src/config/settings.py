@@ -64,6 +64,9 @@ MIDDLEWARE = [
 if DEBUG:
     INSTALLED_APPS.append('debug_toolbar')
     MIDDLEWARE.append('debug_toolbar.middleware.DebugToolbarMiddleware')
+    STATICFILES_DIRS = (
+        BASE_DIR / 'static',
+    )
 
 INTERNAL_IPS = [
     '127.0.0.1',
@@ -160,11 +163,12 @@ LOCALE_PATHS = (
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = BASE_DIR / "static"
+if not DEBUG:
+    STATIC_ROOT = BASE_DIR / "static"
 
-# STATICFILES_DIRS = (
-#     BASE_DIR / 'static',
-# )
+STATICFILES_DIRS = (
+    BASE_DIR / 'static',
+)
 
 MEDIA_ROOT = BASE_DIR / 'media'
 

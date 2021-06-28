@@ -1,6 +1,9 @@
 {% extends 'admin/base.html' %}
 
-{% load static %}
+{% load static i18n %}
+
+{% block title %}{% trans "Статистика" %}{% endblock title %}
+
 {% block extra_css %}{% endblock extra_css %}
 
 {% block main_content %}

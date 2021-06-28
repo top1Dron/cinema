@@ -2,6 +2,8 @@
 
 {% load static i18n widget_tweaks %}
 
+{% block title %}{% trans "Рассылка" %}{% endblock title %}
+
 {% block main_content %}
     <div class="container-fluid" style="margin-top: 75px;">
         <div class="card">
@@ -88,8 +90,8 @@
                             <th>{% trans "Город" %}</th>
                         </tr>
                     </thead>
-                  {% for user in users %}
-                  <tbody>
+                    <tbody>
+                    {% for user in users %}
                     <tr>
                         <td>
                             <div class="form-check">
@@ -105,8 +107,8 @@
                         <td>{{user.username}}</td>
                         <td>{{user.get_city_display}}</td>
                     </tr>
-                  </tbody>
-                  {% endfor %}
+                    {% endfor %}
+                    </tbody>
                 </table>
             </div>
             <div class="modal-footer">

@@ -7,7 +7,7 @@ $(document).ready(function(){
         $('#id_active_movies').addClass('d-block');
         $('#id_active_movies').removeClass('d-none');
         $('#id_soon_movies').addClass('d-none');
-        $('#id_active_movies').removeClass('d-block');
+        $('#id_soon_movies').removeClass('d-block');
     });
     $('#soon_btn').click(function(){
         $(this).removeClass('btn-light');

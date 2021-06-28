@@ -2,6 +2,8 @@
 
 {% load static widget_tweaks i18n %}
 
+{% block title %}{% trans "Редактирование фильма" %} {{ form.instance.name }}{% endblock title %}
+
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'admin/plugins/summernote/summernote-bs4.min.css' %}">
     <link rel="stylesheet" href="{% static 'admin/plugins/daterangepicker/daterangepicker.css' %}">

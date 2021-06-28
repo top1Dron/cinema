@@ -233,4 +233,8 @@ class SheduleListView(ListView):
 
 def movie_detail(request, pk):
     movie = utils.get_movie_by_params(pk=pk)
-    return render(request, 'movie_detail.html', {'movie': movie})
+    sessions = utils.get_sessions_by_movie(
+        sessions=utils.get_future_sessions(),
+        movie_pk=movie.pk
+    )
+    return render(request, 'movie_detail.html', {'movie': movie, 'sessions': sessions})
