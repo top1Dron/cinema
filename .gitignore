@@ -6,7 +6,4 @@ src/config/static/example
 src/config/media
 Python-3.9.5
 postgres_data/
-.env.dev
-.env.prod
-.env.prod.db
 cinema_db_24_06.psql
