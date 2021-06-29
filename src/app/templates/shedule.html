@@ -63,6 +63,7 @@
                                                 <th scope="col">{% trans "Зал" %}</th>
                                                 <th scope="col">{% trans "Дата" %}</th>
                                                 <th scope="col">{% trans "Время" %}</th>
+                                                <th scope="col">{% trans "Цена" %}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -86,6 +87,7 @@
                                                 <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
                                                 <td>{{session.time|date:"d M Y"}}</td>
                                                 <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                                <td>{{session.price}} грн.</td>
                                             </tr>
                                             {% endfor %}
                                         </tbody>
@@ -103,6 +105,7 @@
                                                 <th scope="col">{% trans "Зал" %}</th>
                                                 <th scope="col">{% trans "Дата" %}</th>
                                                 <th scope="col">{% trans "Время" %}</th>
+                                                <th scope="col">{% trans "Цена" %}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -126,6 +129,7 @@
                                                 <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
                                                 <td>{{session.time|date:"d M Y"}}</td>
                                                 <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                                <td>{{session.price}} грн.</td>
                                             </tr>
                                             {% endfor %}
                                         </tbody>
@@ -143,6 +147,7 @@
                                                 <th scope="col">{% trans "Зал" %}</th>
                                                 <th scope="col">{% trans "Дата" %}</th>
                                                 <th scope="col">{% trans "Время" %}</th>
+                                                <th scope="col">{% trans "Цена" %}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -166,6 +171,7 @@
                                                 <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
                                                 <td>{{session.time|date:"d M Y"}}</td>
                                                 <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                                <td>{{session.price}} грн.</td>
                                             </tr>
                                             {% endfor %}
                                         </tbody>
@@ -183,6 +189,7 @@
                                                 <th scope="col">{% trans "Зал" %}</th>
                                                 <th scope="col">{% trans "Дата" %}</th>
                                                 <th scope="col">{% trans "Время" %}</th>
+                                                <th scope="col">{% trans "Цена" %}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -206,6 +213,7 @@
                                                 <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
                                                 <td>{{session.time|date:"d M Y"}}</td>
                                                 <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                                <td>{{session.price}} грн.</td>
                                             </tr>
                                             {% endfor %}
                                         </tbody>

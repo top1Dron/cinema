@@ -57,7 +57,7 @@ def get_cinemas():
 
 
 def get_cinema_halls(cinema_id):
-    return Hall.objects.filter(cinema=get_cinema_by_params(pk=cinema_id))
+    return Hall.objects.filter(cinema=get_cinema_by_params(pk=cinema_id)).order_by('number')
 
 
 def get_news_object_by_params(**kwargs):
