@@ -31,7 +31,19 @@ logger = logging.getLogger(__name__)
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))
 def index(request):
-    return render(request, 'admin/statistics.html')
+    users_count = User.objects.all().count()
+    men_count = User.objects.filter(gender='M').count()
+    women_count = User.objects.filter(gender='W').count()
+    month, sessions_count = utils.get_month_sessions()
+    movie_fees = utils.get_movies_fees()
+    return render(request, 'admin/statistics.html', {
+        'users_count': users_count,
+        'men_count': men_count,
+        'women_count': women_count,
+        'sessions_count': sessions_count,
+        'month': month,
+        'movie_fees': movie_fees,
+    })
 
 
 @staff_member_required(login_url=reverse_lazy('admin:login'))

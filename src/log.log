@@ -1420,3 +1420,77 @@ ERROR 2021-06-29 01:34:08,907 views True
 ERROR 2021-06-29 01:35:02,780 views True
 INFO 2021-06-29 07:26:04,681 views pepsi_news.jpg
 INFO 2021-06-29 07:26:53,160 views stock2.jpg
+INFO 2021-07-03 19:46:45,742 views 
+INFO 2021-07-03 19:47:29,748 views 
+INFO 2021-07-03 19:49:16,968 views 6856 6866 6877 6878
+INFO 2021-07-03 19:50:23,906 views 6 9 1 2   6 9 1 3   6 9 1 5   6 9 1 6   6 9 1 4
+INFO 2021-07-03 19:51:28,221 views ['6866', '6914', '6962', '6988', '6970']
+INFO 2021-07-03 19:52:47,256 views [6869, 6873, 6868, 6867, 6866, 6865, 6870, 6871, 6872]
+INFO 2021-07-04 21:08:11,201 views <QueryDict: {'nameContains': ['ф']}>
+INFO 2021-07-04 21:08:11,201 views None
+INFO 2021-07-04 21:08:11,608 views <QueryDict: {'nameContains': ['фо']}>
+INFO 2021-07-04 21:08:11,608 views None
+INFO 2021-07-04 21:09:01,977 views фор
+INFO 2021-07-04 21:09:02,027 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:09:09,172 views Форсаж 9
+INFO 2021-07-04 21:09:09,191 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:09:28,510 views Форсаж 
+INFO 2021-07-04 21:09:28,526 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:09:31,142 views ф
+INFO 2021-07-04 21:09:31,173 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:09:43,889 views и
+INFO 2021-07-04 21:09:43,923 views [{'detail_link': '/ru/movie/19/', 'name_ru': 'Гнев человеческий'}, {'detail_link': '/ru/movie/20/', 'name_ru': 'Академия магии (2021)'}, {'detail_link': '/ru/movie/13/', 'name_ru': 'Кролик Питер 2 (0+)'}, {'detail_link': '/ru/movie/21/', 'name_ru': 'Изгнание (16+)'}, {'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/15/', 'name_ru': 'Позволь ему уйти'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:09:46,896 views из
+INFO 2021-07-04 21:09:46,951 views [{'detail_link': '/ru/movie/21/', 'name_ru': 'Изгнание (16+)'}]
+INFO 2021-07-04 21:10:23,759 views изг
+INFO 2021-07-04 21:10:23,784 views [{'detail_link': '/ru/movie/21/', 'name_ru': 'Изгнание (16+)'}]
+INFO 2021-07-04 21:10:33,580 views Изгнание (16+)
+INFO 2021-07-04 21:10:33,635 views [{'detail_link': '/ru/movie/21/', 'name_ru': 'Изгнание (16+)'}]
+INFO 2021-07-04 21:11:05,387 views ф
+INFO 2021-07-04 21:11:05,416 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:11:05,827 views фо
+INFO 2021-07-04 21:11:05,843 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:11:55,087 views ф
+INFO 2021-07-04 21:11:55,118 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:11:55,977 views фо
+INFO 2021-07-04 21:11:56,017 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:12:23,346 views форс
+INFO 2021-07-04 21:12:23,376 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:12:40,112 views ф
+INFO 2021-07-04 21:12:40,155 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:12:43,274 views к
+INFO 2021-07-04 21:12:43,294 views [{'detail_link': '/ru/movie/19/', 'name_ru': 'Гнев человеческий'}, {'detail_link': '/ru/movie/20/', 'name_ru': 'Академия магии (2021)'}, {'detail_link': '/ru/movie/13/', 'name_ru': 'Кролик Питер 2 (0+)'}, {'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:12:48,665 views ки
+INFO 2021-07-04 21:12:48,689 views [{'detail_link': '/ru/movie/19/', 'name_ru': 'Гнев человеческий'}, {'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:12:50,045 views кий
+INFO 2021-07-04 21:12:50,066 views [{'detail_link': '/ru/movie/19/', 'name_ru': 'Гнев человеческий'}, {'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:12:56,955 views к
+INFO 2021-07-04 21:12:57,041 views [{'detail_link': '/ru/movie/19/', 'name_ru': 'Гнев человеческий'}, {'detail_link': '/ru/movie/20/', 'name_ru': 'Академия магии (2021)'}, {'detail_link': '/ru/movie/13/', 'name_ru': 'Кролик Питер 2 (0+)'}, {'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:12:57,974 views ко
+INFO 2021-07-04 21:12:58,028 views [{'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:12:58,368 views кос
+INFO 2021-07-04 21:12:58,419 views [{'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}]
+INFO 2021-07-04 21:15:16,725 views у
+INFO 2021-07-04 21:15:16,761 views [{'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/15/', 'name_ru': 'Позволь ему уйти'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:15:17,997 views к
+INFO 2021-07-04 21:15:18,016 views [{'detail_link': '/ru/movie/19/', 'name_ru': 'Гнев человеческий'}, {'detail_link': '/ru/movie/20/', 'name_ru': 'Академия магии (2021)'}, {'detail_link': '/ru/movie/13/', 'name_ru': 'Кролик Питер 2 (0+)'}, {'detail_link': '/ru/movie/14/', 'name_ru': 'Космический рубеж'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:15:27,170 views су
+INFO 2021-07-04 21:15:27,199 views [{'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}]
+INFO 2021-07-04 21:15:33,895 views кли
+INFO 2021-07-04 21:15:33,921 views [{'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+INFO 2021-07-04 21:56:33,253 views asdasd
+INFO 2021-07-04 21:56:33,284 views []
+INFO 2021-07-04 21:56:34,225 views asdas
+INFO 2021-07-04 21:56:34,243 views []
+INFO 2021-07-04 21:56:37,384 views ф
+INFO 2021-07-04 21:56:37,407 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:56:40,508 views ф
+INFO 2021-07-04 21:56:40,523 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:59:42,920 views ф
+INFO 2021-07-04 21:59:42,960 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:59:44,464 views фо
+INFO 2021-07-04 21:59:44,489 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:59:49,083 views фо
+INFO 2021-07-04 21:59:49,134 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
+INFO 2021-07-04 21:59:54,963 views ф
+INFO 2021-07-04 21:59:54,984 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]

@@ -154,8 +154,11 @@ class Session(models.Model):
     time = models.DateTimeField(_('Дата сеанса'))
     hall = models.ForeignKey(Hall, on_delete=models.CASCADE)
     format = models.IntegerField(_('Формат показа'), choices=Movie.MOVIE_TYPES)
-    price = models.FloatField(_('Цена обычного билета'))
-    vip_price = models.FloatField(_('Цена VIP-билета'))
+    price = models.FloatField(_('Цена обычного билета'), validators=[validators.MinValueValidator(0.0)])
+    vip_price = models.FloatField(_('Цена VIP-билета'), validators=[validators.MinValueValidator(0.0)])
+
+    class Meta:
+        unique_together = ('time', 'hall')
 
     @property
     def total_places(self):

@@ -4,9 +4,11 @@ import logging
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.decorators import login_required
+from django.http.response import JsonResponse
 from django.shortcuts import redirect, render
 from django.urls.base import reverse_lazy
 from django.utils import timezone
+from django.views.decorators.http import require_http_methods
 from django.views.generic import DetailView, ListView
 
 from app.forms import UserCreateForm, UserUpdateForm, SessionFilterForm
@@ -238,3 +240,70 @@ def movie_detail(request, pk):
         movie_pk=movie.pk
     )
     return render(request, 'movie_detail.html', {'movie': movie, 'sessions': sessions})
+
+
+@login_required
+def book_tickets_for_session(request, pk):
+    if request.method == 'POST':
+        tickets = request.POST.get('selected_tickets_book')
+        for ticket_id in tickets.split(' '):
+            ticket = utils.get_ticket_by_params(pk=int(ticket_id))
+            ticket.user = request.user
+            ticket.status = '1'
+            ticket.save()
+        return redirect(reverse_lazy('app:book_tickets_for_session', kwargs={'pk': pk}))
+    session = utils.get_session_by_params(pk=pk)
+    rows = max(place.real_row for place in session.hall.ordered_places)
+    cols = max(place.real_position for place in session.hall.ordered_places)
+    return render(request, 'book-ticket-for-session.html', {
+        'session': session,
+        'rows': range(1, rows + 1),
+        'cols': range(1, cols + 1),
+    })
+
+
+@login_required
+@require_http_methods(['POST'])
+def buy_tickets_for_session(request, pk):
+    tickets = request.POST.get('selected_tickets_buy')
+    for ticket_id in tickets.split(' '):
+        ticket = utils.get_ticket_by_params(pk=int(ticket_id))
+        ticket.user = request.user
+        ticket.status = '2'
+        ticket.save()
+    return redirect(reverse_lazy('app:book_tickets_for_session', kwargs={'pk': pk}))
+
+
+@login_required
+def view_user_tickets(request):
+    active_tickets = utils.get_active_user_tickets(request.user)
+    expired_tickets = utils.get_expired_user_tickets(request.user)
+    return render(request, 'user_tickets.html', {
+        'active_tickets': active_tickets,
+        'expired_tickets': expired_tickets,
+    })
+
+
+@login_required
+def return_a_ticket(request, pk):
+    ticket = utils.get_ticket_by_params(pk=pk)
+    ticket.status = '0'
+    ticket.user = get_user_by_email('admin1@gmail.com')
+    ticket.save()
+    return redirect(reverse_lazy('app:view_user_tickets'))
+
+
+@login_required
+def buy_the_ticket(request, pk):
+    ticket = utils.get_ticket_by_params(pk=pk)
+    ticket.status = '2'
+    ticket.save()
+    return redirect(reverse_lazy('app:view_user_tickets'))
+
+
+def find_movie(request):
+    url_param = request.GET.get('nameContains')
+    logger.info(url_param)
+    data = utils.find_movies_by_param(url_param)
+    logger.info(data)
+    return JsonResponse(data, safe=False)

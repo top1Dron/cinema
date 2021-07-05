@@ -67,6 +67,7 @@ class AdminMovieForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['name_uk'].label = 'Назва фільму (українською)'
         self.fields['name_ru'].label = 'Название фильма (на русском)'
+        self.fields['name_ru'].required = True
         self.fields['description_uk'].label = 'Опис (українською)'
         self.fields['description_ru'].label = 'Описание (на русском)'
         self.fields['type'].label = _('Тип')
@@ -104,6 +105,7 @@ class AdminNewsForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['title_uk'].label = 'Назва новини (українською)'
         self.fields['title_ru'].label = 'Название новости (на русском)'
+        self.fields['title_ru'].required = True
         self.fields['description_uk'].label = 'Опис (українською)'
         self.fields['description_ru'].label = 'Описание (на русском)'
         
@@ -120,6 +122,7 @@ class AdminStockForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['title_uk'].label = 'Назва акції (українською)'
         self.fields['title_ru'].label = 'Название акции (на русском)'
+        self.fields['title_ru'].required = True
         self.fields['description_uk'].label = 'Опис (українською)'
         self.fields['description_ru'].label = 'Описание (на русском)'
 
@@ -255,6 +258,12 @@ class CinemaContactsPageForm(forms.ModelForm):
     class Meta:
         model = CinemaContactsPage
         fields = ('address', 'coordinates', 'logo')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['address'].required = True
+        self.fields['coordinates'].required = True
+        self.fields['logo'].required = True
 
 
 class MobileAppForm(forms.ModelForm):

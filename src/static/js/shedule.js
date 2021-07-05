@@ -7,6 +7,7 @@ $(document).ready(function(){
             'movie', 
             $('#id_movie').val());
     });
+
     $('#id_cinema').on('change', function(e){
         var search = window.location.search;
         search = replaceQueryParam('hall', false, search);
@@ -15,6 +16,7 @@ $(document).ready(function(){
             'cinema', 
             $('#id_cinema').val());
     });
+
     $('#id_format').on('change', function(e){
         var search = window.location.search;
         search = replaceQueryParam('hall', false, search);
@@ -24,29 +26,80 @@ $(document).ready(function(){
             $('#id_format').val());
     });
 
+    var today = false, tomorrow = false, nextWeak = false;
+
     $('#id_today_sessions_radio').click(function(){
         $('.sessions').removeClass('d-block');
         $('.sessions').addClass('d-none');
         $('#id_today_sessions').removeClass('d-none');
         $('#id_today_sessions').addClass('d-block');
+        if(!today){
+            $('#id_today_shedule_table').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false,
+                "responsive": true,
+            });
+            today = true;
+        }
     });
+
     $('#id_all_session_radio').click(function(){
         $('.sessions').removeClass('d-block');
         $('.sessions').addClass('d-none');
         $('#id_all_sessions').removeClass('d-none');
         $('#id_all_sessions').addClass('d-block');
     });
+
     $('#id_tomorrow_session_radio').click(function(){
         $('.sessions').removeClass('d-block');
         $('.sessions').addClass('d-none');
         $('#id_tomorrow_sessions').removeClass('d-none');
         $('#id_tomorrow_sessions').addClass('d-block');
+        if(!tomorrow){
+            $('#id_tomorrow_shedule_table').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false,
+                "responsive": true,
+            });
+            tomorrow = true;
+        }
     });
+
     $('#id_week_session_radio').click(function(){
         $('.sessions').removeClass('d-block');
         $('.sessions').addClass('d-none');
         $('#id_next_week_sessions').removeClass('d-none');
         $('#id_next_week_sessions').addClass('d-block');
+        if (!nextWeak){
+            $('#id_next_week_shedule_table').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false,
+                "responsive": true,
+            });
+            nextWeak = true;
+        }
+    });
+
+    $('#id_all_shedule_table').DataTable({
+        "paging": false,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": false,
+        "info": false,
+        "autoWidth": false,
+        "responsive": true,
     });
 })
 

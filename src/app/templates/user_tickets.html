@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% load static i18n template_tags widget_tweaks %}
+
+{% block title %}{% trans "Билеты пользователя" %} {{user.username}}{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+{% endblock extra_css %}
+
+{% block main_content %}
+<div class="container-fluid" style="min-height:46vh;">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="text-center">{% trans "Активные билеты пользователя" %} {{user.username}}</h3>
+                    <table id="id_active_tickets" class="table fs-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">{% trans "Фильм" %}</th>
+                                <th scope="col">{% trans "Кинотеатр" %}</th>
+                                <th scope="col">{% trans "Зал" %}</th>
+                                <th scope="col">{% trans "Дата" %}</th>
+                                <th scope="col">{% trans "Ряд" %}</th>
+                                <th scope="col">{% trans "Место" %}</th>
+                                <th scope="col">{% trans "Цена" %}</th>
+                                <th scope="col">{% trans "Статус" %}</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ticket in active_tickets %}
+                                <tr>
+                                    <td><a href="{% url 'app:movie_detail' ticket.session.movie.pk %}" class="text-decoration-none">{{ticket.session.movie}}</a></td>
+                                    <td><a href="{% url 'app:cinema_detail' ticket.session.hall.cinema.pk %}" class="text-decoration-none">{{ticket.session.hall.cinema.name}}</a></td>
+                                    <td><a href="{% url 'app:hall_detail' ticket.session.hall.pk %}" class="text-decoration-none">{% trans "Зал" %} №{{ticket.session.hall.number}}</a></td>
+                                    <td><a href="{% url 'app:book_tickets_for_session' ticket.session.pk %}" class="btn btn-outline-primary">{{ticket.session.time|date:"d.m.Y H:i"}}</a></td>
+                                    <td>{{ticket.place.row}}</td>
+                                    <td>{{ticket.place.number}}</td>
+                                    <td>
+                                        {% if ticket.place.is_vip %}
+                                            {{ticket.session.vip_price}} грн.
+                                        {% else %}
+                                            {{ticket.session.price}} грн.
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ticket.get_status_display}}</td>
+                                    <td class="text-center">
+                                        {% if ticket.status == '1' %}
+                                            <a class="text-decoration-none text-danger" href="{% url 'app:buy_the_ticket' ticket.pk %}">{% trans "Купить" %}</a></br>
+                                            <a class="text-decoration-none" href="{% url 'app:return_a_ticket' ticket.pk %}">{% trans "Снять бронь" %}</a>
+                                        {% endif %}
+                                        {% if ticket.status == '2' %}
+                                            <a class="text-decoration-none" href="{% url 'app:return_a_ticket' ticket.pk %}">{% trans "Сдать билет" %}</a>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div class="mt-5"></div>
+                    <h3 class="text-center">{% trans "Все билеты пользователя" %} {{user.username}} {% trans "на завершенные сеансы" %}</h3>
+                    <table id="id_expired_tickets" class="table fs-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">{% trans "Фильм" %}</th>
+                                <th scope="col">{% trans "Кинотеатр" %}</th>
+                                <th scope="col">{% trans "Зал" %}</th>
+                                <th scope="col">{% trans "Дата" %}</th>
+                                <th scope="col">{% trans "Ряд" %}</th>
+                                <th scope="col">{% trans "Место" %}</th>
+                                <th scope="col">{% trans "Цена" %}</th>
+                                <th scope="col">{% trans "Статус" %}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ticket in expired_tickets %}
+                                <tr>
+                                    <td><a href="{% url 'app:movie_detail' ticket.session.movie.pk %}" class="text-decoration-none">{{ticket.session.movie}}</a></td>
+                                    <td><a href="{% url 'app:cinema_detail' ticket.session.hall.cinema.pk %}" class="text-decoration-none">{{ticket.session.hall.cinema.name}}</a></td>
+                                    <td><a href="{% url 'app:hall_detail' ticket.session.hall.pk %}" class="text-decoration-none">{% trans "Зал" %} №{{ticket.session.hall.number}}</a></td>
+                                    <td><a href="{% url 'app:book_tickets_for_session' ticket.session.pk %}" class="btn btn-outline-primary">{{ticket.session.time|date:"d.m.Y H:i"}}</a></td>
+                                    <td>{{ticket.place.row}}</td>
+                                    <td>{{ticket.place.number}}</td>
+                                    <td>
+                                        {% if ticket.place.is_vip %}
+                                            {{ticket.session.vip_price}} грн.
+                                        {% else %}
+                                            {{ticket.session.price}} грн.
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ticket.get_status_display}}</td>
+                                </tr>
+                            {% empty %}
+                                {% trans "Билетов на завершенные сеансы нету" %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="position-sticky mt-2" style="top: 2rem;">
+                <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                    {% for image in advertise_page.gallery.all %}
+                    {% if not forloop.counter0 %}
+                        <div class="carousel-item active" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                    {% else %}
+                        <div class="carousel-item" data-bs-interval="{{main_page_baner.rotational_speed|sec_to_ms}}">
+                    {% endif %}
+                        <a href="{{image.url}}"><img class="d-block w-100" src="{{MEDIA_URL}}{{image.image.url}}" alt="..." height="300px"></a>
+                    </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main_content %}
+
+{% block extra_js %}
+    <script src="{% static 'admin/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
+    {% comment %} <script src="{% static 'admin/custom/js/users_list.js' %}"></script> {% endcomment %}
+    <script>
+        $(function () {
+            $('#id_active_tickets').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false,
+                "responsive": true,
+            });
+            
+            $('#id_expired_tickets').DataTable({
+                "paging": false,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": false,
+                "info": false,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });
+    </script>
+{% endblock extra_js %}

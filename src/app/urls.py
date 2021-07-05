@@ -26,5 +26,11 @@ urlpatterns = [
     path('afiche/', views.afiche, name="afiche"),
     path('soon/', views.soon, name="soon"),
     path('movie/<int:pk>/', views.movie_detail, name="movie_detail"),
+    path('movie/find-movies/', views.find_movie, name='find_movie'),
     path('shedule/', views.SheduleListView.as_view(), name="shedule"),
+    path('shedule/book-tickets/<int:pk>/', views.book_tickets_for_session, name="book_tickets_for_session"),
+    path('shedule/buy-tickets/<int:pk>/', views.buy_tickets_for_session, name="buy_tickets_for_session"),
+    path('tickets/', views.view_user_tickets, name='view_user_tickets'),
+    path('return-ticket/<int:pk>/', views.return_a_ticket, name='return_a_ticket'),
+    path('buy-ticket/<int:pk>/', views.buy_the_ticket, name='buy_the_ticket'),
 ]

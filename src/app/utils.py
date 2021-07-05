@@ -1,12 +1,24 @@
-from datetime import date as dt, datetime
+from calendar import monthrange
+from datetime import date as dt, datetime, timedelta
 import logging
 
+from django.db.models import Q
 from django.shortcuts import get_object_or_404
+from django.urls.base import reverse_lazy
+from django.utils import timezone
 
 from app.models import Cinema, Movie, Image, News, Stock, Hall, Session, Ticket, CinemaContactsPage
 
 
 logger = logging.getLogger(__name__)
+
+
+def find_movies_by_param(param):
+    movies = Movie.objects.filter(
+        Q(name_ru__icontains=param) | 
+        Q(name_uk__icontains=param)
+    )
+    return [{'detail_link': reverse_lazy('app:movie_detail', kwargs={'pk': movie.pk}), 'name_ru': movie.name_ru} for movie in movies]
 
 
 def get_movie_by_params(**kwargs):
@@ -121,3 +133,44 @@ def get_sessions_by_hall(sessions, hall_pk):
 
 def get_sessions_by_format(sessions, format):
     return sessions.filter(format=format)
+
+
+def get_active_user_tickets(user):
+    return Ticket.objects.filter(user=user, session__time__gte=timezone.now())
+
+
+def get_expired_user_tickets(user):
+    return Ticket.objects.filter(user=user, session__time__lt=timezone.now())
+
+
+def get_month_sessions():
+    month_sessions = {}
+    start_date = dt(dt.today().year, dt.today().month, 1)
+    end_date = dt(dt.today().year, dt.today().month, monthrange(dt.today().year, dt.today().month)[1])
+    delta = end_date - start_date
+    for i in range(delta.days + 1):
+        sessions_date = start_date + timedelta(days=i)
+        month_sessions[f'{sessions_date.day}.{sessions_date.month}.{sessions_date.year}'] = \
+            Session.objects.filter(
+                time__year=sessions_date.year, 
+                time__month=sessions_date.month, 
+                time__day=sessions_date.day
+            ).count()
+    return dt.today().month, month_sessions
+
+
+def get_movies_fees():
+    movies_fees = {movie.name: 0 for movie in Movie.objects.all()}
+    for movie_name in movies_fees:
+        movie = get_movie_by_params(name=movie_name)
+        movie_sessions = Session.objects.filter(movie=movie)
+        sold_tickets = Ticket.objects.filter(session__in=movie_sessions, status='2')
+        fee = 0.0
+        for ticket in sold_tickets:
+            if ticket.place.is_vip:
+                fee += ticket.session.vip_price
+            else:
+                fee += ticket.session.price
+        movies_fees[movie_name] = int(fee)
+        movies_fees = {k: v for k, v in sorted(movies_fees.items(), key=lambda x: -x[1])[:10] if v > 0}
+    return movies_fees
