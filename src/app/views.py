@@ -1,5 +1,6 @@
 from datetime import date, timedelta, datetime as dt
 import logging
+import textwrap
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login as auth_login, logout
@@ -25,6 +26,12 @@ def index(request):
     news_and_stocks_range = range(NewsAndStockBanner.load().gallery.count())
     today_movies = utils.get_today_movies()
     soon_movies = utils.get_soon_movies()
+    for m in today_movies:
+        m.name = textwrap.shorten(m.name, 20, placeholder='...')
+        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+    for m in soon_movies:
+        m.name = textwrap.shorten(m.name, 20, placeholder='...')
+        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     return render(request, 'main.html', {
         'news_and_stocks_range': news_and_stocks_range,
         'today_movies': today_movies,
@@ -147,6 +154,9 @@ def logout_user(request):
 
 def cinemas_list(request):
     cinema_list = utils.get_cinemas()
+    for c in cinema_list:
+        c.name = textwrap.shorten(c.name, 20, placeholder='...')
+        c.name_uk = textwrap.shorten(c.name_uk, 20, placeholder='...')
     return render(request, 'cinemas.html', {
         'cinemas': cinema_list
     })
@@ -177,6 +187,12 @@ def hall_detail(request, pk):
 def afiche(request):
     active_movies = utils.get_active_movies()
     soon_movies = utils.get_soon_movies()
+    for m in active_movies:
+        m.name = textwrap.shorten(m.name, 20, placeholder='...')
+        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+    for m in soon_movies:
+        m.name = textwrap.shorten(m.name, 20, placeholder='...')
+        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     return render(request, 'afiche.html', {
         'active_movies': active_movies,
         'soon_movies': soon_movies
@@ -186,6 +202,12 @@ def afiche(request):
 def soon(request):
     active_movies = utils.get_active_movies()
     soon_movies = utils.get_soon_movies()
+    for m in active_movies:
+        m.name = textwrap.shorten(m.name, 20, placeholder='...')
+        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+    for m in soon_movies:
+        m.name = textwrap.shorten(m.name, 20, placeholder='...')
+        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     return render(request, 'soon.html', {
         'active_movies': active_movies,
         'soon_movies': soon_movies
@@ -206,10 +228,28 @@ class SheduleListView(ListView):
             context['filter_form'].fields['cinema'].initial = self.request.GET.get('cinema')
         if 'format' in self.request.GET:
             context['filter_form'].fields['format'].initial = self.request.GET.get('format')
-        context['today_sessions'] = self.get_queryset().filter(time__day=timezone.now().today().day, time__month=timezone.now().today().month, time__year=timezone.now().today().year)
+        today_sessions = self.get_queryset().filter(time__day=timezone.now().today().day, time__month=timezone.now().today().month, time__year=timezone.now().today().year)
+        for s in today_sessions:
+            s.movie.name = textwrap.shorten(s.movie.name, 20, placeholder='...')
+            s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
+            s.hall.cinema.name = textwrap.shorten(s.hall.cinema.name, 20, placeholder='...')
+            s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
+        context['today_sessions'] = today_sessions
         tomorrow = timezone.now().today() + timedelta(days=1)
-        context['tomorrow_sessions'] = self.get_queryset().filter(time__day=tomorrow.day, time__month=tomorrow.month, time__year=tomorrow.year)
-        context['next_week_sessions'] = self.get_queryset().filter(time__gte=timezone.now(), time__lte=timezone.now() + timedelta(days=7))
+        tomorrow_sessions = self.get_queryset().filter(time__day=tomorrow.day, time__month=tomorrow.month, time__year=tomorrow.year)
+        for s in tomorrow_sessions:
+            s.movie.name = textwrap.shorten(s.movie.name, 20, placeholder='...')
+            s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
+            s.hall.cinema.name = textwrap.shorten(s.hall.cinema.name, 20, placeholder='...')
+            s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
+        context['tomorrow_sessions'] = tomorrow_sessions
+        next_week_sessions = self.get_queryset().filter(time__gte=timezone.now(), time__lte=timezone.now() + timedelta(days=7))
+        for s in next_week_sessions:
+            s.movie.name = textwrap.shorten(s.movie.name, 20, placeholder='...')
+            s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
+            s.hall.cinema.name = textwrap.shorten(s.hall.cinema.name, 20, placeholder='...')
+            s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
+        context['next_week_sessions'] = next_week_sessions
         return context
 
     def get_queryset(self):
@@ -230,6 +270,11 @@ class SheduleListView(ListView):
             queryset = utils.get_sessions_by_hall(
                 sessions=queryset, 
                 hall_pk=self.request.GET.get('hall'))
+        for s in queryset:
+            s.movie.name = textwrap.shorten(s.movie.name, 20, placeholder='...')
+            s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
+            s.hall.cinema.name = textwrap.shorten(s.hall.cinema.name, 20, placeholder='...')
+            s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
         return queryset
 
 

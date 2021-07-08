@@ -604,17 +604,12 @@ def api_delete_html_email(request, pk):
     html_email.delete()
     return JsonResponse({})
 
+
 class MovieListView(ListView):
     model = Movie
     queryset = utils.get_active_movies()
     context_object_name = 'active_movies'
     template_name = 'admin/movies_list.html'
-
-    def get_context_data(self, **kwargs) -> dict:
-        context = super().get_context_data(**kwargs)
-        context['soon_movies'] = utils.get_soon_movies()
-        context['retired_movies'] = utils.get_retired_movies()
-        return context
 
 
 class CinemaListView(ListView):
