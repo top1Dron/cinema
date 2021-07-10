@@ -15,6 +15,8 @@ $(document).ready(function(){
         height: '200px',
     });
 
+    $('.card.ms-2').matchHeight();
+
     $('#id_logo').change(function(event){
         if(typeof event.target.files[0] !== 'undefined'){
             $('#logo').attr("src", URL.createObjectURL(event.target.files[0]));

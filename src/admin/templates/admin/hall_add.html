@@ -6,6 +6,22 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'admin/plugins/summernote/summernote-bs4.min.css' %}">
+    <style>
+    @media only screen and (min-width : 481px) {
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flex-row > [class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-row.row:after, 
+        .flex-row.row:before {
+            display: flex;
+        }
+    }
+    </style>
 {% endblock extra_css %}
 
 {% block main_content %}
@@ -20,7 +36,7 @@
                     <h4 for="{{form.number.auto_id}}" class="form-label">{{ form.number.label }}</h4>
                     {% render_field form.number class='form-control bg-light' required="required" %}
                     {% for error in form.number.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -102,9 +118,18 @@
                 <div class="card" style="width: 18rem;">
                     <img id="banner" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="banner">
                     <div class="card-body">
-                        {{ form.banner }}
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" accept="image/*" id="{{form.banner.auto_id}}" name="{{form.banner.html_name}}">
+                                    <label class="custom-file-label" for="{{form.banner.auto_id}}">
+                                        {% trans "Загрузите файл" %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         {% for error in form.banner.errors %}
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             {{ error|striptags }}
                         </div>
@@ -115,29 +140,47 @@
             <div class="form-group g-3">
                 <h4 class="form-label">{% trans "Галерея картинок" %}</h4>
                 {{ gallery.management_form }}
-                <div class="row" id="images">
+                <div class="row flex-row" id="images">
                     {% for image_form in gallery %}
                     {% for hidden in image_form.hidden_fields %}
                         {{ hidden }}
                     {% endfor %}
                     <div class="col-md-6 col-xl-3">
-                        <div class="card ms-2" style="width: 16rem; padding:30px;">
-                            <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this)">X</button>
+                        <div class="card ms-2" style="padding:10px;">
+                            <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' onclick="deleteImage(this)">X</button>
                             <img id="gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
-                            <div class="card-body">
-                                {{ image_form.image }}
+                            <div class="card-body w-100">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" accept="image/*" id="{{image_form.image.auto_id}}" name="{{image_form.image.html_name}}">
+                                            <label class="custom-file-label" for="{{image_form.image.auto_id}}">
+                                                {% trans "Загрузите файл" %}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
                     <div id="empty_form" style="display:none">
                         <div class="col-md-6 col-xl-3">
-                            <div class="card ms-2" style="width: 16rem; padding:30px;">
+                            <div class="card ms-2" style="padding:10px;">
                                 {% csrf_token %}
-                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this)">X</button>
-                                <img id="gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
+                                <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' onclick="deleteImage(this)">X</button>
+                                <img id="gallery_image_{{gallery.empty_form.image.auto_id|slice:"16:"}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
                                 <div class="card-body">
-                                    {{ gallery.empty_form.image }}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" accept="image/*" id="{{gallery.empty_form.image.auto_id}}" name="{{gallery.empty_form.image.html_name}}">
+                                                <label class="custom-file-label" for="{{gallery.empty_form.image.auto_id}}">
+                                                    {% trans "Загрузите файл" %}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -154,7 +197,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_url }}
                     {% for error in seo_form.seo_url.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -166,7 +209,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_title }}
                     {% for error in seo_form.seo_title.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -178,7 +221,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_keywords }}
                     {% for error in seo_form.seo_keywords.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -190,7 +233,7 @@
                 <div class="col-md-6">
                     {% render_field seo_form.seo_description  rows="4" class="w-100"%}
                     {% for error in seo_form.seo_description.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>

@@ -10,30 +10,18 @@ $(document).ready(function(){
     $('#id_banner').change(function(event){
         if(typeof event.target.files[0] !== 'undefined'){
             $('#banner').attr("src", URL.createObjectURL(event.target.files[0]));
+            $($(this).parent().children('.custom-file-label')[0]).html(event.target.files[0].name);
         }
         else {
             URL.revokeObjectURL($('#banner').attr("src"));
-            $('#banner').attr("src", "/static/img/default-image.jpg")
+            $('#banner').attr("src", "/static/img/default-image.jpg");
+            $($(this).parent().children('.custom-file-label')[0]).html('Загрузите файл');
         }
     });
 
     $('.col-md-6', $('#images')).each(function(){
-        // console.log($(this));
-        img = $(this).children('.card').children('img')[0];
-        uploadButton = $(this).children('.card').children('.card-body').children('input')[0];
-        
-        upload_id = '#' + uploadButton.getAttribute('id');
-        image_id = '#' + img.getAttribute('id');
-        $(upload_id).change(function(event){
-            image_id = '#' + $(this).parent().parent().children('img')[0].getAttribute('id');
-            if(typeof event.target.files[0] !== 'undefined'){
-                $(image_id).attr("src", URL.createObjectURL(event.target.files[0]));
-            }
-            else {
-                URL.revokeObjectURL($(image_id).attr("src"));
-                $(image_id).attr("src", "/static/img/default-image.jpg")
-            }
-        });
+        var uploadButton = $(this).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
+        onImageButtonUpload(uploadButton);
     });
 
     $('#add_more').click(function() {
@@ -44,10 +32,7 @@ $(document).ready(function(){
             $('#id_hall_gallery-TOTAL_FORMS').val(totalForms);
             
             var imageColumn = $('#images').children('.col-md-6').last();
-            var img = $(imageColumn).children('.card').children('img')[0];
-            var image_id = img.getAttribute('id') + totalForms.toString();
-            $(img).attr('id', image_id);
-            var uploadButton = $(imageColumn).children('.card').children('.card-body').children('input')[0];
+            var uploadButton = $(imageColumn).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
             onImageButtonUpload(uploadButton);
         }
     });
@@ -56,6 +41,7 @@ $(document).ready(function(){
     $('#row_input').on('input', function(e){checkBuildShemeButtonAvailable()});
 
     $('#create_scheme_button').click(function(){
+        $.fn.reverse = [].reverse;
         $('#id_hall_scheme').empty();
         var rows = $('#row_input').val();
         var cols = $('#col_input').val();
@@ -156,6 +142,7 @@ $(document).ready(function(){
                         }
                         else{
                             // iter to find new current number
+                            var rev = false;
                             var iter_col_num = '';
                             $(this).parent().parent().parent().children().each(function(index){
                                 if (index >= parseInt(current_position)){
@@ -165,6 +152,18 @@ $(document).ready(function(){
                                     }
                                 }
                             });
+                        
+                            if(!$.isNumeric(iter_col_num)){
+                                $(this).parent().parent().parent().children().reverse().each(function(index){
+                                    if (index < parseInt(current_position)){
+                                        iter_col_num = $(this).children('button').children('span').html();
+                                        if($.isNumeric(iter_col_num)){
+                                            rev = true;
+                                            return false;
+                                        }
+                                    }
+                                });
+                            }
 
                             //iter to set new values to next places in the row
                             $(this).parent().parent().parent().children().each(function(index){
@@ -181,6 +180,10 @@ $(document).ready(function(){
                             $(vipBtn).removeClass( "d-none");
                             if(!$.isNumeric(iter_col_num)){
                                 iter_col_num = 1;
+                            }
+                            else if(rev){
+                                iter_col_num++;
+                                rev = false;
                             }
                             $(this).parent().parent().children('button').children('span').html(iter_col_num);
                             $(this).parent().parent().children('button').removeClass('badge-primary');
@@ -215,19 +218,17 @@ $(document).ready(function(){
 
 function onImageButtonUpload(uploadButton){
     $(uploadButton).change(function(event){
-        var image_id = '#' + $(this).parent().parent().children('img')[0].getAttribute('id');
+        var image_id = '#' + $(this).parent().parent().parent().parent().parent().children('img')[0].getAttribute('id');
         if(typeof event.target.files[0] !== 'undefined'){
             $(image_id).attr("src", URL.createObjectURL(event.target.files[0]));
+            $($(this).parent().children('.custom-file-label')[0]).html(event.target.files[0].name);
         }
         else {
             URL.revokeObjectURL($(image_id).attr("src"));
-            if($(image_id).attr("image-start-src") == "..."){
-                $(image_id).attr("src", "/static/img/default-image.jpg");
-            }
-            else{
-                $(image_id).attr("src", $(image_id).attr("image-start-src"));
-            }
+            $(image_id).attr("src", "/static/img/default-image.jpg");
+            $($(this).parent().children('.custom-file-label')[0]).html('Загрузите файл');
         }
+        $('.card.ms-2').matchHeight();
     });
 }
 

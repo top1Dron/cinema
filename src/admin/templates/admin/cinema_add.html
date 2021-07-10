@@ -173,7 +173,7 @@
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="custom-file">
-                                            <input type="file" class="custom-file-input" accept="image/*" id="{{image_form.image.auto_id}}" name="cinema_gallery-{{forloop.counter0}}-image">
+                                            <input type="file" class="custom-file-input" accept="image/*" id="{{image_form.image.auto_id}}" name="{{image_form.image.html_name}}">
                                             <label class="custom-file-label" for="{{image_form.image.auto_id}}">
                                                 {% trans "Загрузите файл" %}
                                             </label>
@@ -272,15 +272,9 @@
 
 <script src="{% static 'admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
 
-<script src="{% static 'admin/custom/js/cinema_add.js' %}"></script>
-
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
-
-<script>
-    $(function() {
-        $('.card.ms-2').matchHeight();
-    });
-</script>
     
 <script src="{% static 'admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js' %}"></script>
+
+<script src="{% static 'admin/custom/js/cinema_add.js' %}"></script>
 {% endblock extra_js %}
