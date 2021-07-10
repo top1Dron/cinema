@@ -55,7 +55,7 @@
                                     {% endif %}
                                     <div class="card-body w-100">
                                         {% if image_form.image.value.url %}
-                                            <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{image_form.image.value.url}}">{{image_form.image.value.path|slice:"50:"}}</a></span>
+                                            <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{image_form.image.value.url}}">{{image_form.image.value.path|slice:"39:"}}</a></span>
                                         {% endif %}
                                         <div class="form-group">
                                             <div class="input-group">
@@ -129,7 +129,7 @@
                             {% endif %}
                             <div class="card-body">
                                 {% if main_form.backgroung_image.value.url %}
-                                    <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{main_form.backgroung_image.value.url}}">{{main_form.backgroung_image.value.path|slice:"50:"}}</a></span>
+                                    <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{main_form.backgroung_image.value.url}}">{{main_form.backgroung_image.value.path|slice:"39:"}}</a></span>
                                 {% endif %}
                                 <div class="form-group">
                                     <div class="input-group">

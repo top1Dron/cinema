@@ -125,7 +125,7 @@
                     <img id="logo" class="text-center" src="{{MEDIA_URL}}{{form.logo.value.url}}" alt="logo">
                     <div class="card-body">
                         {% if form.logo.value.url is not None %}
-                            <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{form.logo.value.url}}">{{form.logo.value.path|slice:"50:"}}</a></span>
+                            <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{form.logo.value.url}}">{{form.logo.value.path|slice:"39:"}}</a></span>
                         {% endif %}
                         <div class="form-group">
                             <div class="input-group">
@@ -152,7 +152,7 @@
                     <img id="banner" class="text-center" src="{{MEDIA_URL}}{{form.banner.value.url}}" alt="banner">
                     <div class="card-body">
                         {% if form.banner.value.url %}
-                            <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{form.banner.value.url}}">{{form.banner.value.path|slice:"50:"}}</a></span>
+                            <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{form.banner.value.url}}">{{form.banner.value.path|slice:"39:"}}</a></span>
                         {% endif %}
                         <div class="form-group">
                             <div class="input-group">
@@ -196,7 +196,7 @@
                             {% endif %}
                             <div class="card-body">
                                 {% if image_form.image.value.url %}
-                                    <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{image_form.image.value.url}}">{{image_form.image.value.path|slice:"50:"}}</a></span>
+                                    <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{image_form.image.value.url}}">{{image_form.image.value.path|slice:"39:"}}</a></span>
                                 {% endif %}
                                 <div class="form-group">
                                     <div class="input-group">
