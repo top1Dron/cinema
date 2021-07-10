@@ -6,18 +6,27 @@ $('#id_description_uk').summernote({
     height: '200px',
 });
 
+$('.card.ms-2').matchHeight();
+
 $('#id_poster').change(function(event){
     if(typeof event.target.files[0] !== 'undefined'){
         $('#main_poster').attr("src", URL.createObjectURL(event.target.files[0]));
+        $($(this).parent().children('.custom-file-label')[0]).html(event.target.files[0].name);
     }
     else {
         URL.revokeObjectURL($('#main_poster').attr("src"));
-        $('#main_poster').attr("src", "/static/img/default-image.jpg")
+        if($('#main_poster').attr("image-start-src") == "..."){
+            $('#main_poster').attr("src", "/static/img/default-image.jpg");
+        }
+        else{
+            $('#main_poster').attr("src", $('#main_poster').attr("image-start-src"));
+        }
+        $($(this).parent().children('.custom-file-label')[0]).html('Загрузите файл');
     }
 });
 
 $('.col-md-6', $('#images')).each(function(){
-    var uploadButton = $(this).children('.card').children('.card-body').children('input')[0];
+    var uploadButton = $(this).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
     onImageButtonUpload(uploadButton);
 });
 
@@ -29,19 +38,17 @@ $('#add_more').click(function() {
         $('#id_movies_gallery-TOTAL_FORMS').val(totalForms);
         
         var imageColumn = $('#images').children('.col-md-6').last();
-        var img = $(imageColumn).children('.card').children('img')[0];
-        var image_id = img.getAttribute('id') + totalForms.toString();
-        $(img).attr('id', image_id);
-        var uploadButton = $(imageColumn).children('.card').children('.card-body').children('input')[0];
+        var uploadButton = $(imageColumn).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
         onImageButtonUpload(uploadButton);
     }
 });
 
 function onImageButtonUpload(uploadButton){
     $(uploadButton).change(function(event){
-        var image_id = '#' + $(this).parent().parent().children('img')[0].getAttribute('id');
+        var image_id = '#' + $(this).parent().parent().parent().parent().parent().children('img')[0].getAttribute('id');
         if(typeof event.target.files[0] !== 'undefined'){
             $(image_id).attr("src", URL.createObjectURL(event.target.files[0]));
+            $($(this).parent().children('.custom-file-label')[0]).html(event.target.files[0].name);
         }
         else {
             URL.revokeObjectURL($(image_id).attr("src"));
@@ -51,7 +58,9 @@ function onImageButtonUpload(uploadButton){
             else{
                 $(image_id).attr("src", $(image_id).attr("image-start-src"));
             }
+            $($(this).parent().children('.custom-file-label')[0]).html('Загрузите файл');
         }
+        $('.card.ms-2').matchHeight();
     });
 }
 
@@ -87,7 +96,9 @@ function deleteImage(button, form_ind){
     }
     else{
         $(button).parent().parent().remove();
-    }    
+    }
+    $('#id_movies_gallery-TOTAL_FORMS').val($('#id_movies_gallery-TOTAL_FORMS').val() - 1);
+    $('.card.ms-2').matchHeight();    
 }
 
 function getCookie(name) {

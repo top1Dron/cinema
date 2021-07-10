@@ -37,7 +37,7 @@
                   {% for record in news %}
                     <tr>
                         <td>{{record.title}}</td>
-                        <td>{{record.published}}</td>
+                        <td data-order="{{record.published|date:"YmdHi"}}">{{record.published}}</td>
                         {% if record.status %}
                            <td>{% trans "ВКЛ" %}</td>
                         {% else %}

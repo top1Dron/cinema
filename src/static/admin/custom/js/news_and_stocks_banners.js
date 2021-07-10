@@ -1,9 +1,9 @@
 function onImageButtonUpload(uploadButton){
     $(uploadButton).change(function(event){
-        var image_id = '#' + $(this).parent().parent().children('img')[0].getAttribute('id');
-        // console.log(image_id);
+        var image_id = '#' + $(this).parent().parent().parent().parent().parent().children('img')[0].getAttribute('id');
         if(typeof event.target.files[0] !== 'undefined'){
             $(image_id).attr("src", URL.createObjectURL(event.target.files[0]));
+            $($(this).parent().children('.custom-file-label')[0]).html(event.target.files[0].name);
         }
         else {
             URL.revokeObjectURL($(image_id).attr("src"));
@@ -13,13 +13,14 @@ function onImageButtonUpload(uploadButton){
             else{
                 $(image_id).attr("src", $(image_id).attr("image-start-src"));
             }
+            $($(this).parent().children('.custom-file-label')[0]).html('Загрузите файл');
         }
+        $('.card.ms-2').matchHeight();
     });
 }
 
 $('.col-md-6', $('#images')).each(function(){
-    // console.log($(this));
-    var uploadButton = $(this).children('.card').children('.card-body').children('input')[0];
+    var uploadButton = $(this).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
     onImageButtonUpload(uploadButton);
 });
 
@@ -31,13 +32,24 @@ $('#add_more').click(function() {
         $('#id_news_and_stocks-TOTAL_FORMS').val(totalForms);
         
         var imageColumn = $('#images').children('.col-md-6').last();
-        var img = $(imageColumn).children('.card').children('img')[0];
-        var image_id = img.getAttribute('id') + totalForms.toString();
-        $(img).attr('id', image_id);
-        var uploadButton = $(imageColumn).children('.card').children('.card-body').children('input')[0];
+        var uploadButton = $(imageColumn).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
         onImageButtonUpload(uploadButton);
     }
 });
+
+function add_images_to_formset(formset_id){
+    var form_idx = $('#id_news_and_stocks-TOTAL_FORMS').val();
+    $(`#${formset_id}`).append($(`#${formset_id}_empty_form`).html().replace(/__prefix__/g, form_idx));
+    var totalForms = parseInt(form_idx) + 1;
+    $('#id_news_and_stocks-TOTAL_FORMS').val(totalForms);
+    
+    var imageColumn = $(formset_id).children('.col-md-6').last();
+    var img = $(imageColumn).children('.card').children('img')[0];
+    var image_id = img.getAttribute('id') + totalForms.toString();
+    $(img).attr('id', image_id);
+    var uploadButton = $(imageColumn).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
+    onImageButtonUpload(uploadButton);
+}
 
 function deleteImage(button, form_ind){
 
@@ -53,11 +65,13 @@ function deleteImage(button, form_ind){
             success: function(resp){
                 $(`#news_and_stocks-${form_ind}-DELETE`).attr('checked', true);
                 $(button).parent().parent().addClass("d-none");
+                $('.card.ms-2').matchHeight();
             }
         });
     }
     else{
         $(button).parent().parent().remove();
+        $('.card.ms-2').matchHeight();
     }    
 }
 

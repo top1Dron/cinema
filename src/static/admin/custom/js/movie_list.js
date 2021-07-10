@@ -1,5 +1,5 @@
 function deleteMovie(button){
-    if(confirm('Вы уверены, что хотите удалить данные этого фильма из базы данных?')){
+    if(confirm('Вы уверены, что хотите удалить данные этого кинотеатра из базы данных?')){
         deleteUrl = $(button).attr("delete-url");
         $.ajax({
             url: deleteUrl,
@@ -9,7 +9,7 @@ function deleteMovie(button){
                 xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
             },
             success: function(resp){
-                alert("Данные о фильме удалены");
+                alert("Данные о кинотеатре удалены");
                 window.location.reload();
             }
         });
@@ -23,3 +23,7 @@ function getCookie(name) {
     ))
     return matches ? decodeURIComponent(matches[1]) : undefined
 };
+
+$(function() {
+    $('.card.ms-2').matchHeight();
+});

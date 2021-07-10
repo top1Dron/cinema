@@ -23,6 +23,7 @@
     <div class="container" style="min-height:42vh;">
         <div class="card bg-dark">
             <div class="card-body">
+                {% if today_movies %}
                 <div class="carousel slide" id="todayMoviesCarouselControls" data-bs-ride="carousel">
                     <div class="carousel-indicators">                
                         {% for movie in today_movies %}
@@ -53,8 +54,6 @@
                         {% endfor %}
                         </div>
                     </div>
-                
-                {% if today_movies %}
                 <h3 class="text-center text-light">{% trans "Смотрите сегодня" %}, {{today|date:"d.m"}}</h3>
                 <div class="row">
                 {% for movie in today_movies %}

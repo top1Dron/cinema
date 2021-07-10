@@ -25,9 +25,9 @@
                             {% endfor %}
                         </div>
                     </div>
-                    <h4 class="mt-3">{% trans "Смотрите сегодня" %}:</h4>
+                    <h4 class="mt-3 text-dark bg-light">{% trans "Смотрите сегодня" %}:</h4>
                     {% for session in today_sessions %}
-                        <a href="#" class="btn btn-light w-100">{{session.movie.name}} {% trans "в" %} {{session.time|date:"H:i"}}</a>
+                        <a href="{% url 'app:book_tickets_for_session' session.pk %}" class="btn btn-light w-100">{{session.movie.name}} {% trans "в" %} {{session.time|date:"H:i"}}</a>
                     {% endfor %}
                     <div class="mt-3 text-center">
                         <a href="{% url 'app:shedule' %}?hall={{hall.pk}}" class="btn btn-success">{% trans "Расписание" %}</a>

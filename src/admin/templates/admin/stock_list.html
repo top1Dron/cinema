@@ -37,7 +37,7 @@
                   {% for stock in stocks %}
                     <tr>
                         <td>{{stock.title}}</td>
-                        <td>{{stock.published}}</td>
+                        <td data-order="{{stock.published|date:"YmdHi"}}">{{stock.published}}</td>
                         {% if stock.status %}
                            <td>{% trans "ВКЛ" %}</td>
                         {% else %}

@@ -6,6 +6,22 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'admin/plugins/summernote/summernote-bs4.min.css' %}">
+    <style>
+    @media only screen and (min-width : 481px) {
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flex-row > [class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-row.row:after, 
+        .flex-row.row:before {
+            display: flex;
+        }
+    }
+    </style>
 {% endblock extra_css %}
 
 {% block main_content %}
@@ -108,7 +124,19 @@
                 <div class="card" style="width: 18rem;">
                     <img id="logo" class="text-center" src="{{MEDIA_URL}}{{form.logo.value.url}}" alt="logo">
                     <div class="card-body">
-                        {{ form.logo }}
+                        {% if form.logo.value.url is not None %}
+                            <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{form.logo.value.url}}">{{form.logo.value.path|slice:"50:"}}</a></span>
+                        {% endif %}
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" accept="image/*" id="{{form.logo.auto_id}}" name="{{form.logo.html_name}}">
+                                    <label class="custom-file-label" for="{{form.logo.auto_id}}">
+                                        {% trans "Загрузите файл" %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     {% for error in form.logo.errors %}
                     <div class="alert alert-danger">
@@ -123,7 +151,19 @@
                 <div class="card" style="width: 18rem;">
                     <img id="banner" class="text-center" src="{{MEDIA_URL}}{{form.banner.value.url}}" alt="banner">
                     <div class="card-body">
-                        {{ form.banner }}
+                        {% if form.banner.value.url %}
+                            <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{form.banner.value.url}}">{{form.banner.value.path|slice:"50:"}}</a></span>
+                        {% endif %}
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" accept="image/*" id="{{form.banner.auto_id}}" name="{{form.banner.html_name}}">
+                                    <label class="custom-file-label" for="{{form.banner.auto_id}}">
+                                        {% trans "Загрузите файл" %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     {% for error in form.banner.errors %}
                     <div class="alert alert-danger">
@@ -136,38 +176,59 @@
             <div class="form-group g-3">
                 <h4 class="form-label">{% trans "Галерея картинок" %}</h4>
                 {{ gallery.management_form }}
-                <div class="row" id="images">
+                <div class="row flex-row" id="images">
                     {% for image_form in gallery %}
                     {% for hidden in image_form.hidden_fields %}
                         {{ hidden }}
                     {% endfor %}
                     <div class="col-md-6 col-xl-3">
-                        <div class="card ms-2" style="width: 16rem; padding:30px;">
+                        <div class="card ms-2" style="padding: 10px;">
                             {% csrf_token %}
                             {% if image_form.image.value.url %}
                                 {% render_field image_form.DELETE class="d-none"%}
                                 {% with image_form.hidden_fields.0.value as image_id %}
-                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' delete-url="{% url 'admin:delete_image' image_id %}" image-id="{{ image_id }}" onclick="deleteImage(this, {{forloop.counter0}})">X</button>
+                                <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' delete-url="{% url 'admin:delete_image' image_id %}" image-id="{{ image_id }}" onclick="deleteImage(this, {{forloop.counter0}})">X</button>
                                 {% endwith %}
                                 <img id="gallery_image_{{forloop.counter0}}" class="gallery_image text-center" image-start-src='{{MEDIA_URL}}{{image_form.image.value.url}}' src="{{MEDIA_URL}}{{image_form.image.value.url}}" alt="...">
                             {% else %}
-                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this, {{forloop.counter0}})">X</button>
+                                <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' onclick="deleteImage(this, {{forloop.counter0}})">X</button>
                                 <img id="gallery_image_{{forloop.counter0}}" class="gallery_image text-center" image-start-src='...' src="{% static 'img/default-image.jpg' %}" alt="...">
                             {% endif %}
                             <div class="card-body">
-                                {{ image_form.image }}
+                                {% if image_form.image.value.url %}
+                                    <span>{% trans "На данный момент" %}: <a href="{{MEDIA_URL}}{{image_form.image.value.url}}">{{image_form.image.value.path|slice:"50:"}}</a></span>
+                                {% endif %}
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" accept="image/*" id="{{image_form.image.auto_id}}" name="{{image_form.image.html_name}}">
+                                            <label class="custom-file-label" for="{{image_form.image.auto_id}}">
+                                                {% trans "Загрузите файл" %}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
                     <div id="empty_form" style="display:none">
                         <div class="col-md-6 col-xl-3">
-                            <div class="card ms-2" style="width: 16rem; padding:30px;">
+                            <div class="card ms-2" style="padding: 10px;">
                                 {% csrf_token %}
-                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this, {{forloop.counter0}})">X</button>
-                                <img id="gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
+                                <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' onclick="deleteImage(this, {{forloop.counter0}})">X</button>
+                                <img id="gallery_image_{{gallery.empty_form.image.auto_id|slice:"16:"}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
                                 <div class="card-body">
-                                    {{ gallery.empty_form.image }}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" accept="image/*" id="{{gallery.empty_form.image.auto_id}}" name="{{gallery.empty_form.image.html_name}}">
+                                                <label class="custom-file-label" for="{{gallery.empty_form.image.auto_id}}">
+                                                    {% trans "Загрузите файл" %}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -281,6 +342,8 @@
 
 {% block extra_js %}
 <script src="{% static 'admin/plugins/summernote/summernote-bs4.min.js' %}"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 
 <script src="{% static 'admin/custom/js/cinema_update.js' %}"></script>
 {% endblock extra_js %}

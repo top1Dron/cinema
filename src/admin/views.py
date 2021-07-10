@@ -1,4 +1,5 @@
 import logging
+import textwrap
 from PIL import Image
 
 from django.contrib import messages
@@ -611,12 +612,42 @@ class MovieListView(ListView):
     context_object_name = 'active_movies'
     template_name = 'admin/movies_list.html'
 
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        active_movies = context['active_movies']
+        for m in active_movies:
+            m.name = textwrap.shorten(m.name, 20, placeholder='...')
+            if m.name_uk is not None:
+                m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        soon_movies = utils.get_soon_movies()
+        for m in soon_movies:
+            m.name = textwrap.shorten(m.name, 20, placeholder='...')
+            if m.name_uk is not None:
+                m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        context['soon_movies'] = soon_movies
+        retired_movies = utils.get_retired_movies()
+        for m in retired_movies:
+            m.name = textwrap.shorten(m.name, 20, placeholder='...')
+            if m.name_uk is not None:
+                m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        context['retired_movies'] = retired_movies
+        return context
+
 
 class CinemaListView(ListView):
     model = Cinema
     queryset = utils.get_cinemas()
     context_object_name = 'cinemas'
     template_name = 'admin/cinemas_list.html'
+
+    def get_context_data(self, **kwargs) -> dict:
+        context = super().get_context_data(**kwargs)
+        cinemas = context['cinemas']
+        for cinema in cinemas:
+            cinema.name = textwrap.shorten(cinema.name, 20, placeholder='...')
+            if cinema.name_uk is not None:
+                cinema.name_uk = textwrap.shorten(cinema.name_uk, 20, placeholder='...')
+        return context
 
 
 class SessionListView(ListView):

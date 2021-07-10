@@ -28,6 +28,7 @@
             </div>
             <div class="col-md-10">
                 <div class="d-none" id="id_active_movies">
+                    {% if active_movies %}
                     <div class="card bg-dark">
                         <div class="card-body">
                             <div class="row">
@@ -44,8 +45,10 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
                 <div class="d-block" id="id_soon_movies">
+                    {% if soon_movies %}
                     <div class="card bg-dark">
                         <div class="card-body">
                             <div class="row">
@@ -61,6 +64,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

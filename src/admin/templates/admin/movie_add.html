@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="{% static 'admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
     <link rel="stylesheet" href="{% static 'admin/plugins/select2/css/select2.min.css' %}">
     <link rel="stylesheet" href="{% static 'admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+    <style>
+    @media only screen and (min-width : 481px) {
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flex-row > [class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-row.row:after, 
+        .flex-row.row:before {
+            display: flex;
+        }
+    }
+    </style>
 {% endblock extra_css %}
 
 {% block main_content %}
@@ -23,7 +39,7 @@
                 <h4 for="{{form.name_ru.auto_id}}" class="form-label">{{ form.name_ru.label }}</h4>
                 {% render_field form.name_ru class='form-control bg-light col-md-6'%}
                 {% for error in form.name_ru.errors %}
-                <div class="alert alert-error">
+                <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
                 </div>
@@ -33,7 +49,7 @@
                 <h4 for="{{form.name_uk.auto_id}}" class="form-label">{{ form.name_uk.label }}</h4>
                 {% render_field form.name_uk class='form-control bg-light col-md-6'%}
                 {% for error in form.name_uk.errors %}
-                <div class="alert alert-error">
+                <div class="alert alert-danger">
                     <button type="button" class="close" data-dismiss="alert">×</button>
                     {{ error|striptags }}
                 </div>
@@ -72,9 +88,18 @@
                 <div class="card" style="width: 18rem;">
                     <img id="main_poster" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="poster">
                     <div class="card-body">
-                        {{ form.poster }}
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" accept="image/*" id="{{form.poster.auto_id}}" name="{{form.poster.html_name}}">
+                                    <label class="custom-file-label" for="{{form.poster.auto_id}}">
+                                        {% trans "Загрузите файл" %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         {% for error in form.poster.errors %}
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             {{ error|striptags }}
                         </div>
@@ -85,29 +110,47 @@
             <div class="form-group g-3">
                 <h4 class="form-label">{% trans "Галерея картинок" %}</h4>
                 {{ gallery.management_form }}
-                <div class="row" id="images">
+                <div class="row flex-row" id="images">
                     {% for image_form in gallery %}
                     {% for hidden in image_form.hidden_fields %}
                         {{ hidden }}
                     {% endfor %}
                     <div class="col-md-6 col-xl-3">
-                        <div class="card ms-2" style="width: 16rem; padding:30px;">
-                            <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this)">X</button>
+                        <div class="card ms-2" style="padding: 10px;">
+                            <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' onclick="deleteImage(this)">X</button>
                             <img id="gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
-                            <div class="card-body">
-                                {{ image_form.image }}
+                            <div class="card-body w-100">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" accept="image/*" id="{{image_form.image.auto_id}}" name="movies_gallery-{{forloop.counter0}}-image">
+                                            <label class="custom-file-label" for="{{image_form.image.auto_id}}">
+                                                {% trans "Загрузите файл" %}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
                     <div id="empty_form" style="display:none">
                         <div class="col-md-6 col-xl-3">
-                            <div class="card ms-2" style="width: 16rem; padding:30px;">
+                            <div class="card ms-2" style="padding:10px;">
                                 {% csrf_token %}
-                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this)">X</button>
-                                <img id="gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
+                                <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' onclick="deleteImage(this)">X</button>
+                                <img id="gallery_image_{{gallery.empty_form.image.auto_id|slice:"16:"}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
                                 <div class="card-body">
-                                    {{ gallery.empty_form.image }}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" accept="image/*" id="{{gallery.empty_form.image.auto_id}}" name="{{gallery.empty_form.image.html_name}}">
+                                                <label class="custom-file-label" for="{{gallery.empty_form.image.auto_id}}">
+                                                    {% trans "Загрузите файл" %}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +167,7 @@
                         <h4 for="{{form.trailer.auto_id}}" class="form-label">{{ form.trailer.label }}</h4>
                         {% render_field form.trailer class='form-control bg-light'%}
                         {% for error in form.trailer.errors %}
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             {{ error|striptags }}
                         </div>
@@ -136,7 +179,7 @@
                         <h4 for="{{form.duration.auto_id}}" class="form-label">{{ form.duration.label }}</h4>
                         {% render_field form.duration class='form-control bg-light'%}
                         {% for error in form.duration.errors %}
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             {{ error|striptags }}
                         </div>
@@ -153,7 +196,7 @@
                             </div>
                         </div>
                         {% for error in form.release_date.errors %}
-                        <div class="alert alert-error">
+                        <div class="alert alert-danger">
                             <button type="button" class="close" data-dismiss="alert">×</button>
                             {{ error|striptags }}
                         </div>
@@ -339,7 +382,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_url }}
                     {% for error in seo_form.seo_url.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -351,7 +394,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_title }}
                     {% for error in seo_form.seo_title.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -363,7 +406,7 @@
                 <div class="col-md-6">
                     {{ seo_form.seo_keywords }}
                     {% for error in seo_form.seo_keywords.errors %}
-                    <div class="alert alert-error">
+                    <div class="alert alert-danger">
                         <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ error|striptags }}
                     </div>
@@ -403,4 +446,14 @@
 <script src="{% static 'admin/plugins/select2/js/select2.full.min.js' %}"></script>
 
 <script src="{% static 'admin/custom/js/movie_add.js' %}"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+
+<script>
+    $(function() {
+        $('.card.ms-2').matchHeight();
+    });
+</script>
+    
+<script src="{% static 'admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js' %}"></script>
 {% endblock extra_js %}

@@ -150,6 +150,10 @@ class ImageForm(forms.ModelForm):
         model = Image
         fields = ('image',)
 
+        # widgets = {'image':forms.FileInput(
+        #     attrs={'class':'', 'required': False, } 
+        # )}
+
 
 Gallery = generic_inlineformset_factory(Image, ImageForm, extra=4)
 

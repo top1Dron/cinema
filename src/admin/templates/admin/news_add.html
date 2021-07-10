@@ -6,6 +6,22 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'admin/plugins/summernote/summernote-bs4.min.css' %}">
+    <style>
+    @media only screen and (min-width : 481px) {
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flex-row > [class*='col-'] {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex-row.row:after, 
+        .flex-row.row:before {
+            display: flex;
+        }
+    }
+    </style>
 {% endblock extra_css %}
 
 {% block main_content %}
@@ -77,7 +93,16 @@
                 <div class="card" style="width: 18rem;">
                     <img id="main_image" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="main_image">
                     <div class="card-body">
-                        {{ form.main_image }}
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" accept="image/*" id="{{form.main_image.auto_id}}" name="{{form.main_image.html_name}}">
+                                    <label class="custom-file-label" for="{{form.main_image.auto_id}}">
+                                        {% trans "Загрузите файл" %}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         {% for error in form.main_image.errors %}
                         <div class="alert alert-error">
                             <button type="button" class="close" data-dismiss="alert">×</button>
@@ -90,29 +115,47 @@
             <div class="form-group g-3">
                 <h4 class="form-label">{% trans "Галерея картинок" %}</h4>
                 {{ gallery.management_form }}
-                <div class="row" id="images">
+                <div class="row flex-row" id="images">
                     {% for image_form in gallery %}
                     {% for hidden in image_form.hidden_fields %}
                         {{ hidden }}
                     {% endfor %}
                     <div class="col-md-6 col-xl-3">
-                        <div class="card ms-2" style="width: 16rem; padding:30px;">
-                            <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this)">X</button>
+                        <div class="card ms-2" style="padding:10px;">
+                            <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' onclick="deleteImage(this)">X</button>
                             <img id="gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
-                            <div class="card-body">
-                                {{ image_form.image }}
+                            <div class="card-body w-100">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" accept="image/*" id="{{image_form.image.auto_id}}" name="news_gallery-{{forloop.counter0}}-image">
+                                            <label class="custom-file-label" for="{{image_form.image.auto_id}}">
+                                                {% trans "Загрузите файл" %}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
                     <div id="empty_form" style="display:none">
                         <div class="col-md-6 col-xl-3">
-                            <div class="card ms-2" style="width: 16rem; padding:30px;">
+                            <div class="card ms-2" style="padding: 10px;">
                                 {% csrf_token %}
-                                <button class="col-2 btn btn-dark text-center align-self-end" type='button' onclick="deleteImage(this)">X</button>
-                                <img id="gallery_image_{{forloop.counter0}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
+                                <button class="col-2 btn btn-dark text-center align-self-end mb-2" type='button' onclick="deleteImage(this)">X</button>
+                                <img id="gallery_image_{{gallery.empty_form.image.auto_id|slice:"16:"}}" class="text-center" src="{% static 'img/default-image.jpg' %}" alt="...">
                                 <div class="card-body">
-                                    {{ gallery.empty_form.image }}
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" accept="image/*" id="{{gallery.empty_form.image.auto_id}}" name="{{gallery.empty_form.image.html_name}}">
+                                                <label class="custom-file-label" for="{{gallery.empty_form.image.auto_id}}">
+                                                    {% trans "Загрузите файл" %}
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -193,6 +236,10 @@
 <script src="{% static 'admin/plugins/summernote/summernote-bs4.min.js' %}"></script>
 
 <script src="{% static 'admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js' %}"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+
+<script src="{% static 'admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js' %}"></script>
 
 <script src="{% static 'admin/custom/js/news_add.js' %}"></script>
 {% endblock extra_js %}

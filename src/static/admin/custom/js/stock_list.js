@@ -35,9 +35,10 @@ $(function () {
       "responsive": true,
       "columnDefs": [
         {
-          "targets": [3], 
-          "orderable": false, 
-          "visible": true }
-      ]
+            "targets": [3], 
+            "orderable": false, 
+            "visible": true 
+        },
+    ]
     });
 });

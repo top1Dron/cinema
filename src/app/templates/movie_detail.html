@@ -18,9 +18,11 @@
                             <div class="col-sm-3">
                                 <button class="btn btn-success" type='button' id="movie_info_btn">{% trans "Информация о фильме" %}</button>
                             </div>
-                            <div class="col-sm-2">
-                                <button class="btn btn-outline-success" type='button' id="movie_shedule_btn">{% trans "Расписание" %}</button>
-                            </div>
+                            {% if sessions %}
+                                <div class="col-sm-2">
+                                    <button class="btn btn-outline-success" type='button' id="movie_shedule_btn">{% trans "Расписание" %}</button>
+                                </div>
+                            {% endif %}
                         </div>
                         <div id="movie_info">
                             <div class="row">
@@ -143,7 +145,7 @@
                                         <td><a href="{% url 'app:cinema_detail' session.hall.cinema.pk %}" class="text-decoration-none">{{session.hall.cinema.name}}</a></td>
                                         <td><a href="{% url 'app:hall_detail' session.hall.pk %}" class="text-decoration-none">{{session.hall.number}}</a></td>
                                         <td>{{session.time|date:"d M Y"}}</td>
-                                        <td><a href="#" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
+                                        <td><a href="{% url 'app:book_tickets_for_session' session.pk %}" class="btn btn-outline-primary">{{session.time|date:"H:i"}}</a></td>
                                         <td>{{session.price}} грн.</td>
                                     </tr>
                                     {% endfor %}

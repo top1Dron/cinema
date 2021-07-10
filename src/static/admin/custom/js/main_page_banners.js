@@ -1,19 +1,21 @@
 $('#id_backgroung_image').change(function(event){
     if(typeof event.target.files[0] !== 'undefined'){
         $('#backgroung_image').attr("src", URL.createObjectURL(event.target.files[0]));
+        $($(this).parent().children('.custom-file-label')[0]).html(event.target.files[0].name);
     }
     else {
         URL.revokeObjectURL($('#backgroung_image').attr("src"));
-        $('#backgroung_image').attr("src", "{% static 'img/default-image.jpg' %}")
+        $('#backgroung_image').attr("src", "{% static 'img/default-image.jpg' %}");
+        $($(this).parent().children('.custom-file-label')[0]).html('Загрузите файл');
     }
 });
 
 function onImageButtonUpload(uploadButton){
     $(uploadButton).change(function(event){
-        var image_id = '#' + $(this).parent().parent().children('img')[0].getAttribute('id');
-        // console.log(image_id);
+        var image_id = '#' + $(this).parent().parent().parent().parent().parent().children('img')[0].getAttribute('id');
         if(typeof event.target.files[0] !== 'undefined'){
             $(image_id).attr("src", URL.createObjectURL(event.target.files[0]));
+            $($(this).parent().children('.custom-file-label')[0]).html(event.target.files[0].name);
         }
         else {
             URL.revokeObjectURL($(image_id).attr("src"));
@@ -23,12 +25,14 @@ function onImageButtonUpload(uploadButton){
             else{
                 $(image_id).attr("src", $(image_id).attr("image-start-src"));
             }
+            $($(this).parent().children('.custom-file-label')[0]).html('Загрузите файл');
         }
+        $('.card.ms-2').matchHeight();
     });
 }
 $.each(['#news_and_stock_adv_gallery_images', '#main_gallery_images'], function(i, item){
     $('.col-md-6', $(item)).each(function(){
-        uploadButton = $(this).children('.card').children('.card-body').children('input')[0];
+        var uploadButton = $(this).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
         onImageButtonUpload(uploadButton);
     });
 });
@@ -41,10 +45,7 @@ $('#main_gallery_add_more').click(function() {
         $('#main_gallery_images').parent().children('#id_on_top_main-TOTAL_FORMS').val(totalForms);
         
         var imageColumn = $('#main_gallery_images').children('.col-md-6').last();
-        var img = $(imageColumn).children('.card').children('img')[0];
-        var image_id = img.getAttribute('id') + totalForms.toString();
-        $(img).attr('id', image_id);
-        var uploadButton = $(imageColumn).children('.card').children('.card-body').children('input')[0];
+        var uploadButton = $(imageColumn).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
         onImageButtonUpload(uploadButton);
     }
 });
@@ -59,7 +60,7 @@ function add_images_to_formset(formset_id){
     var img = $(imageColumn).children('.card').children('img')[0];
     var image_id = img.getAttribute('id') + totalForms.toString();
     $(img).attr('id', image_id);
-    var uploadButton = $(imageColumn).children('.card').children('.card-body').children('input')[0];
+    var uploadButton = $(imageColumn).children('.card').children('.card-body').children('.form-group').children('.input-group').children('.custom-file').children('input')[0];
     onImageButtonUpload(uploadButton);
 }
 
@@ -76,11 +77,13 @@ function deleteImage(button, form_ind){
             success: function(resp){
                 $(`#id_on_top_main-${form_ind}-DELETE`).attr('checked', true);
                 $(button).parent().parent().addClass("d-none");
+                $('.card.ms-2').matchHeight();
             }
         });
     }
     else{
         $(button).parent().parent().remove();
+        $('.card.ms-2').matchHeight();
     }    
 }
 

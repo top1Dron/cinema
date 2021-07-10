@@ -42,7 +42,7 @@
                     <tr>
                         <td class="text-center"><img style="max-height:100px;" src="{{ MEDIA_URL }}{{ session.movie.poster.url }}" alt="{{ session.movie.name }}"></td>
                         <td>{{session.movie.name}}</td>
-                        <td>{{session.time|date:"d M Y H:i"}}</td>
+                        <td data-order="{{session.time|date:"YmdHi"}}">{{session.time|date:"d M Y H:i"}}</td>
                         <td>{{session.get_format_display}}</td>
                         <td>{{session.hall.cinema.name}}</td>
                         <td>{{session.hall.number}}</td>

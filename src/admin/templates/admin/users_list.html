@@ -41,8 +41,8 @@
                   {% for user in users %}
                     <tr>
                         <td>{{user.pk}}</td>
-                        <td>{{user.date_joined|date:"d.m.Y"}}</td>
-                        <td>{{user.birth_date|date:"d.m.Y"}}</td>
+                        <td data-order="{{user.date_joined|date:"Ymd"}}">{{user.date_joined|date:"d.m.Y"}}</td>
+                        <td data-order="{{user.birth_date|date:"Ymd"}}">{{user.birth_date|date:"d.m.Y"}}</td>
                         <td>{{user.email}}</td>
                         <td>{{user.phone_number}}</td>
                         <td>{{user.full_name}}</td>

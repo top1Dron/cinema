@@ -1,6 +1,7 @@
 from calendar import monthrange
 from datetime import date as dt, datetime, timedelta
 import logging
+import textwrap
 
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
@@ -52,7 +53,7 @@ def get_not_active_movies():
 
 
 def get_soon_movies():
-    return get_not_active_movies().filter(release_date__gte=dt.today())
+    return get_not_active_movies().filter(release_date__gt=dt.today())
 
 
 def get_retired_movies():
@@ -171,6 +172,6 @@ def get_movies_fees():
                 fee += ticket.session.vip_price
             else:
                 fee += ticket.session.price
-        movies_fees[movie_name] = int(fee)
-        movies_fees = {k: v for k, v in sorted(movies_fees.items(), key=lambda x: -x[1])[:10] if v > 0}
+        movies_fees[movie.name] = int(fee)
+        movies_fees = {textwrap.shorten(k, 20, placeholder='...'): v for k, v in sorted(movies_fees.items(), key=lambda x: -x[1])[:10] if v > 0}
     return movies_fees
