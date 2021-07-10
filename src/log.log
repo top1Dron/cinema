@@ -1508,3 +1508,6 @@ INFO 2021-07-10 07:41:35,869 views ф
 INFO 2021-07-10 07:41:35,891 views [{'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}]
 INFO 2021-07-10 07:41:36,625 views а
 INFO 2021-07-10 07:41:36,641 views [{'detail_link': '/ru/movie/20/', 'name_ru': 'Академия магии (2021)'}, {'detail_link': '/ru/movie/18/', 'name_ru': 'Форсаж 9'}, {'detail_link': '/ru/movie/13/', 'name_ru': 'Кролик Питер 2 (0+)'}, {'detail_link': '/ru/movie/21/', 'name_ru': 'Изгнание (16+)'}, {'detail_link': '/ru/movie/16/', 'name_ru': 'Судьба/Ночь схватки: Прикосновение небес 3. Весенняя песня'}, {'detail_link': '/ru/movie/17/', 'name_ru': 'Клинок, рассекающий демонов: Бесконечный поезд'}]
+ERROR 2021-07-10 10:19:43,109 views dict_items([('hall', ["Це поле обов'язкове."])])
+ERROR 2021-07-10 10:20:21,930 views dict_items([('hall', ["Це поле обов'язкове."])])
+ERROR 2021-07-10 10:20:43,899 views dict_items([('hall', ["Це поле обов'язкове."])])
