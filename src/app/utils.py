@@ -98,7 +98,7 @@ def get_active_stocks():
 
 
 def get_future_sessions():
-    return Session.objects.filter(time__gte=datetime.now())
+    return Session.objects.filter(time__gte=datetime.now()).order_by('time')
 
 
 def get_cinema_contacts():
