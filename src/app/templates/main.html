@@ -76,10 +76,10 @@
                 <h3 class="text-center text-light">{% trans "Смотрите сегодня" %}, {{today|date:"d.m"}}</h3>
                 <div class="row flex-row">
                 {% for movie in today_movies %}
-                    <div class="col-3">
+                    <div class="col-md-3">
                         <a href="{% url 'app:movie_detail' movie.pk %}"><img class="w-100 movie-poster" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..."></a>
                         <a href="{% url 'app:movie_detail' movie.pk %}" class="movie-name fs-5">{{movie.name}}</a>
-                        <div class="row d-flex align-items-center mt-2">
+                        <div class="row d-flex align-items-center my-2">
                             <div class="col-2"></div>
                             <a href="{% url 'app:shedule' %}?movie={{movie.pk}}" class="col-8 btn btn-success release-date-or-buy-ticket">{% trans "Купить билет" %}</a>
                             <div class="col-2"></div>
@@ -93,10 +93,10 @@
                 <h3 class="text-center text-light">{% trans "Смотрите скоро" %}</h3>
                 <div class="row flex-row">
                 {% for movie in soon_movies %}
-                    <div class="col-3">
+                    <div class="col-md-3">
                         <a href="{% url 'app:movie_detail' movie.pk %}"><img class="w-100 movie-poster" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..."></a>
                         <a href="{% url 'app:movie_detail' movie.pk %}" class="movie-name fs-5">{{movie.name}}</a>
-                        <h5 class="text-center text-success fs-3 release-date-or-buy-ticket">{% trans "С" %} {{movie.release_date|date:"d.m.Y"}}</h5>
+                        <h5 class="text-center text-success fs-3 release-date-or-buy-ticket mb-2">{% trans "С" %} {{movie.release_date|date:"d.m.Y"}}</h5>
                     </div>
                 {% endfor %}
                 </div>
