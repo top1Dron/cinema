@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-06 00:12+0300\n"
+"POT-Creation-Date: 2021-07-11 19:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,8 +21,8 @@ msgstr ""
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
-#: admin/forms.py:45 admin/templates/admin/cinema_update.html:190
-#: app/models.py:117
+#: admin/forms.py:45 admin/templates/admin/cinema_update.html:251
+#: app/models.py:121
 msgid "Поддерживаемые форматы"
 msgstr "Підтримувані формати"
 
@@ -30,11 +30,11 @@ msgstr "Підтримувані формати"
 msgid "Тип"
 msgstr "Тип"
 
-#: admin/forms.py:74 app/templates/movie_detail.html:70
+#: admin/forms.py:74 app/templates/movie_detail.html:78
 msgid "Жанр"
 msgstr "Жанр"
 
-#: admin/forms.py:78 app/models.py:156
+#: admin/forms.py:78 app/models.py:160
 msgid "Формат показа"
 msgstr "Формат показу"
 
@@ -57,55 +57,55 @@ msgstr "Зал кінотеатру"
 msgid "Дата последнего показа не может быть ранее даты первого показа"
 msgstr "Дата останнього показу не може бути раніше дати першого показу"
 
-#: admin/forms.py:159 admin/forms.py:168 app/models.py:256 app/models.py:264
+#: admin/forms.py:163 admin/forms.py:172 app/models.py:260 app/models.py:268
 msgid "Скорость вращения"
 msgstr "Швидкість обертання"
 
-#: admin/forms.py:284 admin/forms.py:306 app/forms.py:24 app/models.py:84
-#: app/templates/movie_detail.html:64 users/models.py:39
+#: admin/forms.py:288 admin/forms.py:310 app/forms.py:24 app/models.py:84
+#: app/templates/movie_detail.html:72 users/models.py:39
 msgid "Язык"
 msgstr "Мова"
 
-#: admin/forms.py:286 admin/forms.py:308
+#: admin/forms.py:290 admin/forms.py:312
 #: admin/templates/admin/statistics.html:18 app/forms.py:26 users/models.py:40
 msgid "Пол"
 msgstr "Стать"
 
-#: admin/forms.py:286 admin/forms.py:308
-#: admin/templates/admin/statistics.html:116 app/forms.py:26 users/models.py:40
+#: admin/forms.py:290 admin/forms.py:312
+#: admin/templates/admin/statistics.html:118 app/forms.py:26 users/models.py:40
 msgid "Мужской"
 msgstr "Чоловіча"
 
-#: admin/forms.py:286 admin/forms.py:308
-#: admin/templates/admin/statistics.html:117 app/forms.py:26 users/models.py:40
+#: admin/forms.py:290 admin/forms.py:312
+#: admin/templates/admin/statistics.html:119 app/forms.py:26 users/models.py:40
 msgid "Женский"
 msgstr "Жіноча"
 
-#: admin/forms.py:302
+#: admin/forms.py:306
 msgid "Имя"
 msgstr "Ім'я"
 
-#: admin/forms.py:303
+#: admin/forms.py:307
 msgid "Фамилия"
 msgstr "Прізвище"
 
-#: admin/forms.py:304 app/forms.py:12 app/forms.py:28
+#: admin/forms.py:308 app/forms.py:12 app/forms.py:28
 msgid "Пароль"
 msgstr "Пароль"
 
-#: admin/forms.py:305 app/forms.py:13
+#: admin/forms.py:309 app/forms.py:13
 msgid "Повторите пароль"
 msgstr "Підтвердіть пароль"
 
-#: admin/forms.py:320
+#: admin/forms.py:324
 msgid "Выбрать email кому слать"
 msgstr "Обрати email кому надсилати"
 
-#: admin/forms.py:321
+#: admin/forms.py:325
 msgid "Все пользователи"
 msgstr "Усі користувачі"
 
-#: admin/forms.py:321
+#: admin/forms.py:325
 msgid "Выбранные пользователи"
 msgstr "Обрані користувачі"
 
@@ -115,58 +115,147 @@ msgstr "Обрані користувачі"
 msgid "О кинотеатре"
 msgstr "Про кінотеатр"
 
-#: admin/templates/admin/about-cinema-page.html:83
-#: admin/templates/admin/advertise-page.html:83
-#: admin/templates/admin/cafe_bar_page.html:83
-#: admin/templates/admin/children-room-page.html:83
-#: admin/templates/admin/cinema_add.html:127
-#: admin/templates/admin/cinema_update.html:137
-#: admin/templates/admin/hall_add.html:116
-#: admin/templates/admin/hall_update.html:165
-#: admin/templates/admin/main_page_banners.html:18
-#: admin/templates/admin/mobile-app-page.html:83
-#: admin/templates/admin/movie_add.html:86
-#: admin/templates/admin/movie_update.html:92
-#: admin/templates/admin/news_add.html:91
-#: admin/templates/admin/news_and_stocks_banners.html:18
-#: admin/templates/admin/news_update.html:101
-#: admin/templates/admin/stock_add.html:91
-#: admin/templates/admin/stock_update.html:101
-#: admin/templates/admin/vip-hall-page.html:83
+#: admin/templates/admin/about-cinema-page.html:89
+#: admin/templates/admin/about-cinema-page.html:133
+#: admin/templates/admin/advertise-page.html:89
+#: admin/templates/admin/advertise-page.html:133
+#: admin/templates/admin/cafe_bar_page.html:73
+#: admin/templates/admin/cafe_bar_page.html:117
+#: admin/templates/admin/children-room-page.html:89
+#: admin/templates/admin/children-room-page.html:133
+#: admin/templates/admin/cinema_update.html:128
+#: admin/templates/admin/cinema_update.html:155
+#: admin/templates/admin/cinema_update.html:199
+#: admin/templates/admin/hall_update.html:171
+#: admin/templates/admin/hall_update.html:215
+#: admin/templates/admin/main_page_banners.html:58
+#: admin/templates/admin/main_page_banners.html:132
+#: admin/templates/admin/mobile-app-page.html:89
+#: admin/templates/admin/mobile-app-page.html:133
+#: admin/templates/admin/movie_update.html:98
+#: admin/templates/admin/movie_update.html:142
+#: admin/templates/admin/news_and_stocks_banners.html:58
+#: admin/templates/admin/news_update.html:107
+#: admin/templates/admin/news_update.html:151
+#: admin/templates/admin/stock_update.html:107
+#: admin/templates/admin/stock_update.html:151
+#: admin/templates/admin/vip-hall-page.html:89
+#: admin/templates/admin/vip-hall-page.html:133
+#, fuzzy
+#| msgid "На данный момент нету новостей"
+msgid "На данный момент"
+msgstr "На ланий момент немає новин"
+
+#: admin/templates/admin/about-cinema-page.html:96
+#: admin/templates/admin/about-cinema-page.html:140
+#: admin/templates/admin/about-cinema-page.html:161
+#: admin/templates/admin/advertise-page.html:96
+#: admin/templates/admin/advertise-page.html:140
+#: admin/templates/admin/advertise-page.html:161
+#: admin/templates/admin/cafe_bar_page.html:80
+#: admin/templates/admin/cafe_bar_page.html:124
+#: admin/templates/admin/cafe_bar_page.html:145
+#: admin/templates/admin/children-room-page.html:96
+#: admin/templates/admin/children-room-page.html:140
+#: admin/templates/admin/children-room-page.html:161
+#: admin/templates/admin/cinema_add.html:122
+#: admin/templates/admin/cinema_add.html:146
+#: admin/templates/admin/cinema_add.html:178
+#: admin/templates/admin/cinema_add.html:199
+#: admin/templates/admin/cinema_update.html:135
+#: admin/templates/admin/cinema_update.html:162
+#: admin/templates/admin/cinema_update.html:206
+#: admin/templates/admin/cinema_update.html:227
+#: admin/templates/admin/hall_add.html:126
+#: admin/templates/admin/hall_add.html:158
+#: admin/templates/admin/hall_add.html:179
+#: admin/templates/admin/hall_update.html:178
+#: admin/templates/admin/hall_update.html:222
+#: admin/templates/admin/hall_update.html:243
+#: admin/templates/admin/main_page_banners.html:65
+#: admin/templates/admin/main_page_banners.html:90
+#: admin/templates/admin/main_page_banners.html:139
+#: admin/templates/admin/mobile-app-page.html:96
+#: admin/templates/admin/mobile-app-page.html:140
+#: admin/templates/admin/mobile-app-page.html:161
+#: admin/templates/admin/movie_add.html:96
+#: admin/templates/admin/movie_add.html:128
+#: admin/templates/admin/movie_add.html:149
+#: admin/templates/admin/movie_update.html:105
+#: admin/templates/admin/movie_update.html:149
+#: admin/templates/admin/movie_update.html:170
+#: admin/templates/admin/news_add.html:101
+#: admin/templates/admin/news_add.html:133
+#: admin/templates/admin/news_add.html:154
+#: admin/templates/admin/news_and_stocks_banners.html:65
+#: admin/templates/admin/news_and_stocks_banners.html:90
+#: admin/templates/admin/news_update.html:114
+#: admin/templates/admin/news_update.html:158
+#: admin/templates/admin/news_update.html:179
+#: admin/templates/admin/stock_add.html:101
+#: admin/templates/admin/stock_add.html:133
+#: admin/templates/admin/stock_add.html:154
+#: admin/templates/admin/stock_update.html:114
+#: admin/templates/admin/stock_update.html:158
+#: admin/templates/admin/stock_update.html:179
+#: admin/templates/admin/vip-hall-page.html:96
+#: admin/templates/admin/vip-hall-page.html:140
+#: admin/templates/admin/vip-hall-page.html:161
+msgid "Загрузите файл"
+msgstr "Завантажте файл"
+
+#: admin/templates/admin/about-cinema-page.html:111
+#: admin/templates/admin/advertise-page.html:111
+#: admin/templates/admin/cafe_bar_page.html:95
+#: admin/templates/admin/children-room-page.html:111
+#: admin/templates/admin/cinema_add.html:161
+#: admin/templates/admin/cinema_update.html:177
+#: admin/templates/admin/hall_add.html:141
+#: admin/templates/admin/hall_update.html:193
+#: admin/templates/admin/main_page_banners.html:34
+#: admin/templates/admin/mobile-app-page.html:111
+#: admin/templates/admin/movie_add.html:111
+#: admin/templates/admin/movie_update.html:120
+#: admin/templates/admin/news_add.html:116
+#: admin/templates/admin/news_and_stocks_banners.html:34
+#: admin/templates/admin/news_update.html:129
+#: admin/templates/admin/stock_add.html:116
+#: admin/templates/admin/stock_update.html:129
+#: admin/templates/admin/vip-hall-page.html:111
 msgid "Галерея картинок"
 msgstr "Галерея картинок"
 
-#: admin/templates/admin/about-cinema-page.html:123
-#: admin/templates/admin/advertise-page.html:127
-#: admin/templates/admin/cafe_bar_page.html:123
-#: admin/templates/admin/children-room-page.html:123
-#: admin/templates/admin/cinema_add.html:158
-#: admin/templates/admin/cinema_update.html:177
-#: admin/templates/admin/hall_add.html:147
-#: admin/templates/admin/hall_update.html:205
-#: admin/templates/admin/main_page_banners.html:64
-#: admin/templates/admin/mobile-app-page.html:123
-#: admin/templates/admin/movie_add.html:117
-#: admin/templates/admin/movie_update.html:132
-#: admin/templates/admin/news_add.html:122
-#: admin/templates/admin/news_and_stocks_banners.html:63
-#: admin/templates/admin/news_update.html:141
-#: admin/templates/admin/stock_add.html:122
-#: admin/templates/admin/stock_update.html:141
-#: admin/templates/admin/vip-hall-page.html:123
+#: admin/templates/admin/about-cinema-page.html:172
+#: admin/templates/admin/advertise-page.html:172
+#: admin/templates/admin/cafe_bar_page.html:156
+#: admin/templates/admin/children-room-page.html:172
+#: admin/templates/admin/cinema_add.html:210
+#: admin/templates/admin/cinema_update.html:238
+#: admin/templates/admin/hall_add.html:190
+#: admin/templates/admin/hall_update.html:254
+#: admin/templates/admin/main_page_banners.html:105
+#: admin/templates/admin/mobile-app-page.html:172
+#: admin/templates/admin/movie_add.html:160
+#: admin/templates/admin/movie_update.html:181
+#: admin/templates/admin/news_add.html:165
+#: admin/templates/admin/news_and_stocks_banners.html:105
+#: admin/templates/admin/news_update.html:190
+#: admin/templates/admin/stock_add.html:165
+#: admin/templates/admin/stock_update.html:190
+#: admin/templates/admin/vip-hall-page.html:172
 msgid "Добавить ещё"
 msgstr "Додати ще"
 
-#: admin/templates/admin/about-cinema-page.html:177
-#: admin/templates/admin/advertise-page.html:181
-#: admin/templates/admin/cafe_bar_page.html:177
-#: admin/templates/admin/children-room-page.html:177
+#: admin/templates/admin/about-cinema-page.html:226
+#: admin/templates/admin/advertise-page.html:226
+#: admin/templates/admin/cafe_bar_page.html:210
+#: admin/templates/admin/children-room-page.html:226
 #: admin/templates/admin/contacts_page.html:61
 #: admin/templates/admin/main_page.html:78
-#: admin/templates/admin/mobile-app-page.html:177
+#: admin/templates/admin/mobile-app-page.html:226
 #: admin/templates/admin/user_create.html:163
 #: admin/templates/admin/user_update.html:128
-#: admin/templates/admin/vip-hall-page.html:177 app/templates/profile.html:140
+#: admin/templates/admin/vip-hall-page.html:226 app/templates/profile.html:140
 msgid "Сохранить"
 msgstr "Зберегти"
 
@@ -185,7 +274,7 @@ msgid "Баннера/Слайдеры"
 msgstr "Банери/Слайдери"
 
 #: admin/templates/admin/base.html:93
-#: admin/templates/admin/main_page_banners.html:8
+#: admin/templates/admin/main_page_banners.html:24
 msgid "Баннера главной страницы"
 msgstr "Банера головної сторінки"
 
@@ -193,14 +282,14 @@ msgstr "Банера головної сторінки"
 msgid "Баннера на страницах Новости и Акции"
 msgstr "Банера на сторінках Новини та Акції"
 
-#: admin/templates/admin/base.html:106 admin/templates/admin/movies_list.html:7
-#: app/forms.py:61
+#: admin/templates/admin/base.html:106
+#: admin/templates/admin/movies_list.html:24 app/forms.py:61
 msgid "Фильмы"
 msgstr "Фільми"
 
 #: admin/templates/admin/base.html:111 app/forms.py:65
 #: app/templates/base.html:116 app/templates/base.html:179
-#: app/templates/cinemas.html:5 app/templates/cinemas.html:13
+#: app/templates/cinemas.html:5 app/templates/cinemas.html:32
 msgid "Кинотеатры"
 msgstr "Кінотеатри"
 
@@ -269,53 +358,53 @@ msgid "Кафе-Бар"
 msgstr "Кафе-Бар"
 
 #: admin/templates/admin/cinema_add.html:5
-#: admin/templates/admin/cinema_add.html:14
-#: admin/templates/admin/cinemas_list.html:13
+#: admin/templates/admin/cinema_add.html:30
+#: admin/templates/admin/cinemas_list.html:30
 msgid "Добавить кинотеатр"
 msgstr "Додати кінотеатр"
 
-#: admin/templates/admin/cinema_add.html:212
-#: admin/templates/admin/cinema_update.html:276
-#: admin/templates/admin/hall_add.html:201
-#: admin/templates/admin/hall_update.html:259
-#: admin/templates/admin/main_page_banners.html:103
-#: admin/templates/admin/movie_add.html:386
-#: admin/templates/admin/movie_update.html:404
-#: admin/templates/admin/news_add.html:186
-#: admin/templates/admin/news_and_stocks_banners.html:76
-#: admin/templates/admin/news_update.html:205
-#: admin/templates/admin/stock_add.html:186
-#: admin/templates/admin/stock_update.html:205
+#: admin/templates/admin/cinema_add.html:264
+#: admin/templates/admin/cinema_update.html:337
+#: admin/templates/admin/hall_add.html:244
+#: admin/templates/admin/hall_update.html:308
+#: admin/templates/admin/main_page_banners.html:156
+#: admin/templates/admin/movie_add.html:429
+#: admin/templates/admin/movie_update.html:453
+#: admin/templates/admin/news_add.html:229
+#: admin/templates/admin/news_and_stocks_banners.html:118
+#: admin/templates/admin/news_update.html:254
+#: admin/templates/admin/stock_add.html:229
+#: admin/templates/admin/stock_update.html:254
 msgid "Cохранить"
 msgstr "Зберегти"
 
 #: admin/templates/admin/cinema_update.html:5
-#: admin/templates/admin/cinema_update.html:14
+#: admin/templates/admin/cinema_update.html:30
 msgid "Редактирование информации о кинотеатре"
 msgstr "Редагування інформації про кінотеатр"
 
-#: admin/templates/admin/cinema_update.html:183
+#: admin/templates/admin/cinema_update.html:244
 msgid "Cписок залов"
 msgstr "Список залей"
 
-#: admin/templates/admin/cinema_update.html:188
+#: admin/templates/admin/cinema_update.html:249
 #: admin/templates/admin/news_list.html:30
 #: admin/templates/admin/stock_list.html:30
 msgid "Название"
 msgstr "Назва"
 
-#: admin/templates/admin/cinema_update.html:189
+#: admin/templates/admin/cinema_update.html:250
 #: admin/templates/admin/news_list.html:31
-#: admin/templates/admin/stock_list.html:31 app/models.py:116
+#: admin/templates/admin/stock_list.html:31 app/models.py:120
 msgid "Дата создания"
 msgstr "Дата створення"
 
-#: admin/templates/admin/cinema_update.html:222
+#: admin/templates/admin/cinema_update.html:283
 msgid "Создать зал"
 msgstr "Сторити залу"
 
 #: admin/templates/admin/cinemas_list.html:5
-#: admin/templates/admin/cinemas_list.html:16
+#: admin/templates/admin/cinemas_list.html:33
 msgid "Список кинотеатров"
 msgstr "Список кінотеатрів"
 
@@ -331,52 +420,52 @@ msgstr "Адреса"
 msgid "Координаты для карты"
 msgstr "Координати для мапи"
 
-#: admin/templates/admin/hall_add.html:5 admin/templates/admin/hall_add.html:14
+#: admin/templates/admin/hall_add.html:5 admin/templates/admin/hall_add.html:30
 msgid "Добавить зал в кинотеатр"
 msgstr "Додати залу до кінотеатру"
 
-#: admin/templates/admin/hall_add.html:77
-#: admin/templates/admin/hall_update.html:77
+#: admin/templates/admin/hall_add.html:93
+#: admin/templates/admin/hall_update.html:93
 msgid "Схема зала"
 msgstr "Схема зали"
 
-#: admin/templates/admin/hall_add.html:81
-#: admin/templates/admin/hall_update.html:81
+#: admin/templates/admin/hall_add.html:97
+#: admin/templates/admin/hall_update.html:97
 msgid "Количество рядов"
 msgstr "Кількість рядків"
 
-#: admin/templates/admin/hall_add.html:85
-#: admin/templates/admin/hall_update.html:85
+#: admin/templates/admin/hall_add.html:101
+#: admin/templates/admin/hall_update.html:101
 msgid "Количество мест в ряду"
 msgstr "Кількість місць у рядку"
 
-#: admin/templates/admin/hall_add.html:90
-#: admin/templates/admin/hall_update.html:90
+#: admin/templates/admin/hall_add.html:106
+#: admin/templates/admin/hall_update.html:106
 msgid "Сгенерировать схему зала"
 msgstr "Згенерувати схему зали"
 
 #: admin/templates/admin/hall_update.html:5
-#: admin/templates/admin/hall_update.html:14
+#: admin/templates/admin/hall_update.html:30
 msgid "Редактировать зал в кинотеатре"
 msgstr "Редагувати залу у кінотеатрі"
 
-#: admin/templates/admin/hall_update.html:97
+#: admin/templates/admin/hall_update.html:113
 msgid "Ошибка"
 msgstr "Помилка"
 
-#: admin/templates/admin/hall_update.html:103
+#: admin/templates/admin/hall_update.html:119
 msgid ""
 "Нельзя изменять схему зала пока есть запланированные сеансы в этом зале!"
 msgstr ""
 "Змінювати схему зали заборонено до тих пір, поки є заплановані сеанси у залі"
 
-#: admin/templates/admin/hall_update.html:106
+#: admin/templates/admin/hall_update.html:122
 #: admin/templates/admin/mailing.html:115
 msgid "Закрыть"
 msgstr "Закрити"
 
-#: admin/templates/admin/hall_update.html:120
-#: admin/templates/admin/session_update.html:131 app/models.py:139
+#: admin/templates/admin/hall_update.html:136
+#: admin/templates/admin/session_update.html:132 app/models.py:143
 #: app/templates/book-ticket-for-session.html:60
 #: app/templates/hall_detail.html:56 app/templates/user_tickets.html:28
 #: app/templates/user_tickets.html:74
@@ -465,26 +554,26 @@ msgstr "Відправити обраним"
 msgid "Номера"
 msgstr "Номера"
 
-#: admin/templates/admin/main_page_banners.html:15
+#: admin/templates/admin/main_page_banners.html:31
 msgid "На главной верх"
 msgstr "Верх на головній"
 
-#: admin/templates/admin/main_page_banners.html:78
+#: admin/templates/admin/main_page_banners.html:119
 msgid "Сквозной баннер на заднем фоне"
 msgstr "Сквізний банер на задньому фоні"
 
 #: admin/templates/admin/movie_add.html:5
-#: admin/templates/admin/movie_add.html:18
+#: admin/templates/admin/movie_add.html:34
 msgid "Добавить новый фильм"
 msgstr "Додати новий фільм"
 
-#: admin/templates/admin/movie_add.html:184
-#: admin/templates/admin/movie_update.html:202
+#: admin/templates/admin/movie_add.html:227
+#: admin/templates/admin/movie_update.html:251
 msgid "Дополнительная информация о фильме"
 msgstr "Додаткова інформація про фільм"
 
-#: admin/templates/admin/movie_add.html:262
-#: admin/templates/admin/movie_update.html:280
+#: admin/templates/admin/movie_add.html:305
+#: admin/templates/admin/movie_update.html:329
 msgid "Выберите жанры"
 msgstr "Оберіть жанри"
 
@@ -492,33 +581,33 @@ msgstr "Оберіть жанри"
 msgid "Редактирование фильма"
 msgstr "Редагування кінострічки"
 
-#: admin/templates/admin/movie_update.html:18
+#: admin/templates/admin/movie_update.html:34
 msgid "Редактирование информации о фильме"
 msgstr "Редагування інформації про фільм"
 
-#: admin/templates/admin/movies_list.html:13
+#: admin/templates/admin/movies_list.html:30
 msgid "Добавить фильм"
 msgstr "Додати фільм"
 
-#: admin/templates/admin/movies_list.html:17
+#: admin/templates/admin/movies_list.html:34
 msgid "Список фильмов в прокате"
 msgstr "Список фільмів у прокаті"
 
-#: admin/templates/admin/movies_list.html:35
+#: admin/templates/admin/movies_list.html:52
 msgid "Список фильмов, которые скоро покажут"
 msgstr "Список фільмів, що скоро покажуть"
 
-#: admin/templates/admin/movies_list.html:56
+#: admin/templates/admin/movies_list.html:73
 msgid "Список фильмов, которые вышли из проката"
 msgstr "Список фільмів, що вийшли із прокату"
 
-#: admin/templates/admin/news_add.html:5 admin/templates/admin/news_add.html:14
+#: admin/templates/admin/news_add.html:5 admin/templates/admin/news_add.html:30
 #: admin/templates/admin/news_list.html:16
 msgid "Добавить новость"
 msgstr "Додати новину"
 
-#: admin/templates/admin/news_and_stocks_banners.html:8
-#: admin/templates/admin/news_and_stocks_banners.html:15
+#: admin/templates/admin/news_and_stocks_banners.html:24
+#: admin/templates/admin/news_and_stocks_banners.html:31
 msgid "На главной Новости Акции"
 msgstr "На головній Новини та Акції"
 
@@ -528,7 +617,7 @@ msgid "Список новостей"
 msgstr "Список новин"
 
 #: admin/templates/admin/news_list.html:32
-#: admin/templates/admin/stock_list.html:32 app/models.py:213 app/models.py:228
+#: admin/templates/admin/stock_list.html:32 app/models.py:217 app/models.py:232
 #: app/templates/user_tickets.html:31 app/templates/user_tickets.html:77
 msgid "Статус"
 msgstr "Статус"
@@ -544,7 +633,7 @@ msgid "ВЫКЛ"
 msgstr "ВИМК"
 
 #: admin/templates/admin/news_update.html:5
-#: admin/templates/admin/news_update.html:14
+#: admin/templates/admin/news_update.html:30
 msgid "Редактирование новости"
 msgstr "Редагування новини"
 
@@ -566,21 +655,21 @@ msgid "Время сеанса"
 msgstr "Час сеансу"
 
 #: admin/templates/admin/session_list.html:32 app/forms.py:70
-#: app/templates/movie_detail.html:131 app/templates/shedule.html:68
+#: app/templates/movie_detail.html:139 app/templates/shedule.html:68
 #: app/templates/shedule.html:110 app/templates/shedule.html:152
 #: app/templates/shedule.html:194
 msgid "Формат"
 msgstr "Формат"
 
 #: admin/templates/admin/session_list.html:33
-#: app/templates/movie_detail.html:132 app/templates/shedule.html:69
+#: app/templates/movie_detail.html:140 app/templates/shedule.html:69
 #: app/templates/shedule.html:111 app/templates/shedule.html:153
 #: app/templates/shedule.html:195 app/templates/user_tickets.html:25
 #: app/templates/user_tickets.html:71
 msgid "Кинотеатр"
 msgstr "Кінотеатр"
 
-#: admin/templates/admin/session_list.html:34 app/models.py:113
+#: admin/templates/admin/session_list.html:34 app/models.py:117
 msgid "Номер зала"
 msgstr "Номер зали"
 
@@ -602,27 +691,27 @@ msgstr "Деталі"
 msgid "Изменение сеанса"
 msgstr "Зміна сеансу"
 
-#: admin/templates/admin/session_update.html:95
+#: admin/templates/admin/session_update.html:96
 msgid "Изменить сеанс"
 msgstr "Змінити сеанс"
 
-#: admin/templates/admin/session_update.html:102
+#: admin/templates/admin/session_update.html:103
 msgid "Всего мест"
 msgstr "Усього місць"
 
-#: admin/templates/admin/session_update.html:103
+#: admin/templates/admin/session_update.html:104
 msgid "Свободно"
 msgstr "Вільно"
 
-#: admin/templates/admin/session_update.html:104
+#: admin/templates/admin/session_update.html:105
 msgid "Забронировано"
 msgstr "Заброньовано"
 
-#: admin/templates/admin/session_update.html:105
+#: admin/templates/admin/session_update.html:106
 msgid "Продано"
 msgstr "Продано"
 
-#: admin/templates/admin/session_update.html:109
+#: admin/templates/admin/session_update.html:110
 msgid "Пользователь, на которого будут записываться билеты"
 msgstr "Користувач, на якого будуть записуватися білети"
 
@@ -642,12 +731,12 @@ msgstr "Кількість зареєстрованих користувачів
 msgid "Подробнее"
 msgstr "Детальніше"
 
-#: admin/templates/admin/statistics.html:224
+#: admin/templates/admin/statistics.html:226
 msgid "сеансов"
 msgstr "сеансів"
 
 #: admin/templates/admin/stock_add.html:5
-#: admin/templates/admin/stock_add.html:14
+#: admin/templates/admin/stock_add.html:30
 #: admin/templates/admin/stock_list.html:16
 msgid "Добавить акцию"
 msgstr "Додати акцію"
@@ -658,7 +747,7 @@ msgid "Список акций"
 msgstr "Список акцій"
 
 #: admin/templates/admin/stock_update.html:5
-#: admin/templates/admin/stock_update.html:14
+#: admin/templates/admin/stock_update.html:30
 msgid "Редактирование акции"
 msgstr "Редагування акцій"
 
@@ -776,11 +865,11 @@ msgstr "Історичний фільм"
 
 #: app/models.py:54
 msgid "Комедия"
-msgstr "КОмедія"
+msgstr "Комедія"
 
 #: app/models.py:55
 msgid "Короткометражный фильм"
-msgstr "КОроткометражний фільм"
+msgstr "Короткометражний фільм"
 
 #: app/models.py:56
 msgid "Криминал"
@@ -846,14 +935,14 @@ msgstr "Фентезі"
 msgid "Название фильма"
 msgstr "Назва фільму"
 
-#: app/models.py:73 app/models.py:101 app/models.py:114 app/models.py:208
-#: app/models.py:223
+#: app/models.py:73 app/models.py:101 app/models.py:118 app/models.py:212
+#: app/models.py:227
 msgid "Описание"
 msgstr "Опис"
 
-#: app/models.py:74 app/models.py:210 app/models.py:225 app/models.py:285
-#: app/models.py:293 app/models.py:301 app/models.py:309 app/models.py:317
-#: app/models.py:325
+#: app/models.py:74 app/models.py:214 app/models.py:229 app/models.py:289
+#: app/models.py:297 app/models.py:305 app/models.py:313 app/models.py:321
+#: app/models.py:329
 msgid "Главная картинка"
 msgstr "Головна картинка"
 
@@ -877,11 +966,11 @@ msgstr "У прокаті?"
 msgid "Дата выхода"
 msgstr "Дата виходу"
 
-#: app/models.py:81 app/templates/movie_detail.html:40
+#: app/models.py:81 app/templates/movie_detail.html:48
 msgid "Страна"
 msgstr "Країна"
 
-#: app/models.py:82 app/templates/movie_detail.html:46
+#: app/models.py:82 app/templates/movie_detail.html:54
 msgid "Режиссёр"
 msgstr "Режисер"
 
@@ -893,17 +982,17 @@ msgstr "Сценарій"
 msgid "украинский"
 msgstr "українська"
 
-#: app/models.py:85 app/templates/movie_detail.html:58
+#: app/models.py:85 app/templates/movie_detail.html:66
 msgid "Возрастное ограничение"
 msgstr "Вікове обмеження"
 
-#: app/models.py:86 app/templates/movie_detail.html:82
+#: app/models.py:86 app/templates/movie_detail.html:90
 msgid "Бюджет"
 msgstr "Бюджет"
 
-#: app/models.py:88 app/models.py:106 app/models.py:120 app/models.py:214
-#: app/models.py:229 app/models.py:279 app/models.py:287 app/models.py:295
-#: app/models.py:303 app/models.py:311 app/models.py:319 app/models.py:327
+#: app/models.py:88 app/models.py:106 app/models.py:124 app/models.py:218
+#: app/models.py:233 app/models.py:283 app/models.py:291 app/models.py:299
+#: app/models.py:307 app/models.py:315 app/models.py:323 app/models.py:331
 msgid "SEO блок"
 msgstr "SEO блок"
 
@@ -911,7 +1000,7 @@ msgstr "SEO блок"
 msgid "Условия"
 msgstr "Умови"
 
-#: app/models.py:103 app/models.py:334
+#: app/models.py:103 app/models.py:338
 msgid "Логотип"
 msgstr "ЛОготип"
 
@@ -919,88 +1008,88 @@ msgstr "ЛОготип"
 msgid "Фото верхнего баннера"
 msgstr "Фото верхнього баннеру"
 
-#: app/models.py:115
+#: app/models.py:119
 msgid "Верхний баннер"
 msgstr "Верхній баннер"
 
-#: app/models.py:140
+#: app/models.py:144
 msgid "Реальный ряд"
 msgstr "Релаьний рядок"
 
-#: app/models.py:141
+#: app/models.py:145
 msgid "Реальное местоположение в ряду"
 msgstr "Реальне місцеположення у рядку"
 
-#: app/models.py:142
+#: app/models.py:146
 msgid "Номер"
 msgstr "Номер"
 
-#: app/models.py:143
+#: app/models.py:147
 msgid "VIP-место?"
 msgstr "VIP-місце?"
 
-#: app/models.py:154
+#: app/models.py:158
 msgid "Дата сеанса"
 msgstr "Дата сеансу"
 
-#: app/models.py:157
+#: app/models.py:161
 msgid "Цена обычного билета"
 msgstr "Ціна звичайного білету"
 
-#: app/models.py:158
+#: app/models.py:162
 msgid "Цена VIP-билета"
 msgstr "Ціна VIP-білету"
 
-#: app/models.py:192
+#: app/models.py:196
 msgid "Cвободен"
 msgstr "Вільний"
 
-#: app/models.py:193
+#: app/models.py:197
 msgid "Забронирован"
 msgstr "Заброньований"
 
-#: app/models.py:194
+#: app/models.py:198
 msgid "Куплен"
 msgstr "Куплений"
 
-#: app/models.py:200
+#: app/models.py:204
 msgid "Cтатус"
 msgstr "Статус"
 
-#: app/models.py:207
+#: app/models.py:211
 msgid "Название новости"
 msgstr "Назва новини"
 
-#: app/models.py:209 app/models.py:224
+#: app/models.py:213 app/models.py:228
 msgid "Дата публикации"
 msgstr "Дата публікації"
 
-#: app/models.py:212 app/models.py:227
+#: app/models.py:216 app/models.py:231
 msgid "Ссылка на видео"
 msgstr "Посилання на відео"
 
-#: app/models.py:222
+#: app/models.py:226
 msgid "Название акции"
 msgstr "Назва акції"
 
-#: app/templates/afiche.html:5 app/templates/afiche.html:11
+#: app/templates/afiche.html:5 app/templates/afiche.html:30
 #: app/templates/base.html:107 app/templates/base.html:176
-#: app/templates/soon.html:11
+#: app/templates/soon.html:30
 msgid "Афиша"
 msgstr "Афіша"
 
-#: app/templates/afiche.html:12 app/templates/base.html:113
-#: app/templates/soon.html:5 app/templates/soon.html:12
+#: app/templates/afiche.html:31 app/templates/base.html:113
+#: app/templates/soon.html:5 app/templates/soon.html:31
 msgid "Скоро"
 msgstr "Скоро"
 
-#: app/templates/afiche.html:41 app/templates/main.html:66
-#: app/templates/soon.html:41
+#: app/templates/afiche.html:63 app/templates/main.html:84
+#: app/templates/soon.html:63
 msgid "Купить билет"
 msgstr "Придбати білет"
 
-#: app/templates/afiche.html:54 app/templates/main.html:81
-#: app/templates/soon.html:54
+#: app/templates/afiche.html:80 app/templates/main.html:99
+#: app/templates/soon.html:80
 msgid "С"
 msgstr "З"
 
@@ -1010,7 +1099,7 @@ msgstr "Пошук"
 
 #: app/templates/base.html:110 app/templates/base.html:177
 #: app/templates/cinema_detail.html:37 app/templates/cinema_detail.html:54
-#: app/templates/hall_detail.html:33 app/templates/movie_detail.html:22
+#: app/templates/hall_detail.html:33 app/templates/movie_detail.html:29
 #: app/templates/shedule.html:5
 msgid "Расписание"
 msgstr "Розклад"
@@ -1041,7 +1130,7 @@ msgstr "Бронювання білета"
 
 #: app/templates/book-ticket-for-session.html:37
 #: app/templates/cinema_detail.html:30 app/templates/hall_detail.html:5
-#: app/templates/hall_detail.html:41 app/templates/movie_detail.html:133
+#: app/templates/hall_detail.html:41 app/templates/movie_detail.html:141
 #: app/templates/shedule.html:70 app/templates/shedule.html:112
 #: app/templates/shedule.html:154 app/templates/shedule.html:196
 #: app/templates/user_tickets.html:26 app/templates/user_tickets.html:40
@@ -1091,7 +1180,7 @@ msgid "Количество залов"
 msgstr "Кількість зал"
 
 #: app/templates/cinema_detail.html:32 app/templates/hall_detail.html:28
-#: app/templates/main.html:58
+#: app/templates/main.html:76
 msgid "Смотрите сегодня"
 msgstr "Дивіться сьогодні"
 
@@ -1107,7 +1196,7 @@ msgstr "у"
 msgid "ФОТОГАЛЕРЕЯ"
 msgstr "ФОТОГАЛЕРЕЯ"
 
-#: app/templates/cinemas.html:23
+#: app/templates/cinemas.html:42
 msgid "На данный момент нету кинотеатров в в сети"
 msgstr "На даний момент нема кінотеатрів у мережі"
 
@@ -1123,52 +1212,52 @@ msgstr "Нема акаунта?"
 msgid "Зарегистрироваться"
 msgstr "Зареєструватися"
 
-#: app/templates/main.html:75
+#: app/templates/main.html:93
 msgid "Смотрите скоро"
 msgstr "Дивітся скоро"
 
-#: app/templates/main.html:87
+#: app/templates/main.html:105
 msgid "Новости и Акции"
 msgstr "Новини та Акції"
 
-#: app/templates/main.html:120
+#: app/templates/main.html:138
 msgid "СЕО текст"
 msgstr "СЕО текст"
 
-#: app/templates/movie_detail.html:19
+#: app/templates/movie_detail.html:25
 msgid "Информация о фильме"
 msgstr "Інформація про фільм"
 
-#: app/templates/movie_detail.html:34
+#: app/templates/movie_detail.html:42
 msgid "Год"
 msgstr "Рік"
 
-#: app/templates/movie_detail.html:52
+#: app/templates/movie_detail.html:60
 msgid "Сценарий"
 msgstr "Сценарій"
 
-#: app/templates/movie_detail.html:76
+#: app/templates/movie_detail.html:84
 msgid "Длительность"
 msgstr "Тривалість"
 
-#: app/templates/movie_detail.html:91
+#: app/templates/movie_detail.html:99
 msgid "Кадры и постеры"
 msgstr "Фрагменти та постери"
 
-#: app/templates/movie_detail.html:134 app/templates/shedule.html:71
+#: app/templates/movie_detail.html:142 app/templates/shedule.html:71
 #: app/templates/shedule.html:113 app/templates/shedule.html:155
 #: app/templates/shedule.html:197 app/templates/user_tickets.html:27
 #: app/templates/user_tickets.html:73
 msgid "Дата"
 msgstr "Дата"
 
-#: app/templates/movie_detail.html:135 app/templates/shedule.html:72
+#: app/templates/movie_detail.html:143 app/templates/shedule.html:72
 #: app/templates/shedule.html:114 app/templates/shedule.html:156
 #: app/templates/shedule.html:198
 msgid "Время"
 msgstr "Час"
 
-#: app/templates/movie_detail.html:136 app/templates/shedule.html:73
+#: app/templates/movie_detail.html:144 app/templates/shedule.html:73
 #: app/templates/shedule.html:115 app/templates/shedule.html:157
 #: app/templates/shedule.html:199 app/templates/user_tickets.html:30
 #: app/templates/user_tickets.html:76
