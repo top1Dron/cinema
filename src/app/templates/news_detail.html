@@ -7,7 +7,7 @@
 {% block main_content %}
     <div class="container-fluid" style="min-height:46vh;">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-lg-10">
                 <div class="card">
                     <div class="card-body bg-dark">
                         <h2 class="text-light">{{article.title}}</h2>
@@ -26,7 +26,7 @@
                             <iframe class="w-100" src="{{article.youtube_link}}" height="500px"></iframe>
                         {% endif %}
                         {% if article.gallery.count %}
-                        <div class="carousel slide" id="articleCarouselControls" data-bs-ride="carousel">
+                        <div class="carousel slide mt-2" id="articleCarouselControls" data-bs-ride="carousel">
                             <div class="carousel-indicators">                
                                 {% for image in article.gallery.all %}
                                     {% if not forloop.counter0 %}
@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-lg-2">
                 <div class="position-sticky" style="top: 2rem;">
                     <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
                         <div class="carousel-inner">
