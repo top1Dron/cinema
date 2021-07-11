@@ -137,11 +137,11 @@ def get_sessions_by_format(sessions, format):
 
 
 def get_active_user_tickets(user):
-    return Ticket.objects.filter(user=user, session__time__gte=timezone.now())
+    return Ticket.objects.filter(user=user, session__time__gte=timezone.now()).order_by('session__time')
 
 
 def get_expired_user_tickets(user):
-    return Ticket.objects.filter(user=user, session__time__lt=timezone.now())
+    return Ticket.objects.filter(user=user, session__time__lt=timezone.now()).order_by('-session__time')
 
 
 def get_month_sessions():

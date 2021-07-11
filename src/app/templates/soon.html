@@ -4,10 +4,29 @@
 
 {% block title %}{% trans "Скоро" %}{% endblock title %}
 
+{% block extra_css %}
+<style>
+@media only screen and (min-width : 481px) {
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .flex-row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-row.row:after, 
+    .flex-row.row:before {
+        display: flex;
+    }
+}
+</style>
+{% endblock extra_css %}
+
 {% block main_content %}
     <div class="container-fluid" style="min-height:46vh;">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-lg-2">
                 <button class="btn btn-light w-100" type="button" id="afiche_btn">{% trans "Афиша" %}</button>
                 <button class="btn btn-success w-100" type="button" id="soon_btn">{% trans "Скоро" %}</button>
                 <div class="position-sticky mt-2" style="top: 2rem;">
@@ -26,20 +45,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-lg-10">
                 <div class="d-none" id="id_active_movies">
                     {% if active_movies %}
                     <div class="card bg-dark">
                         <div class="card-body">
-                            <div class="row">
+                            <div class="row flex-row">
                                 {% for movie in active_movies %}
                                     <div class="col-md-2 text-center">
                                         <label class="fs-5 text-light">Сейчас в кино</label>
                                         {% if movie.poster %}
-                                            <img class="w-100" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
+                                            <img class="w-100 movie-poster" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
                                         {% endif %}
-                                        <a class="fs-5" href="{% url 'app:movie_detail' movie.pk %}">{{ movie.name }}</a>
-                                        <a href="{% url 'app:shedule' %}?movie={{movie.pk}}" class="col-8 btn btn-success">{% trans "Купить билет" %}</a>
+                                        <a class="fs-5 movie-name" href="{% url 'app:movie_detail' movie.pk %}">{{ movie.name }}</a>
+                                        <div class="row d-flex align-items-center mt-2">
+                                            <div class="col-2"></div>
+                                            <a href="{% url 'app:shedule' %}?movie={{movie.pk}}" class="col-8 btn btn-success release-date-or-buy-ticket">{% trans "Купить билет" %}</a>
+                                            <div class="col-2"></div>
+                                        </div>
                                     </div>
                                 {% endfor %}
                             </div>
@@ -51,14 +74,14 @@
                     {% if soon_movies %}
                     <div class="card bg-dark">
                         <div class="card-body">
-                            <div class="row">
+                            <div class="row flex-row">
                                 {% for movie in soon_movies %}
                                     <div class="col-md-2 text-center">
                                         <label class="text-light fs-5">{% trans "С" %} {{movie.release_date|date:"d.m.Y"}}</label>
                                         {% if movie.poster %}
-                                            <img class="w-100" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
+                                            <img class="w-100 movie-poster" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="{{movie.name}}_poster">
                                         {% endif %}
-                                        <a class="fs-5" href="{% url 'app:movie_detail' movie.pk %}">{{ movie.name }}</a>
+                                        <a class="fs-5 movie-name" href="{% url 'app:movie_detail' movie.pk %}">{{ movie.name }}</a>
                                     </div>
                                 {% endfor %}
                             </div>
@@ -73,5 +96,6 @@
 
 {% block extra_js %}
     <script src="{% static 'js/afiche.js' %}"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 {% endblock extra_js %}
 

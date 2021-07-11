@@ -10,7 +10,7 @@
             <img id="about_cinema_image" class="text-center w-100" src="{{MEDIA_URL}}{{about_cinema.main_image.url}}" alt="about_cinema_image" height="400px">
         {% endif %}
         <div class="row mt-3">
-            <div class="col-md-2">
+            <div class="col-lg-2">
                 {% if session.movie.poster %}
                     <img class="w-100" src="{{MEDIA_URL}}{{session.movie.poster.url}}" alt="{{session.movie.name}}_poster">
                 {% endif %}
@@ -30,23 +30,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-10">
+            <div class="col-lg-10">
                 <div class="card">
                     <div class="card-body">
                         <h3>{{session.movie.name}}</h3>
                         <span class="fs-6 text-secondary">{{session.time}}, {% trans "Зал" %} №{{session.hall.number}}</span>
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-xl-3">
                                 <div>{% trans "Цена в грн." %}: <span id="session_price" price="{{session.price}}" class="text-light bg-warning">{{session.price}}</span></div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-xl-3">
                                 <div>{% trans "VIP цена" %}: <span id="vip_price" price="{{session.vip_price}}" class="text-light bg-warning">{{session.vip_price}}</span></div>
                             </div>
-                            <div class="col-md-6">
-                                <div>{% trans "Ваш заказ" %}: <span class="border border-3 border-warning">
+                            <div class="col-xl-6">
+                                {% trans "Ваш заказ" %}: <span class="border border-3 border-warning">
                                     {% trans "Билетов" %}: <span id="tickets">0</span>
                                     {% trans "Сумма" %}: <span id="summ">0</span>
-                                </span></div>
+                                </span>
                             </div>
                         </div>
                         <div class="row my-3">
@@ -104,12 +104,12 @@
                             <div class="fs-6">{% trans "ЗАБРОНИРОВАННЫЕ БИЛЕТЫ НУЖНО ВЫКУПИТЬ В КАССЕ КИНОТЕАТРА НЕ ПОЗДНЕЕ ЧЕМ ЗА ПОЛЧАСА ДО НАЧАЛА СЕАНСА." %}</div>
                         </div>
                         <div class="row justify-content-center mb-2">
-                            <form class="col-lg-2" action="." method="POST">
+                            <form class="col-xl-2" action="." method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" id="id_selected_tickets1" name="selected_tickets_book" value="">
                                 <button class="btn btn-outline-success" type="submit">{% trans "Забронировать" %}</button>
                             </form>
-                            <form class="col-lg-2" action="{% url 'app:buy_tickets_for_session' session.pk %}" method="POST">
+                            <form class="col-xl-2" action="{% url 'app:buy_tickets_for_session' session.pk %}" method="POST">
                                 {% csrf_token %}
                                 <input type="hidden" id="id_selected_tickets2" name="selected_tickets_buy" value="">
                                 <button class="btn btn-success" type="submit">{% trans "Купить" %}</button>

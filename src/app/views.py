@@ -28,10 +28,12 @@ def index(request):
     soon_movies = utils.get_soon_movies()
     for m in today_movies:
         m.name = textwrap.shorten(m.name, 20, placeholder='...')
-        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        if m.name_uk is not None:
+            m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     for m in soon_movies:
         m.name = textwrap.shorten(m.name, 20, placeholder='...')
-        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        if m.name_uk is not None:
+            m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     return render(request, 'main.html', {
         'news_and_stocks_range': news_and_stocks_range,
         'today_movies': today_movies,
@@ -101,7 +103,7 @@ def signup(request):
                 password=request.POST.get('password1'))
             auth_login(request, user)
             return redirect(reverse_lazy('app:index'))
-    return render(request, 'registration.html',{'form': form})
+    return render(request, 'registration.html', {'form': form})
 
 
 @login_required
@@ -189,10 +191,12 @@ def afiche(request):
     soon_movies = utils.get_soon_movies()
     for m in active_movies:
         m.name = textwrap.shorten(m.name, 20, placeholder='...')
-        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        if m.name_uk is not None:
+            m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     for m in soon_movies:
         m.name = textwrap.shorten(m.name, 20, placeholder='...')
-        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        if m.name_uk is not None:
+            m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     return render(request, 'afiche.html', {
         'active_movies': active_movies,
         'soon_movies': soon_movies
@@ -204,10 +208,12 @@ def soon(request):
     soon_movies = utils.get_soon_movies()
     for m in active_movies:
         m.name = textwrap.shorten(m.name, 20, placeholder='...')
-        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        if m.name_uk is not None:
+            m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     for m in soon_movies:
         m.name = textwrap.shorten(m.name, 20, placeholder='...')
-        m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
+        if m.name_uk is not None:
+            m.name_uk = textwrap.shorten(m.name_uk, 20, placeholder='...')
     return render(request, 'soon.html', {
         'active_movies': active_movies,
         'soon_movies': soon_movies
@@ -231,24 +237,30 @@ class SheduleListView(ListView):
         today_sessions = self.get_queryset().filter(time__day=timezone.now().today().day, time__month=timezone.now().today().month, time__year=timezone.now().today().year)
         for s in today_sessions:
             s.movie.name = textwrap.shorten(s.movie.name, 20, placeholder='...')
-            s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
+            if s.movie.name_uk is not None:
+                s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
             s.hall.cinema.name = textwrap.shorten(s.hall.cinema.name, 20, placeholder='...')
-            s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
+            if s.hall.cinema.name_uk is not None:
+                s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
         context['today_sessions'] = today_sessions
         tomorrow = timezone.now().today() + timedelta(days=1)
         tomorrow_sessions = self.get_queryset().filter(time__day=tomorrow.day, time__month=tomorrow.month, time__year=tomorrow.year)
         for s in tomorrow_sessions:
             s.movie.name = textwrap.shorten(s.movie.name, 20, placeholder='...')
-            s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
+            if s.movie.name_uk is not None:
+                s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
             s.hall.cinema.name = textwrap.shorten(s.hall.cinema.name, 20, placeholder='...')
-            s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
+            if s.hall.cinema.name_uk is not None:
+                s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
         context['tomorrow_sessions'] = tomorrow_sessions
         next_week_sessions = self.get_queryset().filter(time__gte=timezone.now(), time__lte=timezone.now() + timedelta(days=7))
         for s in next_week_sessions:
             s.movie.name = textwrap.shorten(s.movie.name, 20, placeholder='...')
-            s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
+            if s.movie.name_uk is not None:
+                s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
             s.hall.cinema.name = textwrap.shorten(s.hall.cinema.name, 20, placeholder='...')
-            s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
+            if s.hall.cinema.name_uk is not None:
+                s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
         context['next_week_sessions'] = next_week_sessions
         return context
 
@@ -272,9 +284,11 @@ class SheduleListView(ListView):
                 hall_pk=self.request.GET.get('hall'))
         for s in queryset:
             s.movie.name = textwrap.shorten(s.movie.name, 20, placeholder='...')
-            s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
+            if s.movie.name_uk is not None:
+                s.movie.name_uk = textwrap.shorten(s.movie.name_uk, 20, placeholder='...')
             s.hall.cinema.name = textwrap.shorten(s.hall.cinema.name, 20, placeholder='...')
-            s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
+            if s.hall.cinema.name_uk is not None:
+                s.hall.cinema.name_uk = textwrap.shorten(s.hall.cinema.name_uk, 20, placeholder='...')
         return queryset
 
 

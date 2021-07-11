@@ -2,6 +2,25 @@
 
 {% load static i18n template_tags %}
 
+{% block extra_css %}
+<style>
+@media only screen and (min-width : 481px) {
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .flex-row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-row.row:after, 
+    .flex-row.row:before {
+        display: flex;
+    }
+}
+</style>
+{% endblock extra_css %}
+
 {% block site_header %}
 <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
     <div class="carousel-inner">
@@ -55,14 +74,14 @@
                         </div>
                     </div>
                 <h3 class="text-center text-light">{% trans "Смотрите сегодня" %}, {{today|date:"d.m"}}</h3>
-                <div class="row">
+                <div class="row flex-row">
                 {% for movie in today_movies %}
                     <div class="col-3">
-                        <a href="{% url 'app:movie_detail' movie.pk %}" class=""><img src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..." style="height: 400px;"></a>
-                        <div class="text-center"><a href="{% url 'app:movie_detail' movie.pk %}" class="fs-5">{{movie.name}}</a></div>
+                        <a href="{% url 'app:movie_detail' movie.pk %}"><img class="w-100 movie-poster" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..."></a>
+                        <a href="{% url 'app:movie_detail' movie.pk %}" class="movie-name fs-5">{{movie.name}}</a>
                         <div class="row d-flex align-items-center mt-2">
                             <div class="col-2"></div>
-                            <a href="{% url 'app:shedule' %}?movie={{movie.pk}}" class="col-8 btn btn-success">{% trans "Купить билет" %}</a>
+                            <a href="{% url 'app:shedule' %}?movie={{movie.pk}}" class="col-8 btn btn-success release-date-or-buy-ticket">{% trans "Купить билет" %}</a>
                             <div class="col-2"></div>
                         </div>
                     </div>
@@ -72,12 +91,12 @@
                 
                 {% if soon_movies %}
                 <h3 class="text-center text-light">{% trans "Смотрите скоро" %}</h3>
-                <div class="row">
+                <div class="row flex-row">
                 {% for movie in soon_movies %}
                     <div class="col-3">
-                        <a href="{% url 'app:movie_detail' movie.pk %}"><img src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..." style="height: 400px;"></a>
-                        <a href="{% url 'app:movie_detail' movie.pk %}" class="fs-5">{{movie.name}}</a></br>
-                        <h5 class="text-center text-success fs-3">{% trans "С" %} {{movie.release_date|date:"d.m.Y"}}</h5>
+                        <a href="{% url 'app:movie_detail' movie.pk %}"><img class="w-100 movie-poster" src="{{MEDIA_URL}}{{movie.poster.url}}" alt="..."></a>
+                        <a href="{% url 'app:movie_detail' movie.pk %}" class="movie-name fs-5">{{movie.name}}</a>
+                        <h5 class="text-center text-success fs-3 release-date-or-buy-ticket">{% trans "С" %} {{movie.release_date|date:"d.m.Y"}}</h5>
                     </div>
                 {% endfor %}
                 </div>
@@ -125,3 +144,14 @@
         </div>
     </div> 
 {% endblock main_content %}
+
+{% block extra_js %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+    <script>
+        $(function() {
+            $('.movie-poster').matchHeight();
+            $('.movie-name').matchHeight();
+            $('.release-date-or-buy-ticket').matchHeight();
+        });
+    </script>
+{% endblock extra_js %}

@@ -11,9 +11,9 @@
     <div class="row">
         <div class="col-8">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <!-- PIE CHART -->
-                    <div class="card card-danger card-outline">
+                    <div class="card card-danger card-outline pie-chart-card">
                         <div class="card-header">
                             <h3 class="card-title">{% trans "Пол" %}</h3>
 
@@ -33,9 +33,9 @@
                     </div>
                     <!-- /.card -->
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <!-- PIE CHART -->
-                    <div class="card card-danger card-outline">
+                    <div class="card card-danger card-outline pie-chart-card">
                         <div class="card-header">
                             <h3 class="card-title">{% trans "Самые большие кассовые сборы" %}</h3>
 
@@ -103,9 +103,11 @@
 <script src="{% static 'admin/plugins/flot/jquery.flot.js' %}"></script>
 <!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
 <script src="{% static 'admin/plugins/flot/plugins/jquery.flot.resize.js' %}"></script>
-
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
 <script>
+    
     $(function () {
+        $('.pie-chart-card').matchHeight();
         //-------------
         //- PIE CHART -
         //-------------

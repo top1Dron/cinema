@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     <h4 class="mt-3 text-dark bg-light">{% trans "Количество залов" %}: {{cinema.hall_set.count}}</h4>
-                    {% for hall in cinema.hall_set.all %}
+                    {% for hall in cinema.halls.all %}
                         <a href="{% url 'app:hall_detail' hall.pk %}" class="btn btn-light w-100">{% trans "Зал" %} №{{hall.number}}</a>
                     {% endfor %}
                     <h4 class="mt-3 text-dark bg-light">{% trans "Смотрите сегодня" %}:</h4>
@@ -34,7 +34,7 @@
                         <a href="{% url 'app:book_tickets_for_session' session.pk %}" class="btn btn-light w-100">{{session.movie.name}} {% trans "в зале" %} №{{session.hall.number}} {% trans "в" %} {{session.time|date:"H:i"}}</a>
                     {% endfor %}
                     <div class="mt-3 text-center">
-                        <a href="{% url 'app:shedule' %}?cinema={{cinema.pk}}" class="btn btn-success">{% trans "Расписание" %}</a>
+                        <a href="{% url 'app:shedule' %}?cinema={{cinema.pk}}" class="btn btn-success mb-3">{% trans "Расписание" %}</a>
                     </div>
                 </div>
             </div>
@@ -42,15 +42,15 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-2">
+                            <div class="col-lg-2">
                                 {% if cinema.logo %}
                                     <img class="d-block" src="{{MEDIA_URL}}{{cinema.logo.url}}" alt="" height="200px" width="200px">
                                 {% endif %}
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-lg-8">
                                 <h4 class="text-center">{{cinema.name}}</h4>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2">
                                 <a href="{% url 'app:shedule' %}?cinema={{cinema.pk}}" class="btn btn-success">{% trans "Расписание" %}</a>
                             </div>
                         </div>

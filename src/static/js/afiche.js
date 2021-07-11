@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $('.movie-poster').matchHeight();
+    $('.movie-name').matchHeight();
+    $('.buy-ticket').matchHeight();
     $('#afiche_btn').click(function(){
         $(this).removeClass('btn-light');
         $(this).addClass('btn-success');
@@ -8,6 +11,9 @@ $(document).ready(function(){
         $('#id_active_movies').removeClass('d-none');
         $('#id_soon_movies').addClass('d-none');
         $('#id_soon_movies').removeClass('d-block');
+        $('.movie-poster').matchHeight();
+        $('.movie-name').matchHeight();
+        $('.buy-ticket').matchHeight();
     });
     $('#soon_btn').click(function(){
         $(this).removeClass('btn-light');
@@ -18,5 +24,7 @@ $(document).ready(function(){
         $('#id_soon_movies').removeClass('d-none');
         $('#id_active_movies').addClass('d-none');
         $('#id_active_movies').removeClass('d-block');
+        $('.movie-poster').matchHeight();
+        $('.movie-name').matchHeight();
     });
 })

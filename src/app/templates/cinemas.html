@@ -4,6 +4,25 @@
 
 {% block title %}{% trans "Кинотеатры" %}{% endblock title %}
 
+{% block extra_css %}
+<style>
+@media only screen and (min-width : 481px) {
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .flex-row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
+    .flex-row.row:after, 
+    .flex-row.row:before {
+        display: flex;
+    }
+}
+</style>
+{% endblock extra_css %}
+
 {% block main_content %}
     <div class="container-fluid" style="min-height:46vh;">
         <div class="row">
@@ -11,13 +30,13 @@
                 <div class="card">
                     <div class="card-body">
                         <h2 class="text-center">{% trans "Кинотеатры" %}</h2>
-                        <div class="row">
+                        <div class="row flex-row">
                         {% for cinema in cinemas %}
                             <div class="col-sm-6 text-center d-flex flex-column align-items-center mt-3">
                             {% if cinema.logo %}
-                                <img class="d-block w-50" src="{{MEDIA_URL}}{{cinema.logo.url}}" alt="" height="300px">
+                                <img class="d-block w-50 cinema-logo" src="{{MEDIA_URL}}{{cinema.logo.url}}" alt="" height="300px">
                             {% endif %}
-                                <a href="{% url 'app:cinema_detail' cinema.pk %}" class="text-decoration-none text-center fs-4">{{cinema.name}}</a>
+                                <a href="{% url 'app:cinema_detail' cinema.pk %}" class="text-decoration-none text-center fs-4 cinema-name">{{cinema.name}}</a>
                             </div>
                         {% empty %}
                             <h4 class="text-center">{% trans "На данный момент нету кинотеатров в в сети" %}</h4>
@@ -47,3 +66,11 @@
         </div>
     </div>
 {% endblock main_content %}
+
+{% block extra_js %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.0/jquery.matchHeight-min.js"></script>
+    <script>
+        $('.cinema-logo').matchHeight();
+        $('.cinema-name').matchHeight();
+    </script>
+{% endblock extra_js %}

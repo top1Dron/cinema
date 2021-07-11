@@ -4,11 +4,17 @@
 
 {% block title %}{{movie.name}}{% endblock title %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css' %}">
+{% endblock extra_css %}
+
 {% block main_content %}
     <div class="container-fluid" style="min-height:46vh;">
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
                 {% if movie.trailer %}
                     <iframe class="w-100" height="500px" src="{{movie.trailer}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 {% endif %}
@@ -127,7 +133,7 @@
                             </div>
                         </div>
                         <div class="d-none" id="movie_shedule">
-                            <table class="table fs-5">
+                            <table class="table fs-5" id="id_shedule_table">
                                 <thead>
                                     <tr>
                                         <th scope="col">{% trans "Формат" %}</th>
@@ -155,7 +161,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-lg-2">
                 <div class="position-sticky mt-2" style="top: 2rem;">
                     <div class="carousel slide" id="carouselControls" data-bs-ride="carousel">
                         <div class="carousel-inner">
@@ -177,5 +183,11 @@
 {% endblock main_content %}
 
 {% block extra_js %}
+    <script src="{% static 'admin/plugins/datatables/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{% static 'admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js' %}"></script>
     <script src="{% static 'js/movie_detail.js' %}"></script>
 {% endblock extra_js %}

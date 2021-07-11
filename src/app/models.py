@@ -108,6 +108,10 @@ class Cinema(models.Model):
     class Meta:
         unique_together = ('name', 'description', 'condition')
 
+    @property
+    def halls(self):
+        return self.hall_set.all().order_by('number')
+
 
 class Hall(models.Model):
     number = models.CharField(_("Номер зала"), max_length=5)
