@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-11 19:08+0300\n"
+"POT-Creation-Date: 2021-07-12 00:30+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -141,10 +141,8 @@ msgstr "Про кінотеатр"
 #: admin/templates/admin/stock_update.html:151
 #: admin/templates/admin/vip-hall-page.html:89
 #: admin/templates/admin/vip-hall-page.html:133
-#, fuzzy
-#| msgid "На данный момент нету новостей"
 msgid "На данный момент"
-msgstr "На ланий момент немає новин"
+msgstr "На даний момент"
 
 #: admin/templates/admin/about-cinema-page.html:96
 #: admin/templates/admin/about-cinema-page.html:140
@@ -1002,7 +1000,7 @@ msgstr "Умови"
 
 #: app/models.py:103 app/models.py:338
 msgid "Логотип"
-msgstr "ЛОготип"
+msgstr "Логотип"
 
 #: app/models.py:104
 msgid "Фото верхнего баннера"
@@ -1270,11 +1268,11 @@ msgstr "На ланий момент немає новин"
 
 #: app/templates/profile.html:18
 msgid "Выйти с аккаунта"
-msgstr "ВИйти з акаунту"
+msgstr "Вийти з акаунту"
 
 #: app/templates/profile.html:22
 msgid "Панель администратора"
-msgstr "Панелі адміністратора"
+msgstr "Панель адміністратора"
 
 #: app/templates/profile.html:26
 msgid "Билеты"
@@ -1322,7 +1320,7 @@ msgstr "Вік"
 #: app/templates/shedule.html:89 app/templates/shedule.html:131
 #: app/templates/shedule.html:173 app/templates/shedule.html:215
 msgid "Не указано"
-msgstr "НЕ вказано"
+msgstr "Не вказано"
 
 #: app/templates/stocks-list.html:5 app/templates/stocks-list.html:13
 msgid "Акции и скидки"
@@ -1364,11 +1362,11 @@ msgstr "на завершені сеанси"
 msgid "Билетов на завершенные сеансы нету"
 msgstr "Білетів на завершені сеанси не знайдено"
 
-#: config/settings.py:153
+#: config/settings.py:155
 msgid "Russian"
 msgstr "Русский"
 
-#: config/settings.py:154
+#: config/settings.py:156
 msgid "Ukrainian"
 msgstr "Українська"
 
